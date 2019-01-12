@@ -1,6 +1,6 @@
-function Score = HV(PopObj,PF)
+function Score = NHV(PopObj,PF)
 % <metric> <max>
-% Hypervolume
+% Normalized hypervolume
 
 %--------------------------------------------------------------------------
 % Copyright (c) 2016-2017 BIMK Group. You are free to use the PlatEMO for
@@ -12,8 +12,12 @@ function Score = HV(PopObj,PF)
 %--------------------------------------------------------------------------
 
     [N,M]    = size(PopObj);
-    RefPoint = max(PF,[],1)*1.1;
-    PopObj(any(PopObj>repmat(RefPoint,N,1),2),:) = [];
+    fmin   = min(min(PF,[],1),zeros(1,M));
+    fmax   = max(PF,[],1);
+    PopObj = (PopObj-repmat(fmin,N,1))./repmat((fmax-fmin)*1.1,N,1);
+    %PopObj   = PopObj./repmat(max(PF,[],1)*1.1,N,1);
+    PopObj(any(PopObj>1,2),:) = [];
+    RefPoint = ones(1,M);
     if isempty(PopObj)
         Score = 0;
     elseif M<=10

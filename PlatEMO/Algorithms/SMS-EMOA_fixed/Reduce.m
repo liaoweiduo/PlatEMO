@@ -1,4 +1,4 @@
-function [Population,FrontNo] = Reduce(Population,FrontNo)
+function [Population,FrontNo] = Reduce(Population,FrontNo, r)
 % Delete one solution from the population
 
 %------------------------------- Copyright --------------------------------
@@ -24,7 +24,7 @@ function [Population,FrontNo] = Reduce(Population,FrontNo)
             deltaS(rank(i)) = (PopObj(rank(i+1),1)-PopObj(rank(i),1)).*(PopObj(rank(i-1),2)-PopObj(rank(i),2));
         end
     elseif N > 1
-        deltaS = CalHVC(PopObj,max(PopObj,[],1)*1.1,N);
+        deltaS = CalHVC(PopObj,max(PopObj,[],1)*r,N);
     end
     
     %% Delete the worst solution from the last front

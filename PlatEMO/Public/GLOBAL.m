@@ -304,8 +304,8 @@ classdef GLOBAL < handle
     methods(Access = private, Static)
         %% Display or save the result after the algorithm is terminated
         function Output(obj)
-            clc; fprintf('%s on %s, %d objectives %d variables, run %d (%6.2f%%), %.2fs passed...\n',...
-                         func2str(obj.algorithm),class(obj.problem),obj.M,obj.D,obj.run,obj.evaluated/obj.evaluation*100,obj.runtime);
+            clc; fprintf('%s on %s,%d populations %d objectives %d variables, run %d (%6.2f%%), %.2fs passed...\n',...
+                         func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run,obj.evaluated/obj.evaluation*100,obj.runtime);
             if obj.evaluated >= obj.evaluation
                 if obj.save == 0
                     % Identify the feasible and non-dominated solutions in the
@@ -341,7 +341,7 @@ classdef GLOBAL < handle
                     [~,~]  = mkdir(folder);
                     result         = obj.result;
                     metric.runtime = obj.runtime;
-                    save(fullfile(folder,sprintf('%s_%s_M%d_D%d_%d.mat',func2str(obj.algorithm),class(obj.problem),obj.M,obj.D,obj.run)),'result','metric');
+                    save(fullfile(folder,sprintf('%s_%s_N%d_M%d_D%d_%d.mat',func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run)),'result','metric');
                 end
             end
         end

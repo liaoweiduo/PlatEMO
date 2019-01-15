@@ -1,5 +1,5 @@
 function HypE(Global)
-% <algorithm> <H>
+% <algorithm> <A>
 % Hypervolume estimation algorithm
 % nSample --- 10000 --- Number of sampled points for HV estimation
 

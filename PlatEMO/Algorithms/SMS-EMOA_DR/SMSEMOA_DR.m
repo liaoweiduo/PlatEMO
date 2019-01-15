@@ -1,7 +1,14 @@
-function SMSEMOA(Global)
+function SMSEMOA_DR(Global)
 % <algorithm> <A>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
+% y = ax2 + bx + c 
+% Rfinal - Rinit = deltR 
+% n = evaluation; a; b = deltR / n - na; c = Rinit; 
+% deltR / n2 <= a <= - deltR / n2; 
+%      tu      linear         ao;
+% Rinit --- 2 --- The initial value of r
+% level --- 0 --- level => [-1 : 1] map to a => [ao : tu]
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the
@@ -17,6 +24,25 @@ function SMSEMOA(Global)
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
+    %% Parameter setting
+    [Rinit, level] = Global.ParameterSet(2, 1);
+    if level > 1
+        level = 1;
+    elseif level < -1
+        level = -1;
+    end
+    
+    %% Calculation of paremeter calculating reference point position r
+    H = CalH(Global.N, Global.M);
+    Rfinal = 1 + 1./H;
+    deltR = Rfinal - Rinit;
+    n = Global.evaluation - Global.N - 1;
+    % evaluated starts from N+1, first N evaluated was used to initialize N generations; 
+    % total evaluation-N
+    a = -1 .* level .* deltR ./ (n .* n);
+    b = deltR ./ n - n .* a;
+    c = Rinit;
+    
     %% Generate random population
     Population = Global.Initialization();
     FrontNo    = NDSort(Population.objs,inf);
@@ -26,7 +52,10 @@ function SMSEMOA(Global)
         for i = 1 : Global.N
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo);
+            Global.evaluated
+            r = CalR(a,b,c,Global.evaluated - Global.N - 1);
+    % evaluated starts from N+1, first N evaluated was used to initialize N generations; 
+            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
         end
     end
 end

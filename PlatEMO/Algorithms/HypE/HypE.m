@@ -27,7 +27,7 @@ function HypE(Global)
     %% Optimization
     while Global.NotTermination(Population)
         MatingPool = TournamentSelection(2,Global.N,-CalHV(Population.objs,RefPoint,Global.N,nSample));
-        Offspring  = GA(Population(MatingPool));    
+        Offspring  = GA(Population(MatingPool));
         Population = EnvironmentalSelection([Population,Offspring],Global.N,RefPoint,nSample);
     end
 end

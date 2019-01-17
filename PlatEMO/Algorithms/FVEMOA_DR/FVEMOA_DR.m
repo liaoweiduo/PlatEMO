@@ -48,7 +48,6 @@ function FVEMOA_DR(Global)
         MatingPool = TournamentSelection(2,Global.N,FrontNo);
         %Offspring  = Global.Variation(Population(MatingPool),Global.N);
         Offspring  = GA(Population(MatingPool));
-        Global.evaluated
         r = CalR(a,b,c,Global.evaluated - Global.N - 1);
         [Population,FrontNo] = EnvironmentalSelection([Population,Offspring],Global.N,r);
     end

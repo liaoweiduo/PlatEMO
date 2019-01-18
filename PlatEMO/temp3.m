@@ -10,13 +10,13 @@ problems = {@DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
 for m = M
-for problem = problems
 for algorithm = algorithms
-    parfor run = 1:5
-        main('-algorithm', algorithm{1},'-problem', problem,... 
-        '-N', N, '-M', m, '-evaluation', evaluation,...
-        '-save', evaluation, '-run', run);
-    end
+for run = 1:5
+parfor problem = problems
+    main('-algorithm', algorithm{1},'-problem', problem,... 
+    '-N', N, '-M', m, '-evaluation', evaluation,...
+    '-save', evaluation, '-run', run);
+end
 end
 end
 end

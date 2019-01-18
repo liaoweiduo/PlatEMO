@@ -9,14 +9,24 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTL
     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
+parameters = {};
 for m = M
-for problem = problems
 for algorithm = algorithms
-    parfor run = 1:5
-        main('-algorithm', algorithm{1},'-problem', problem,... 
-        '-N', N, '-M', m, '-evaluation', evaluation,...
-        '-save', evaluation, '-run', run);
-    end
+for problem = problems
+for run = 1:5
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
 end
 end
+end
+end
+
+parfor i = 1:size(parameters,2)
+    m = parameters{i}{1};
+    problem = parameters{i}{2};
+    algorithm = parameters{i}{3};
+    run = parameters{i}{4};
+    
+    main('-algorithm', algorithm{1},'-problem', problem,... 
+    '-N', N, '-M', m, '-evaluation', evaluation,...
+    '-save', evaluation, '-run', run);
 end

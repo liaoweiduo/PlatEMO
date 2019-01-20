@@ -20,7 +20,8 @@ end
 end
 end
 
-parfor i = 1:size(parameters,2)
+total = size(parameters,2);
+parfor i = 1:total
     m = parameters{i}{1};
     problem = parameters{i}{2};
     algorithm = parameters{i}{3};
@@ -29,4 +30,5 @@ parfor i = 1:size(parameters,2)
     main('-algorithm', algorithm{1},'-problem', problem,... 
     '-N', N, '-M', m, '-evaluation', evaluation,...
     '-save', evaluation, '-run', run);
+    fprintf('finish %d of %d...\n', i, total);
 end

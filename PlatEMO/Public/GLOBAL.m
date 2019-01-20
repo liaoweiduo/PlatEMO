@@ -304,8 +304,11 @@ classdef GLOBAL < handle
     methods(Access = private, Static)
         %% Display or save the result after the algorithm is terminated
         function Output(obj)
-            clc; fprintf('%s on %s,%d populations %d objectives %d variables, run %d (%6.2f%%), %.2fs passed...\n',...
-                         func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run,obj.evaluated/obj.evaluation*100,obj.runtime);
+            unit = floor(obj.evaluation / 10);
+            if mod(obj.evaluated, unit) == 0
+                clc; fprintf('%s on %s,%d populations %d objectives %d variables, run %d (%6.2f%%), %.2fs passed...\n',...
+                           func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run,obj.evaluated/obj.evaluation*100,obj.runtime);
+            end
             if obj.evaluated >= obj.evaluation
                 if obj.save == 0
                     % Identify the feasible and non-dominated solutions in the

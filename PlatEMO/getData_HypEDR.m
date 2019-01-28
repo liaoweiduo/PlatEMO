@@ -38,6 +38,7 @@ parfor i = 1:total
     elseif 21<=run && run<=25
         level = 1;
     end
+    fprintf('start %d of %d...\n', i, total);
     main('-algorithm', {algorithm,10000,Rinit,level},'-problem', problem,... 
     '-N', N, '-M', m, '-evaluation', evaluation,...
     '-save', evaluation, '-run', run);

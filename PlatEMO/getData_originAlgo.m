@@ -27,6 +27,7 @@ parfor i = 1:total
     algorithm = parameters{i}{3};
     run = parameters{i}{4};
     
+    fprintf('start %d of %d...\n', i, total);
     main('-algorithm', algorithm{1},'-problem', problem,... 
     '-N', N, '-M', m, '-evaluation', evaluation,...
     '-save', evaluation, '-run', run);

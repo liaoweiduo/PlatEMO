@@ -343,7 +343,7 @@ classdef GLOBAL < handle
                     folder = fullfile('Data',func2str(obj.algorithm));
                     [~,~]  = mkdir(folder);
                     result         = obj.result;
-                    metric.runtime = obj.runtime;
+                    metric.runtime = obj.runtime; 
                     save(fullfile(folder,sprintf('%s_%s_N%d_M%d_D%d_%d.mat',func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run)),'result','metric');
                 end
             end

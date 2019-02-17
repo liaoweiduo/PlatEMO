@@ -3,7 +3,7 @@ function ResultsAnalysis(Algorithm)
     PathRoot=['Data/', Algorithm, '/'];
     list=dir(fullfile(PathRoot));
     fileNum=size(list,1)-2; 
-    for k=3:fileNum
+    for k=3:fileNum+2
         filename = list(k).name;
         filename_temp = filename(length(Algorithm)+2:length(filename));
         Problem = filename_temp(1:strfind(filename_temp,'_N')-1);
@@ -24,7 +24,6 @@ function ResultsAnalysis(Algorithm)
             int2str(k-2), 'file']);
 
         load(strcat(PathRoot, filename));
-        runtime = metric.runtime;
         indexSet = cell2mat(result(:,1));
         generationSet = result(:,2);
         parfor index = 1:length(generationSet)
@@ -32,5 +31,6 @@ function ResultsAnalysis(Algorithm)
             objectiveSet = populationSet.objs;
             result(index,3) = {HV(objectiveSet, PF)};
         end
+        save([PathRoot,filename],'result','metric');
     end
 end

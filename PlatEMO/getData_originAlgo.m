@@ -10,19 +10,8 @@ evaluation = 100000;
 parameters = {};
 
 M = [10];
-algorithms = {@FVEMOA};
-problems = {@MaF8};
-for m = M
-for algorithm = algorithms
-for problem = problems
-for run = 2:5
-    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
-end
-end
-end
-end
-
-problems = {@MaF10};
+algorithms = {@SMSEMOA};
+problems = {@DTLZ1, @C2_DTLZ2};
 for m = M
 for algorithm = algorithms
 for problem = problems
@@ -33,11 +22,55 @@ end
 end
 end
 
-problems = {@MaF11};
+problems = {@DTLZ2, @DTLZ3, @DTLZ4, @C3_DTLZ4, @CDTLZ2, @IDTLZ1, @IDTLZ2, @SDTLZ1, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9};
+for m = M
+for algorithm = algorithms
+for problem = problems
+for run = 1:5
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+end
+end
+end
+end
+
+problems = {@WFG1};
 for m = M
 for algorithm = algorithms
 for problem = problems
 for run = 1:2
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+end
+end
+end
+end
+
+problems = {@MaF1};
+for m = M
+for algorithm = algorithms
+for problem = problems
+for run = 1:4
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+end
+end
+end
+end
+
+problems = {@MaF4};
+for m = M
+for algorithm = algorithms
+for problem = problems
+for run = 3:5
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+end
+end
+end
+end
+
+problems = {@MaF10};
+for m = M
+for algorithm = algorithms
+for problem = problems
+for run = 1:3
     parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
 end
 end

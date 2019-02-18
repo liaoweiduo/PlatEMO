@@ -1,6 +1,6 @@
-Algorithm = 'HypE';
+Algorithm = 'FVEMOA_DR';
 PathRoot=['Data/', Algorithm, '/'];
-filename = 'HypE_WFG9_N100_M8_D17_4.mat';
+filename = 'FVEMOA_DR_WFG9_N100_M8_D17_12.mat';
 
 filename_temp = filename(length(Algorithm)+2:length(filename));
 Problem = filename_temp(1:strfind(filename_temp,'_N')-1);

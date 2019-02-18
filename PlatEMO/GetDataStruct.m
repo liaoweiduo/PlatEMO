@@ -2,8 +2,8 @@ Algorithm = 'HypE';
 PathRoot=['Data/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
-% Dataindex = 1;
-for k=2094:fileNum+2
+Dataindex = 1;
+for k=3:fileNum+2
     filename = list(k).name;
     
     clc;disp(['Data Struct collection: ', filename ', file index ', int2str(floor((k-2)/fileNum*100)), '%, ',...

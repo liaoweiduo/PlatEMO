@@ -1,9 +1,6 @@
 N = 100;
 evaluation = 100000;
 
-M = [10];
-algorithms = {@FVEMOA};
-problems = {@MaF7};
 % problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
 %     @C1_DTLZ1, @C2_DTLZ2, @C3_DTLZ4, @CDTLZ2, @IDTLZ1, @IDTLZ2, @SDTLZ1,...
 %     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
@@ -11,6 +8,32 @@ problems = {@MaF7};
 %     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
 parameters = {};
+
+M = [10];
+algorithms = {@FVEMOA};
+problems = {@MaF8};
+for m = M
+for algorithm = algorithms
+for problem = problems
+for run = 2:5
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+end
+end
+end
+end
+
+problems = {@MaF10};
+for m = M
+for algorithm = algorithms
+for problem = problems
+for run = 5:5
+    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+end
+end
+end
+end
+
+problems = {@MaF11};
 for m = M
 for algorithm = algorithms
 for problem = problems

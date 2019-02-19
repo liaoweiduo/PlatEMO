@@ -1,8 +1,9 @@
 %% load data
 Algorithm = 'FVEMOA_DR';
-Problem = 'IDTLZ1';
+Problem = 'C1_DTLZ1';
 M = '3';
-fileName=['Analysis/', Algorithm, '.mat'];
+rootPath = 'Analysis/';
+fileName=[rootPath, Algorithm, '.mat'];
 load(fileName);
 for i = 1:length(metrics)
     if strcmp(metrics(i).Problem, Problem) && strcmp(metrics(i).M, M)
@@ -30,16 +31,12 @@ hold on
 plot(hvSetStrut(5).indexSet, hvSetStrut(5).aver);
 hold on
 legend('-1','-0.5','0','0.5','1');
-title(['FVEMOADR, IDTLZ1, M', M]);
+title([Algorithm,', ',Problem,', M', M]);
 xlabel('Time');
 ylabel('HV');
 
  %% load data
-Algorithm = 'FVEMOA_DR';
-Problem = 'IDTLZ1';
 M = '5';
-fileName=['Analysis/', Algorithm, '.mat'];
-load(fileName);
 for i = 1:length(metrics)
     if strcmp(metrics(i).Problem, Problem) && strcmp(metrics(i).M, M)
         break
@@ -65,17 +62,13 @@ hold on
 plot(hvSetStrut(5).indexSet, hvSetStrut(5).aver);
 hold on
 legend('-1','-0.5','0','0.5','1');
-title(['FVEMOADR, IDTLZ1, M', M]);
+title([Algorithm,', ',Problem,', M', M]);
 xlabel('Time');
 ylabel('HV');
 
 
  %% load data
-Algorithm = 'FVEMOA_DR';
-Problem = 'IDTLZ1';
 M = '8';
-fileName=['Analysis/', Algorithm, '.mat'];
-load(fileName);
 for i = 1:length(metrics)
     if strcmp(metrics(i).Problem, Problem) && strcmp(metrics(i).M, M)
         break
@@ -101,17 +94,13 @@ hold on
 plot(hvSetStrut(5).indexSet, hvSetStrut(5).aver);
 hold on
 legend('-1','-0.5','0','0.5','1');
-title(['FVEMOADR, IDTLZ1, M', M]);
+title([Algorithm,', ',Problem,', M', M]);
 xlabel('Time');
 ylabel('HV');
 
 
  %% load data
-Algorithm = 'FVEMOA_DR';
-Problem = 'IDTLZ1';
 M = '10';
-fileName=['Analysis/', Algorithm, '.mat'];
-load(fileName);
 for i = 1:length(metrics)
     if strcmp(metrics(i).Problem, Problem) && strcmp(metrics(i).M, M)
         break
@@ -120,7 +109,7 @@ end
 hvSetStrut = metrics(i).hvSetStrut;
 
 %% draw picture
-subplot(2,2,4)d'r
+subplot(2,2,4);
 % e1 = errorbar(hvSetStrut(1).indexSet, hvSetStrut(1).aver, hvSetStrut(1).var);
 plot(hvSetStrut(1).indexSet, hvSetStrut(1).aver);
 hold on
@@ -137,6 +126,9 @@ hold on
 plot(hvSetStrut(5).indexSet, hvSetStrut(5).aver);
 hold on
 legend('-1','-0.5','0','0.5','1');
-title(['FVEMOADR, IDTLZ1, M', M]);
+title([Algorithm,', ',Problem,', M', M]);
 xlabel('Time');
 ylabel('HV');
+
+%% save pic
+savefig([rootPath, Algorithm, '_Problem.fig']);

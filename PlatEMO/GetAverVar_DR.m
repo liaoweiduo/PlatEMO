@@ -52,6 +52,3 @@ for index = 1:length(metrics)
 end
 
 save(['Analysis/',Algorithm,'.mat'],'Data','metrics');
-% aver = mean(hvSets, 2);
-% var = std(hvSets, 0, 2);
-% errorbar(indexSet, aver, var);

@@ -1,6 +1,6 @@
 %% parameter sets
 rootPath = 'Analysis/';
-Algorithms = {'FVEMOA_DR'};
+Algorithms = {'FVEMOA'};
 Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ8', 'DTLZ9',...
     'C1_DTLZ1', 'C2_DTLZ2', 'C3_DTLZ4', 'CDTLZ2', 'IDTLZ1', 'IDTLZ2', 'SDTLZ1',...
     'WFG1', 'WFG2', 'WFG3', 'WFG4', 'WFG5', 'WFG6', 'WFG7', 'WFG8', 'WFG9',...
@@ -8,7 +8,7 @@ Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ
     'MaF11', 'MaF12', 'MaF13', 'MaF14', 'MaF1'};
 Ms = {'3','5','8','10'};
 errorLogs = {};
-errorLogsName = 'errorLogs_DR.mat';
+errorLogsName = 'errorLogs_originAlgo.mat';
 
 %% load data
 for i = 1:size(Algorithms,2)
@@ -39,23 +39,9 @@ for indexA = 1:size(Algorithms,2)  % draw picture for specific algorithm
             try
                 % e1 = errorbar(hvSetStrut(1).indexSet, hvSetStrut(1).aver, hvSetStrut(1).var);
                 plot(hvSetStrut(1).indexSet, hvSetStrut(1).aver);
-                hold on
-                % e2 = errorbar(hvSetStrut(2).indexSet, hvSetStrut(2).aver, hvSetStrut(2).var);
-                plot(hvSetStrut(2).indexSet, hvSetStrut(2).aver);
-                hold on
-                % e3 = errorbar(hvSetStrut(3).indexSet, hvSetStrut(3).aver, hvSetStrut(3).var);
-                plot(hvSetStrut(3).indexSet, hvSetStrut(3).aver);
-                hold on
-                % e4 = errorbar(hvSetStrut(4).indexSet, hvSetStrut(4).aver, hvSetStrut(4).var);
-                plot(hvSetStrut(4).indexSet, hvSetStrut(4).aver);
-                hold on
-                % e5 = errorbar(hvSetStrut(5).indexSet, hvSetStrut(5).aver, hvSetStrut(5).var);
-                plot(hvSetStrut(5).indexSet, hvSetStrut(5).aver);
-                hold on
             catch exception
                 errorLogs{length(errorLogs)+1} = [Algorithm,'_',Problem,'_',M];
             end
-            legend('-1','-0.5','0','0.5','1');
             title([Algorithm,', ',Problem,', M', M]);
             xlabel('Time');
             ylabel('HV');

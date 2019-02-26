@@ -5,7 +5,7 @@ Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ
     'C1_DTLZ1', 'C2_DTLZ2', 'C3_DTLZ4', 'CDTLZ2', 'IDTLZ1', 'IDTLZ2', 'SDTLZ1',...
     'WFG1', 'WFG2', 'WFG3', 'WFG4', 'WFG5', 'WFG6', 'WFG7', 'WFG8', 'WFG9',...
     'MaF1', 'MaF2', 'MaF3', 'MaF4', 'MaF5', 'MaF6', 'MaF7', 'MaF8', 'MaF9', 'MaF10',...
-    'MaF11', 'MaF12', 'MaF13', 'MaF14', 'MaF1'};
+    'MaF11', 'MaF12', 'MaF13', 'MaF14', 'MaF15'};
 Ms = {'3','5','8','10'};
 errorLogs = {};
 errorLogsName = 'errorLogs_drawPic.mat';
@@ -27,7 +27,7 @@ for indexA = 1:size(Algorithms,2)  % draw picture for specific algorithm
     Algorithm = Algorithms{indexA};
     eval(['metrics_1=metrics_',Algorithm,';']);
     eval(['metrics_2=metrics_',Algorithm,'_DR;']);
-    for indexP = 1:size(Problems,2)   % draq picture for specific problem
+    for indexP = 1:size(Problems,2)   % draw picture for specific problem
         %% draw picture
         fig = figure('Visible', 'on');
         Problem = Problems{indexP};

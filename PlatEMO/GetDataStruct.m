@@ -32,6 +32,7 @@ for k=3:fileNum+2
     Data(Dataindex).runtime = runtime;
     Data(Dataindex).indexSet = indexSet;
     Data(Dataindex).hvSet = hvSet;
+    Data(Dataindex).finalHv = hvSet(end);
     Dataindex = Dataindex + 1;
 end
 [~,~]  = mkdir('Analysis');

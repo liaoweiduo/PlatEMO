@@ -9,7 +9,7 @@ evaluation = 100000;
 
 parameters = {};
 
-M = [3,5,8];
+M = [10];
 algorithms = {@FVEMOA_optimal};
 problems = {@IDTLZ1, @IDTLZ2, @MaF1, @MaF4, @MaF8, @MaF15,...
     @DTLZ1, @MaF3, @WFG1};

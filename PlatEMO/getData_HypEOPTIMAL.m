@@ -9,10 +9,18 @@ evaluation = 100000;
 
 parameters = {};
 
-M = [10];
+M = [3,5,8,10];
 algorithms = {@HypE_optimal};
-problems = {@IDTLZ1, @IDTLZ2, @MaF1, @MaF4, @MaF8, @MaF15,...
-    @DTLZ1, @MaF3, @WFG1};
+% first run
+% problems = {@IDTLZ1, @IDTLZ2, @MaF1, @MaF4, @MaF8, @MaF15,...
+%     @DTLZ1, @MaF3, @WFG1};
+
+% second run
+problems = {@DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
+    @C1_DTLZ1, @C2_DTLZ2, @C3_DTLZ4, @CDTLZ2, @SDTLZ1,...
+    @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
+    @MaF2, @MaF4, @MaF5, @MaF6, @MaF7, @MaF9, @MaF10,...
+    @MaF11, @MaF12, @MaF13, @MaF14};
 for m = M
 for algorithm = algorithms
 for problem = problems

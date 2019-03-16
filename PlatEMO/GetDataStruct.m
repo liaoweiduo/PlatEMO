@@ -1,5 +1,5 @@
-Algorithm = 'HypE';
-PathRoot=['Data/', Algorithm, '/'];
+Algorithm = 'HypE_DR';
+PathRoot=['Data_processed/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
 Dataindex = 1;
@@ -22,7 +22,7 @@ for k=3:fileNum+2
     
     runtime = metric.runtime;
     indexSet = cell2mat(result(:,1));
-    hvSet = cell2mat(result(:,3));   
+    hvSet = cell2mat(result(:,3));
     
     Data(Dataindex).Algorithm = Algorithm;
     Data(Dataindex).Problem = Problem;

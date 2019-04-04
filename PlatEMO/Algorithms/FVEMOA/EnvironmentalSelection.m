@@ -16,8 +16,8 @@ function [Population,FrontNo] = EnvironmentalSelection(Population,N)
     
     %% Calculate the crowding distance of each solution
     Last     = FrontNo==MaxFNo;
-    LastPopulation = CalHVC(Population(Last),10,N-sum(Next));
-    LastFrontNo = MaxFNo*ones(1,N-sum(Next));
+    LastPopulation = CalHVC(Population(Last),2,N-sum(Next));   % 10 origin
+    LastFrontNo = MaxFNo*ones(1,N-sum(Next)); 
     
     %% Population for next generation
     Population = [Population(Next),LastPopulation];

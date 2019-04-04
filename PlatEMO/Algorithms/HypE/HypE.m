@@ -22,7 +22,7 @@ function HypE(Global)
     %% Generate random population
     Population = Global.Initialization();
     % Reference point for hypervolume calculation
-    RefPoint = zeros(1,Global.M) + max(Population.objs)*1.2;
+    RefPoint = zeros(1,Global.M) + max(Population.objs)*2;
 
     %% Optimization
     while Global.NotTermination(Population)

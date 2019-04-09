@@ -1,6 +1,6 @@
 %% parameter sets
 rootPath = 'Analysis/';
-Algorithms = {'HypE'};
+Algorithms = {'HypE','FVEMOA'};
 Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ8', 'DTLZ9',...
     'C1_DTLZ1', 'C2_DTLZ2', 'C3_DTLZ4', 'CDTLZ2', 'IDTLZ1', 'IDTLZ2', 'SDTLZ1',...
     'WFG1', 'WFG2', 'WFG3', 'WFG4', 'WFG5', 'WFG6', 'WFG7', 'WFG8', 'WFG9',...
@@ -43,7 +43,9 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
             for i = 1:length(metrics_1)     % origin metrics
                 if strcmp(metrics_1(i).Problem, Problem) && strcmp(metrics_1(i).M, M)
                     hvSetStrut = metrics_1(i).hvSetStrut;
-                    aver_origin = hvSetStrut.aver(end);
+                    if ~isempty(hvSetStrut.aver)
+                        aver_origin = hvSetStrut.aver(end);
+                    end
                     break
                 end
             end
@@ -51,9 +53,22 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
             for i = 1:length(metrics_2)     % dr metrics
                 if strcmp(metrics_2(i).Problem, Problem) && strcmp(metrics_2(i).M, M)
                     hvSetStrut = metrics_2(i).hvSetStrut;
-                    aver_dr = [hvSetStrut(1).aver(end), hvSetStrut(2).aver(end),...
-                        hvSetStrut(3).aver(end), hvSetStrut(4).aver(end),...
-                        hvSetStrut(5).aver(end)];
+                    
+                    if ~isempty(hvSetStrut(1).aver)
+                        aver_dr(1) = hvSetStrut(1).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(2).aver)
+                        aver_dr(2) = hvSetStrut(2).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(3).aver)
+                        aver_dr(3) = hvSetStrut(3).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(4).aver)
+                        aver_dr(4) = hvSetStrut(4).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(5).aver)
+                        aver_dr(5) = hvSetStrut(5).aver(end);
+                    end
                     break
                 end
             end
@@ -61,7 +76,9 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
             for i = 1:length(metrics_3)     % optimal metrics
                 if strcmp(metrics_3(i).Problem, Problem) && strcmp(metrics_3(i).M, M)
                     hvSetStrut = metrics_3(i).hvSetStrut;
-                    aver_optimal = hvSetStrut.aver(end);
+                    if ~isempty(hvSetStrut.aver)
+                        aver_optimal = hvSetStrut.aver(end);
+                    end
                     break
                 end
             end

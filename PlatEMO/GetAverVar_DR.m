@@ -1,4 +1,4 @@
-Algorithm = 'HypE_DR';
+Algorithm = 'FVEMOA_DR';
 fileName=['Analysis/', Algorithm, '.mat'];
 load(fileName);
 for index = 1:length(Data)

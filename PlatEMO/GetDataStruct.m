@@ -1,3 +1,4 @@
+clear;
 Algorithm = 'FVEMOA';
 PathRoot=['Data_processed/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));

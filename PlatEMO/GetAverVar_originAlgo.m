@@ -1,7 +1,11 @@
-Algorithm = 'SMSEMOA';
+clear;
+Algorithm = 'FVEMOA';
 fileName=['Analysis/', Algorithm, '.mat'];
 load(fileName);
 for index = 1:length(Data)
+    if ~strcmp(Data(index).Algorithm, Algorithm)
+        continue
+    end
     Problem = Data(index).Problem;
     N = Data(index).N;
     M = Data(index).M;

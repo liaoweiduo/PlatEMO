@@ -1,3 +1,4 @@
+clear;
 %% parameter sets
 rootPath = 'Analysis/';
 Algorithms = {'HypE','FVEMOA'};

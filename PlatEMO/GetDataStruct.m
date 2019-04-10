@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'FVEMOA_optimal';
+Algorithm = 'HypE';
 PathRoot=['Data_processed/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 

@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'HypE_optimal';
+Algorithm = 'SMSEMOA';
 fileName=['Analysis/', Algorithm, '.mat'];
 load(fileName);
 for index = 1:length(Data)

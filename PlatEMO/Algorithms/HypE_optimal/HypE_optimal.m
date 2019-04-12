@@ -2,6 +2,7 @@ function HypE_optimal(Global)
 % <algorithm> <A>
 % Hypervolume estimation algorithm
 % Rfinal = Rinit = 1 + 1 / H 
+% nSample --- 10000 --- Number of sampled points for HV estimation
 
 %------------------------------- Reference --------------------------------
 % J. Bader and E. Zitzler, HypE: An algorithm for fast hypervolume-based

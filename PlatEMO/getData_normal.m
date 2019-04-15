@@ -1,3 +1,4 @@
+clear;
 N = 100;
 evaluation = 40000;
 
@@ -15,8 +16,8 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8,...
 
 parameters = {};
 
-M = [3,5];
-algorithms = {@HypE, @HypE_optimal};
+M = [3,5];  
+algorithms = {@FVEMOA, @FVEMOA_optimal};
 
 for m = M
 for algorithm = algorithms

@@ -17,7 +17,7 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8,...
 parameters = {};
 
 M = [3,5];  
-algorithms = {@FVEMOA, @FVEMOA_optimal};
+algorithms = {@HypE};
 
 for m = M
 for algorithm = algorithms

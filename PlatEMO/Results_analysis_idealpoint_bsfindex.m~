@@ -1,0 +1,7 @@
+Algorithm = 'HypE';
+Problem = 'DTLZ1';
+N = '100';
+M = '3';
+run = '1';
+Path = ['Data/', Algorithm, '/', Algorithm];
+load(Path);

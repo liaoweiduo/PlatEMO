@@ -1,4 +1,4 @@
-Algorithm = 'SMSEMOA';
+Algorithm = 'HypE';
 PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 

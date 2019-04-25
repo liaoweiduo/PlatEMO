@@ -1,3 +1,4 @@
+clear;
 Algorithm = 'HypE';
 PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));

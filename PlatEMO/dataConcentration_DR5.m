@@ -31,15 +31,15 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
     eval(['metrics_1=metrics_',Algorithm,';']);
     eval(['metrics_2=metrics_',Algorithm,'_DR;']);
     eval(['metrics_3=metrics_',Algorithm,'_optimal;']);
-    T = table('Size',[160,5],'VariableTypes',{'string','string','double','double','double'},...
-        'VariableNames',{'Problem','M',Algorithm,[Algorithm,'_DR'],[Algorithm,'_optimal']});
+    T = table('Size',[160,9],'VariableTypes',{'string','string','double','double','double','double','double','double','double'},...
+        'VariableNames',{'Problem','M',Algorithm,[Algorithm,'_DR_minus1'],[Algorithm,'_DR_minuspoint5'],[Algorithm,'_DR_0'],[Algorithm,'_DR_point5'],[Algorithm,'_DR_1'],[Algorithm,'_optimal']});
     tIndex = 1;
     for indexP = 1:size(Problems,2)   % concentrate data for specific problem
         Problem = Problems{indexP};
         for indexM = 1:size(Ms,2)
             M = Ms{indexM};
             aver_origin = -1;
-            aver_dr = -1;
+            aver_dr = [-1,-1,-1,-1,-1];
             aver_optimal = -1;
             for i = 1:length(metrics_1)     % origin metrics
                 if strcmp(metrics_1(i).Problem, Problem) && strcmp(metrics_1(i).M, M)
@@ -55,8 +55,20 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
                 if strcmp(metrics_2(i).Problem, Problem) && strcmp(metrics_2(i).M, M)
                     hvSetStrut = metrics_2(i).hvSetStrut;
                     
-                    if ~isempty(hvSetStrut.aver)
-                        aver_dr = hvSetStrut.aver(end);
+                    if ~isempty(hvSetStrut(1).aver)
+                        aver_dr(1) = hvSetStrut(1).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(2).aver)
+                        aver_dr(2) = hvSetStrut(2).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(3).aver)
+                        aver_dr(3) = hvSetStrut(3).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(4).aver)
+                        aver_dr(4) = hvSetStrut(4).aver(end);
+                    end
+                    if ~isempty(hvSetStrut(5).aver)
+                        aver_dr(5) = hvSetStrut(5).aver(end);
                     end
                     break
                 end
@@ -72,7 +84,10 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
                 end
             end
             
-            T(tIndex,:) = {Problem, M, aver_origin, aver_dr, aver_optimal};
+            T(tIndex,:) = {Problem, M, aver_origin, ...
+                aver_dr(1), aver_dr(2), ...
+                aver_dr(3), aver_dr(4), ...
+                aver_dr(5), aver_optimal};
             
             tIndex = tIndex + 1;
         end

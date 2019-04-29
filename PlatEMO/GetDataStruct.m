@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'HypE_optimal';
+Algorithm = 'HypE';
 PathRoot=['Data_processed/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
@@ -24,6 +24,7 @@ for k=3:fileNum+2
     runtime = metric.runtime;
     indexSet = cell2mat(result(:,1));
     hvSet = cell2mat(result(:,3));
+    nadirSet = cell2mat(result(:,4));
     
     Data(Dataindex).Algorithm = Algorithm;
     Data(Dataindex).Problem = Problem;
@@ -34,6 +35,7 @@ for k=3:fileNum+2
     Data(Dataindex).indexSet = indexSet;
     Data(Dataindex).hvSet = hvSet;
     Data(Dataindex).finalHv = hvSet(end);
+    Data(Dataindex).nadirSet = nadirSet;
     Dataindex = Dataindex + 1;
 end
 [~,~]  = mkdir('Analysis');

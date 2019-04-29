@@ -1,17 +1,14 @@
 clear;
-Algorithm = 'HypE_optimal';
-PathRoot=['Data_toprocess/', Algorithm, '/'];
+Algorithm = 'HypE';
+PathRoot=['Data_processed/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
 for k=3:fileNum+2
     filename = list(k).name;
     
-    clc;disp(['HV calculation: ', filename ', file index ', int2str(floor((k-2)/fileNum*100)), '%, ',...
+    clc;disp(['hv and nadir calculation: ', filename ', file index ', int2str(floor((k-2)/fileNum*100)), '%, ',...
         int2str(k-2), 'file']);
     load(strcat(PathRoot, filename));
-    if (size(result,2) == 3) 
-        continue;
-    end
     
     filename_temp = filename(length(Algorithm)+2:length(filename));
     Problem = filename_temp(1:strfind(filename_temp,'_N')-1);
@@ -28,12 +25,18 @@ for k=3:fileNum+2
     Global = GLOBAL(varargin{:});
     PF = Global.problem.PF(10000);
 
-    indexSet = cell2mat(result(:,1));
     generationSet = result(:,2);
     parfor index = 1:length(generationSet)
         populationSet = generationSet{index};
         objectiveSet = populationSet.objs;
         result(index,3) = {HV(objectiveSet, PF)};
+    end
+    
+    for index = 1:length(generationSet)
+        populationSet = generationSet{index};
+        objectiveSet = populationSet.objs;
+        % save the nadir point of each generation
+        result(index,4) = {max(objectiveSet)};
     end
     
     save([PathRoot,filename],'result','metric');

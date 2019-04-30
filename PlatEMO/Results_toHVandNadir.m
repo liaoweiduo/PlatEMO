@@ -1,6 +1,6 @@
 clear;
 Algorithm = 'HypE';
-PathRoot=['Data_processed/', Algorithm, '/'];
+PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
 for k=3:fileNum+2

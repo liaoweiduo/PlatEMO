@@ -1,4 +1,4 @@
-Problem = 'C1_DTLZ1';
+Problem = 'MaF1';
 M = '3';
 run = '1';
 window = 10;

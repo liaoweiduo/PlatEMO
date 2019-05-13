@@ -33,6 +33,9 @@ parfor i = 1:total
     run = parameters{i}{4};
     
     fprintf('start %d of %d...\n', i, total);
+    if exist('HypE_DTLZ1_N100_M8_D12_17.mat','file')
+        
+    end
     main('-algorithm', {algorithm{1},10000},'-problem', problem,... 
     '-N', N, '-M', m, '-evaluation', evaluation,...
     '-save', 100, '-run', run);

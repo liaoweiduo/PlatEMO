@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'HypE';
+Algorithm = 'HypE_DR';
 PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 

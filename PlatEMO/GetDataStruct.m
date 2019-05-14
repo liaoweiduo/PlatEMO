@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'HypE_DR';
+Algorithm = 'HypE_DR2';
 PathRoot=['Data_processed/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
@@ -7,7 +7,8 @@ Dataindex = 1;
 for k=3:fileNum+2
     filename = list(k).name;
     
-    clc;disp(['Data Struct collection: ', filename ', file index ', int2str(floor((k-2)/fileNum*100)), '%, ',...
+    clc;disp(['Data Struct collection: ', filename ', file index ',... 
+        int2str(floor((k-2)/fileNum*100)), '%, ',...
             int2str(k-2), 'file']);
     
     load(strcat(PathRoot, filename));

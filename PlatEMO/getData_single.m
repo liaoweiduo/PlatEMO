@@ -12,8 +12,8 @@ problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
 
 parameters = {};
 
-M = [3,5,8,10];  
-algorithms = {@HypE_DR2};
+M = [8,10];  
+algorithms = {@HypE_DR};
 
 for m = M
 for algorithm = algorithms

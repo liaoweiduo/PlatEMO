@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'HypE_optimal';
+Algorithm = 'HypE';
 PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
@@ -9,9 +9,9 @@ for k=3:fileNum+2
     clc;disp(['HV calculation: ', filename ', file index ', int2str(floor((k-2)/fileNum*100)), '%, ',...
         int2str(k-2), 'file']);
     load(strcat(PathRoot, filename));
-    if (size(result,2) == 3) 
-        continue;
-    end
+%     if (size(result,2) == 3) 
+%         continue;
+%     end
     
     filename_temp = filename(length(Algorithm)+2:length(filename));
     Problem = filename_temp(1:strfind(filename_temp,'_N')-1);

@@ -12,7 +12,7 @@ function Score = HV(PopObj,PF)
 %--------------------------------------------------------------------------
 
     [N,M]    = size(PopObj);
-    RefPoint = max(PF,[],1)*2;
+    RefPoint = max(PF,[],1)*1.1;
     PopObj(any(PopObj>repmat(RefPoint,N,1),2),:) = [];
     if isempty(PopObj)
         Score = 0;

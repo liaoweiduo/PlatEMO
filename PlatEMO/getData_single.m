@@ -12,8 +12,8 @@ problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
 
 parameters = {};
 
-M = [8,10];  
-algorithms = {@HypE_DR};
+M = [3,5,8,10];  
+algorithms = {@FVEMOA, @FVEMOA_DR, @FVEMOA_optimal, @SMSEMOA, @SMSEMOA_DR};
 
 for m = M
 for algorithm = algorithms
@@ -33,9 +33,6 @@ parfor i = 1:total
     run = parameters{i}{4};
     
     fprintf('start %d of %d...\n', i, total);
-    if exist('HypE_DTLZ1_N100_M8_D12_17.mat','file')
-        
-    end
     main('-algorithm', algorithm{1},'-problem', problem,... 
     '-N', N, '-M', m, '-evaluation', evaluation,...
     '-save', 100, '-run', run);

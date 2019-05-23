@@ -1,11 +1,6 @@
 function HypE_DR2(Global)
 % <algorithm> <A>
 % Hypervolume estimation algorithm
-% y = ax2 + bx + c 
-% Rfinal - Rinit = deltR 
-% n = evaluation; a; b = deltR / n - na; c = Rinit; 
-% deltR / n2 <= a <= - deltR / n2; 
-%      tu      linear         ao;
 % nSample --- 10000 --- Number of sampled points for HV estimation
 % Rinit --- 2 --- The initial value of r
 % window --- 4000 --- The window size of evaluated

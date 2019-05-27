@@ -13,7 +13,7 @@ problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
 parameters = {};
 
 M = [3,5,8,10];  
-algorithms = {@FVEMOA_optimal, @SMSEMOA, @SMSEMOA_DR};
+algorithms = {@FVEMOA, @FVEMOA_DR, @FVEMOA_optimal, @SMSEMOA, @SMSEMOA_DR};
 
 for m = M
 for algorithm = algorithms
@@ -28,25 +28,12 @@ end
 total = size(parameters,2);
 parfor i = 1:total
     m = parameters{i}{1};
-    problem = parameters{i}{2}{1};
-    algorithm = parameters{i}{3}{1};
+    problem = parameters{i}{2};
+    algorithm = parameters{i}{3};
     run = parameters{i}{4};
     
     fprintf('start %d of %d...\n', i, total);
-    
-    if strcmp(func2str(problem), 'MaF1')
-        d = m + 9;
-    else
-        d = m + 4;
-    end
-    if exist(['Data/',func2str(algorithm),'_',func2str(problem),'_N100_M',int2str(m),'_D',...
-            int2str(d),'_',int2str(run),'.mat'],'file') == 2
-        fprintf('file: %s exist, continue', [func2str(algorithm),'_',...
-            func2str(problem),'_N100_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
-        continue
-    end
-    
-    main('-algorithm', algorithm,'-problem', problem,... 
+    main('-algorithm', algorithm{1},'-problem', problem,... 
     '-N', N, '-M', m, '-evaluation', evaluation,...
     '-save', 100, '-run', run);
     fprintf('finish %d of %d...\n', i, total);

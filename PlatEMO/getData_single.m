@@ -8,12 +8,12 @@ evaluation = 40000;
 %     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
 %     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
-problems = {@C1_DTLZ1};
+problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
 
 parameters = {};
 
 M = [3,5,8,10];  
-algorithms = {@HypE};
+algorithms = {@FVEMOA_optimal, @SMSEMOA, @SMSEMOA_DR};
 
 for m = M
 for algorithm = algorithms
@@ -26,7 +26,7 @@ end
 end
 
 total = size(parameters,2);
-for i = 1:total
+parfor i = 1:total
     m = parameters{i}{1};
     problem = parameters{i}{2}{1};
     algorithm = parameters{i}{3}{1};

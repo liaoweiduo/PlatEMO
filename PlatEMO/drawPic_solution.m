@@ -4,12 +4,12 @@
 %--------------------------------------------------------------------------
 clear;
 N = 100;
-M =    8;    % 3  5  8 10
-D =   12;    % 7  9 12 14
-             %12 14 17 19 MaF1
+M =   8;    % 3  5  8 10
+D =  17;    % 7  9 12 14
+            %12 14 17 19 MaF1
 runs = 1:20;
 algorithms = {'HypE','HypE_DR','HypE_DR2','HypE_optimal'};
-problem = 'DTLZ1';
+problem = 'MaF1';
 generation = 40000;
 for run = runs
     figSavePath = fullfile('Analysis','solution',[problem,'_N',int2str(N),'_M',...

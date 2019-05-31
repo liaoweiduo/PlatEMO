@@ -1,5 +1,5 @@
 function HypE(Global)
-% <algorithm> <A>
+% <algorithm> <H>
 % Hypervolume estimation algorithm
 % nSample --- 10000 --- Number of sampled points for HV estimation
 
@@ -22,12 +22,12 @@ function HypE(Global)
     %% Generate random population
     Population = Global.Initialization();
     % Reference point for hypervolume calculation
-    RefPoint = zeros(1,Global.M) + max(Population.objs)*2;
+    RefPoint = zeros(1,Global.M) + max(Population.objs)*1.2;
 
     %% Optimization
     while Global.NotTermination(Population)
         MatingPool = TournamentSelection(2,Global.N,-CalHV(Population.objs,RefPoint,Global.N,nSample));
-        Offspring  = GA(Population(MatingPool));
+        Offspring  = GA(Population(MatingPool));    
         Population = EnvironmentalSelection([Population,Offspring],Global.N,RefPoint,nSample);
     end
 end

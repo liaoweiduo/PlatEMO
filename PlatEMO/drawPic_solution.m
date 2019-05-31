@@ -4,12 +4,12 @@
 %--------------------------------------------------------------------------
 clear;
 N = 100;
-M =   8;    % 3  5  8 10
-D =  17;    % 7  9 12 14
+M =   3;    % 3  5  8 10
+D =   7;    % 7  9 12 14
             %12 14 17 19 MaF1
 runs = 1:20;
 algorithms = {'HypE','HypE_DR','HypE_DR2','HypE_optimal'};
-problem = 'MaF1';
+problem = 'IDTLZ1';
 generation = 40000;
 for run = runs
     figSavePath = fullfile('Analysis','solution',[problem,'_N',int2str(N),'_M',...
@@ -36,14 +36,12 @@ for run = runs
         title([algorithm,'-',problem,...
             '_N',int2str(N),'_M',int2str(M),'_D',int2str(D),'_',int2str(run)]);
 
+        xlim([0,0.6]);
         ylim([0,0.6]);
+        zlim([0,0.6]);
         % h = plot([0.5,0],[0,0.5]);
         % set(h,'color',[96 96 96]/255);
 
-
-
-        % xlim([0,1]);
-        % zlim([0,1]);
         % set(gcf, 'position', [500 500 500 500]);
         % set(gca,'FontSize',20);
 

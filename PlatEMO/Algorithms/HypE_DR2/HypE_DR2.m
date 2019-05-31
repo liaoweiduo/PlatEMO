@@ -42,11 +42,12 @@ function HypE_DR2(Global)
         Offspring  = GA(Population(MatingPool));    
         Population = EnvironmentalSelection([Population,Offspring],Global.N,RefPoint,nSample);
         
-%         if r == Rfinal && ~saving
-%             % save nadir_list and evaluate_num and r_list
+        if r == Rfinal && ~saving
+            % save nadir_list and evaluate_num and r_list
 %             save(fullfile('Analysis',sprintf('%s_%s_N%d_M%d_D%d_%d_.mat',func2str(Global.algorithm),class(Global.problem),Global.N,Global.M,Global.D,Global.run)),'evaluate_num','nadir_list','r_list');
-%             saving = 1;
-%         end
+            fprintf('r change to final at %d evaluation\n', Global.evaluated);
+            saving = 1;
+        end
     end
    
 end

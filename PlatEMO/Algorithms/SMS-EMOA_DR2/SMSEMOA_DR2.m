@@ -53,6 +53,7 @@ function SMSEMOA_DR2(Global)
             if r == Rfinal && ~saving
                 % save nadir_list and evaluate_num and r_list
                 save(fullfile('Analysis',sprintf('%s_%s_N%d_M%d_D%d_%d_.mat',func2str(Global.algorithm),class(Global.problem),Global.N,Global.M,Global.D,Global.run)),'evaluate_num','nadir_list','r_list');
+                fprintf('r change to final at %d evaluation\n', Global.evaluated);
                 saving = 1;
             end
 

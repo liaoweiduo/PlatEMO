@@ -13,7 +13,7 @@ problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
 parameters = {};
 
 M = [3,5,8,10];  
-algorithms = {@HypE_2};  % , @SMSEMOA_optima
+algorithms = {@SMSEMOA_optimal};
 
 for m = M
 for algorithm = algorithms

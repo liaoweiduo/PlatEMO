@@ -30,7 +30,7 @@ for run = runs
 
 
         individualSet = generationSet{find(generationIndexSet==generation)};
-        objectiveSet = individualSet.objs;
+        objectiveSet = individualSet.objs(:,1:3);      %只看前3维
 
         Draw(objectiveSet);
         title([algorithm,'-',problem,...

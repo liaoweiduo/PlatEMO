@@ -13,9 +13,9 @@ Ms = {'3','5','8','10'};
 %% load data
 for i = 1:size(Algorithms,2)
     Algorithm = Algorithms{i};
-    fileName=[rootPath, Algorithm, '.mat'];
+    fileName=[rootPath, Algorithm, '_2.mat'];
     load(fileName);
-    eval(['metrics_',Algorithm,'=metrics;']);
+    eval(['metrics_',Algorithm,'_2=metrics;']);
     
     fileName=[rootPath, Algorithm, '_DR.mat'];
     load(fileName);

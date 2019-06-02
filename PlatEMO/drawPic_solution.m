@@ -4,12 +4,12 @@
 %--------------------------------------------------------------------------
 clear;
 N = 100;
-M =   3;    % 3  5  8 10
-D =   7;    % 7  9 12 14
+M =   5;    % 3  5  8 10
+D =   9;    % 7  9 12 14
             %12 14 17 19 MaF1
 runs = 1:20;
-algorithms = {'HypE','HypE_DR','HypE_DR2','HypE_optimal'};
-problem = 'IDTLZ1';
+algorithms = {'HypE_2','HypE_DR','HypE_DR2','HypE_optimal'};
+problem = 'DTLZ1';
 generation = 40000;
 for run = runs
     figSavePath = fullfile('Analysis','solution',[problem,'_N',int2str(N),'_M',...
@@ -30,15 +30,16 @@ for run = runs
 
 
         individualSet = generationSet{find(generationIndexSet==generation)};
-        objectiveSet = individualSet.objs(:,1:3);      %只看前3维
+        objectiveSet = individualSet.objs;
+%         objectiveSet = objectiveSet(:,1:3);      %只看前3维
 
         Draw(objectiveSet);
         title([algorithm,'-',problem,...
             '_N',int2str(N),'_M',int2str(M),'_D',int2str(D),'_',int2str(run)]);
 
-        xlim([0,0.6]);
         ylim([0,0.6]);
-        zlim([0,0.6]);
+%         xlim([0,0.6]);
+%         zlim([0,0.6]);
         % h = plot([0.5,0],[0,0.5]);
         % set(h,'color',[96 96 96]/255);
 

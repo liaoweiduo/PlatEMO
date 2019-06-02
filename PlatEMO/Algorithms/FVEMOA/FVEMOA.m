@@ -1,6 +1,7 @@
 function FVEMOA(Global)
 % <algorithm> <A>
 % Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II
+% r --- 2 --- r of reference point
 
 %--------------------------------------------------------------------------
 % Copyright (c) 2016-2017 BIMK Group. You are free to use the PlatEMO for
@@ -11,16 +12,19 @@ function FVEMOA(Global)
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
+    %% Parameter setting
+    r = Global.ParameterSet(2);
+    
     %% Generate random population
     Population = Global.Initialization();
     %Vectors used in R2 for HVC approximation
-    [~,FrontNo] = EnvironmentalSelection(Population,Global.N);
+    [~,FrontNo] = EnvironmentalSelection(Population,Global.N,r);
     
     %% Optimization
     while Global.NotTermination(Population)
         MatingPool = TournamentSelection(2,Global.N,FrontNo);
         %Offspring  = Global.Variation(Population(MatingPool),Global.N);
         Offspring  = GA(Population(MatingPool));
-        [Population,FrontNo] = EnvironmentalSelection([Population,Offspring],Global.N);
+        [Population,FrontNo] = EnvironmentalSelection([Population,Offspring],Global.N,r);
     end
 end

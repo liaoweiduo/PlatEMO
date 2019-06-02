@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'HypE_optimal';
+Algorithm = 'HypE_2';
 fileName=['Analysis/', Algorithm, '.mat'];
 load(fileName);
 for index = 1:length(Data)

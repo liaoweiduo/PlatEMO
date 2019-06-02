@@ -15,7 +15,7 @@ for i = 1:size(Algorithms,2)
     Algorithm = Algorithms{i};
     fileName=[rootPath, Algorithm, '_2.mat'];
     load(fileName);
-    eval(['metrics_',Algorithm,'_2=metrics;']);
+    eval(['metrics_',Algorithm,'=metrics;']);
     
     fileName=[rootPath, Algorithm, '_DR.mat'];
     load(fileName);

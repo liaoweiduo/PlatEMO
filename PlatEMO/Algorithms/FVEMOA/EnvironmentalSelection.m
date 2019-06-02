@@ -1,4 +1,4 @@
-function [Population,FrontNo] = EnvironmentalSelection(Population,N)
+function [Population,FrontNo] = EnvironmentalSelection(Population,N,r)
 % The environmental selection of NSGA-II
 
 %--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ function [Population,FrontNo] = EnvironmentalSelection(Population,N)
     
     %% Calculate the crowding distance of each solution
     Last     = FrontNo==MaxFNo;
-    LastPopulation = CalHVC(Population(Last),2,N-sum(Next));   % 10 origin
+    LastPopulation = CalHVC(Population(Last),r,N-sum(Next));   % 10 origin
     LastFrontNo = MaxFNo*ones(1,N-sum(Next)); 
     
     %% Population for next generation

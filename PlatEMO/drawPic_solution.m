@@ -8,7 +8,7 @@ M =   5;    % 3  5  8 10
 D =   9;    % 7  9 12 14
             %12 14 17 19 MaF1
 runs = 1:20;
-algorithms = {'HypE_2','HypE_DR','HypE_DR2','HypE_optimal'};
+algorithms = {'FVEMOA','FVEMOA_DR','FVEMOA_DR2','FVEMOA_optimal'};
 problem = 'DTLZ1';
 generation = 40000;
 for run = runs

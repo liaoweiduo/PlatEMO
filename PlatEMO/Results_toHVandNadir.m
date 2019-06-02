@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'FVEMOA';
+Algorithm = 'FVEMOA_DR';
 PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 

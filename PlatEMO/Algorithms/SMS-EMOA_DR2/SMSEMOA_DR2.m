@@ -37,15 +37,15 @@ function SMSEMOA_DR2(Global)
     r_list = [];
     saving = 0;
     while Global.NotTermination(Population)
-        for i = 1 : Global.N
-            drawnow();
-            
-            nadir = max(Population.objs);
+        
+        nadir = max(Population.objs);
             nadir_list(end + 1,:) = nadir;
             evaluate_num(end + 1) = Global.evaluated;
             r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);
             r_list(end + 1) = r;
-        
+            
+        for i = 1 : Global.N
+            drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
     % evaluated starts from N+1, first N evaluated was used to initialize N generations; 
             [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);

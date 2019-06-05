@@ -3,7 +3,7 @@ Algorithms = {'FVEMOA', 'FVEMOA_DR', 'FVEMOA_DR2', 'FVEMOA_optimal'};
 for i = 1:size(Algorithms,2)
     Algorithm = Algorithms{i};
     
-    PathRoot=['Data_processed/', Algorithm, '/'];s
+    PathRoot=['Data_processed/', Algorithm, '/'];
     list=dir(fullfile(PathRoot));
     fileNum=size(list,1)-2; 
     for k=3:fileNum+2

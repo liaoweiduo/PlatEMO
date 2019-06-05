@@ -1,6 +1,6 @@
 %% parameter sets
 rootPath = 'Analysis/';
-Algorithms = {'HypE'};
+Algorithms = {'FVEMOA'};
 % Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ8', 'DTLZ9',...
 %     'C1_DTLZ1', 'C2_DTLZ2', 'C3_DTLZ4', 'CDTLZ2', 'IDTLZ1', 'IDTLZ2', 'SDTLZ1',...
 %     'WFG1', 'WFG2', 'WFG3', 'WFG4', 'WFG5', 'WFG6', 'WFG7', 'WFG8', 'WFG9',...
@@ -87,6 +87,7 @@ for indexA = 1:size(Algorithms,2)  % draw picture for specific algorithm
         end
         %% save pic
         saveas(fig, [rootPath, Algorithm, '_', Problem, '.fig']);
+        saveas(fig, [rootPath, Algorithm, '_', Problem, '.png']);
         close(fig);
     end
 end

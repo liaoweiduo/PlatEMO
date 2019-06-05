@@ -604,17 +604,25 @@ some text
 % （加图 相同的evaluation 一直optimal和一直2 一直2会快点收敛，换成10会不会变快？）
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
+\subsection{reference point specification for fast convergence}
+some text
+
+% ------------------sub-------------- dynamic mechanism ----------------------------------
+% ------------------------- linearly decrease mechanism --------------------------
 % so r从2到1+1/H 很必要 之前介绍过 但是怎么变化 没有一个特别好的idea outperform the others
 % hisao的paper，提到一种linearly decrease 机制 就是从2到1+1/H线性下降 这是一种简单又实用的idea
+% 图在下一个section画。
 % 接下来本文介绍一种基于weak convergence detection criterion, 在一些限制条件下outperform线性机制。
 % 
-\subsection{reference point specification for fast convergence}
+\subsection{linearly decrease mechanism}
+some text
 
 % -------------------------------- new dynamic mechanism ------------------------------------
 % 本文介绍一种基于weak convergence detection criterion的 new mechanism
-% 当 检测到convergence 就把r从2变成optimal （画 r 随 evaluation变化图）
+% 当 检测到convergence 就把r从2变成optimal 
+% （画 r 随 evaluation变化图 就是z字型那个 和线性机制一起画）
 % 
-\section{New mechanism}
+\section{New dynamic mechanism}
 In this section,
 we will introduce a new mechanism that combines a weak convergence detection criterion. 
 As we have explained before, 
@@ -626,33 +634,48 @@ So
 
 % ---------------sub-------------- new dynamic mechanism ------------------------------------
 % ----------------------------- weak convergence detection ----------------------------------
-% convergence detection 不应该花太多时间，并不需要太准  用 subsubsection
+% consider some convergence detection paper【各种 convergence detection paper】
 % convergence detection一般用各种各样的indicator【各种paper】
-% it seems to be a good idea to use HV 作为indicator，
+% 总结特点：用indicator list的太花时间；精确的收敛检测
+%
+% 准则：
+% convergence detection 不应该花太多时间，并不需要太准  用 subsubsection
+% 需要寻找一种不需要花太多计算量的 weak criterion
+% 【一些paper】indicator based algorithm用indicator
+% for us，it seems to be a good idea to use HV 作为indicator，however
 % 但是程序运行过程中 hv的reference point 一直在变，所以不同generations没有可比性
 % （画一张算法运行过程中用的hv的图）
-% 需要寻找一种不需要花太多计算量的 weak criterion
 %
-% estimated nadir point 会越来越接近PF， 并且当solutions reach to PF后 NP stagnation
-% (画 HV和bsf ln(nadir point) mean的图)表示它们同时期变化。 
-% 这是一个good idea to use ln(nadir point) mean作为判断解是否reach to PF 的 indicator
+% estimated nadir point 会越来越接近PF， 并且当solutions reach to PF后 NaidrP stagnation
+% (画 HV和bsf ln(nadir point) mean的图 最好用MaF1的 可能平滑些)表示它们同时期变化。 
+% good idea to use ln(nadir point) mean作为判断解是否reach to PF 的 indicator
 % 一篇论文（Introducing a Robust and Efficient Stopping Criterion for MOEAs）实现了
-% the Least Squares Stopping Criterion for convergence detectation 
+% the Least Squares Stopping Criterion for convergence detection 
 % when indicator has reached a stagnation situation, stop
-% 用一种简单并且直观SIMPLE INTUITIVE 的方式 就是
-% 
+% 用一种简单并且直观SIMPLE INTUITIVE 的方式 就是剩余价值和线性回归斜率 below thresholds
+% 介绍机制 线性计算公式
+% 画上图（ln np mean）的b随evaluation变化图
+% for nadir point, 经过我们的实验 10^-5是个好threshold
+%
 \subsection{weak convergence detection}
-some text
+some text 
+LSCD: least squares convergence detection
 
+% -------------------------------- Computational Experiments ------------------------------------
+% 为了直观的表现dynamic reference point adaptation的优势，
+% 算法 sets 我们选用了什么，简单介绍
+% 我们选用了test problem：DTLZ1， C1_DTLZ1，IDTLZ1，MaF1 分别介绍
+% 维度选择了 3，5，8，10维 为了表现在multi 和 many上的不同
+%
+\section{Computational Experiments}
+
+\subsection{settings}
 
 \section{Conclusion}
 The conclusion goes here.
 
 
-
-
 % conference papers do not normally have an appendix
-
 
 % use section* for acknowledgment
 \section*{Acknowledgment}

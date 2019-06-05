@@ -29,6 +29,7 @@ for i = 1:size(Algorithms,2)
         indexSet = cell2mat(result(:,1));
         hvSet = cell2mat(result(:,3));
         nadirSet = cell2mat(result(:,4));
+        igdSet = cell2mat(result(:,5));
 
         Data(Dataindex).Algorithm = Algorithm;
         Data(Dataindex).Problem = Problem;
@@ -40,6 +41,7 @@ for i = 1:size(Algorithms,2)
         Data(Dataindex).hvSet = hvSet;
         Data(Dataindex).finalHv = hvSet(end);
         Data(Dataindex).nadirSet = nadirSet;
+        Data(Dataindex).igdSet = igdSet;
         Dataindex = Dataindex + 1;
     end
     [~,~]  = mkdir('Analysis');

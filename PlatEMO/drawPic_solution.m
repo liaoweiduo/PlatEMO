@@ -4,8 +4,8 @@
 %--------------------------------------------------------------------------
 clear;
 N = 100;
-M =   5;    % 3  5  8 10
-D =   9;    % 7  9 12 14
+M =  8;    % 3  5  8 10
+D =  12;    % 7  9 12 14
             %12 14 17 19 MaF1
 runs = 1:20;
 algorithms = {'FVEMOA','FVEMOA_DR','FVEMOA_DR2','FVEMOA_optimal'};
@@ -37,7 +37,7 @@ for run = runs
         title([algorithm,'-',problem,...
             '_N',int2str(N),'_M',int2str(M),'_D',int2str(D),'_',int2str(run)]);
 
-        ylim([0,0.6]);
+%         ylim([0,1.1]);
 %         xlim([0,0.6]);
 %         zlim([0,0.6]);
         % h = plot([0.5,0],[0,0.5]);
@@ -49,6 +49,6 @@ for run = runs
     end
 
     saveas(gcf,figSavePath,'fig');
-    saveas(gcf,figSavePath,'png');
+    saveas(gcf,figSavePath,'eps');
     close(fig);
 end

@@ -8,11 +8,12 @@ evaluation = 40000;
 %     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
 %     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
-problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
+% problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
+problems = {@DTLZ1};
 
 parameters = {};
 
-M = [3,5,8,10];  
+M = [10];  
 algorithms = {@SMSEMOA_DR2};
 
 for m = M

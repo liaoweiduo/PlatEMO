@@ -1,3 +1,4 @@
+clear;
 %% parameter sets
 rootPath = 'Analysis/';
 Algorithms = {'FVEMOA'};
@@ -29,65 +30,75 @@ for i = 1:size(Algorithms,2)
     eval(['metrics_',Algorithm,'_optimal=metrics;']);
 end
 
-%% draw picture
-for indexA = 1:size(Algorithms,2)  % draw picture for specific algorithm
+%% concentrate data
+for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
     Algorithm = Algorithms{indexA};
     eval(['metrics_1=metrics_',Algorithm,';']);
     eval(['metrics_2=metrics_',Algorithm,'_DR;']);
     eval(['metrics_3=metrics_',Algorithm,'_DR2;']);
     eval(['metrics_4=metrics_',Algorithm,'_optimal;']);
-    for indexP = 1:size(Problems,2)   % draw picture for specific problem
-        %% draw picture
-        fig = figure('Visible', 'on');
+    T = table('Size',[160,6],'VariableTypes',{'string','string','double','double','double','double'},...
+        'VariableNames',{'Problem','M',Algorithm,[Algorithm,'_DR'],[Algorithm,'_DR2'],[Algorithm,'_optimal']});
+    tIndex = 1;
+    for indexP = 1:size(Problems,2)   % concentrate data for specific problem
         Problem = Problems{indexP};
         for indexM = 1:size(Ms,2)
             M = Ms{indexM};
-            
-            subplot(2,2,indexM);
-            hold on
+            aver_origin = -1;
+            aver_dr = -1;
+            aver_dr2 = -1;
+            aver_optimal = -1;
             for i = 1:length(metrics_1)     % origin metrics
                 if strcmp(metrics_1(i).Problem, Problem) && strcmp(metrics_1(i).M, M)
-                    hvSetStrut = metrics_1(i).hvSetStrut;
-                    p0=plot(hvSetStrut.indexSet, hvSetStrut.aver);
+                    igdSetStrut = metrics_1(i).igdSetStrut;
+                    if ~isempty(igdSetStrut.aver)
+                        aver_origin = igdSetStrut.aver(end);
+                    end
                     break
                 end
             end
-            
+                
             for i = 1:length(metrics_2)     % dr metrics
                 if strcmp(metrics_2(i).Problem, Problem) && strcmp(metrics_2(i).M, M)
-                    hvSetStrut = metrics_2(i).hvSetStrut;
-                    p1=plot(hvSetStrut.indexSet, hvSetStrut.aver);
+                    igdSetStrut = metrics_2(i).igdSetStrut;
+                    
+                    if ~isempty(igdSetStrut.aver)
+                        aver_dr = igdSetStrut.aver(end);
+                    end
                     break
                 end
             end
             
             for i = 1:length(metrics_3)     % dr2 metrics
                 if strcmp(metrics_3(i).Problem, Problem) && strcmp(metrics_3(i).M, M)
-                    hvSetStrut = metrics_3(i).hvSetStrut;
-                    p2=plot(hvSetStrut.indexSet, hvSetStrut.aver);
+                    igdSetStrut = metrics_3(i).igdSetStrut;
+                    
+                    if ~isempty(igdSetStrut.aver)
+                        aver_dr2 = igdSetStrut.aver(end);
+                    end
                     break
                 end
             end
             
             for i = 1:length(metrics_4)     % optimal metrics
                 if strcmp(metrics_4(i).Problem, Problem) && strcmp(metrics_4(i).M, M)
-                    hvSetStrut = metrics_4(i).hvSetStrut;
-                    p3=plot(hvSetStrut.indexSet, hvSetStrut.aver);
+                    igdSetStrut = metrics_4(i).igdSetStrut;
+                    if ~isempty(igdSetStrut.aver)
+                        aver_optimal = igdSetStrut.aver(end);
+                    end
                     break
                 end
             end
             
-            try
-                legend([p0,p1,p2,p3],'origin','DR','DR2','optimal');
-            catch exception
-            end
-            title([Algorithm,', ',Problem,', M', M]);
-            xlabel('Time');
-            ylabel('HV');
+            T(tIndex,:) = {Problem, M, aver_origin, aver_dr, aver_dr2, aver_optimal};
+            
+            tIndex = tIndex + 1;
         end
-        %% save pic
-        saveas(fig, [rootPath, Algorithm, '_', Problem, '.fig']);
-        saveas(fig, [rootPath, Algorithm, '_', Problem, '.png']);
-        close(fig);
     end
+    
+    %% save table of igd results
+    save([rootPath, 'finaligdTable_', Algorithm, '.mat'],'T');
+    writetable(T,[rootPath, 'finaligdTable_', Algorithm, '.xlsx'],'Sheet',1,'Range','A1');
 end
+        
+        

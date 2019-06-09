@@ -119,23 +119,24 @@
 
 % *** GRAPHICS RELATED PACKAGES ***
 %
+
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
+  \graphicspath{{fig/}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
-  % \usepackage[dvips]{graphicx}
+  \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
+  \graphicspath{{fig/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
+  \DeclareGraphicsExtensions{.eps,.pdf,.jpeg,.png}
 \fi
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
@@ -163,7 +164,7 @@
 
 % *** MATH PACKAGES ***
 %
-%\usepackage[cmex10]{amsmath}
+\usepackage[cmex10]{amsmath}
 % A popular package from the American Mathematical Society that provides
 % many useful and powerful commands for dealing with mathematics. If using
 % it, be sure to load this package with the cmex10 option to ensure that
@@ -174,7 +175,7 @@
 %
 % Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
 % thus preventing page breaks from occurring within multiline equations. Use:
-%\interdisplaylinepenalty=2500
+\interdisplaylinepenalty=2500
 % after loading amsmath to restore such page breaks as IEEEtran.cls normally
 % does. amsmath.sty is already installed on most LaTeX systems. The latest
 % version and documentation can be obtained at:
@@ -228,11 +229,11 @@
 
 
 % *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
+\ifCLASSOPTIONcompsoc
+ \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+ \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
 % subfig.sty, written by Steven Douglas Cochran, is the modern replacement
 % for subfigure.sty, the latter of which is no longer maintained and is
 % incompatible with some LaTeX packages including fixltx2e. However,
@@ -327,7 +328,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{A New Dynamic Reference Point Adaptation Mechanism in indicator-based EMOA
+\title{A New Dynamically Reference Point Adaptation Mechanism in indicator-based EMOA
 based on weak convergence detection}
 
 % author names and affiliations
@@ -565,10 +566,60 @@ Subsubsection text here.
 % The reference point is specified by the following common-use role:
 % estimated reference point = r × estimated nadir point, r = 1.1, 
 % the estimated nadir point is the vector consists of every maximization objective values of all
-% solutions in current population.
+% solutions in current population.【图】
 %
 \section{reference point adaptation}
-some text
+When hypervolume(HV) is used in indicator-based algorithms, 
+one important thing to be considered is that how to specified the reference point.
+Before calculating the HV values, reference point needs to be chosen in advance.
+However, it is not suggested that the reference point is set only once at the beginning.
+\cite{ut}  % undergraduated thesis
+This may cause a very far away reference point from solutions
+for those problems with a very large feasible space. 
+As the solutions set is gradually converging to the pareto front, 
+during the iteration of the algorithm procecess
+(As shown in Fig. \ref{rpa1}).
+There is a big problem when applying this strategy to some problems with specific pareto front shape, 
+for example, the inverted-DTLZ1 problem with a inverted-triangular pareto front in 3 dimensions,
+that many solutions of the final solutions set will distribute at the boundary of the pareto front
+(Fig. \ref{rpa2})\cite{hisao1,hisao2}. 
+% Dynamic Specification of a Reference Point for Hypervolume Calculation in SMS-EMOA
+% Reference point specification in hypervolume calculation for fair comparison and efficient search
+Although it has no effect on the distributions of solutions set 
+in problems with triangular pareto front in 3 dimensions (Fig. \ref{rpa3}), 
+it is necessary using reference point adaptation during the algorithm progress.
+
+In many algorithms including SMS-EMOA\cite{smsemoa}, 
+the reference point is adapted based on the following rules:
+\begin{equation}\label{rpaf1}
+  estimated reference point = r × estimated nadir point, r = 1.1.
+\end{equation}
+Note that the estimated nadir point is the nadir point in current population.
+When the solutions in the current population is obtained, 
+we use hypervolume as indicator to evaluate the performance of the solutions set. 
+Then the reference point used to calculate the hypervolume is calculated by the formula above.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\columnwidth]{test}
+  \caption{The reference point for a large feasible space.
+   PF can be far away from reference point.}
+  \label{rpa1}
+\end{figure}
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
+  \caption{The final distribution of solutions set in inverted-DTLZ1 problem.
+   The algorithm is FVEMOA with a reference point adaptation strategy when $r$=2.}
+  \label{rpa2}
+\end{figure}
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
+  \caption{The final distribution of solutions set in DTLZ1 problem.
+   The algorithm is FVEMOA with a reference point adaptation strategy when $r$=2.}
+  \label{rpa3}
+\end{figure}
 
 % ----------------------------------- dynamic mechanism ------------------------------------
 % 在算法运行的不同时期 early stage；final stage， 为了不同的目的，
@@ -579,11 +630,37 @@ some text
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
 \section{dynamic mechanism}
-some text
+Basically the Evolutionary Multi-objective Optimization Algorithm can be separate into
+two stages:
+\subsubsection{Early Stage} In this stage, 
+all the solutions are far away from pareto front.
+The main task is to converge the solutions to pareto front.
+This stage is also called Convergence Stage.
+\subsubsection{Final Stage} In this stage,
+all the solutions are in or near the pareto front.
+So the main task is to make the distribution of solutions more evenly in the pareto front.
+This stage is also called Diversity Stage.
+
+For different purposes in these two stages, the $r$ should be treated differently\cite{ut}. 
+Not only the reference point but also the value of $r$ 
+needs to be adapted in each iteration of algorithm. 
+This is called dynamically reference point adaptation. 
+
+Unfortunately, the research on how to specified $r$ is limited.
+Only a few papers\cite{hisao1, hisao2, hisao3, zhangqingfuHypE} did some research on reference point. 
+% 这方面的研究有限，研究的不够深入
+The reason is that, the effect of the location of the reference point on the pareto front 
+is not fatal on some benchmark problems, especially triangular pareto front. 
+But in fact, on some specific problems, the distribution of solutions on pareto front
+strongly depends on the location of the reference point. 
+The sensitivity about value of $r$ for solutions is also observerd on some real world problems,
+for example, distance minimization problems.
+This observation Potential shows the usefulness of the dynamically reference point adaptation
+\cite{hisao}.
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for optimal distribution ----------------
-% 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出三维图for example），
+% 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出二维三维图for example），
 % 提一句 本文主要的研究问题就是平的PF问题
 % 即在算法的最后final stage，所有solution都在PF上，r应该设置成1+1/H。
 %
@@ -601,7 +678,7 @@ some text
 %
 % in early generations， a slightly larger r is suggested in 【hisao和我的本科毕设】
 % 大一点的r能够加快convergence 
-% （加图 相同的evaluation 一直optimal和一直2 一直2会快点收敛，换成10会不会变快？）
+% （加图 相同的evaluation 一直optimal和一直2 一直2会快点收敛，换成10会不会更明显？ 用HypE的现象明显点）
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
 \subsection{reference point specification for fast convergence}

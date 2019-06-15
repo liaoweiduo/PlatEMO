@@ -12,7 +12,7 @@ for index = 1:length(Data)
     % find set in metrics
     
     if index == 1
-        metrics = struct('Problem',Problem,'N',N,'M',M,'hvSetStrut',struct('indexSet',Data(1).indexSet,'hvSets',[]));
+        metrics = struct('Problem',Problem,'N',N,'M',M,'nhvSetStrut',struct('indexSet',Data(1).indexSet,'nhvSets',[]));
     end
     
     i = 1;
@@ -24,16 +24,16 @@ for index = 1:length(Data)
     end
     
     if i > length(metrics) % first set
-        metrics(i) = struct('Problem',Problem,'N',N,'M',M,'hvSetStrut',struct('indexSet',Data(1).indexSet,'hvSets',[]));
+        metrics(i) = struct('Problem',Problem,'N',N,'M',M,'nhvSetStrut',struct('indexSet',Data(1).indexSet,'nhvSets',[]));
     end
     
-    metrics(i).hvSetStrut.hvSets(:,size(metrics(i).hvSetStrut.hvSets,2)+1) = Data(index).hvSet;
+    metrics(i).nhvSetStrut.nhvSets(:,size(metrics(i).nhvSetStrut.nhvSets,2)+1) = Data(index).nhvSet;
 
 end
 
 for index = 1:length(metrics)
-    metrics(index).hvSetStrut.aver = mean(metrics(index).hvSetStrut.hvSets, 2);
-    metrics(index).hvSetStrut.var = std(metrics(index).hvSetStrut.hvSets, 0, 2);
+    metrics(index).nhvSetStrut.aver = mean(metrics(index).nhvSetStrut.nhvSets, 2);
+    metrics(index).nhvSetStrut.var = std(metrics(index).nhvSetStrut.nhvSets, 0, 2);
 end
 
 save(['Analysis/',Algorithm,'.mat'],'Data','metrics');

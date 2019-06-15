@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  8 JUN 2019 10:11
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  15 JUN 2019 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -178,6 +178,24 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count106
+\c@ALC@line=\count107
+\c@ALC@rem=\count108
+\c@ALC@depth=\count109
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
  (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
@@ -193,103 +211,136 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
-\c@KVtest=\count106
-\sf@farskip=\skip47
+\c@KVtest=\count110
+\sf@farskip=\skip49
 \sf@captopadj=\dimen143
-\sf@capskip=\skip48
-\sf@nearskip=\skip49
-\c@subfigure=\count107
-\c@subfigure@save=\count108
-\c@lofdepth=\count109
-\c@subtable=\count110
-\c@subtable@save=\count111
-\c@lotdepth=\count112
-\sf@top=\skip50
-\sf@bottom=\skip51
+\sf@capskip=\skip50
+\sf@nearskip=\skip51
+\c@subfigure=\count111
+\c@subfigure@save=\count112
+\c@lofdepth=\count113
+\c@subtable=\count114
+\c@subtable@save=\count115
+\c@lotdepth=\count116
+\sf@top=\skip52
+\sf@bottom=\skip53
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2016/02/08 v2.0 Improve float mechanism and baselineskip settings
+\@dblbotnum=\count117
+\c@dblbotnumber=\count118
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (./bare_conf.aux)
 \openout1 = `bare_conf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 323.
-LaTeX Font Info:    ... okay on input line 323.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 323.
-LaTeX Font Info:    ... okay on input line 323.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 323.
-LaTeX Font Info:    ... okay on input line 323.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 323.
-LaTeX Font Info:    ... okay on input line 323.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 323.
-LaTeX Font Info:    ... okay on input line 323.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 323.
-LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 324.
+LaTeX Font Info:    ... okay on input line 324.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 324.
+LaTeX Font Info:    ... okay on input line 324.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 324.
+LaTeX Font Info:    ... okay on input line 324.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 324.
+LaTeX Font Info:    ... okay on input line 324.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 324.
+LaTeX Font Info:    ... okay on input line 324.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 324.
+LaTeX Font Info:    ... okay on input line 324.
 
 -- Lines per column: 56 (exact).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 390.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 390.
+LaTeX Font Info:    Try loading font information for U+msa on input line 393.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 393.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
-LaTeX Warning: Citation `ut' on page 1 undefined on input line 576.
-
-
-LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 585.
-
-
-LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 585.
+LaTeX Warning: Citation `ut' on page 1 undefined on input line 579.
 
 
-LaTeX Warning: Citation `smsemoa' on page 1 undefined on input line 592.
+LaTeX Warning: Reference `rpa1' on page 1 undefined on input line 584.
 
-Missing character: There is no × in font cmr10!
 
-Overfull \hbox (7.22946pt too wide) detected at line 596
-\OML/cmm/m/it/10 estimatedreferencepoint \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 restimatednadirpoint; r \OT1/cmr/m/n/10 = 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :
- []
+LaTeX Warning: Reference `rpa2' on page 1 undefined on input line 588.
 
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 604 replaced by U+FFFD.
-File: fig/test.eps Graphic file (type eps)
-<fig/test.eps>
-File: fig/FVEMOA_IDTLZ1.eps Graphic file (type eps)
- <fig/FVEMOA_IDTLZ1.eps>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 613.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 613.
-File: fig/FVEMOA_IDTLZ1.eps Graphic file (type eps)
- <fig/FVEMOA_IDTLZ1.eps>
 
-LaTeX Warning: Citation `ut' on page 1 undefined on input line 644.
+LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 588.
+
+
+LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 588.
+
+
+LaTeX Warning: Reference `rpa3' on page 1 undefined on input line 592.
+
+
+LaTeX Warning: Citation `smsemoa' on page 1 undefined on input line 595.
+
+
+LaTeX Warning: Citation `ut' on page 1 undefined on input line 647.
+
+
+LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 653.
+
+
+LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 653.
+
+
+LaTeX Warning: Citation `hisao3' on page 1 undefined on input line 653.
+
+
+LaTeX Warning: Citation `zhangqingfuHypE' on page 1 undefined on input line 653.
+
+
+LaTeX Warning: Citation `hisao' on page 1 undefined on input line 663.
 
 [1
 
 
 ]
 
-LaTeX Warning: Citation `hisao1' on page 2 undefined on input line 650.
+LaTeX Warning: Reference `dm1' on page 2 undefined on input line 683.
 
 
-LaTeX Warning: Citation `hisao2' on page 2 undefined on input line 650.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 718.
 
 
-LaTeX Warning: Citation `hisao3' on page 2 undefined on input line 650.
+LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 718.
 
 
-LaTeX Warning: Citation `zhangqingfuHypE' on page 2 undefined on input line 650.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 720.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 659.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 738.
+
+
+LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 746.
+
+
+LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 767.
+
+
+LaTeX Warning: Citation `convergence detection' on page 2 undefined on input line 802.
+
+
+LaTeX Warning: Reference `wcd1' on page 2 undefined on input line 821.
+
+
+LaTeX Warning: Reference `wcd2' on page 2 undefined on input line 830.
+
+
+LaTeX Warning: Citation `lscd27' on page 2 undefined on input line 851.
+
+
+LaTeX Warning: Citation `lscd' on page 2 undefined on input line 852.
+
+[2]
+
+LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 880.
 
 
 ** Conference Paper **
@@ -302,18 +353,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2] (./bare_conf.aux)
+[3
+
+] (./bare_conf.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2857 strings out of 493591
- 45337 string characters out of 6143546
- 110082 words of memory out of 5000000
- 6283 multiletter control sequences out of 15000+600000
- 27727 words of font info for 62 fonts, out of 8000000 for 9000
+ 3123 strings out of 493591
+ 48954 string characters out of 6143546
+ 115300 words of memory out of 5000000
+ 6524 multiletter control sequences out of 15000+600000
+ 30703 words of font info for 76 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
- 36i,9n,38p,320b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,38p,295b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bare_conf.pdf (2 pages).
+Output written on bare_conf.pdf (3 pages).

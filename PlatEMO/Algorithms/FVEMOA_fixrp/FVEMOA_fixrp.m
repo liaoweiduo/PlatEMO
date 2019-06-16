@@ -1,4 +1,4 @@
-function FVEMOA(Global)
+function FVEMOA_fixrp(Global)
 % <algorithm> <A>
 % Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II
 % r --- 2 --- r of reference point
@@ -18,14 +18,16 @@ function FVEMOA(Global)
     %% Generate random population
     Population = Global.Initialization();
 
+    RefPoint = zeros(1,Global.M) + max(Population.objs)*r;
+    
     %Vectors used in R2 for HVC approximation
-    [~,FrontNo] = EnvironmentalSelection(Population,Global.N,r);
+    [~,FrontNo] = EnvironmentalSelection(Population,Global.N,RefPoint);
     
     %% Optimization
     while Global.NotTermination(Population)
         MatingPool = TournamentSelection(2,Global.N,FrontNo);
         %Offspring  = Global.Variation(Population(MatingPool),Global.N);
         Offspring  = GA(Population(MatingPool));
-        [Population,FrontNo] = EnvironmentalSelection([Population,Offspring],Global.N,r);
+        [Population,FrontNo] = EnvironmentalSelection([Population,Offspring],Global.N,RefPoint);
     end
 end

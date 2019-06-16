@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  15 JUN 2019 14:21
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  16 JUN 2019 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,85 +262,135 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: Citation `ut' on page 1 undefined on input line 579.
 
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+File: fig/rpa1_1.eps Graphic file (type eps)
+<fig/rpa1_1.eps>
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 590 replaced by U+FFFD.
+File: fig/rpa1_2.eps Graphic file (type eps)
+ <fig/rpa1_2.eps>
 
-LaTeX Warning: Reference `rpa1' on page 1 undefined on input line 584.
-
-
-LaTeX Warning: Reference `rpa2' on page 1 undefined on input line 588.
-
-
-LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 588.
-
-
-LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 588.
-
-
-LaTeX Warning: Reference `rpa3' on page 1 undefined on input line 592.
-
-
-LaTeX Warning: Citation `smsemoa' on page 1 undefined on input line 595.
-
-
-LaTeX Warning: Citation `ut' on page 1 undefined on input line 647.
-
-
-LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 653.
-
-
-LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 653.
+LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 604.
 
 
-LaTeX Warning: Citation `hisao3' on page 1 undefined on input line 653.
+LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 604.
 
 
-LaTeX Warning: Citation `zhangqingfuHypE' on page 1 undefined on input line 653.
+LaTeX Warning: Citation `smsemoa' on page 1 undefined on input line 612.
+
+Invalid UTF-8 byte or sequence at line 626 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 626 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 626 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 626 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 626 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 626 replaced by U+FFFD.
+File: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps Graphic file (type eps)
+<fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps>
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 628 replaced by U+FFFD.
+File: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps Graphic file (type eps)
+ <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 628--628
+[]\OT1/ptm/m/n/8 (b) |Inverted-DTLZ1 with a
+ []
+
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 630 replaced by U+FFFD.
+File: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps Graphic file (type eps)
+<fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps>
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+File: fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps Graphic file (type eps)
+ <fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
+
+LaTeX Warning: Citation `ut' on page 1 undefined on input line 666.
 
 
-LaTeX Warning: Citation `hisao' on page 1 undefined on input line 663.
+LaTeX Warning: Citation `hisao1' on page 1 undefined on input line 672.
+
+
+LaTeX Warning: Citation `hisao2' on page 1 undefined on input line 672.
+
+
+LaTeX Warning: Citation `hisao3' on page 1 undefined on input line 672.
+
+
+LaTeX Warning: Citation `zhangqingfuHypE' on page 1 undefined on input line 672.
+
+
+LaTeX Warning: Citation `hisao' on page 1 undefined on input line 682.
 
 [1
 
 
 ]
 
-LaTeX Warning: Reference `dm1' on page 2 undefined on input line 683.
+LaTeX Warning: Reference `dm1' on page 2 undefined on input line 702.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 718.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 737.
 
 
-LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 718.
+LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 737.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 720.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 739.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 738.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 757.
 
 
-LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 746.
+LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 765.
 
 
-LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 767.
+LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 786.
 
 
-LaTeX Warning: Citation `convergence detection' on page 2 undefined on input line 802.
-
-
-LaTeX Warning: Reference `wcd1' on page 2 undefined on input line 821.
-
-
-LaTeX Warning: Reference `wcd2' on page 2 undefined on input line 830.
-
-
-LaTeX Warning: Citation `lscd27' on page 2 undefined on input line 851.
-
-
-LaTeX Warning: Citation `lscd' on page 2 undefined on input line 852.
+LaTeX Warning: Citation `convergence detection' on page 2 undefined on input line 821.
 
 [2]
 
-LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 880.
+LaTeX Warning: Reference `wcd1' on page 3 undefined on input line 840.
+
+
+LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 849.
+
+
+LaTeX Warning: Citation `lscd27' on page 3 undefined on input line 870.
+
+
+LaTeX Warning: Citation `lscd' on page 3 undefined on input line 871.
+
+
+LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 899.
 
 
 ** Conference Paper **
@@ -353,20 +403,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
-
-] (./bare_conf.aux)
+[3] (./bare_conf.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3123 strings out of 493591
- 48954 string characters out of 6143546
- 115300 words of memory out of 5000000
- 6524 multiletter control sequences out of 15000+600000
+ 3152 strings out of 493591
+ 49547 string characters out of 6143546
+ 117300 words of memory out of 5000000
+ 6545 multiletter control sequences out of 15000+600000
  30703 words of font info for 76 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
- 36i,10n,38p,295b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,49p,882b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on bare_conf.pdf (3 pages).

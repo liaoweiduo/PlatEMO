@@ -578,51 +578,70 @@ Before calculating the HV values, reference point needs to be chosen in advance.
 However, it is not suggested that the reference point is set only once at the beginning.
 \cite{ut}  % undergraduated thesis
 This may cause a very far away reference point from solutions
-for those problems with a very large feasible space. 
-As the solutions set is gradually converging to the pareto front, 
-during the iteration of the algorithm process
-(As shown in Fig. \ref{rpa1}).
+for those problems with a very large feasible space(As shown in Fig. \ref{rpa1}),
+as the solutions set is gradually converging to the pareto front
+during the iteration of the algorithm process.
+
+\begin{figure}[!t]
+  \centering
+  \subfloat[The initial generation.]{\label{rpa1:a}
+    \includegraphics[width=1.5in]{rpa1_1}}\quad
+  \subfloat[The final generation.]{\label{rpa1:b}
+  \includegraphics[width=1.5in]{rpa1_2}}\\
+  \caption{The reference point is set with a large feasible space.
+  pareto front can be far away from reference point.
+  The gray region shows the feasible region and the red arc is the corresponding pareto front.
+  The red circle $r$ is the reference point calculated by the initial solutions in (\ref{rpa1:a})
+  which is randomly generated.
+  After some generations, the current solutions reach to the five black circles in (\ref{rpa1:b}), 
+  which is far away from the reference point.}
+  \label{rpa1}
+\end{figure}
+
 There is a big problem when applying this strategy to some problems with specific pareto front shape, 
 for example, the inverted-DTLZ1 problem with a inverted-triangular pareto front in 3 dimensions,
-that many solutions of the final solutions set will distribute at the boundary of the pareto front
-(Fig. \ref{rpa2})\cite{hisao1,hisao2}. 
+that many solutions in the final solutions set will distribute at the boundary of the pareto front
+(Fig. \ref{rpa2:a} comparing with Fig. \ref{rpa2:b})\cite{hisao1,hisao2}. 
 % Dynamic Specification of a Reference Point for Hypervolume Calculation in SMS-EMOA
 % Reference point specification in hypervolume calculation for fair comparison and efficient search
 Although it has no effect on the distributions of solutions set 
-in problems with triangular pareto front in 3 dimensions (Fig. \ref{rpa3}), 
+in problems with triangular pareto front in 3 dimensions 
+(Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
 it is necessary using reference point adaptation during the algorithm progress.
 
 In many algorithms including SMS-EMOA\cite{smsemoa}, 
 the reference point is adapted based on the following rules:
-\begin{equation}\label{rpaf1}
-  reference \ point = r * estimated \ nadir \ point, r = 1.1.
+\begin{equation}\label{frpa1}
+  RP = r * ENP, r = 1.1.
 \end{equation}
-Note that the estimated nadir point is the nadir point in current population.
+Note that the estimated nadir point($ENP$) is the nadir point in current population.
 When the solutions in the current population is obtained, 
 we use hypervolume as indicator to evaluate the performance of the solutions set. 
 Then the reference point used to calculate the hypervolume is calculated by the formula above.
+%可以加一个介绍nadir point的图，如果8页不够的话。
 
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[width=\columnwidth]{test}
-%   \caption{The reference point for a large feasible space.
-%    PF can be far away from reference point.}
-%   \label{rpa1}
-% \end{figure}
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
-%   \caption{The final distribution of solutions set in inverted-DTLZ1 problem.
-%    The algorithm is FVEMOA with a reference point adaptation strategy when $r$=2.}
-%   \label{rpa2}
-% \end{figure}
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
-%   \caption{The final distribution of solutions set in DTLZ1 problem.
-%    The algorithm is FVEMOA with a reference point adaptation strategy when $r$=2.}
-%   \label{rpa3}
-% \end{figure}
+\begin{figure}[!t]
+  \centering
+  \subfloat[Inverted-DTLZ1 with a fixed reference point.]{\label{rpa2:a}
+    \includegraphics[width=1.5in]{FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1}}\quad
+  \subfloat[Inverted-DTLZ1 with a adapted reference point.]{\label{rpa2:b}
+  \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation20000_r1__1}}\\
+  \subfloat[DTLZ1 with a fixed reference point.]{\label{rpa2:c}
+    \includegraphics[width=1.5in]{FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1}}\quad
+  \subfloat[DTLZ1 with a adapted reference point.]{\label{rpa2:d}
+  \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
+  \caption{The final distribution of solutions set in inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
+  and DTLZ1 problem(\ref{rpa2:c} and \ref{rpa2:d}).
+  The algorithm is FVEMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. 
+  (\ref{rpa2:a} and \ref{rpa2:c}): the reference point is calculated only once at the initial step;
+  (\ref{rpa2:b} and \ref{rpa2:d}): the reference point is adapted based on the formula (\ref{frpa1}).
+  All the solutions in the final distribution are at the boundary of the pareto front in (\ref{rpa2:a}),
+  which shows the bad effect of a far away reference point
+  on the final distribution of inverted-triangular problems.
+  This bad effect can not be observed on triangular problems in (\ref{rpa2:c}).
+  }
+  \label{rpa2}
+\end{figure}
 
 % ----------------------------------- dynamic mechanism ------------------------------------
 % 在算法运行的不同时期 early stage；final stage， 为了不同的目的，
@@ -816,7 +835,7 @@ are time consuming when dimension is very high.
 We are discussing the effect of reference points in calculating hypervolume. It seems to be a good
 idea to use hypervolume as our convergence detection indicator, for that we have calculated
 hypervolume in each generation in hypervolume-based evolutionary multi-objective optimization algorithm.
-But during the process of algorithm, the reference point is calculated in (\ref{rpaf1}) 
+But during the process of algorithm, the reference point is calculated in (\ref{frpa1}) 
 for each generation.
 So we can not compare hypervolume among different generations. As shown in Fig. \ref{wcd1}
 % \begin{figure}[!t]

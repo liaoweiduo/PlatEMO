@@ -608,6 +608,7 @@ Although it has no effect on the distributions of solutions set
 in problems with triangular pareto front in 3 dimensions 
 (Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
 it is necessary using reference point adaptation during the algorithm progress.
+And the reason is illustrated detailedly in hisao \cite{hisaos}. % hisao介绍原因的paper。
 
 In many algorithms including SMS-EMOA\cite{smsemoa}, 
 the reference point is adapted based on the following rules:
@@ -622,17 +623,17 @@ Then the reference point used to calculate the hypervolume is calculated by the 
 
 \begin{figure}[!t]
   \centering
-  \subfloat[Inverted-DTLZ1 with a fixed reference point.]{\label{rpa2:a}
+  \subfloat[The inverted-DTLZ1 problem with a fixed reference point.]{\label{rpa2:a}
     \includegraphics[width=1.5in]{FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1}}\quad
-  \subfloat[Inverted-DTLZ1 with a adapted reference point.]{\label{rpa2:b}
-  \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation20000_r1__1}}\\
-  \subfloat[DTLZ1 with a fixed reference point.]{\label{rpa2:c}
+  \subfloat[The inverted-DTLZ1 problem with a adapted reference point.]{\label{rpa2:b}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation20000_r1__1}}\\
+  \subfloat[The DTLZ1 problem with a fixed reference point.]{\label{rpa2:c}
     \includegraphics[width=1.5in]{FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1}}\quad
-  \subfloat[DTLZ1 with a adapted reference point.]{\label{rpa2:d}
-  \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
-  \caption{The final distribution of solutions set in inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
-  and DTLZ1 problem(\ref{rpa2:c} and \ref{rpa2:d}).
-  The algorithm is FVEMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. 
+  \subfloat[The DTLZ1 problem with a adapted reference point.]{\label{rpa2:d}
+    \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
+  \caption{The final distribution of solutions set in the inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
+  and the DTLZ1 problem(\ref{rpa2:c} and \ref{rpa2:d}).
+  The algorithm is FV-EMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. 
   (\ref{rpa2:a} and \ref{rpa2:c}): the reference point is calculated only once at the initial step;
   (\ref{rpa2:b} and \ref{rpa2:d}): the reference point is adapted based on the formula (\ref{frpa1}).
   All the solutions in the final distribution are at the boundary of the pareto front in (\ref{rpa2:a}),
@@ -694,20 +695,36 @@ in the early and final stages.
 In the final stages, the major purpose is to augment the diversity of solutions set.
 More specifically, for inverted-triangular problems, 
 the interval between two boundary solutions should be same as that between two inner solutions.
-In .% 在hisao的paper里，
+In hisao\cite{hisao}.% 在hisao的paper里，
 \begin{equation}\label{e1}
   r=1+\frac{1}{H},
 \end{equation}
 is the optimal setting for flat(not concave or convex) pareto front problem
 (As shown in Fig. \ref{dm1}). $H$ is the number of solutions intervals in 2-dimension 
 and the number of interval at each boundary of pareto front in many-dimension.
+In Fig. \ref{dm1:a}, $r=1.2(H=5)$ is the optimal setting for a $21$ individuals 
+inverted-DTLZ1 problem and a evenly distribution is observed. 
+In Fig. \ref{dm1:b} - Fig. \ref{dm1:d}, the inner solutions are decreased and move to
+the boundary of pareto front.
 
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
-%   \caption{}
-%   \label{dm1}
-% \end{figure}
+\begin{figure}[!t]
+  \centering
+  \subfloat[$r=1.2$(optimal).]{\label{dm1:a}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r1__2_N21}}\quad
+  \subfloat[$r=1.5.$]{\label{dm1:b}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r1__5_N21}}\\
+  \subfloat[$r=2.$]{\label{dm1:c}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r2_N21}}\quad
+  \subfloat[$r=5.$]{\label{dm1:d}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r5_N21}}\\
+  \caption{The final distribution of solutions set in the inverted-DTLZ1 problem.
+  The algorithm is FV-EMOA with population size $=21$($H=5$) and evaluation number $=20000$.
+  $r=1.2$ is the optimal setting and we observed a evenly distribution in (\ref{dm1:a}).
+  As the increasing of $r$, solutions are more likely to be at the boundary
+  (\ref{dm1:b}-\ref{dm1:d}). 
+  }
+  \label{dm1}
+\end{figure}
 
 For simply illustration, we only consider flat(not concave or convex) pareto front problem
 in this paper.

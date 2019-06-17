@@ -1,5 +1,5 @@
 clear;
-N = 100;
+N = 21;
 evaluation = 40000;
 
 % problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
@@ -8,13 +8,13 @@ evaluation = 40000;
 %     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
 %     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
-% problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
-problems = {@DTLZ1};
+problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
+% problems = {@DTLZ1};
 
 parameters = {};
 
-M = [10];  
-algorithms = {@SMSEMOA_DR2};
+M = [3,5,8,10];  
+algorithms = {@FVEMOA,@FVEMOA_optimal};
 
 for m = M
 for algorithm = algorithms
@@ -41,10 +41,10 @@ parfor i = 1:total
         d = m + 4;
     end
     if exist(['Data/',func2str(algorithm),'/',func2str(algorithm),...
-            '_',func2str(problem),'_N100_M',int2str(m),'_D',...
+            '_',func2str(problem),'_N'+int2str(N)+'_M',int2str(m),'_D',...
             int2str(d),'_',int2str(run),'.mat'],'file') == 2
         fprintf('file: %s exist, continue\n', [func2str(algorithm),'_',...
-            func2str(problem),'_N100_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
+            func2str(problem),'_N'+int2str(N)+'_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
         continue
     end
     

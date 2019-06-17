@@ -705,7 +705,7 @@ and the number of interval at each boundary of pareto front in many-dimension.
 In Fig. \ref{dm1:a}, $r=1.2(H=5)$ is the optimal setting for a $21$ individuals 
 inverted-DTLZ1 problem and a evenly distribution is observed. 
 In Fig. \ref{dm1:b} - Fig. \ref{dm1:d}, the inner solutions are decreased and move to
-the boundary of pareto front.
+the boundary of pareto front. 
 
 \begin{figure}[!t]
   \centering
@@ -731,7 +731,6 @@ in this paper.
 When algorithm reach to the final stage, all solutions are near the pareto front, $r$ should
 be specified as $1+1/H$, as in equation \ref{e1}. 
 
-
 % ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for convergence ----------------
 % hisao指出如果一直用1+1/H， 在convergence阶段会有不好的 search behavior，因为
@@ -742,7 +741,7 @@ be specified as $1+1/H$, as in equation \ref{e1}.
 % often has unexpected bad effects on the search behavior
 %
 % in early generations， a slightly larger r is suggested in 【hisao和我的本科毕设】
-% 大一点的r能够加快convergence 用NHV试试 
+% 大一点的r能够加快convergence 用NHV试试 log(HV)
 % （加图 相同的evaluation 一直optimal和一直2 一直2会快点收敛 一个HV 一个NHV， 
 % HV表示最后hv差，NHV表示较快到达前沿）
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
@@ -755,7 +754,6 @@ As a result, the search behavior will be poor for the poor normalization\cite{hi
 
 In \cite{hisao}, a larger value of $r$ than the suggested value $1+1/H$ is used
 in the early stage.
-
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
 % ------------------------- linearly decrease mechanism --------------------------

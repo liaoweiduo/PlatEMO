@@ -13,8 +13,8 @@ problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
 
 parameters = {};
 
-M = [3,5];  
-algorithms = {{@FVEMOA,5},{@FVEMOA_DR,5,0},{@FVEMOA_DR2,5,4000,0.00001},@FVEMOA_optimal};
+M = [3,5,8,10];  
+algorithms = {{@FVEMOA,5},{@FVEMOA_DR,5,0},@FVEMOA_optimal};
 
 for m = M
 for algorithm = algorithms

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  17 JUN 2019 11:35
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  17 JUN 2019 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -398,41 +398,41 @@ Invalid UTF-8 byte or sequence at line 719 replaced by U+FFFD.
 File: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps Graphic file (type eps)
  <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps>
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 754.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 753.
 
 
-LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 754.
+LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 753.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 756.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 755.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 774.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 772.
 
 
-LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 782.
+LaTeX Warning: Reference `ldm1' on page 2 undefined on input line 780.
 
 [2]
 
-LaTeX Warning: Reference `ldm1' on page 3 undefined on input line 803.
+LaTeX Warning: Reference `ldm1' on page 3 undefined on input line 801.
 
 
-LaTeX Warning: Citation `convergence detection' on page 3 undefined on input line 838.
+LaTeX Warning: Citation `convergence detection' on page 3 undefined on input line 836.
 
 
-LaTeX Warning: Reference `wcd1' on page 3 undefined on input line 857.
+LaTeX Warning: Reference `wcd1' on page 3 undefined on input line 855.
 
 
-LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 866.
+LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 864.
 
 
-LaTeX Warning: Citation `lscd27' on page 3 undefined on input line 887.
+LaTeX Warning: Citation `lscd27' on page 3 undefined on input line 885.
 
 
-LaTeX Warning: Citation `lscd' on page 3 undefined on input line 888.
+LaTeX Warning: Citation `lscd' on page 3 undefined on input line 886.
 
 
-LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 916.
+LaTeX Warning: Reference `wcd2' on page 3 undefined on input line 914.
 
 [3]
 

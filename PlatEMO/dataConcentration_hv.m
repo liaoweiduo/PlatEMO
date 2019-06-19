@@ -1,7 +1,7 @@
 clear;
 %% parameter sets
 rootPath = 'Analysis/';
-Algorithms = {'FVEMOA'};
+Algorithms = {'HypE'};
 % Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ8', 'DTLZ9',...
 %     'C1_DTLZ1', 'C2_DTLZ2', 'C3_DTLZ4', 'CDTLZ2', 'IDTLZ1', 'IDTLZ2', 'SDTLZ1',...
 %     'WFG1', 'WFG2', 'WFG3', 'WFG4', 'WFG5', 'WFG6', 'WFG7', 'WFG8', 'WFG9',...
@@ -37,8 +37,10 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
     eval(['metrics_2=metrics_',Algorithm,'_DR;']);
     eval(['metrics_3=metrics_',Algorithm,'_DR2;']);
     eval(['metrics_4=metrics_',Algorithm,'_optimal;']);
-    T = table('Size',[160,6],'VariableTypes',{'string','string','double','double','double','double'},...
-        'VariableNames',{'Problem','M',Algorithm,[Algorithm,'_DR'],[Algorithm,'_DR2'],[Algorithm,'_optimal']});
+    T = table('Size',[160,10],'VariableTypes',{'string','string','double','double','double','double','double','double','double','double'},...
+        'VariableNames',{'Problem','M',[Algorithm,'_aver'],[Algorithm,'_var'],...
+        [Algorithm,'_DR_aver'],[Algorithm,'_DR_var'],[Algorithm,'_DR2_aver'],[Algorithm,'_DR2_var'],...
+        [Algorithm,'_optimal_aver'],[Algorithm,'_optimal_var']});
     tIndex = 1;
     for indexP = 1:size(Problems,2)   % concentrate data for specific problem
         Problem = Problems{indexP};
@@ -48,11 +50,16 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
             aver_dr = -1;
             aver_dr2 = -1;
             aver_optimal = -1;
+            var_origin = -1;
+            var_dr = -1;
+            var_dr2 = -1;
+            var_optimal = -1;
             for i = 1:length(metrics_1)     % origin metrics
                 if strcmp(metrics_1(i).Problem, Problem) && strcmp(metrics_1(i).M, M)
                     hvSetStrut = metrics_1(i).hvSetStrut;
                     if ~isempty(hvSetStrut.aver)
                         aver_origin = hvSetStrut.aver(end);
+                        var_origin = hvSetStrut.var(end);
                     end
                     break
                 end
@@ -64,6 +71,7 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
                     
                     if ~isempty(hvSetStrut.aver)
                         aver_dr = hvSetStrut.aver(end);
+                        var_dr = hvSetStrut.var(end);
                     end
                     break
                 end
@@ -75,6 +83,7 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
                     
                     if ~isempty(hvSetStrut.aver)
                         aver_dr2 = hvSetStrut.aver(end);
+                        var_dr2 = hvSetStrut.var(end);
                     end
                     break
                 end
@@ -85,12 +94,13 @@ for indexA = 1:size(Algorithms,2)  % concentrate data for specific algorithm
                     hvSetStrut = metrics_4(i).hvSetStrut;
                     if ~isempty(hvSetStrut.aver)
                         aver_optimal = hvSetStrut.aver(end);
+                        var_optimal = hvSetStrut.var(end);
                     end
                     break
                 end
             end
             
-            T(tIndex,:) = {Problem, M, aver_origin, aver_dr, aver_dr2, aver_optimal};
+            T(tIndex,:) = {Problem, M, aver_origin, var_origin, aver_dr, var_dr, aver_dr2, var_dr2, aver_optimal, var_optimal};
             
             tIndex = tIndex + 1;
         end

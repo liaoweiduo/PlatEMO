@@ -1,6 +1,6 @@
-Problem = 'MaF1';
+Problem = 'C1_DTLZ1';
 M = '3';
-run = '1';
+run = '5';
 window = 10;
 
 for i = 1:length(Data)
@@ -36,8 +36,9 @@ for i = 1:length(Data)
         figure()
         hold on
 %         plot(indexSet, nadirSet_y)
-        scatter(indexSet, ab(:,2))
-        ylabel('b')
+        plot(indexSet(10:end), -ab(10:end,2))
+        scatter(indexSet, -ab(:,2))
+        ylabel('|b|')
         title([Problem, ' M', M, ' run', run])
         
     end

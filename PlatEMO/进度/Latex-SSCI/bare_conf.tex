@@ -210,7 +210,7 @@
 
 % *** ALIGNMENT PACKAGES ***
 %
-%\usepackage{array}
+\usepackage{array}
 % Frank Mittelbach's and David Carlisle's array.sty patches and improves
 % the standard LaTeX2e array and tabular environments to provide better
 % appearance and additional user controls. As the default LaTeX2e table
@@ -220,7 +220,7 @@
 % set of table tools. array.sty is already installed on most systems. The
 % latest version and documentation can be obtained at:
 % http://www.ctan.org/tex-archive/macros/latex/required/tools/
-
+\usepackage{color}
 
 % IEEEtran contains the IEEEeqnarray family of commands that can be used to
 % generate multiline equations as well as matrices, tables, etc., of high
@@ -257,7 +257,7 @@
 
 % *** FLOAT PACKAGES ***
 %
-%\usepackage{fixltx2e}
+\usepackage{fixltx2e}
 % fixltx2e, the successor to the earlier fix2col.sty, was written by
 % Frank Mittelbach and David Carlisle. This package corrects a few problems
 % in the LaTeX2e kernel, the most notable of which is that in current
@@ -696,7 +696,7 @@ In the final stages, the major purpose is to augment the diversity of solutions 
 More specifically, for inverted-triangular problems, 
 the interval between two boundary solutions should be same as that between two inner solutions.
 In hisao\cite{hisao}.% 在hisao的paper里，
-\begin{equation}\label{e1}
+\begin{equation}\label{eod}
   r=1+\frac{1}{H},
 \end{equation}
 is the optimal setting for flat(not concave or convex) pareto front problem
@@ -729,7 +729,7 @@ the boundary of pareto front.
 For simply illustration, we only consider flat(not concave or convex) pareto front problem
 in this paper.
 When algorithm reach to the final stage, all solutions are near the pareto front, $r$ should
-be specified as $1+1/H$, as in equation \ref{e1}. 
+be specified as $1+1/H$, as in equation \ref{eod}. 
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for convergence ----------------
@@ -770,14 +770,13 @@ outperforms the others in all problems and all experiments settings. One mechani
 when work on some specific experiments conditions, but may be not good on other conditions. 
 
 In \cite{hisao}, a linearly decrease mechanism has been proposed:
-\begin{equation}\label{e2}
+\begin{equation}\label{eldm1}
   r(t)=r_{Initial}\frac{(T-t)}{T}+(1+1/H)\frac{t}{T}, t=0,1,\dots,T,
 \end{equation}
 where $T$ is the total number of generations, and $r_{Initial}$ is the initial value of $r$,
 which is larger than $1+1/H$.
-It is a simple and practical mechanism. In (\ref{e2}), the value of $r$ starts from $r_{Initial}$,
+It is a simple and practical mechanism. In (\ref{eldm1}), the value of $r$ starts from $r_{Initial}$,
 then gradually decrease to the suggested value in a linearly decrease process. 
-As shown in Fig. \ref{ldm1}.
 
 In next section, we will propose another good dynamic mechanism based on weak convergence 
 detection criterion outperform simple linearly decrease mechanism on some constraint condition.
@@ -790,22 +789,25 @@ detection criterion outperform simple linearly decrease mechanism on some constr
 \section{New Dynamic Mechanism}
 In this section,
 we will introduce a new mechanism that uses a weak convergence detection criterion to 
-decide whether to change the value of $r$ from $r_{Initial}$ to $r_{Optimal}=1+1/H$. 
+decide whether to change the value of $r$ from $r_{Initial}$ to $1+1/H$. 
 
 As we have explained before, 
 a slightly larger $r$ is suggested at the initial stage of the algorithms. 
 But for well diversity at the final stage,
 it is needed to set $r$ to it's optimal value ($1+1/H$). 
-For this purpose, we detect whether algorithm has convergenced or not. If solutions are all close to the 
-pareto front, we change the value of $r$ to $r_{Optimal}$; otherwise, we set value of $r$ to 
-$r_{Initial}$. The mechanism is also shown in Fig. \ref{ldm1}
-
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=\columnwidth]{ldm1}
-  \caption{}
-  \label{ldm1}
-\end{figure}
+For this purpose, we detect whether algorithm has convergenced or not.  
+If solutions are all close to the pareto front, 
+we change the value of $r$ to $r_{Optimal}$; otherwise, we set value of $r$ to 
+$r_{Initial}$. The mechanism is also shown below:
+\begin{equation}\begin{aligned}\label{endm1}
+  r(t)&=r_{Initial}\mathbb{I}\left[t<t_{Convergent}\right]\\
+  &+(1+1/H)\mathbb{I}\left[t \ge t_{Convergent}\right], t=0,1,\dots,T,
+\end{aligned}
+\end{equation}
+where $\mathbb{I}$ is the indicator function returning $1$ if argument is true and $0$ otherwise.
+$r(t)$ equals to $r_{Initial}$ before reaching to the convergent generation $t_{Convergent}$,
+and changes to $1+1/H$ after $t_{Convergent}$. 
+The $t_{Convergent}$ is determined by a weak convergence detection criterion. 
 
 % ---------------sub-------------- new dynamic mechanism ------------------------------------
 % ----------------------------- weak convergence detection ----------------------------------
@@ -848,28 +850,35 @@ for the reason that the state-of-the-art indicator-based algorithms such as SMS-
 are time consuming when dimension is very high. 
 
 We are discussing the effect of reference points in calculating hypervolume. It seems to be a good
-idea to use hypervolume as our convergence detection indicator, for that we have calculated
+idea to use progress indicator hypervolume as our convergence detection indicator, 
+for that we have calculated
 hypervolume in each generation in hypervolume-based evolutionary multi-objective optimization algorithm.
-But during the process of algorithm, the reference point is calculated in (\ref{frpa1}) 
-for each generation.
-So we can not compare hypervolume among different generations. As shown in Fig. \ref{wcd1}
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
-%   \caption{}
-%   \label{wcd1}
-% \end{figure}
+But during the process of algorithm, the reference point is calculated by (\ref{frpa1}) 
+in each generation.
+So we can not just simply compare hypervolume calculated in algorithm among different generations. 
 
-We are trying some other good indicators satisfying our convergence detection criterions. 
-In Fig. \ref{wcd2} ,when current solutions are close to the pareto front, the estimated nadir point is close 
+We are trying on some other good indicators satisfying our convergence detection criterions. 
+Fig. \ref{wcd1} shows the change of hypervolume(HV) and nadir point on the FV-EMOA algorithm 
+with 3-dimensional inverted-DTLZ1 problem.
+When current solutions are close to the pareto front, the estimated nadir point is close 
 to the true nadir points. 
+\begin{figure}[!t]
+  \centering
+    \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_1}
+  \caption{Example of nadir point and hypervolume(HV) value on inverted-DTLZ1 3-dimension problem
+  with FV-EMOA algorithm.
+  The yellow curve is the change of hypervolume 
+  while the black curve is the change of logarithmic nadir point.
+  }
+  \label{wcd1}
+\end{figure}
 This imply that the estimated nadir point can be a good indicator for our purpose. 
 But for some problems with large feasible region, 
 the moving distance of estimated nadir point in the early generations is larger than that near convergence.
 So we consider the logarithm. And consider the possible bad variance of the indicator, 
 finally we use best logarithmic nadir point so far as our indicator. more specifically,
 for a minimization problem, we consider the indicator as follows:
-\begin{equation}\begin{aligned}\label{e3}
+\begin{equation}\begin{aligned}\label{ewcd1}
   ENP_{t} &= [f_{t1},f_{t2},\dots,f_{tm}]^\top \in \mathbb{R}^m ,\\
   I_{0} &= \frac{1}{m} \sum_{i=1}^{m}lnf_{0i},\\
   I_{t} &= min(I_{t-1},\frac{1}{m} \sum_{i=1}^{m}lnf_{ti}),
@@ -885,9 +894,10 @@ After chosen the indicator, the next step is to detect the stagnation of indicat
 We use a basic linear regression method called Simple Least Squares\cite{lscd27} with a
 simple least squares convergence detection strategy introduced in \cite{lscd}.
 If the absolute value of slope of indicator is below a threshold, the convergence is reported.
-Briefly speaking, the intercept $a$ and slope $b$ of the $t$th generation can be calculated 
+Briefly speaking, for a simple linear regression $I=a+bt$,
+the intercept $a$ and slope $b$ of the $t$th generation can be calculated 
 with the following matrix-based formula:
-\begin{equation}\label{e4}
+\begin{equation}\label{elr1}
   \left[
     \begin{matrix}
       a \\
@@ -910,29 +920,30 @@ with the following matrix-based formula:
   \right]
 \end{equation}
 where $w\_ l$ is the length of the chosen window 
-and $t_i$ is the generation number in the chosen window.
+and $t_i$ is the evaluated number in the chosen window.
 The value of slope $b$ is shown in Fig. \ref{wcd2} 
-(Note that the value in the first $w\_ l$ generations is 0, 
-and we should not consider the first $w\_ l$ generations). 
+(Note that the value in the first $w\_ l$ evaluations is 0, 
+and we should not consider the first $w\_ l$ evaluations). 
+\begin{figure}[!t]
+  \centering
+    \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_2}
+  \caption{Example of $\lvert b\rvert$ on inverted-DTLZ1 3-dimension problem
+  (window size = $4000$ evaluations with population size = $100$).
+  }
+  \label{wcd2}
+\end{figure}
 
-With the above formula (\ref{e4}), the convergence detection criterion is defined as:
-\begin{equation}\label{e5}
-  convergence = \vert b \vert < thres
+With the above formula (\ref{elr1}), the convergence detection criterion is defined as:
+\begin{equation}\label{elr2}
+  convergence = \lvert b \rvert < thres
 \end{equation}
 The chosen of the $thres$ value is not so important 
 as the report ahead or delay is not fatal to the algorithm or to the final solutions set.
 We choose the $thres$ value as $10^{-5}$ after some experimental computation with 
-the window size $w\_ l = 100$. 
+the window size $w\_ l = 4000$ evaluations. 
 If we do not change the window size, 
 this threshold can be applied to other problems or indicator-based algorithms
 because of a weak convergence detection purpose.
-
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1}
-%   \caption{}
-%   \label{wcd2}
-% \end{figure}
 
 % -------------------------------- Computational Experiments ------------------------------------
 % 为了直观的表现dynamic reference point adaptation的优势，
@@ -945,18 +956,118 @@ because of a weak convergence detection purpose.
 % 要验证 10^-5 是不是一个好的threshold 画出不同维度 当检测到收敛的solutions图，确认检测到不变的时候确实收敛
 %
 \section{Computational Experiments}
-
-\subsection{Settings}
+To clearly represent the superiority of dynamically reference point adaptation 
+and to ease the comparsion process of two different dynamic mechanisms
+(linearly decrease mechanism and weak convergence detection mechanism), 
+the mechanisms is going to be tested with the algorithm FV-EMOA\cite{FVEMOA}. % and HypE\cite{HypE}.
+The problems include two triangular pareto front problems: 
+DTLZ1\cite{DTLZ1}, C1-DTLZ1\cite{C1DTLZ1}
+and two inverted-triangular pareto front problems: 
+Inverted-DTLZ1\cite{IDTLZ1}, MaF1\cite{MaF1}.
+To show the performance both on multi-objective and many-objective, we tested in 3,5,8 and 10 dimensions.
 
 \subsection{Computational Results}
+\begin{table*}[!t]
+  \renewcommand{\arraystretch}{1.3}
+  \caption{HV mean and standard deviation over 20 independent runs} %加粗是好，下划线是坏
+  \label{table_hv_FVEMOA}
+  \centering
+  \begin{tabular*}{\textwidth}{l|l|m{3.5cm}m{3.5cm}m{3.5cm}m{3.5cm}}
+    \hline
+    Problems        & M  & FV-EMOA-2                         & FV-EMOA-LD                        & FV-EMOA-CD                        & FV-EMOA-Opt   \\ 
+    \hline
+    DTLZ1           & 3  & 1.40E-01$\pm$1.49E-04             & \underline{1.40E-01$\pm$1.18E-04} & 1.40E-01$\pm$9.18E-05             & \textbf{1.40E-01$\pm$1.04E-04} \\
+    DTLZ1           & 5  & \underline{4.90E-02$\pm$1.74E-05} & \textbf{4.90E-02$\pm$1.15E-05}    & 4.90E-02$\pm$1.42E-05             & 4.90E-02$\pm$1.38E-05 \\
+    DTLZ1           & 8  & 6.26E-03$\pm$3.14E-03             & 7.63E-03$\pm$1.61E-03             & \underline{5.78E-03$\pm$3.48E-03} & \textbf{8.14E-03$\pm$4.50E-04} \\
+    DTLZ1           & 10 & 9.54E-05$\pm$2.83E-04             & \underline{0.00E+00$\pm$0.00E+00} & 2.73E-06$\pm$8.45E-06             & \textbf{5.46E-04$\pm$1.02E-03} \\ 
+    \hline
+    C1-DTLZ1        & 3  & \underline{1.39E-01$\pm$7.22E-04} & \textbf{1.40E-01$\pm$7.24E-04}    & 1.39E-01$\pm$7.23E-04             & 1.40E-01$\pm$6.10E-04 \\
+    C1-DTLZ1        & 5  & 4.85E-02$\pm$3.69E-04             & 4.79E-02$\pm$8.35E-04             & \textbf{4.85E-02$\pm$3.17E-04}    & \underline{4.70E-02$\pm$2.16E-03} \\
+    C1-DTLZ1        & 8  & \textbf{8.03E-03$\pm$3.30E-04}    & \underline{7.75E-03$\pm$4.98E-04} & 7.98E-03$\pm$3.68E-04             & 7.86E-03$\pm$3.93E-04 \\
+    C1-DTLZ1        & 10 & \textbf{2.40E-03$\pm$1.09E-04}    & 2.40E-03$\pm$8.41E-05             & 2.38E-03$\pm$1.21E-04             & \underline{2.31E-03$\pm$2.27E-04} \\ 
+    \hline
+    \hline
+    MaF1            & 3  & \underline{86E-01$\pm$7.88E-04}   & \textbf{2.97E-01$\pm$1.57E-04}    & 2.97E-01$\pm$1.94E-04             & 2.97E-01$\pm$1.49E-04 \\
+    MaF1            & 5  & \underline{1.09E-02$\pm$1.28E-04} & 1.63E-02$\pm$1.38E-04             & 1.63E-02$\pm$1.63E-04             & \textbf{1.63E-02$\pm$1.07E-04} \\
+    MaF1            & 8  & \underline{2.24E-05$\pm$9.81E-07} & 4.18E-05$\pm$1.31E-06             & 4.23E-05$\pm$9.14E-07             & \textbf{4.26E-05$\pm$7.84E-07} \\
+    MaF1            & 10 & \underline{1.85E-07$\pm$1.70E-08} & 6.73E-07$\pm$1.95E-08             & \textbf{6.78E-07$\pm$1.73E-08}    & 6.78E-07$\pm$1.34E-08 \\ 
+    \hline
+    Inverted-DTLZ1  & 3  & \underline{3.57E-02$\pm$2.97E-04} & \textbf{3.69E-02$\pm$3.30E-04}    & 3.65E-02$\pm$1.27E-03             & 3.65E-02$\pm$1.20E-03 \\
+    Inverted-DTLZ1  & 5  & \underline{3.19E-04$\pm$4.11E-05} & 4.65E-04$\pm$7.01E-05             & 4.40E-04$\pm$7.11E-05             & \textbf{4.90E-04$\pm$5.93E-05} \\
+    Inverted-DTLZ1  & 8  & \underline{5.99E-08$\pm$1.32E-08} & 1.41E-07$\pm$3.43E-08             & \textbf{1.57E-07$\pm$2.06E-08}    & 1.56E-07$\pm$2.12E-08 \\
+    Inverted-DTLZ1  & 10 & \underline{1.83E-10$\pm$3.06E-11} & 6.51E-10$\pm$5.00E-11             & \textbf{6.58E-10$\pm$7.05E-11}    & 6.55E-10$\pm$6.20E-11 \\ 
+    \hline
+  \end{tabular*}
+\end{table*}
+Each experiment has been run for twenty times independently. 
+And the population size is $100$, $r_{Initial}=2$.
+The detailed algorithms are as following: 
+FV-EMOA-2(the FV-EMOA\cite{FVEMOA} algorithm with $r=2$),
+FV-EMOA-LD(the FV-EMOA algorithm with a linearly decrease mechanism),
+FV-EMOA-CD(the FV-EMOA algorithm with a weak convergence detection mechanism, proposed in this paper)
+and FV-EMOA-Opt(the FV-EMOA algorithm with $r=1+1/H$).
+% And the HypE\cite{HypE} versions:
+% HypE-2(the HypE algorithm with $r=2$),
+% HypE-LD(the HypE algorithm with a linearly decrease mechanism),
+% HypE-CD(the HypE algorithm with a weak convergence detection mechanism, proposed in this paper)
+% and HypE-Opt(the HypE algorithm with $r=1+1/H$).
+We obtain the hypervolume results after $40000$ evaluations for each algorithm. 
+The computational results is shown in TABLE \ref{table_hv_FVEMOA}.%, and TABLE \ref{table_hv_HypE}. 
+In triangular pareto front problems(DTLZ1, C1-DTLZ1), 
+we can not tell the differences among the four algorithms in TABLE \ref{table_hv_FVEMOA},
+for that all the four algorithms are more or less the best or the worst. 
+Note that, the hypervolume results of FV-EMOA-LD with DTLZ1 problem and 10-dimension is all 0,
+because of the un-convergence of the algorithm.
+But in inverted-triangular pareto front problems(Inverted-DTLZ1, MaF1), 
+FV-EMOA-2 performs the worst in all experiments,
+for that the $r$ is $2$ all the process of algorithm. 
+What's more, we can not tell the differences among the other three algorithms, 
+for that the $r_{Final}$ of the three algorithms are all $1+1/H$.
+% The similar results are obtained in TABLE \ref{table_hv_HypE} with HypE-based algorithms.
+
+
+% \begin{table*}[!t]
+%   \renewcommand{\arraystretch}{1.3}
+%   \caption{HV mean and standard deviation over 20 independent runs} %加粗是好，下划线是坏
+%   \label{table_hv_HypE}
+%   \centering
+%   \begin{tabular*}{\textwidth}{l|l|m{3.5cm}m{3.5cm}m{3.5cm}m{3.5cm}}
+%     \hline
+%     Problems        & M  & HypE-2                         & HypE-LD                        & HypE-CD                        & HypE-Opt   \\ 
+%     \hline
+%     DTLZ1     & 3  & 1.11E-01$\pm$1.07E-02  & 1.39E-01       & 1.42E-04      & 1.39E-01        & 6.62E-04       & 1.34E-01            & 1.20E-02           \\
+%     DTLZ1     & 5  & 2.73E-02$\pm$3.64E-03  & 4.31E-02       & 2.12E-03      & 4.51E-02        & 1.81E-03       & 3.97E-02            & 2.88E-03           \\
+%     DTLZ1     & 8  & 4.61E-03$\pm$6.81E-04  & 6.98E-03       & 2.71E-04      & 7.19E-03        & 3.58E-04       & 6.93E-03            & 9.08E-05           \\
+%     DTLZ1     & 10 & 1.48E-03$\pm$2.58E-04  & 2.09E-03       & 9.86E-05      & 2.19E-03        & 1.20E-04       & 2.14E-03            & 9.87E-05           \\
+%     \hline
+%     C1-DTLZ1 & 3  & 1.08E-01$\pm$9.35E-03  & 1.39E-01       & 1.72E-04      & 1.39E-01        & 7.45E-04       & 1.36E-01            & 9.69E-03           \\
+%     C1-DTLZ1 & 5  & 2.95E-02$\pm$4.41E-03  & 4.23E-02       & 2.22E-03      & 4.49E-02        & 1.68E-03       & 3.99E-02            & 4.19E-03           \\
+%     C1-DTLZ1 & 8  & 4.47E-03$\pm$8.05E-04  & 7.02E-03       & 2.49E-04      & 7.14E-03        & 3.43E-04       & 7.00E-03            & 2.09E-04           \\
+%     C1-DTLZ1 & 10 & 1.48E-03$\pm$2.69E-04  & 2.14E-03       & 1.18E-04      & 2.07E-03        & 1.61E-04       & 2.07E-03            & 1.46E-04           \\
+%     \hline
+%     \hline
+%     MaF1      & 3  & 1.99E-01$\pm$1.55E-02  & 2.88E-01       & 9.93E-04      & 2.86E-01        & 1.09E-03       & 2.86E-01            & 1.42E-03           \\
+%     MaF1      & 5  & 5.33E-03$\pm$2.15E-04  & 1.57E-02       & 2.14E-04      & 1.59E-02        & 2.23E-04       & 1.59E-02            & 2.12E-04           \\
+%     MaF1      & 8  & 1.19E-05   & 3.22E-07  & 5.22E-05       & 1.75E-06      & 5.11E-05        & 2.42E-06       & 5.15E-05            & 1.82E-06           \\
+%     MaF1      & 10 & 1.60E-07   & 4.73E-09  & 9.45E-07       & 4.81E-08      & 9.68E-07        & 4.11E-08       & 9.65E-07            & 2.92E-08           \\
+%     \hline
+%     IDTLZ1    & 3  & 1.95E-02   & 2.42E-03  & 3.60E-02       & 1.94E-04      & 3.57E-02        & 1.70E-04       & 3.57E-02            & 2.48E-04           \\
+%     IDTLZ1    & 5  & 7.44E-05   & 1.53E-05  & 4.90E-04       & 1.03E-05      & 4.95E-04        & 9.18E-06       & 4.89E-04            & 1.95E-05           \\
+%     IDTLZ1    & 8  & 1.71E-08   & 7.30E-09  & 1.94E-07       & 1.36E-08      & 1.99E-07        & 1.25E-08       & 2.03E-07            & 1.34E-08           \\
+%     IDTLZ1    & 10 & 4.16E-11   & 2.23E-11  & 8.81E-10       & 1.26E-10      & 8.68E-10        & 1.14E-10       & 9.07E-10            & 9.55E-11          
+%     \hline
+%   \end{tabular*}
+%   \end{table*}
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- comparison of two dynamic mechanism ----------------------------------
 % 2种机制比较
 % 当evaluation足够的时候，差不多
+% feasible region 大， evaluation不太够时但过了convergence点时 我的好
+% rinit = 10
 %
-\subsection{Comparison of Two Dynamic Mechanism}
-
+\subsection{Comparison of Two Dynamic Mechanisms}
+We want to further investigate the differences between two dynamic mechanisms. 
 
 \section{Conclusion}
 The conclusion goes here.

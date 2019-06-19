@@ -600,6 +600,13 @@ classdef module_experiment < module
                                 [~,best] = max(meanvalue(valid));
                             end
                             obj.control.table.handle.Data{p,end-nA+valid(best)} = ['<html><Font color=#3333ff>',obj.control.table.handle.Data{p,end-nA+valid(best)}];
+                            
+                            if minMetric
+                                [~,worst] = max(meanvalue(valid));
+                            else
+                                [~,worst] = min(meanvalue(valid));
+                            end
+                            obj.control.table.handle.Data{p,end-nA+valid(worst)} = ['<html><Font color=#ff3258>',obj.control.table.handle.Data{p,end-nA+valid(worst)}];
                         end
                     end
                     % Count the ranksum test results in each column
@@ -750,12 +757,15 @@ classdef module_experiment < module
             nA = size(obj.data.Result,2);
             % Convert the data
             mainData = Data(2:nP+1,end-nA+1:end);
-            mainData = regexprep(mainData,'<html><Font color=#3333ff>','\\hl{','ignorecase');
+            mainData = regexprep(mainData,'<html><Font color=#3333ff>','\\semitextbf{','ignorecase');
+            mainData = regexprep(mainData,'<html><Font color=#ff3258>','\\hl{','ignorecase');
             mainData = regexprep(mainData,'+$','$+$');
             mainData = regexprep(mainData,'-$','$-$');
             mainData = regexprep(mainData,'=$','$\\approx$');
-            temp     = ~cellfun('isempty',strfind(mainData,'\hl{'));
+            temp     = ~cellfun('isempty',strfind(mainData,'\semitextbf{'));
             mainData(temp)            = strcat(mainData(temp),'}');
+            temp     = ~cellfun('isempty',strfind(mainData,'\hl{'));
+            mainData(temp)            = strcat(mainData(temp),'}');            
             Data(2:nP+1,end-nA+1:end) = mainData;
             Data(end,1)          = regexprep(Data(end,1),'^\+/\-/=$',['\\multicolumn{',num2str(size(Data,2)-nA),'}{c}{$+/-/\\approx$}']);
             Data(1,2:end-nA)     = strcat('$',Data(1,2:end-nA),'$');
@@ -781,6 +791,11 @@ classdef module_experiment < module
                     '\usepackage{multirow,booktabs,color,soul,threeparttable}'
                     '\definecolor{hl}{rgb}{0.75,0.75,0.75}'
                     '\sethlcolor{hl}'
+                    '\newcommand{\semitextbf}[1]{%'
+                    '\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness'
+                    '#1%'
+                    '\pdfliteral direct {0 Tr 0 w}%'
+                    '}'
                     '\begin{document}'
                     '\begin{table*}[htbp]'
                     '\renewcommand{\arraystretch}{1.2}'

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  19 JUN 2019 17:01
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.26)  20 JUN 2019 15:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -425,68 +425,76 @@ Invalid UTF-8 byte or sequence at line 719 replaced by U+FFFD.
 File: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps Graphic file (type eps)
  <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps>
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 753.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 752.
 
 
-LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 753.
+LaTeX Warning: Citation `hisao26' on page 2 undefined on input line 752.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 755.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 754.
 
 
-LaTeX Warning: Citation `hisao' on page 2 undefined on input line 772.
+LaTeX Warning: Citation `hisao' on page 2 undefined on input line 771.
 
 [2]
 
-LaTeX Warning: Citation `convergence detection' on page 3 undefined on input line 838.
+LaTeX Warning: Citation `convergence detection' on page 3 undefined on input line 837.
 
-Invalid UTF-8 byte or sequence at line 867 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 867 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 867 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 867 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 867 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 867 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 866 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 866 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 866 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 866 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 866 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 866 replaced by U+FFFD.
 File: fig/FVEMOA_IDTLZ1_M3_nadir_1.eps Graphic file (type eps)
 <fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
 
-LaTeX Warning: Citation `lscd27' on page 3 undefined on input line 894.
+LaTeX Warning: Citation `lscd27' on page 3 undefined on input line 893.
 
 
-LaTeX Warning: Citation `lscd' on page 3 undefined on input line 895.
+LaTeX Warning: Citation `lscd' on page 3 undefined on input line 894.
 
 [3]
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 929 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 928 replaced by U+FFFD.
 File: fig/FVEMOA_IDTLZ1_M3_nadir_2.eps Graphic file (type eps)
  <fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
 
-LaTeX Warning: Citation `FVEMOA' on page 4 undefined on input line 962.
+LaTeX Warning: Citation `FVEMOA' on page 4 undefined on input line 961.
 
 
-LaTeX Warning: Citation `DTLZ1' on page 4 undefined on input line 964.
+LaTeX Warning: Citation `DTLZ1' on page 4 undefined on input line 963.
 
 
-LaTeX Warning: Citation `C1DTLZ1' on page 4 undefined on input line 964.
+LaTeX Warning: Citation `C1DTLZ1' on page 4 undefined on input line 963.
 
 
-LaTeX Warning: Citation `IDTLZ1' on page 4 undefined on input line 966.
+LaTeX Warning: Citation `IDTLZ1' on page 4 undefined on input line 965.
 
 
-LaTeX Warning: Citation `MaF1' on page 4 undefined on input line 966.
+LaTeX Warning: Citation `MaF1' on page 4 undefined on input line 965.
 
 
-Overfull \hbox (16.4584pt too wide) in alignment at lines 975--1000
+Overfull \hbox (16.4584pt too wide) in alignment at lines 974--999
 [][][][][][] 
  []
 
 
-LaTeX Warning: Citation `FVEMOA' on page 4 undefined on input line 1005.
+LaTeX Warning: Citation `FVEMOA' on page 4 undefined on input line 1004.
 
+File: fig/FVEMOA_DTLZ4_3.eps Graphic file (type eps)
+<fig/FVEMOA_DTLZ4_3.eps>
+File: fig/FVEMOA_DR_DTLZ4_3.eps Graphic file (type eps)
+ <fig/FVEMOA_DR_DTLZ4_3.eps>
+File: fig/FVEMOA_DR2_DTLZ4_3.eps Graphic file (type eps)
+ <fig/FVEMOA_DR2_DTLZ4_3.eps>
+File: fig/FVEMOA_optimal_DTLZ4_3.eps Graphic file (type eps)
+ <fig/FVEMOA_optimal_DTLZ4_3.eps> [4]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -498,16 +506,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] [5] (./bare_conf.aux)
+[5
+
+] (./bare_conf.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3531 strings out of 493591
- 55556 string characters out of 6143546
+ 3548 strings out of 493591
+ 55832 string characters out of 6143546
  128402 words of memory out of 5000000
- 6895 multiletter control sequences out of 15000+600000
+ 6908 multiletter control sequences out of 15000+600000
  31349 words of font info for 77 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
  36i,15n,49p,891b,436s stack positions out of 5000i,500n,10000p,200000b,80000s

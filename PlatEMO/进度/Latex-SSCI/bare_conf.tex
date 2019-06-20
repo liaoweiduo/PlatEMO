@@ -726,9 +726,8 @@ the boundary of pareto front.
   \label{dm1}
 \end{figure}
 
-For simply illustration, we only consider flat(not concave or convex) pareto front problem
-in this paper.
-When algorithm reach to the final stage, all solutions are near the pareto front, $r$ should
+For simply illustration,
+when algorithm reach to the final stage, all solutions are near the pareto front, $r$ should
 be specified as $1+1/H$, as in equation \ref{eod}. 
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
@@ -1025,39 +1024,29 @@ What's more, we can not tell the differences among the other three algorithms,
 for that the $r_{Final}$ of the three algorithms are all $1+1/H$.
 % The similar results are obtained in TABLE \ref{table_hv_HypE} with HypE-based algorithms.
 
+% ---------------sub-------------- Computational Experiments ------------------------------------
+% ----------------------------- The Importance of Dynamic Mechanism ----------------------------------
+% 
+\subsection{The Importance of Using Dynamic Mechanism}
+We plot the final solutions distributions of some experiments including DTLZ4 and minus-DTLZ4 in 3-dimension.
+In Fig. \ref{iudm:d}, the solutions are poor distributed comparing with Fig. \ref{iudm:a}-\ref{iudm:c}. 
+The only difference is that FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism
+\begin{figure}[!t]
+  \centering
+  \subfloat[FV-EMOA-2]{\label{iudm:a}
+    \includegraphics[width=1.5in]{FVEMOA_DTLZ4_3}}\quad
+  \subfloat[FV-EMOA-LD]{\label{iudm:b}
+    \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_3}}\\
+  \subfloat[FV-EMOA-CD]{\label{iudm:c}
+    \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_3}}\quad
+  \subfloat[FV-EMOA-Opt]{\label{iudm:d}
+    \includegraphics[width=1.5in]{FVEMOA_optimal_DTLZ4_3}}\\
+  \caption{
+    The final distribution of 4 reference point strategies on DTLZ4 problems.
+  }
+  \label{iudm}
+\end{figure}
 
-% \begin{table*}[!t]
-%   \renewcommand{\arraystretch}{1.3}
-%   \caption{HV mean and standard deviation over 20 independent runs} %加粗是好，下划线是坏
-%   \label{table_hv_HypE}
-%   \centering
-%   \begin{tabular*}{\textwidth}{l|l|m{3.5cm}m{3.5cm}m{3.5cm}m{3.5cm}}
-%     \hline
-%     Problems        & M  & HypE-2                         & HypE-LD                        & HypE-CD                        & HypE-Opt   \\ 
-%     \hline
-%     DTLZ1     & 3  & 1.11E-01$\pm$1.07E-02  & 1.39E-01       & 1.42E-04      & 1.39E-01        & 6.62E-04       & 1.34E-01            & 1.20E-02           \\
-%     DTLZ1     & 5  & 2.73E-02$\pm$3.64E-03  & 4.31E-02       & 2.12E-03      & 4.51E-02        & 1.81E-03       & 3.97E-02            & 2.88E-03           \\
-%     DTLZ1     & 8  & 4.61E-03$\pm$6.81E-04  & 6.98E-03       & 2.71E-04      & 7.19E-03        & 3.58E-04       & 6.93E-03            & 9.08E-05           \\
-%     DTLZ1     & 10 & 1.48E-03$\pm$2.58E-04  & 2.09E-03       & 9.86E-05      & 2.19E-03        & 1.20E-04       & 2.14E-03            & 9.87E-05           \\
-%     \hline
-%     C1-DTLZ1 & 3  & 1.08E-01$\pm$9.35E-03  & 1.39E-01       & 1.72E-04      & 1.39E-01        & 7.45E-04       & 1.36E-01            & 9.69E-03           \\
-%     C1-DTLZ1 & 5  & 2.95E-02$\pm$4.41E-03  & 4.23E-02       & 2.22E-03      & 4.49E-02        & 1.68E-03       & 3.99E-02            & 4.19E-03           \\
-%     C1-DTLZ1 & 8  & 4.47E-03$\pm$8.05E-04  & 7.02E-03       & 2.49E-04      & 7.14E-03        & 3.43E-04       & 7.00E-03            & 2.09E-04           \\
-%     C1-DTLZ1 & 10 & 1.48E-03$\pm$2.69E-04  & 2.14E-03       & 1.18E-04      & 2.07E-03        & 1.61E-04       & 2.07E-03            & 1.46E-04           \\
-%     \hline
-%     \hline
-%     MaF1      & 3  & 1.99E-01$\pm$1.55E-02  & 2.88E-01       & 9.93E-04      & 2.86E-01        & 1.09E-03       & 2.86E-01            & 1.42E-03           \\
-%     MaF1      & 5  & 5.33E-03$\pm$2.15E-04  & 1.57E-02       & 2.14E-04      & 1.59E-02        & 2.23E-04       & 1.59E-02            & 2.12E-04           \\
-%     MaF1      & 8  & 1.19E-05   & 3.22E-07  & 5.22E-05       & 1.75E-06      & 5.11E-05        & 2.42E-06       & 5.15E-05            & 1.82E-06           \\
-%     MaF1      & 10 & 1.60E-07   & 4.73E-09  & 9.45E-07       & 4.81E-08      & 9.68E-07        & 4.11E-08       & 9.65E-07            & 2.92E-08           \\
-%     \hline
-%     IDTLZ1    & 3  & 1.95E-02   & 2.42E-03  & 3.60E-02       & 1.94E-04      & 3.57E-02        & 1.70E-04       & 3.57E-02            & 2.48E-04           \\
-%     IDTLZ1    & 5  & 7.44E-05   & 1.53E-05  & 4.90E-04       & 1.03E-05      & 4.95E-04        & 9.18E-06       & 4.89E-04            & 1.95E-05           \\
-%     IDTLZ1    & 8  & 1.71E-08   & 7.30E-09  & 1.94E-07       & 1.36E-08      & 1.99E-07        & 1.25E-08       & 2.03E-07            & 1.34E-08           \\
-%     IDTLZ1    & 10 & 4.16E-11   & 2.23E-11  & 8.81E-10       & 1.26E-10      & 8.68E-10        & 1.14E-10       & 9.07E-10            & 9.55E-11          
-%     \hline
-%   \end{tabular*}
-%   \end{table*}
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- comparison of two dynamic mechanism ----------------------------------

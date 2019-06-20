@@ -1,6 +1,6 @@
 function Population = CalHVC(Population,ref,numSel)
     data = Population.objs;
-    ref = ref*max(data,[],1);
+    ref = ref*(max(data,[],1)-min(data,[],1))+min(data,[],1);
     
     [PopNum,~] = size(data);
     numDel = PopNum-numSel;

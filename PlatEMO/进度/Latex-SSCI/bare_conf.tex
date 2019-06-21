@@ -1029,8 +1029,7 @@ for that the $r_{Final}$ of the three algorithms are all $1+1/H$.
 % 
 \subsection{The Importance of Using Dynamic Mechanism}
 We plot the final solutions distributions of some experiments including DTLZ4 and minus-DTLZ4 in 3-dimension.
-In Fig. \ref{iudm:d}, the solutions are poor distributed comparing with Fig. \ref{iudm:a}-\ref{iudm:c}. 
-The only difference is that FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism
+In Fig. \ref{iudm:d}, the solutions are poor distributed comparing with Fig. \ref{iudm:a}-\ref{iudm:c}.
 \begin{figure}[!t]
   \centering
   \subfloat[FV-EMOA-2]{\label{iudm:a}
@@ -1045,8 +1044,15 @@ The only difference is that FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism
     The final distribution of 4 reference point strategies on DTLZ4 problems.
   }
   \label{iudm}
-\end{figure}
+\end{figure} 
+FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism at the early stage of algorithm 
+while other three algorithms apply $r_{Initial} = 2$.
+Even though the $r_{final}$ of FV-EMOA-LD, FV-EMOA-CD and FV-EMOA-Opt are all equal to $1+1/H$, 
+FV-EMOA-Opt can not estimate the pareto front well due to the pool searching behavior at the early stage.
 
+The above example clearly shows the importance of using dynamic mechanism, 
+that a slightly larger $r$ than $1+1/H$ can make the algorithm with a better searching behavior in 
+convergence stage where the solutions have not reached to the pareto front. 
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- comparison of two dynamic mechanism ----------------------------------
@@ -1057,7 +1063,33 @@ The only difference is that FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism
 %
 \subsection{Comparison of Two Dynamic Mechanisms}
 We want to further investigate the differences between two dynamic mechanisms. 
+Here is the examples of the final distribution on MaF1 problem(as shown in Fig. \ref{ctdm}).
 
+
+\begin{figure}[!t]
+  \centering
+  \subfloat[FV-EMOA-2]{\label{ctdm:a}
+    \includegraphics[width=1.5in]{FVEMOA_MaF1_M3_3500_3400convergence}}\quad
+  \subfloat[FV-EMOA-LD]{\label{ctdm:b}
+    \includegraphics[width=1.5in]{FVEMOA_DR_MaF1_M3_3500_3400convergence}}\\
+  \subfloat[FV-EMOA-CD]{\label{ctdm:c}
+    \includegraphics[width=1.5in]{FVEMOA_DR2_MaF1_M3_3500_3400convergence}}\quad
+  \subfloat[FV-EMOA-Opt]{\label{ctdm:d}
+    \includegraphics[width=1.5in]{FVEMOA_optimal_MaF1_M3_3500_3400convergence}}\\
+  \subfloat[FV-EMOA-2]{\label{ctdm:e}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly}}\quad
+  \subfloat[FV-EMOA-LD]{\label{ctdm:f}
+    \includegraphics[width=1.5in]{FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly}}\\
+  \subfloat[FV-EMOA-CD]{\label{ctdm:g}
+    \includegraphics[width=1.5in]{FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence}}\quad
+  \subfloat[FV-EMOA-Opt]{\label{ctdm:h}
+    \includegraphics[width=1.5in]{FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly}}\\
+  \caption{
+    The final distribution of 4 reference point strategies on MaF1(\ref{ctdm:a}-\ref{ctdm:d})
+    and inverted-DTLZ1(\ref{ctdm:e}-\ref{ctdm:h}) problems.
+    The results are obtained after 3500 evaluations($t_{Convergent} = 3400$).
+  }
+  \label{ctdm}
 \section{Conclusion}
 The conclusion goes here.
 

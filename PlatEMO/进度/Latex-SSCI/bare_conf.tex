@@ -608,7 +608,7 @@ Although it has no effect on the distributions of solutions set
 in problems with triangular pareto front in 3 dimensions 
 (Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
 it is necessary using reference point adaptation during the algorithm progress.
-And the reason is illustrated detailedly in hisao \cite{hisaos}. % hisao介绍原因的paper。
+And the reason is illustrated detailedly in hisao Ishibuchi et al. \cite{hisaos}. % hisao介绍原因的paper。
 
 In many algorithms including SMS-EMOA\cite{smsemoa}, 
 the reference point is adapted based on the following rules:
@@ -1032,18 +1032,48 @@ We plot the final solutions distributions of some experiments including DTLZ4 an
 In Fig. \ref{iudm:d}, the solutions are poor distributed comparing with Fig. \ref{iudm:a}-\ref{iudm:c}.
 \begin{figure}[!t]
   \centering
-  \subfloat[FV-EMOA-2]{\label{iudm:a}
+  \subfloat[FV-EMOA-2]{\label{iudm1:a}
     \includegraphics[width=1.5in]{FVEMOA_DTLZ4_3}}\quad
-  \subfloat[FV-EMOA-LD]{\label{iudm:b}
+  \subfloat[FV-EMOA-LD]{\label{iudm1:b}
     \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_3}}\\
-  \subfloat[FV-EMOA-CD]{\label{iudm:c}
+  \subfloat[FV-EMOA-CD]{\label{iudm1:c}
     \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_3}}\quad
-  \subfloat[FV-EMOA-Opt]{\label{iudm:d}
+  \subfloat[FV-EMOA-Opt]{\label{iudm1:d}
     \includegraphics[width=1.5in]{FVEMOA_optimal_DTLZ4_3}}\\
   \caption{
-    The final distribution of 4 reference point strategies on DTLZ4 problems.
+    The final distribution of 4 reference point strategies on 3-dimensional DTLZ4 problems.
   }
-  \label{iudm}
+  \label{iudm1}
+\end{figure} 
+\begin{figure}[!t]
+  \centering
+  \subfloat[FV-EMOA-2]{\label{iudm2:a}
+    \includegraphics[width=1.5in]{FVEMOA_DTLZ4_3}}\quad
+  \subfloat[FV-EMOA-LD]{\label{iudm2:b}
+    \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_3}}\\
+  \subfloat[FV-EMOA-CD]{\label{iudm2:c}
+    \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_3}}\quad
+  \subfloat[FV-EMOA-Opt]{\label{iudm2:d}
+    \includegraphics[width=1.5in]{FVEMOA_optimal_DTLZ4_4}}\\
+  \caption{
+    The final distribution of 4 reference point strategies on 4-dimensional DTLZ4 problems.
+  }
+  \label{iudm2}
+\end{figure} 
+\begin{figure}[!t]
+  \centering
+  \subfloat[FV-EMOA-2]{\label{iudm3:a}
+    \includegraphics[width=1.5in]{FVEMOA_DTLZ4_3}}\quad
+  \subfloat[FV-EMOA-LD]{\label{iudm3:b}
+    \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_3}}\\
+  \subfloat[FV-EMOA-CD]{\label{iudm3:c}
+    \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_3}}\quad
+  \subfloat[FV-EMOA-Opt]{\label{iudm3:d}
+    \includegraphics[width=1.5in]{FVEMOA_optimal_DTLZ4_5}}\\
+  \caption{
+    The final distribution of 4 reference point strategies on 5-dimensional DTLZ4 problems.
+  }
+  \label{iudm3}
 \end{figure} 
 FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism at the early stage of algorithm 
 while other three algorithms apply $r_{Initial} = 2$.
@@ -1063,7 +1093,7 @@ convergence stage where the solutions have not reached to the pareto front.
 %
 \subsection{Comparison of Two Dynamic Mechanisms}
 We want to further investigate the differences between two dynamic mechanisms. 
-Here is the examples of the final distribution on MaF1 problem(as shown in Fig. \ref{ctdm}).
+Here is the examples of the final distribution on MaF1 problem(as shown in Fig. \ref{ctdm1}).
 
 
 \begin{figure}[!t]
@@ -1090,6 +1120,7 @@ Here is the examples of the final distribution on MaF1 problem(as shown in Fig. 
     The results are obtained after 3500 evaluations($t_{Convergent} = 3400$).
   }
   \label{ctdm}
+\end{figure} 
 \section{Conclusion}
 The conclusion goes here.
 

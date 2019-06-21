@@ -45,15 +45,18 @@ function FVEMOA_DR2(Global)
         nadir = max(Population.objs);
         nadir_list(end + 1,:) = nadir;
         evaluate_num(end + 1) = Global.evaluated;
-        r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);
+        if ~saving
+            r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);
+        end
         r_list(end + 1) = r;
         [Population,FrontNo] = EnvironmentalSelection([Population,Offspring],Global.N,r);
         
         if r == Rfinal && ~saving
             % save nadir_list and evaluate_num and r_list
-            save(fullfile('Analysis',sprintf('%s_%s_N%d_M%d_D%d_%d_.mat',func2str(Global.algorithm),class(Global.problem),Global.N,Global.M,Global.D,Global.run)),'evaluate_num','nadir_list','r_list');
+%             save(fullfile('Analysis',sprintf('%s_%s_N%d_M%d_D%d_%d_.mat',func2str(Global.algorithm),class(Global.problem),Global.N,Global.M,Global.D,Global.run)),'evaluate_num','nadir_list','r_list');
             fprintf('r change to final at %d evaluation\n', Global.evaluated);
             saving = 1;
         end
+        
     end
 end

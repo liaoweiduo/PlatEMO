@@ -1,0 +1,32 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{multirow,booktabs,color,soul,threeparttable}
+\definecolor{hl}{rgb}{0.75,0.75,0.75}
+\sethlcolor{hl}
+\newcommand{\semitextbf}[1]{%
+\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness
+#1%
+\pdfliteral direct {0 Tr 0 w}%
+}
+\begin{document}
+\begin{table*}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\centering
+\caption{No Title}
+\begin{tabular}{ccccccc}
+\toprule
+Problem&$M$&$D$&FVEMOA&FVEMOA\_optimal&FVEMOA\_DR&FVEMOA\_DR2\\
+\midrule
+\multirow{1}{*}{DTLZ1}&5&9&\semitextbf{4.8962e-2 (8.83e-6) $\approx$}&4.8955e-2 (1.55e-5) $\approx$&4.8957e-2 (1.35e-5) $\approx$&\hl{4.8952e-2 (2.06e-5)}\\
+\hline
+\multirow{1}{*}{DTLZ2}&5&14&1.2934e+0 (3.12e-4) $\approx$&\hl{1.2934e+0 (2.65e-4) $\approx$}&\semitextbf{1.2935e+0 (3.11e-4) $\approx$}&1.2935e+0 (2.62e-4)\\
+\hline
+\multirow{1}{*}{DTLZ3}&5&14&\hl{1.1264e+0 (3.87e-1) $\approx$}&\semitextbf{1.1957e+0 (2.82e-1) $\approx$}&1.1351e+0 (3.89e-1) $\approx$&1.1931e+0 (2.84e-1)\\
+\hline
+\multirow{1}{*}{DTLZ4}&5&14&1.2381e+0 (9.98e-2) $\approx$&\hl{1.2308e+0 (1.01e-1) $\approx$}&1.2424e+0 (7.21e-2) $\approx$&\semitextbf{1.2644e+0 (6.05e-2)}\\
+\hline
+\multicolumn{3}{c}{$+/-/\approx$}&0/0/4&0/0/4&0/0/4&\\
+\bottomrule
+\end{tabular}
+\label{No Label}
+\end{table*}
+\end{document}

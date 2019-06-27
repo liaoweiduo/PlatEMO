@@ -1,0 +1,966 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.26)  27 JUN 2019 15:06
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/liaoweiduo/Documents/MATLAB/PlatEMO/PlatEMO/进度/NewDynamicRPAdaptation/NewDynamicRPAdaptation
+(/Users/liaoweiduo/Documents/MATLAB/PlatEMO/PlatEMO/进度/NewDynamicRPAdaptation/NewDynamicRPAdaptation.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./IEEEtran.cls
+Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+)
+** ATTENTION: Overriding command lockouts (line 5).
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count94
+))
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/ifsym/ifsym.sty
+Package: ifsym 2000/04/18 I.Kloeckl
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count95
+\calc@Bcount=\count96
+\calc@Adimen=\dimen127
+\calc@Bdimen=\dimen128
+\calc@Askip=\skip44
+\calc@Bskip=\skip45
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count97
+\calc@Cskip=\skip46
+)
+\c@ifsymcnt=\count98
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen129
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen130
+\lightrulewidth=\dimen131
+\cmidrulewidth=\dimen132
+\belowrulesep=\dimen133
+\belowbottomsep=\dimen134
+\aboverulesep=\dimen135
+\abovetopsep=\dimen136
+\cmidrulesep=\dimen137
+\cmidrulekern=\dimen138
+\defaultaddspace=\dimen139
+\@cmidla=\count99
+\@cmidlb=\count100
+\@aboverulesep=\dimen140
+\@belowrulesep=\dimen141
+\@thisruleclass=\count101
+\@lastruleclass=\count102
+\@thisrulewidth=\dimen142
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 144.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks16
+\SOUL@lasttoken=\toks17
+\SOUL@cmds=\toks18
+\SOUL@buffer=\toks19
+\SOUL@token=\toks20
+\SOUL@spaceskip=\skip47
+\SOUL@ttwidth=\dimen143
+\SOUL@uldp=\dimen144
+\SOUL@ulht=\dimen145
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box28
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count103
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip48
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+********************************************************
+\skiptotal=\skip49
+\skiplinenumber=\skip50
+\skiprule=\skip51
+\skiphlne=\skip52
+\skiptext=\skip53
+\skiplength=\skip54
+\algomargin=\skip55
+\skipalgocfslide=\skip56
+\algowidth=\dimen146
+\inoutsize=\dimen147
+\inoutindent=\dimen148
+\interspacetitleruled=\dimen149
+\interspacealgoruled=\dimen150
+\interspacetitleboxruled=\dimen151
+\algocf@ruledwidth=\skip57
+\algocf@inoutbox=\box29
+\algocf@inputbox=\box30
+\AlCapSkip=\skip58
+\AlCapHSkip=\skip59
+\algoskipindent=\skip60
+\algocf@nlbox=\box31
+\algocf@hangingbox=\box32
+\algocf@untilbox=\box33
+\algocf@skipuntil=\skip61
+\algocf@capbox=\box34
+\algoheightruledefault=\skip62
+\algoheightrule=\skip63
+\algotitleheightruledefault=\skip64
+\algotitleheightrule=\skip65
+\c@algocfline=\count104
+\c@algocfproc=\count105
+\c@algocf=\count106
+\algocf@algoframe=\box35
+\algocf@algobox=\box36
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip66
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen152
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen153
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count107
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count108
+\leftroot@=\count109
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count110
+\DOTSCASE@=\count111
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box37
+\strutbox@=\box38
+\big@size=\dimen154
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count112
+\c@MaxMatrixCols=\count113
+\dotsspace@=\muskip10
+\c@parentequation=\count114
+\dspbrk@lvl=\count115
+\tag@help=\toks22
+\row@=\count116
+\column@=\count117
+\maxfields@=\count118
+\andhelp@=\toks23
+\eqnshift@=\dimen155
+\alignsep@=\dimen156
+\tagshift@=\dimen157
+\tagwidth@=\dimen158
+\totwidth@=\dimen159
+\lineht@=\dimen160
+\@envbody=\toks24
+\multlinegap=\skip67
+\multlinetaggap=\skip68
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen161
+\captionmargin@=\dimen162
+\captionwidth=\dimen163
+\caption@tempdima=\dimen164
+\caption@indent=\dimen165
+\caption@parindent=\dimen166
+\caption@hangindent=\dimen167
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi .
+\c@ContinuedFloat=\count119
+Package caption Info: threeparttable package is loaded.
+)
+\c@KVtest=\count120
+\sf@farskip=\skip69
+\sf@captopadj=\dimen168
+\sf@capskip=\skip70
+\sf@nearskip=\skip71
+\c@subfigure=\count121
+\c@subfigure@save=\count122
+\c@lofdepth=\count123
+\c@subtable=\count124
+\c@subtable@save=\count125
+\c@lotdepth=\count126
+\sf@top=\skip72
+\sf@bottom=\skip73
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count127
+\c@ALC@line=\count128
+\c@ALC@rem=\count129
+\c@ALC@depth=\count130
+\ALC@tlm=\skip74
+\algorithmicindent=\skip75
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks26
+\AP@partial=\box39
+\AP@footins=\box40
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen169
+\extrarowheight=\dimen170
+\NC@list=\toks27
+\extratabsurround=\skip76
+\backup@length=\skip77
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2016/02/08 v2.0 Improve float mechanism and baselineskip settings
+\@dblbotnum=\count131
+\c@dblbotnumber=\count132
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (./NewDynamicRPAdaptation.aux)
+\openout1 = `NewDynamicRPAdaptation.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+
+-- Lines per column: 56 (exact).
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count133
+\scratchdimen=\dimen171
+\scratchbox=\box41
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen172
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.jpeg,.png,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 75.
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+ifsym on input line 75.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/ifsym/uifsym.fd)
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 75.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
+Package epstopdf Info: Source file: <fig/rpa1_1.eps>
+(epstopdf)                    date: 2019-06-16 10:50:57
+(epstopdf)                    size: 1284106 bytes
+(epstopdf)             Output file: <fig/rpa1_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:08
+(epstopdf)                    size: 16067 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/rpa1_1-eps-converted-to.pdf fig/rpa1_1.eps>
+(epstopdf)             \includegraphics on input line 175.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/rpa1_1-eps-converted-to.pdf, id=1, 576.1525pt x 557.08125pt>
+File: fig/rpa1_1-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/rpa1_1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/rpa1_1-eps-converted-to.pdf used on input line 175.
+(pdftex.def)             Requested size: 108.405pt x 104.8095pt.
+Package epstopdf Info: Source file: <fig/rpa1_2.eps>
+(epstopdf)                    date: 2019-06-16 10:49:07
+(epstopdf)                    size: 1281870 bytes
+(epstopdf)             Output file: <fig/rpa1_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:09
+(epstopdf)                    size: 15542 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/rpa1_2-eps-converted-to.pdf fig/rpa1_2.eps>
+(epstopdf)             \includegraphics on input line 177.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/rpa1_2-eps-converted-to.pdf, id=2, 576.1525pt x 557.08125pt>
+File: fig/rpa1_2-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/rpa1_2-eps-converted-to.pdf>
+Package pdftex.def Info: fig/rpa1_2-eps-converted-to.pdf used on input line 177.
+(pdftex.def)             Requested size: 108.405pt x 104.8095pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)                    date: 2019-06-16 14:07:19
+(epstopdf)                    size: 1324018 bytes
+(epstopdf)             Output file: <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:10
+(epstopdf)                    size: 24618 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)             \includegraphics on input line 214.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=3, 525.965pt x 382.42876pt>
+File: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 214.
+(pdftex.def)             Requested size: 108.405pt x 78.81854pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)                    date: 2019-06-16 14:10:12
+(epstopdf)                    size: 1327414 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:10
+(epstopdf)                    size: 26967 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)             \includegraphics on input line 216.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=4, 525.965pt x 382.42876pt>
+File: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 216.
+(pdftex.def)             Requested size: 108.405pt x 78.81854pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)                    date: 2019-06-16 13:58:21
+(epstopdf)                    size: 1334446 bytes
+(epstopdf)             Output file: <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:11
+(epstopdf)                    size: 28254 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)             \includegraphics on input line 218.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=5, 525.965pt x 385.44pt>
+File: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 218.
+(pdftex.def)             Requested size: 108.405pt x 79.43916pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)                    date: 2019-06-16 14:00:56
+(epstopdf)                    size: 1333386 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:12
+(epstopdf)                    size: 27835 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
+(epstopdf)             \includegraphics on input line 220.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=6, 525.965pt x 385.44pt>
+File: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 220.
+(pdftex.def)             Requested size: 108.405pt x 79.43916pt.
+ [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./fig/rpa1_1-eps-converted-to.pdf> <./fig/rpa1_2-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21.eps>
+(epstopdf)                    date: 2019-06-17 10:55:57
+(epstopdf)                    size: 1256358 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:13
+(epstopdf)                    size: 16334 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21.eps>
+(epstopdf)             \includegraphics on input line 300.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf, id=48, 525.965pt x 382.42876pt>
+File: fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf used on input line 300.
+(pdftex.def)             Requested size: 108.405pt x 78.81854pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21.eps>
+(epstopdf)                    date: 2019-06-17 11:00:04
+(epstopdf)                    size: 1256778 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:14
+(epstopdf)                    size: 16355 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21.eps>
+(epstopdf)             \includegraphics on input line 302.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf, id=49, 525.965pt x 382.42876pt>
+File: fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf used on input line 302.
+(pdftex.def)             Requested size: 108.405pt x 78.81854pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21.eps>
+(epstopdf)                    date: 2019-06-17 11:15:46
+(epstopdf)                    size: 1256946 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:15
+(epstopdf)                    size: 16496 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21.eps>
+(epstopdf)             \includegraphics on input line 304.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf, id=50, 525.965pt x 382.42876pt>
+File: fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf used on input line 304.
+(pdftex.def)             Requested size: 108.405pt x 78.81854pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps>
+(epstopdf)                    date: 2019-06-17 11:18:52
+(epstopdf)                    size: 1252190 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:16
+(epstopdf)                    size: 16612 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps>
+(epstopdf)             \includegraphics on input line 306.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf, id=51, 525.965pt x 382.42876pt>
+File: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf used on input line 306.
+(pdftex.def)             Requested size: 108.405pt x 78.81854pt.
+ [2 <./fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `convergenceDetection' on page 3 undefined on input line 424.
+
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
+(epstopdf)                    date: 2019-06-18 16:08:41
+(epstopdf)                    size: 769238 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:17
+(epstopdf)                    size: 24074 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
+(epstopdf)             \includegraphics on input line 453.
+Package epstopdf Info: Output file is already uptodate.
+<fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf, id=154, 564.1075pt x 400.49625pt>
+File: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf used on input line 453.
+(pdftex.def)             Requested size: 252.0pt x 178.91388pt.
+ [3 <./fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
+(epstopdf)                    date: 2019-06-18 16:00:36
+(epstopdf)                    size: 794894 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:18
+(epstopdf)                    size: 22263 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
+(epstopdf)             \includegraphics on input line 515.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf, id=179, 533.995pt x 434.62375pt>
+File: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf used on input line 515.
+(pdftex.def)             Requested size: 252.0pt x 205.1088pt.
+
+Underfull \hbox (badness 1418) in paragraph at lines 552--561
+\OT1/ptm/m/n/10 The prob-lems in-clude two tri-an-gu-lar pareto front prob-
+ []
+
+
+LaTeX Warning: Reference `iudm:d' on page 4 undefined on input line 687.
+
+
+LaTeX Warning: Reference `iudm:a' on page 4 undefined on input line 687.
+
+
+LaTeX Warning: Reference `iudm:c' on page 4 undefined on input line 687.
+
+Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-26 10:15:07
+(epstopdf)                    size: 1371070 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:19
+(epstopdf)                    size: 26916 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 691.
+Package epstopdf Info: Output file is already uptodate.
+<fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf, id=180, 551.05875pt x 402.50375pt>
+File: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf used on input line 691.
+(pdftex.def)             Requested size: 108.405pt x 79.17885pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-20 14:33:49
+(epstopdf)                    size: 37826 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:20
+(epstopdf)                    size: 15336 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 693.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf, id=181, 562.1pt x 421.575pt>
+File: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf used on input line 693.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-20 14:31:52
+(epstopdf)                    size: 38085 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:20
+(epstopdf)                    size: 15340 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR2_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 695.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf, id=182, 562.1pt x 421.575pt>
+File: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf used on input line 695.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-26 10:27:02
+(epstopdf)                    size: 1342674 bytes
+(epstopdf)             Output file: <fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:21
+(epstopdf)                    size: 21726 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_optimal_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 697.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf, id=183, 546.04pt x 401.5pt>
+File: fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf used on input line 697.
+(pdftex.def)             Requested size: 108.405pt x 79.71043pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-26 10:15:07
+(epstopdf)                    size: 1371070 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:19
+(epstopdf)                    size: 26916 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 706.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf used on input line 706.
+(pdftex.def)             Requested size: 108.405pt x 79.17885pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-20 14:33:49
+(epstopdf)                    size: 37826 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:20
+(epstopdf)                    size: 15336 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 708.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf used on input line 708.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-20 14:31:52
+(epstopdf)                    size: 38085 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:20
+(epstopdf)                    size: 15340 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR2_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 710.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf used on input line 710.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_4.eps>
+(epstopdf)                    date: 2019-06-21 19:42:13
+(epstopdf)                    size: 24955 bytes
+(epstopdf)             Output file: <fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:22
+(epstopdf)                    size: 10277 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf fig/FVEMOA_optimal_DTLZ4_4.eps>
+(epstopdf)             \includegraphics on input line 712.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf, id=184, 562.1pt x 421.575pt>
+File: fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf used on input line 712.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-26 10:15:07
+(epstopdf)                    size: 1371070 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:19
+(epstopdf)                    size: 26916 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 721.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf used on input line 721.
+(pdftex.def)             Requested size: 108.405pt x 79.17885pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-20 14:33:49
+(epstopdf)                    size: 37826 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:20
+(epstopdf)                    size: 15336 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 723.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf used on input line 723.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_3.eps>
+(epstopdf)                    date: 2019-06-20 14:31:52
+(epstopdf)                    size: 38085 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:20
+(epstopdf)                    size: 15340 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR2_DTLZ4_3.eps>
+(epstopdf)             \includegraphics on input line 725.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf used on input line 725.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_5.eps>
+(epstopdf)                    date: 2019-06-21 19:46:38
+(epstopdf)                    size: 26033 bytes
+(epstopdf)             Output file: <fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:22
+(epstopdf)                    size: 10579 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf fig/FVEMOA_optimal_DTLZ4_5.eps>
+(epstopdf)             \includegraphics on input line 727.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf, id=185, 562.1pt x 421.575pt>
+File: fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf used on input line 727.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+
+
+LaTeX Warning: Reference `ctdm1' on page 4 undefined on input line 751.
+
+Package epstopdf Info: Source file: <fig/FVEMOA_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)                    date: 2019-06-20 16:49:04
+(epstopdf)                    size: 38574 bytes
+(epstopdf)             Output file: <fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:23
+(epstopdf)                    size: 15241 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)             \includegraphics on input line 757.
+Package epstopdf Info: Output file is already uptodate.
+<fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=186, 562.1pt x 421.575pt>
+File: fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 757.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)                    date: 2019-06-20 10:31:00
+(epstopdf)                    size: 38573 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:24
+(epstopdf)                    size: 15514 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_DR_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)             \includegraphics on input line 759.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=187, 562.1pt x 421.575pt>
+File: fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 759.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)                    date: 2019-06-20 10:33:59
+(epstopdf)                    size: 38617 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:25
+(epstopdf)                    size: 15476 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)             \includegraphics on input line 761.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=188, 562.1pt x 421.575pt>
+File: fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 761.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)                    date: 2019-06-20 16:48:02
+(epstopdf)                    size: 38417 bytes
+(epstopdf)             Output file: <fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:26
+(epstopdf)                    size: 16102 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence.eps>
+(epstopdf)             \includegraphics on input line 763.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=189, 562.1pt x 421.575pt>
+File: fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 763.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly.eps>
+(epstopdf)                    date: 2019-06-20 16:57:28
+(epstopdf)                    size: 38604 bytes
+(epstopdf)             Output file: <fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:27
+(epstopdf)                    size: 15138 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly.eps>
+(epstopdf)             \includegraphics on input line 765.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf, id=190, 562.1pt x 421.575pt>
+File: fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf used on input line 765.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly.eps>
+(epstopdf)                    date: 2019-06-20 11:00:38
+(epstopdf)                    size: 38418 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:28
+(epstopdf)                    size: 15410 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly.eps>
+(epstopdf)             \includegraphics on input line 767.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf, id=191, 562.1pt x 421.575pt>
+File: fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf used on input line 767.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence.eps>
+(epstopdf)                    date: 2019-06-06 21:44:45
+(epstopdf)                    size: 38411 bytes
+(epstopdf)             Output file: <fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:29
+(epstopdf)                    size: 15321 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence.eps>
+(epstopdf)             \includegraphics on input line 769.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf, id=192, 562.1pt x 421.575pt>
+File: fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf used on input line 769.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+Package epstopdf Info: Source file: <fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly.eps>
+(epstopdf)                    date: 2019-06-20 16:58:20
+(epstopdf)                    size: 38437 bytes
+(epstopdf)             Output file: <fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-27 14:39:30
+(epstopdf)                    size: 16027 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly.eps>
+(epstopdf)             \includegraphics on input line 771.
+Package epstopdf Info: Output file is already uptodate.
+ <fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf, id=193, 562.1pt x 421.575pt>
+File: fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf Graphic file (type pdf)
+ <use fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>
+Package pdftex.def Info: fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf used on input line 771.
+(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+ [4 <./fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>] (./NewDynamicRPAdaptation.bbl [5 <./fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf> <./fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf> <./fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf> <./fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf> <./fig/FVEMOA_optimal_DTLZ4_4-eps-converted-to.pdf> <./fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf>] [6])
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[7 <./fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf> <./fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf> <./fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf> <./fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf> <./fig/FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf> <./fig/FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence-eps-converted-to.pdf> <./fig/FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly-eps-converted-to.pdf>] (./NewDynamicRPAdaptation.aux)
+
+LaTeX Warning: There were undefined references.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 6428 strings out of 493014
+ 105791 string characters out of 6133351
+ 232545 words of memory out of 5000000
+ 9800 multiletter control sequences out of 15000+600000
+ 52057 words of font info for 120 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 44i,12n,49p,927b,4043s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc} </Users/liaoweiduo/Library/texlive/2016/texmf-var/fonts/pk/ljfour/public/ifsym/ifsym10.462pk></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on NewDynamicRPAdaptation.pdf (7 pages, 557597 bytes).
+PDF statistics:
+ 425 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+

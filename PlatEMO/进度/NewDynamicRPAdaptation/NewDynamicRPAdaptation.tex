@@ -1,392 +1,74 @@
 
-%% bare_conf.tex
-%% V1.4a
-%% 2014/09/17
-%% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8a or later) with an IEEE
-%% conference paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
-%% and
-%% http://www.ieee.org/
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE!
-%% User assumes all risk.
-%% In no event shall IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%
-%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
-%%                    bare_conf.tex, bare_jrnl.tex, bare_conf_compsoc.tex,
-%%                    bare_jrnl_compsoc.tex, bare_jrnl_transmag.tex
-%%*************************************************************************
-
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. IEEE's font choices and paper sizes can       ***
-% *** trigger bugs that do not appear when using other class files.       ***                          ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
 
 \documentclass[conference]{IEEEtran}
-% Some Computer Society conferences also require the compsoc mode option,
-% but others use the standard conference format.
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
+
+\IEEEoverridecommandlockouts
 
 
+\makeatletter
+\renewcommand\footnoterule{%
+  \kern-3\p@
+  \hrule\@width.4\columnwidth
+  \kern2.6\p@}
+  \makeatother
+  
+\usepackage{graphicx}
+\graphicspath{{fig/}}
+\DeclareGraphicsExtensions{.eps,.pdf,.jpeg,.png}
 
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
-
-\ifCLASSINFOpdf
-  \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  \graphicspath{{fig/}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  \graphicspath{{fig/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  \DeclareGraphicsExtensions{.eps,.pdf,.jpeg,.png}
-\fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation
-% can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found at:
-% http://www.ctan.org/tex-archive/info/epslatex/
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-\usepackage[cmex10]{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics. If using
-% it, be sure to load this package with the cmex10 option to ensure that
-% only type 1 fonts will utilized at all point sizes. Without this option,
-% it is possible that some math symbols, particularly those within
-% footnotes, will be rendered in bitmap form which will result in a
-% document that can not be IEEE Xplore compliant!
-%
-% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
+\usepackage[misc]{ifsym}
+\usepackage{multirow,booktabs,color,soul,threeparttable}
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{amsmath,bm,setspace}
 \interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
 \usepackage{amsfonts}
-
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
+\definecolor{hl}{rgb}{0.75,0.75,0.75}
+\sethlcolor{hl}
+\usepackage{subfig}
 \usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
-% There is also a support site at:
-% http://algorithms.berlios.de/index.html
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
+\usepackage{caption}
+\usepackage{afterpage}
 \usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/tools/
-\usepackage{color}
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-\ifCLASSOPTIONcompsoc
- \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-\else
- \usepackage[caption=false,font=footnotesize]{subfig}
-\fi
-% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
-% for subfigure.sty, the latter of which is no longer maintained and is
-% incompatible with some LaTeX packages including fixltx2e. However,
-% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
-% which will override IEEEtran.cls' handling of captions and this will result
-% in non-IEEE style figure/table captions. To prevent this problem, be sure
-% and invoke subfig.sty's "caption=false" package option (available since
-% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
-% handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
-%
-% The latest version and documentation of subfig.sty can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure. The latest version and documentation can be found at:
-% http://www.ctan.org/tex-archive/macros/latex/base/
-
-
 \usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
 \fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
-% Do not use the stfloats baselinefloat ability as IEEE does not allow
-% \baselineskip to stretch. Authors submitting work to the IEEE should note
-% that IEEE rarely uses double column equations and that authors should try
-% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
-% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
-% such ways.
-% Do not attempt to use stfloats with fixltx2e as they are incompatible.
-% Instead, use Morten Hogholm'a dblfloatfix which combines the features
-% of both fixltx2e and stfloats:
-%
-% \usepackage{dblfloatfix}
-% The latest version can be found at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
 \usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
-% Basically, \url{my_url_here}.
 
+\newcommand{\semitextbf}[1]{%
+	\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness
+	#1%
+	\pdfliteral direct {0 Tr 0 w}%
+}
 
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
-
-
+%\def\Plus{\texttt{+}}
+\newcommand{\Plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \renewcommand\IEEEkeywordsname{Keywords}
 
 \begin{document}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
+
 \title{A New Dynamically Reference Point Adaptation Mechanism in indicator-based EMOA
 based on weak convergence detection}
 
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
-\author{
-  \IEEEauthorblockN{Weiduo Liao}
-  \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-  Georgia Institute of Technology\\
-  Atlanta, Georgia 30332--0250\\
-  Email: \url{http://www.michaelshell.org/contact.html}}
-  \and
-  \IEEEauthorblockN{sssss}
-  \IEEEauthorblockA{Twentieth Century Fox\\
-  Springfield, USA\\
-  Email: homer@thesimpsons.com}
-  \and
-  \IEEEauthorblockN{ssss}
-  \IEEEauthorblockA{Starfleet Academy\\
-  San Francisco, California 96678--2391\\
-  Telephone: (800) 555--1212\\
-  Fax: (888) 555--1212}
-}
-
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-%
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3},
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}\\
-%School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ 
-%Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco,\\
-%California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street,\\
-%Los Angeles, California 90210--4321}}
-
-
-
+%\author{\IEEEauthorblockN{Linjun He\IEEEauthorrefmark{1},
+%Auraham Camacho\IEEEauthorrefmark{2} and
+%Hisao Ishibuchi\IEEEauthorrefmark{1}$\textsuperscript{(\Letter)}$}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Southern University of Science and Technology, Shenzhen, China\\
+%Email: helj@mail.sustech.edu.cn, hisao@sustech.edu.cn}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}CINVESTAV, Tamaulipas, Mexico\\
+%Email: acamacho@tamps.cinvestav.mx}}
 
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
-
+\author{\IEEEauthorblockN{Weiduo Liao, Ke Shang and Hisao Ishibuchi$\textsuperscript{(\Letter)}$}
+\IEEEauthorblockA{Department of Computer Science and Engineering\\
+Southern University of Science and Technology, Shenzhen, China\\
+Email: \{11849249@mail., hisao@\}sustech.edu.cn}
+}
 
 
 % make the title area
@@ -395,13 +77,14 @@ based on weak convergence detection}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-The abstract goes here.
+ABSTRACT HERE
 \end{abstract}
 
 \begin{IEEEkeywords}
 keyword 1; keyword 2
 \end{IEEEkeywords}
-
+    
+\let\thefootnote\relax\footnotetext{This work was supported by the Program for Guangdong Introducing Innovative and Entrepreneurial Teams (Grant No. 2017ZT07X386), Shenzhen Peacock Plan (Grant No. KQTD2016112514355531), the Science and Technology Innovation Committee Foundation of Shenzhen (Grant No. ZDSYS201703031748284), the Program for University Key Laboratory of Guangdong Province (Grant No. 2017KSYS008), and National Natural Science Foundation of China (Grant No. 61876075).}
 
 % For peer review papers, you can put extra information on the cover
 % page as needed:
@@ -412,8 +95,6 @@ keyword 1; keyword 2
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
-
-
 
 \section{Introduction}
 % no \IEEEPARstart
@@ -436,100 +117,6 @@ Subsection text here.
 \subsubsection{Subsubsection Heading Here}
 Subsubsection text here.
 
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex,
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively.
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
 
 % -------------------------------------- main part ---------------------------------------
 % 背景介绍：
@@ -653,16 +240,16 @@ Then the reference point used to calculate the hypervolume is calculated by the 
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
 \section{Dynamic Mechanism}
-Basically the process of Evolutionary Multi-objective Optimization Algorithm can be separate into
+Basically the process of Evolutionary Multi-objective Optimization Algorithm can be separated into
 two stages:
 \subsubsection{Early Stage} In this stage, 
 all the solutions are far away from pareto front.
 The main task is to converge the solutions to pareto front.
-We also call this stage convergence stage.
+We also call this stage the convergence stage.
 \subsubsection{Final Stage} In this stage,
 all the solutions are in or near the pareto front.
 So the main task is to make the distribution of solutions more evenly in the pareto front.
-We also call this stage diversity stage.
+We also call this stage the diversity stage.
 
 For different purposes in these two stages, the $r$ should be treated differently\cite{ut}. 
 Not only the reference point but also the value of $r$ 
@@ -834,7 +421,7 @@ The $t_{Convergent}$ is determined by a weak convergence detection criterion.
 % for nadir point, 经过我们的实验 10^-5是个好threshold
 %
 \subsection{Weak Convergence Detection}
-Consider many convergence detection paper \cite{convergence detection},
+Consider many convergence detection paper \cite{convergenceDetection},
 various indicators including convergence detection indicators are using to detect the stagnation.
 They focus on accuracy of convergence, which is not the purpose in our approach for 
 the reason that after algorithm convergent, we still need some generations in order to
@@ -955,6 +542,13 @@ because of a weak convergence detection purpose.
 % 要验证 10^-5 是不是一个好的threshold 画出不同维度 当检测到收敛的solutions图，确认检测到不变的时候确实收敛
 %
 \section{Computational Experiments}
+
+Population size (l): 100,
+Termination condition: 100,000 solution evaluations,
+Crossover: SBX (Crossover probability: 1.0, Distribution index: 20),
+Mutation: PM (Mutation probability: 1/(String length), Distribution index: 20),
+Number of runs: 11 runs.
+
 To clearly represent the superiority of dynamically reference point adaptation 
 and to ease the comparsion process of two different dynamic mechanisms
 (linearly decrease mechanism and weak convergence detection mechanism), 
@@ -967,37 +561,98 @@ To show the performance both on multi-objective and many-objective, we tested in
 
 \subsection{Computational Results}
 \begin{table*}[!t]
-  \renewcommand{\arraystretch}{1.3}
   \caption{HV mean and standard deviation over 20 independent runs} %加粗是好，下划线是坏
   \label{table_hv_FVEMOA}
   \centering
-  \begin{tabular*}{\textwidth}{l|l|m{3.5cm}m{3.5cm}m{3.5cm}m{3.5cm}}
+  \begin{tabular}{ccccccc}
     \hline
-    Problems        & M  & FV-EMOA-2                         & FV-EMOA-LD                        & FV-EMOA-CD                        & FV-EMOA-Opt   \\ 
+    Problems        & M  & D & FV-EMOA-2                         & FV-EMOA-Opt                       & FV-EMOA-LD                        & FV-EMOA-CD                           \\ 
     \hline
-    DTLZ1           & 3  & 1.40E-01$\pm$1.49E-04             & \underline{1.40E-01$\pm$1.18E-04} & 1.40E-01$\pm$9.18E-05             & \textbf{1.40E-01$\pm$1.04E-04} \\
-    DTLZ1           & 5  & \underline{4.90E-02$\pm$1.74E-05} & \textbf{4.90E-02$\pm$1.15E-05}    & 4.90E-02$\pm$1.42E-05             & 4.90E-02$\pm$1.38E-05 \\
-    DTLZ1           & 8  & 6.26E-03$\pm$3.14E-03             & 7.63E-03$\pm$1.61E-03             & \underline{5.78E-03$\pm$3.48E-03} & \textbf{8.14E-03$\pm$4.50E-04} \\
-    DTLZ1           & 10 & 9.54E-05$\pm$2.83E-04             & \underline{0.00E+00$\pm$0.00E+00} & 2.73E-06$\pm$8.45E-06             & \textbf{5.46E-04$\pm$1.02E-03} \\ 
+    \multirow{1}{*}{DTLZ1}&3&7&\textbf{1.4026e-1 (6.25e-5) $\approx$}&\hl{1.4020e-1 (1.14e-4) $\approx$}&1.4021e-1 (1.15e-4) $\approx$&1.4022e-1 (7.38e-5)\\
+    
+    DTLZ2&3&12&7.5684e-1 (1.10e-4) $\approx$&7.5683e-1 (1.48e-4) $\approx$&\textbf{7.5686e-1 (1.13e-4) $\approx$}&\underline{7.5681e-1 (1.32e-4)}\\
+    
+    DTLZ3&3&12&7.1789e-1 (7.31e-2) $\approx$&\underline{7.0047e-1 (1.65e-1) $\approx$}&\textbf{7.4029e-1 (8.35e-3) $\approx$}&7.3655e-1 (9.43e-3)\\
+    
+    DTLZ4&3&12&\textbf{6.9813e-1 (1.21e-1) $\approx$}&\hl{6.0515e-1 (2.14e-1) $\approx$}&6.8340e-1 (1.31e-1) $\approx$&6.6637e-1 (1.76e-1)\\
     \hline
-    C1-DTLZ1        & 3  & \underline{1.39E-01$\pm$7.22E-04} & \textbf{1.40E-01$\pm$7.24E-04}    & 1.39E-01$\pm$7.23E-04             & 1.40E-01$\pm$6.10E-04 \\
-    C1-DTLZ1        & 5  & 4.85E-02$\pm$3.69E-04             & 4.79E-02$\pm$8.35E-04             & \textbf{4.85E-02$\pm$3.17E-04}    & \underline{4.70E-02$\pm$2.16E-03} \\
-    C1-DTLZ1        & 8  & \textbf{8.03E-03$\pm$3.30E-04}    & \underline{7.75E-03$\pm$4.98E-04} & 7.98E-03$\pm$3.68E-04             & 7.86E-03$\pm$3.93E-04 \\
-    C1-DTLZ1        & 10 & \textbf{2.40E-03$\pm$1.09E-04}    & 2.40E-03$\pm$8.41E-05             & 2.38E-03$\pm$1.21E-04             & \underline{2.31E-03$\pm$2.27E-04} \\ 
-    \hline
-    \hline
-    MaF1            & 3  & \underline{86E-01$\pm$7.88E-04}   & \textbf{2.97E-01$\pm$1.57E-04}    & 2.97E-01$\pm$1.94E-04             & 2.97E-01$\pm$1.49E-04 \\
-    MaF1            & 5  & \underline{1.09E-02$\pm$1.28E-04} & 1.63E-02$\pm$1.38E-04             & 1.63E-02$\pm$1.63E-04             & \textbf{1.63E-02$\pm$1.07E-04} \\
-    MaF1            & 8  & \underline{2.24E-05$\pm$9.81E-07} & 4.18E-05$\pm$1.31E-06             & 4.23E-05$\pm$9.14E-07             & \textbf{4.26E-05$\pm$7.84E-07} \\
-    MaF1            & 10 & \underline{1.85E-07$\pm$1.70E-08} & 6.73E-07$\pm$1.95E-08             & \textbf{6.78E-07$\pm$1.73E-08}    & 6.78E-07$\pm$1.34E-08 \\ 
-    \hline
-    Inverted-DTLZ1  & 3  & \underline{3.57E-02$\pm$2.97E-04} & \textbf{3.69E-02$\pm$3.30E-04}    & 3.65E-02$\pm$1.27E-03             & 3.65E-02$\pm$1.20E-03 \\
-    Inverted-DTLZ1  & 5  & \underline{3.19E-04$\pm$4.11E-05} & 4.65E-04$\pm$7.01E-05             & 4.40E-04$\pm$7.11E-05             & \textbf{4.90E-04$\pm$5.93E-05} \\
-    Inverted-DTLZ1  & 8  & \underline{5.99E-08$\pm$1.32E-08} & 1.41E-07$\pm$3.43E-08             & \textbf{1.57E-07$\pm$2.06E-08}    & 1.56E-07$\pm$2.12E-08 \\
-    Inverted-DTLZ1  & 10 & \underline{1.83E-10$\pm$3.06E-11} & 6.51E-10$\pm$5.00E-11             & \textbf{6.58E-10$\pm$7.05E-11}    & 6.55E-10$\pm$6.20E-11 \\ 
-    \hline
-  \end{tabular*}
+    $+/-/\approx$& & &0/0/4&0/0/4&0/0/4&\\
+
+  \end{tabular}
 \end{table*}
+\begin{table*}[htbp]
+  \renewcommand{\arraystretch}{1}
+  \centering
+  \caption{No Title}
+  \begin{tabular}{cccccc}
+  \toprule
+  Problem&$M$&tDEA&tDEAt&NSGAIII&NSGAIIIt\\
+  \midrule
+  \multirow{5}{*}{DTLZ1}&3&8.4024e-1 $\approx$&\hl{8.4055e-1 $+$}&8.4028e-1 $\approx$&8.4003e-1\\
+  &5&\hl{9.7980e-1 $\approx$}&9.7979e-1 $\approx$&9.7978e-1 $\approx$&9.7975e-1\\
+  &8&\hl{9.9740e-1 $\approx$}&9.9248e-1 $\approx$&9.8874e-1 $\approx$&9.9698e-1\\
+  &10&\hl{9.9969e-1 $\approx$}&9.9947e-1 $\approx$&9.8408e-1 $\approx$&9.9968e-1\\
+  &15&9.6961e-1 $-$&9.6143e-1 $-$&9.9868e-1 $-$&\hl{9.9979e-1}\\
+  \hline
+  \multirow{5}{*}{DTLZ2}&3&5.5930e-1 $+$&\hl{5.5931e-1 $+$}&5.5920e-1 $\approx$&5.5922e-1\\
+  &5&\hl{8.1227e-1 $+$}&8.1226e-1 $+$&8.1190e-1 $\approx$&8.1185e-1\\
+  &8&\hl{9.2387e-1 $+$}&9.1761e-1 $-$&9.1557e-1 $-$&9.2295e-1\\
+  &10&\hl{9.6974e-1 $+$}&9.6791e-1 $-$&9.6076e-1 $\approx$&9.6928e-1\\
+  &15&\hl{9.9064e-1 $+$}&9.7725e-1 $-$&9.7763e-1 $-$&9.9049e-1\\
+  \hline
+  \multirow{5}{*}{DTLZ3}&3&5.5523e-1 $\approx$&\hl{5.5640e-1 $+$}&5.5350e-1 $\approx$&5.5416e-1\\
+  &5&\hl{8.1181e-1 $+$}&8.1160e-1 $\approx$&8.1057e-1 $\approx$&8.1111e-1\\
+  &8&\hl{9.1127e-1 $+$}&8.6752e-1 $+$&8.0316e-1 $\approx$&8.5108e-1\\
+  &10&9.6601e-1 $-$&9.1269e-1 $\approx$&9.4408e-1 $\approx$&\hl{9.6928e-1}\\
+  &15&\hl{9.8388e-1 $+$}&8.9576e-1 $-$&9.2701e-1 $-$&9.5216e-1\\
+  \hline
+  \multirow{5}{*}{DTLZ4}&3&4.7651e-1 $\approx$&4.5458e-1 $\approx$&\hl{5.1669e-1 $\approx$}&5.1610e-1\\
+  &5&\hl{8.1276e-1 $+$}&7.5770e-1 $\approx$&8.0893e-1 $\approx$&8.1222e-1\\
+  &8&\hl{9.2404e-1 $+$}&8.6682e-1 $-$&9.0200e-1 $-$&9.2386e-1\\
+  &10&\hl{9.6985e-1 $+$}&9.6057e-1 $\approx$&9.6475e-1 $\approx$&9.6962e-1\\
+  &15&\hl{9.9063e-1 $+$}&9.7976e-1 $-$&9.8039e-1 $-$&9.9054e-1\\
+  \hline
+  \multirow{5}{*}{WFG4}&3&\hl{5.5444e-1 $+$}&5.5418e-1 $+$&5.5346e-1 $\approx$&5.5341e-1\\
+  &5&8.0675e-1 $+$&\hl{8.0693e-1 $+$}&8.0550e-1 $\approx$&8.0550e-1\\
+  &8&9.2131e-1 $+$&\hl{9.2139e-1 $+$}&9.2090e-1 $\approx$&9.2074e-1\\
+  &10&9.6799e-1 $+$&\hl{9.6816e-1 $+$}&9.6527e-1 $\approx$&9.6717e-1\\
+  &15&\hl{9.9047e-1 $+$}&9.9001e-1 $-$&9.8924e-1 $\approx$&9.9034e-1\\
+  \hline
+  \multirow{5}{*}{WFG5}&3&5.1806e-1 $\approx$&\hl{5.1809e-1 $\approx$}&5.1792e-1 $\approx$&5.1807e-1\\
+  &5&\hl{7.6139e-1 $\approx$}&7.6138e-1 $\approx$&7.6122e-1 $\approx$&7.6121e-1\\
+  &8&\hl{8.6362e-1 $\approx$}&8.6346e-1 $\approx$&8.6148e-1 $\approx$&8.6352e-1\\
+  &10&9.0480e-1 $\approx$&\hl{9.0483e-1 $+$}&9.0472e-1 $\approx$&9.0472e-1\\
+  &15&9.1755e-1 $\approx$&9.1692e-1 $\approx$&\hl{9.1760e-1 $+$}&9.1757e-1\\
+  \hline
+  \multirow{5}{*}{WFG6}&3&4.9914e-1 $\approx$&4.9622e-1 $\approx$&\hl{5.0159e-1 $\approx$}&4.9636e-1\\
+  &5&7.3987e-1 $\approx$&7.4104e-1 $\approx$&\hl{7.4217e-1 $\approx$}&7.3886e-1\\
+  &8&\hl{8.4426e-1 $\approx$}&8.3383e-1 $\approx$&8.4157e-1 $\approx$&8.3713e-1\\
+  &10&\hl{8.8289e-1 $\approx$}&8.7764e-1 $\approx$&8.7993e-1 $\approx$&8.8113e-1\\
+  &15&8.8290e-1 $-$&8.8690e-1 $\approx$&\hl{8.9577e-1 $\approx$}&8.9349e-1\\
+  \hline
+  \multirow{5}{*}{WFG7}&3&\hl{5.5555e-1 $+$}&5.5536e-1 $+$&5.5462e-1 $\approx$&5.5447e-1\\
+  &5&8.0958e-1 $+$&\hl{8.0965e-1 $+$}&8.0826e-1 $\approx$&8.0823e-1\\
+  &8&\hl{9.2207e-1 $+$}&9.1944e-1 $-$&9.2100e-1 $\approx$&9.2086e-1\\
+  &10&\hl{9.6869e-1 $+$}&9.6725e-1 $-$&9.6434e-1 $\approx$&9.6816e-1\\
+  &15&9.9031e-1 $\approx$&9.8044e-1 $-$&9.8214e-1 $-$&\hl{9.9037e-1}\\
+  \hline
+  \multirow{5}{*}{WFG8}&3&4.6650e-1 $+$&\hl{4.6758e-1 $+$}&4.6618e-1 $+$&4.6374e-1\\
+  &5&6.9521e-1 $\approx$&6.9534e-1 $\approx$&6.9591e-1 $\approx$&\hl{6.9641e-1}\\
+  &8&8.0375e-1 $-$&7.9290e-1 $-$&7.9295e-1 $-$&\hl{8.0966e-1}\\
+  &10&\hl{8.9230e-1 $\approx$}&8.7460e-1 $-$&8.7512e-1 $-$&8.8640e-1\\
+  &15&9.2903e-1 $-$&9.1506e-1 $-$&9.2882e-1 $-$&\hl{9.4072e-1}\\
+  \hline
+  \multirow{5}{*}{WFG9}&3&5.2117e-1 $\approx$&\hl{5.2609e-1 $+$}&5.2377e-1 $\approx$&5.2441e-1\\
+  &5&7.6923e-1 $+$&\hl{7.6993e-1 $+$}&7.6052e-1 $\approx$&7.6023e-1\\
+  &8&\hl{8.6404e-1 $+$}&8.6402e-1 $+$&8.2685e-1 $\approx$&8.3242e-1\\
+  &10&9.1753e-1 $+$&\hl{9.1970e-1 $+$}&8.8934e-1 $\approx$&8.9248e-1\\
+  &15&9.1855e-1 $+$&\hl{9.2695e-1 $+$}&9.1800e-1 $+$&8.7976e-1\\
+  \hline
+  \multicolumn{2}{c}{$+/-/\approx$}&26/5/19&18/14/18&3/10/37&\\
+  \bottomrule
+  \end{tabular}
+  \label{No Label}
+  \end{table*}
 Each experiment has been run for twenty times independently. 
 And the population size is $100$, $r_{Initial}=2$.
 The detailed algorithms are as following: 
@@ -1132,47 +787,9 @@ The conclusion goes here.
 The authors would like to thank...\cite{IEEEhowto:kopka1}
 
 
+\bibliographystyle{IEEEtran} 
+\bibliography{mybibtex} 
 
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\bibitem{IEEEhowto:kopka1}
-H.~pka and P.~W. Daly, \emph{A Guito \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
-
-
-
-
-% that's all folks
 \end{document}
 
 

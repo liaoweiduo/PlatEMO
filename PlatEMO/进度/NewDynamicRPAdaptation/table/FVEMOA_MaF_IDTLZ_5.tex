@@ -1,0 +1,36 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{multirow,booktabs,color,soul,threeparttable}
+\definecolor{hl}{rgb}{0.75,0.75,0.75}
+\sethlcolor{hl}
+\newcommand{\semitextbf}[1]{%
+\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness
+#1%
+\pdfliteral direct {0 Tr 0 w}%
+}
+\begin{document}
+\begin{table*}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\centering
+\caption{No Title}
+\begin{tabular}{ccccccc}
+\toprule
+Problem&$M$&$D$&FVEMOA&FVEMOA\_optimal&FVEMOA\_DR&FVEMOA\_DR2\\
+\midrule
+\multirow{1}{*}{MaF1}&5&14&\hl{1.1011e-2 (1.83e-4) $-$}&1.6331e-2 (1.39e-4) $\approx$&1.6138e-2 (1.73e-4) $-$&\semitextbf{1.6331e-2 (9.90e-5)}\\
+\hline
+\multirow{1}{*}{MaF2}&5&14&\hl{4.1233e-2 (6.91e-5) $-$}&\semitextbf{4.2327e-2 (8.11e-5) $\approx$}&4.2204e-2 (8.66e-5) $-$&4.2296e-2 (7.02e-5)\\
+\hline
+\multirow{1}{*}{MaF3}&5&14&1.7391e-5 (7.78e-5) $\approx$&4.2290e-2 (1.89e-1) $\approx$&\hl{0.0000e+0 (0.00e+0) $\approx$}&\semitextbf{6.8734e-2 (3.07e-1)}\\
+\hline
+\multirow{1}{*}{MaF4}&5&14&\hl{3.7215e+3 (1.64e+3) $-$}&\semitextbf{6.2601e+3 (2.81e+2) $\approx$}&6.2386e+3 (3.23e+2) $\approx$&6.1540e+3 (4.87e+2)\\
+\hline
+\multirow{1}{*}{IDTLZ1}&5&9&\hl{3.1124e-4 (4.25e-5) $-$}&\semitextbf{4.7494e-4 (4.71e-5) $\approx$}&4.5874e-4 (6.97e-5) $\approx$&4.2499e-4 (1.00e-4)\\
+\hline
+\multirow{1}{*}{IDTLZ2}&5&14&\hl{1.6127e-1 (2.18e-3) $-$}&2.0287e-1 (8.88e-4) $\approx$&\semitextbf{2.0452e-1 (6.98e-4) $+$}&2.0326e-1 (5.90e-4)\\
+\hline
+\multicolumn{3}{c}{$+/-/\approx$}&0/5/1&0/0/6&1/2/3&\\
+\bottomrule
+\end{tabular}
+\label{No Label}
+\end{table*}
+\end{document}

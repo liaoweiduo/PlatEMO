@@ -1,5 +1,3 @@
-
-
 \documentclass[conference]{IEEEtran}
 
 \IEEEoverridecommandlockouts
@@ -553,138 +551,121 @@ To clearly represent the superiority of dynamically reference point adaptation
 and to ease the comparsion process of two different dynamic mechanisms
 (linearly decrease mechanism and weak convergence detection mechanism), 
 the mechanisms is going to be tested with the algorithm FV-EMOA\cite{FVEMOA}. % and HypE\cite{HypE}.
-The problems include two triangular pareto front problems: 
-DTLZ1\cite{DTLZ1}, C1-DTLZ1\cite{C1DTLZ1}
+The problems include: 
+DTLZ series\cite{DTLZ1}, WFG series\cite{WFG} and their minus versions\cite{minus}
 and two inverted-triangular pareto front problems: 
 Inverted-DTLZ1\cite{IDTLZ1}, MaF1\cite{MaF1}.
-To show the performance both on multi-objective and many-objective, we tested in 3,5,8 and 10 dimensions.
+To show the performance both on multi-objective and many-objective, we tested in 3 and 5 dimensions.
 
+% ---------------sub-------------- Computational Experiments ------------------------------------
+% ----------------------------- Computational Results ----------------------------------
+% 
 \subsection{Computational Results}
-\begin{table*}[!t]
-  \caption{HV mean and standard deviation over 20 independent runs} %加粗是好，下划线是坏
-  \label{table_hv_FVEMOA}
+\begin{table*}[!t]\small
+  \caption{HV mean and standard deviation over 20 independent runs for triangular pareto front problems.} %加粗是好，灰色是坏
+  \label{table_FVEMOA_tri}
   \centering
   \begin{tabular}{ccccccc}
+    \toprule
+    Problem&$M$&$D$&FV-EMOA-2&FV-EMOA-Opt&FV-EMOA-LD&FV-EMOA-CD\\ 
+    \midrule
+    \multirow{1}{*}{DTLZ1}&3&7&\semitextbf{1.4026e-1 (6.25e-5) $\approx$}&\hl{1.4020e-1 (1.14e-4) $\approx$}&1.4021e-1 (1.15e-4) $\approx$&1.4022e-1 (7.38e-5)\\
+    \multirow{1}{*}{DTLZ1}&5&9&\semitextbf{4.8962e-2 (8.83e-6) $\approx$}&4.8955e-2 (1.55e-5) $\approx$&4.8957e-2 (1.35e-5) $\approx$&\hl{4.8952e-2 (2.06e-5)}\\
+    \multirow{1}{*}{DTLZ2}&3&12&7.5684e-1 (1.10e-4) $\approx$&7.5683e-1 (1.48e-4) $\approx$&\semitextbf{7.5686e-1 (1.13e-4) $\approx$}&\hl{7.5681e-1 (1.32e-4)}\\
+    \multirow{1}{*}{DTLZ2}&5&14&1.2934e+0 (3.12e-4) $\approx$&\hl{1.2934e+0 (2.65e-4) $\approx$}&\semitextbf{1.2935e+0 (3.11e-4) $\approx$}&1.2935e+0 (2.62e-4)\\
+    \multirow{1}{*}{DTLZ3}&3&12&7.1789e-1 (7.31e-2) $\approx$&\hl{7.0047e-1 (1.65e-1) $\approx$}&\semitextbf{7.4029e-1 (8.35e-3) $\approx$}&7.3655e-1 (9.43e-3)\\
+    \multirow{1}{*}{DTLZ3}&5&14&\hl{1.1264e+0 (3.87e-1) $\approx$}&\semitextbf{1.1957e+0 (2.82e-1) $\approx$}&1.1351e+0 (3.89e-1) $\approx$&1.1931e+0 (2.84e-1)\\
+    \multirow{1}{*}{DTLZ4}&3&12&\semitextbf{6.9813e-1 (1.21e-1) $\approx$}&\hl{6.0515e-1 (2.14e-1) $\approx$}&6.8340e-1 (1.31e-1) $\approx$&6.6637e-1 (1.76e-1)\\
+    \multirow{1}{*}{DTLZ4}&5&14&1.2381e+0 (9.98e-2) $\approx$&\hl{1.2308e+0 (1.01e-1) $\approx$}&1.2424e+0 (7.21e-2) $\approx$&\semitextbf{1.2644e+0 (6.05e-2)}\\
     \hline
-    Problems        & M  & D & FV-EMOA-2                         & FV-EMOA-Opt                       & FV-EMOA-LD                        & FV-EMOA-CD                           \\ 
+    \multirow{1}{*}{WFG1}&3&12&5.9236e+1 (9.45e-1) $\approx$&\hl{5.9204e+1 (7.24e-1) $\approx$}&\semitextbf{5.9303e+1 (4.79e-1) $\approx$}&5.9298e+1 (8.50e-1)\\
+    \multirow{1}{*}{WFG1}&5&14&5.9946e+3 (3.02e+0) $\approx$&5.9908e+3 (1.09e+1) $-$&\hl{5.9801e+3 (6.90e+1) $\approx$}&\semitextbf{5.9954e+3 (1.12e+0)}\\
+    \multirow{1}{*}{WFG2}&3&12&5.9711e+1 (1.94e-2) $\approx$&\semitextbf{5.9720e+1 (2.92e-2) $\approx$}&5.9712e+1 (2.54e-2) $\approx$&\hl{5.9703e+1 (3.49e-2)}\\
+    \multirow{1}{*}{WFG2}&5&14&\semitextbf{6.0208e+3 (2.44e+0) $\approx$}&\hl{6.0170e+3 (4.04e+0) $-$}&6.0186e+3 (3.72e+0) $\approx$&6.0195e+3 (5.24e+0)\\
+    \multirow{1}{*}{WFG3}&3&12&\semitextbf{6.6296e+0 (1.23e-2) $\approx$}&6.6238e+0 (1.16e-2) $\approx$&\hl{6.6222e+0 (9.24e-3) $\approx$}&6.6229e+0 (1.46e-2)\\
+    \multirow{1}{*}{WFG3}&5&14&\semitextbf{3.3164e+0 (4.12e-2) $\approx$}&3.3137e+0 (3.46e-2) $\approx$&\hl{3.2991e+0 (3.42e-2) $\approx$}&3.3105e+0 (3.46e-2)\\
+    \multirow{1}{*}{WFG4}&3&12&\semitextbf{3.6259e+1 (1.29e-2) $\approx$}&3.6252e+1 (2.87e-2) $\approx$&3.6258e+1 (1.43e-2) $\approx$&\hl{3.6251e+1 (2.37e-2)}\\
+    \multirow{1}{*}{WFG4}&5&14&\semitextbf{4.9536e+3 (3.75e+0) $\approx$}&\hl{4.9503e+3 (3.64e+0) $\approx$}&4.9531e+3 (2.55e+0) $\approx$&4.9523e+3 (2.25e+0)\\
     \hline
-    \multirow{1}{*}{DTLZ1}&3&7&\textbf{1.4026e-1 (6.25e-5) $\approx$}&\hl{1.4020e-1 (1.14e-4) $\approx$}&1.4021e-1 (1.15e-4) $\approx$&1.4022e-1 (7.38e-5)\\
-    
-    DTLZ2&3&12&7.5684e-1 (1.10e-4) $\approx$&7.5683e-1 (1.48e-4) $\approx$&\textbf{7.5686e-1 (1.13e-4) $\approx$}&\underline{7.5681e-1 (1.32e-4)}\\
-    
-    DTLZ3&3&12&7.1789e-1 (7.31e-2) $\approx$&\underline{7.0047e-1 (1.65e-1) $\approx$}&\textbf{7.4029e-1 (8.35e-3) $\approx$}&7.3655e-1 (9.43e-3)\\
-    
-    DTLZ4&3&12&\textbf{6.9813e-1 (1.21e-1) $\approx$}&\hl{6.0515e-1 (2.14e-1) $\approx$}&6.8340e-1 (1.31e-1) $\approx$&6.6637e-1 (1.76e-1)\\
-    \hline
-    $+/-/\approx$& & &0/0/4&0/0/4&0/0/4&\\
-
-  \end{tabular}
+    \multicolumn{3}{c}{$+/-/\approx$}&0/0/16&0/2/14&0/0/16&\\
+    \bottomrule
+    \end{tabular}
 \end{table*}
-\begin{table*}[htbp]
-  \renewcommand{\arraystretch}{1}
-  \centering
-  \caption{No Title}
-  \begin{tabular}{cccccc}
-  \toprule
-  Problem&$M$&tDEA&tDEAt&NSGAIII&NSGAIIIt\\
-  \midrule
-  \multirow{5}{*}{DTLZ1}&3&8.4024e-1 $\approx$&\hl{8.4055e-1 $+$}&8.4028e-1 $\approx$&8.4003e-1\\
-  &5&\hl{9.7980e-1 $\approx$}&9.7979e-1 $\approx$&9.7978e-1 $\approx$&9.7975e-1\\
-  &8&\hl{9.9740e-1 $\approx$}&9.9248e-1 $\approx$&9.8874e-1 $\approx$&9.9698e-1\\
-  &10&\hl{9.9969e-1 $\approx$}&9.9947e-1 $\approx$&9.8408e-1 $\approx$&9.9968e-1\\
-  &15&9.6961e-1 $-$&9.6143e-1 $-$&9.9868e-1 $-$&\hl{9.9979e-1}\\
-  \hline
-  \multirow{5}{*}{DTLZ2}&3&5.5930e-1 $+$&\hl{5.5931e-1 $+$}&5.5920e-1 $\approx$&5.5922e-1\\
-  &5&\hl{8.1227e-1 $+$}&8.1226e-1 $+$&8.1190e-1 $\approx$&8.1185e-1\\
-  &8&\hl{9.2387e-1 $+$}&9.1761e-1 $-$&9.1557e-1 $-$&9.2295e-1\\
-  &10&\hl{9.6974e-1 $+$}&9.6791e-1 $-$&9.6076e-1 $\approx$&9.6928e-1\\
-  &15&\hl{9.9064e-1 $+$}&9.7725e-1 $-$&9.7763e-1 $-$&9.9049e-1\\
-  \hline
-  \multirow{5}{*}{DTLZ3}&3&5.5523e-1 $\approx$&\hl{5.5640e-1 $+$}&5.5350e-1 $\approx$&5.5416e-1\\
-  &5&\hl{8.1181e-1 $+$}&8.1160e-1 $\approx$&8.1057e-1 $\approx$&8.1111e-1\\
-  &8&\hl{9.1127e-1 $+$}&8.6752e-1 $+$&8.0316e-1 $\approx$&8.5108e-1\\
-  &10&9.6601e-1 $-$&9.1269e-1 $\approx$&9.4408e-1 $\approx$&\hl{9.6928e-1}\\
-  &15&\hl{9.8388e-1 $+$}&8.9576e-1 $-$&9.2701e-1 $-$&9.5216e-1\\
-  \hline
-  \multirow{5}{*}{DTLZ4}&3&4.7651e-1 $\approx$&4.5458e-1 $\approx$&\hl{5.1669e-1 $\approx$}&5.1610e-1\\
-  &5&\hl{8.1276e-1 $+$}&7.5770e-1 $\approx$&8.0893e-1 $\approx$&8.1222e-1\\
-  &8&\hl{9.2404e-1 $+$}&8.6682e-1 $-$&9.0200e-1 $-$&9.2386e-1\\
-  &10&\hl{9.6985e-1 $+$}&9.6057e-1 $\approx$&9.6475e-1 $\approx$&9.6962e-1\\
-  &15&\hl{9.9063e-1 $+$}&9.7976e-1 $-$&9.8039e-1 $-$&9.9054e-1\\
-  \hline
-  \multirow{5}{*}{WFG4}&3&\hl{5.5444e-1 $+$}&5.5418e-1 $+$&5.5346e-1 $\approx$&5.5341e-1\\
-  &5&8.0675e-1 $+$&\hl{8.0693e-1 $+$}&8.0550e-1 $\approx$&8.0550e-1\\
-  &8&9.2131e-1 $+$&\hl{9.2139e-1 $+$}&9.2090e-1 $\approx$&9.2074e-1\\
-  &10&9.6799e-1 $+$&\hl{9.6816e-1 $+$}&9.6527e-1 $\approx$&9.6717e-1\\
-  &15&\hl{9.9047e-1 $+$}&9.9001e-1 $-$&9.8924e-1 $\approx$&9.9034e-1\\
-  \hline
-  \multirow{5}{*}{WFG5}&3&5.1806e-1 $\approx$&\hl{5.1809e-1 $\approx$}&5.1792e-1 $\approx$&5.1807e-1\\
-  &5&\hl{7.6139e-1 $\approx$}&7.6138e-1 $\approx$&7.6122e-1 $\approx$&7.6121e-1\\
-  &8&\hl{8.6362e-1 $\approx$}&8.6346e-1 $\approx$&8.6148e-1 $\approx$&8.6352e-1\\
-  &10&9.0480e-1 $\approx$&\hl{9.0483e-1 $+$}&9.0472e-1 $\approx$&9.0472e-1\\
-  &15&9.1755e-1 $\approx$&9.1692e-1 $\approx$&\hl{9.1760e-1 $+$}&9.1757e-1\\
-  \hline
-  \multirow{5}{*}{WFG6}&3&4.9914e-1 $\approx$&4.9622e-1 $\approx$&\hl{5.0159e-1 $\approx$}&4.9636e-1\\
-  &5&7.3987e-1 $\approx$&7.4104e-1 $\approx$&\hl{7.4217e-1 $\approx$}&7.3886e-1\\
-  &8&\hl{8.4426e-1 $\approx$}&8.3383e-1 $\approx$&8.4157e-1 $\approx$&8.3713e-1\\
-  &10&\hl{8.8289e-1 $\approx$}&8.7764e-1 $\approx$&8.7993e-1 $\approx$&8.8113e-1\\
-  &15&8.8290e-1 $-$&8.8690e-1 $\approx$&\hl{8.9577e-1 $\approx$}&8.9349e-1\\
-  \hline
-  \multirow{5}{*}{WFG7}&3&\hl{5.5555e-1 $+$}&5.5536e-1 $+$&5.5462e-1 $\approx$&5.5447e-1\\
-  &5&8.0958e-1 $+$&\hl{8.0965e-1 $+$}&8.0826e-1 $\approx$&8.0823e-1\\
-  &8&\hl{9.2207e-1 $+$}&9.1944e-1 $-$&9.2100e-1 $\approx$&9.2086e-1\\
-  &10&\hl{9.6869e-1 $+$}&9.6725e-1 $-$&9.6434e-1 $\approx$&9.6816e-1\\
-  &15&9.9031e-1 $\approx$&9.8044e-1 $-$&9.8214e-1 $-$&\hl{9.9037e-1}\\
-  \hline
-  \multirow{5}{*}{WFG8}&3&4.6650e-1 $+$&\hl{4.6758e-1 $+$}&4.6618e-1 $+$&4.6374e-1\\
-  &5&6.9521e-1 $\approx$&6.9534e-1 $\approx$&6.9591e-1 $\approx$&\hl{6.9641e-1}\\
-  &8&8.0375e-1 $-$&7.9290e-1 $-$&7.9295e-1 $-$&\hl{8.0966e-1}\\
-  &10&\hl{8.9230e-1 $\approx$}&8.7460e-1 $-$&8.7512e-1 $-$&8.8640e-1\\
-  &15&9.2903e-1 $-$&9.1506e-1 $-$&9.2882e-1 $-$&\hl{9.4072e-1}\\
-  \hline
-  \multirow{5}{*}{WFG9}&3&5.2117e-1 $\approx$&\hl{5.2609e-1 $+$}&5.2377e-1 $\approx$&5.2441e-1\\
-  &5&7.6923e-1 $+$&\hl{7.6993e-1 $+$}&7.6052e-1 $\approx$&7.6023e-1\\
-  &8&\hl{8.6404e-1 $+$}&8.6402e-1 $+$&8.2685e-1 $\approx$&8.3242e-1\\
-  &10&9.1753e-1 $+$&\hl{9.1970e-1 $+$}&8.8934e-1 $\approx$&8.9248e-1\\
-  &15&9.1855e-1 $+$&\hl{9.2695e-1 $+$}&9.1800e-1 $+$&8.7976e-1\\
-  \hline
-  \multicolumn{2}{c}{$+/-/\approx$}&26/5/19&18/14/18&3/10/37&\\
-  \bottomrule
-  \end{tabular}
-  \label{No Label}
+\begin{table*}[!t]\footnotesize
+    \caption{HV mean and standard deviation over 20 independent runs for inverted-triangular pareto front problems.} %加粗是好，灰色是坏
+    \label{table_FVEMOA_itri}
+    \centering
+    \begin{tabular}{ccccccc}
+        \toprule
+        Problem&$M$&$D$&FV-EMOA-2&FV-EMOA-Opt&FV-EMOA-LD&FV-EMOA-CD\\ 
+        \midrule
+        \multirow{1}{*}{MinusDTLZ1}&3&7&\hl{4.8083e+7 (1.08e+5) $-$}&\semitextbf{4.9842e+7 (2.58e+4) $\approx$}&4.9832e+7 (2.04e+4) $\approx$&4.9842e+7 (2.51e+4)\\
+        \multirow{1}{*}{MinusDTLZ1}&5&9&\hl{5.6448e+11 (8.23e+9) $-$}&8.5886e+11 (4.19e+9) $\approx$&8.3910e+11 (5.37e+9) $-$&\semitextbf{8.5919e+11 (5.29e+9)}\\
+        \multirow{1}{*}{MinusDTLZ2}&3&12&\hl{3.0452e+1 (3.82e-2) $-$}&3.0690e+1 (7.55e-2) $\approx$&\semitextbf{3.0919e+1 (5.32e-2) $+$}&3.0696e+1 (9.18e-2)\\
+        \multirow{1}{*}{MinusDTLZ2}&5&14&\hl{8.5606e+1 (1.02e+0) $-$}&1.0680e+2 (4.56e-1) $\approx$&\semitextbf{1.0766e+2 (3.15e-1) $+$}&1.0657e+2 (5.69e-1)\\
+        \multirow{1}{*}{MinusDTLZ3}&3&12&\hl{7.5985e+9 (7.41e+6) $-$}&7.6308e+9 (2.89e+7) $\approx$&\semitextbf{7.7119e+9 (1.32e+7) $+$}&7.6232e+9 (3.43e+7)\\
+        \multirow{1}{*}{MinusDTLZ3}&5&14&\hl{8.5019e+15 (1.14e+14) $-$}&1.0539e+16 (4.69e+13) $\approx$&\semitextbf{1.0603e+16 (7.31e+13) $+$}&1.0526e+16 (4.87e+13)\\
+        \multirow{1}{*}{MinusDTLZ4}&3&12&\hl{3.0434e+1 (3.77e-2) $-$}&3.1092e+1 (2.34e-2) $\approx$&\semitextbf{3.1116e+1 (1.64e-2) $+$}&3.1089e+1 (2.57e-2)\\
+        \multirow{1}{*}{MinusDTLZ4}&5&14&\hl{8.4994e+1 (1.50e+0) $-$}&\semitextbf{1.0797e+2 (1.95e-1) $\approx$}&1.0756e+2 (2.10e-1) $-$&1.0795e+2 (1.89e-1)\\      
+        \hline
+        \multirow{1}{*}{MinusWFG1}&3&12&\hl{6.9856e+0 (2.77e-2) $-$}&7.1742e+0 (4.52e-2) $\approx$&\semitextbf{7.1857e+0 (2.74e-2) $+$}&7.1844e+0 (3.78e-2)\\
+        \multirow{1}{*}{MinusWFG1}&5&14&\hl{1.4147e+1 (2.48e-1) $-$}&\semitextbf{1.5635e+1 (2.33e-1) $\approx$}&1.5284e+1 (2.01e-1) $-$&1.5539e+1 (2.02e-1)\\
+        \multirow{1}{*}{MinusWFG2}&3&12&\hl{1.8711e+1 (1.19e-2) $-$}&1.8965e+1 (4.48e-3) $\approx$&1.8958e+1 (4.32e-3) $-$&\semitextbf{1.8967e+1 (3.80e-3)}\\
+        \multirow{1}{*}{MinusWFG2}&5&14&\hl{4.7715e+1 (1.85e-1) $-$}&\semitextbf{5.6183e+1 (1.78e-1) $\approx$}&5.5939e+1 (1.85e-1) $-$&5.6168e+1 (1.71e-1)\\
+        \multirow{1}{*}{MinusWFG3}&3&12&\hl{1.3765e+1 (3.31e-2) $-$}&1.4269e+1 (9.29e-3) $\approx$&\semitextbf{1.4275e+1 (6.86e-3) $\approx$}&1.4274e+1 (7.04e-3)\\
+        \multirow{1}{*}{MinusWFG3}&5&14&\hl{4.2737e+1 (6.41e-1) $-$}&6.3482e+1 (7.07e-1) $\approx$&6.2143e+1 (7.62e-1) $-$&\semitextbf{6.3513e+1 (6.15e-1)}\\
+        \multirow{1}{*}{MinusWFG4}&3&12&\hl{3.4059e+1 (4.33e-2) $-$}&3.4700e+1 (4.83e-2) $\approx$&\semitextbf{3.4783e+1 (3.16e-2) $+$}&3.4725e+1 (5.17e-2)\\
+        \multirow{1}{*}{MinusWFG4}&5&14&\hl{6.2416e+2 (1.05e+1) $-$}&7.9011e+2 (1.26e+0) $\approx$&7.8781e+2 (2.02e+0) $-$&\semitextbf{7.9023e+2 (1.63e+0)}\\
+        \hline
+        \multirow{1}{*}{MaF1}&3&12&\hl{2.8634e-1 (7.00e-4) $-$}&\semitextbf{2.9746e-1 (1.36e-4) $\approx$}&2.9736e-1 (1.36e-4) $\approx$&2.9736e-1 (1.87e-4)\\
+        \multirow{1}{*}{MaF1}&5&14&\hl{1.1011e-2 (1.83e-4) $-$}&1.6331e-2 (1.39e-4) $\approx$&1.6138e-2 (1.73e-4) $-$&\semitextbf{1.6331e-2 (9.90e-5)}\\
+        \multirow{1}{*}{MaF4}&3&12&4.0852e+1 (9.56e+0) $-$&\hl{3.9125e+1 (1.44e+1) $\approx$}&4.1884e+1 (1.07e+1) $\approx$&\semitextbf{4.4345e+1 (2.82e+0)}\\
+        \multirow{1}{*}{MaF4}&5&14&\hl{3.7215e+3 (1.64e+3) $-$}&\semitextbf{6.2601e+3 (2.81e+2) $\approx$}&6.2386e+3 (3.23e+2) $\approx$&6.1540e+3 (4.87e+2)\\
+        \hline
+        \multirow{1}{*}{Inverted-DTLZ1}&3&7&\hl{3.5744e-2 (1.47e-4) $-$}&3.6520e-2 (1.11e-3) $\approx$&\semitextbf{3.6961e-2 (2.51e-4) $\approx$}&3.6897e-2 (4.23e-4)\\
+        \multirow{1}{*}{Inverted-DTLZ1}&5&9&\hl{3.1124e-4 (4.25e-5) $-$}&\semitextbf{4.7494e-4 (4.71e-5) $\approx$}&4.5874e-4 (6.97e-5) $\approx$&4.2499e-4 (1.00e-4)\\
+        \multirow{1}{*}{Inverted-DTLZ2}&3&12&\hl{7.0894e-1 (1.17e-3) $-$}&7.1559e-1 (2.72e-3) $\approx$&\semitextbf{7.2070e-1 (1.16e-3) $+$}&7.1612e-1 (2.45e-3)\\
+        \multirow{1}{*}{Inverted-DTLZ2}&5&14&\hl{1.6127e-1 (2.18e-3) $-$}&2.0287e-1 (8.88e-4) $\approx$&\semitextbf{2.0452e-1 (6.98e-4) $+$}&2.0326e-1 (5.90e-4)\\
+        \hline
+        \multicolumn{3}{c}{$+/-/\approx$}&0/24/0&0/0/24&9/8/7&\\
+        \bottomrule
+    \end{tabular}
   \end{table*}
+
 Each experiment has been run for twenty times independently. 
 And the population size is $100$, $r_{Initial}=2$.
 The detailed algorithms are as following: 
-FV-EMOA-2(the FV-EMOA\cite{FVEMOA} algorithm with $r=2$),
+FV-EMOA-2(the FV-EMOA\cite{FVEMOA} algorithm with the reference point adaptation with $r=2$),
+FV-EMOA-Opt(the FV-EMOA algorithm with the reference point adaptation with $r=1+1/H$),
 FV-EMOA-LD(the FV-EMOA algorithm with a linearly decrease mechanism),
-FV-EMOA-CD(the FV-EMOA algorithm with a weak convergence detection mechanism, proposed in this paper)
-and FV-EMOA-Opt(the FV-EMOA algorithm with $r=1+1/H$).
-% And the HypE\cite{HypE} versions:
-% HypE-2(the HypE algorithm with $r=2$),
-% HypE-LD(the HypE algorithm with a linearly decrease mechanism),
-% HypE-CD(the HypE algorithm with a weak convergence detection mechanism, proposed in this paper)
-% and HypE-Opt(the HypE algorithm with $r=1+1/H$).
+and FV-EMOA-CD(the FV-EMOA algorithm with a weak convergence detection mechanism, proposed in this paper).
 We obtain the hypervolume results after $40000$ evaluations for each algorithm. 
-The computational results is shown in TABLE \ref{table_hv_FVEMOA}.%, and TABLE \ref{table_hv_HypE}. 
-In triangular pareto front problems(DTLZ1, C1-DTLZ1), 
-we can not tell the differences among the four algorithms in TABLE \ref{table_hv_FVEMOA},
-for that all the four algorithms are more or less the best or the worst. 
-Note that, the hypervolume results of FV-EMOA-LD with DTLZ1 problem and 10-dimension is all 0,
-because of the un-convergence of the algorithm.
-But in inverted-triangular pareto front problems(Inverted-DTLZ1, MaF1), 
-FV-EMOA-2 performs the worst in all experiments,
-for that the $r$ is $2$ all the process of algorithm. 
-What's more, we can not tell the differences among the other three algorithms, 
-for that the $r_{Final}$ of the three algorithms are all $1+1/H$.
-% The similar results are obtained in TABLE \ref{table_hv_HypE} with HypE-based algorithms.
+The computational results is shown in TABLE \ref{table_FVEMOA_tri} and TABLE \ref{table_FVEMOA_itri}. 
+
+In the basic test problems(DTLZ1-4, WFG1, 2, 4 with the triangular pareto front except WFG3), 
+we can not tell the differences among the four algorithms in TABLE \ref{table_FVEMOA_tri},
+for that all the four algorithms are more or less the best or the worst 
+and the Wilcoxon rank sum tests show that almost all the results from the other three algorithms are not significantly different from FV-EMOA-CD
+(except 2 results from FV-EMOA-Opt are worse than results from FV-EMOA-CD). 
+
+But in the results of inverted-triangular pareto front problems (MinusDTLZ1-4, MinusWFG1-4, Inverted-DTLZ1, 4, MaF1, 2), 
+FV-EMOA-2 performs almost the worst in all experiments (23 out of 24), 
+and the Wilcoxon rank sum tests show that all the results from FV-EMOA-2 are significantly worse than FV-EMOA-CD. 
+The reason is that the $r$ is $2$ all the process of FV-EMOA-2 algorithm. 
+Comparing with FV-EMOA-CD, the final hypervolume values of FV-EMOA-Opt are not significantly different. 
+And it is difficult to say FV-EMOA-CD is better than FV-EMOA-LD or vice versa,
+for that near one third of results are better, one third are worse, one third are not significantly different. 
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- The Importance of Dynamic Mechanism ----------------------------------
 % 
 \subsection{The Importance of Using Dynamic Mechanism}
-We plot the final solutions distributions of some experiments including DTLZ4 and minus-DTLZ4 in 3-dimension.
-In Fig. \ref{iudm:d}, the solutions are poor distributed comparing with Fig. \ref{iudm:a}-\ref{iudm:c}.
+We plot the final solutions distributions of some experiments including DTLZ4 and minus-DTLZ4 
+in 3-dimension (as shown in Fig. \ref{iudm1}) and in 5-dimension (as shown in Fig. \ref{iudm2}).
+The solutions distributions of Fig. \ref{iudm1:a} - \ref{iudm1:c} hint that 
+the FVEMOA do not have good performance on concave pareto front problems. 
+In Fig. \ref{iudm1:d}, the solutions are poor distributed comparing with Fig. \ref{iudm1:a}-\ref{iudm1:c}.
+This phenomenon is also observed in Fig. \ref{iudm2:d}.
 \begin{figure}[!t]
   \centering
   \subfloat[FV-EMOA-2]{\label{iudm1:a}
@@ -703,41 +684,33 @@ In Fig. \ref{iudm:d}, the solutions are poor distributed comparing with Fig. \re
 \begin{figure}[!t]
   \centering
   \subfloat[FV-EMOA-2]{\label{iudm2:a}
-    \includegraphics[width=1.5in]{FVEMOA_DTLZ4_3}}\quad
+    \includegraphics[width=1.5in]{FVEMOA_DTLZ4_5}}\quad
   \subfloat[FV-EMOA-LD]{\label{iudm2:b}
-    \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_3}}\\
+    \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_5}}\\
   \subfloat[FV-EMOA-CD]{\label{iudm2:c}
-    \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_3}}\quad
+    \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_5}}\quad
   \subfloat[FV-EMOA-Opt]{\label{iudm2:d}
-    \includegraphics[width=1.5in]{FVEMOA_optimal_DTLZ4_4}}\\
-  \caption{
-    The final distribution of 4 reference point strategies on 4-dimensional DTLZ4 problems.
-  }
-  \label{iudm2}
-\end{figure} 
-\begin{figure}[!t]
-  \centering
-  \subfloat[FV-EMOA-2]{\label{iudm3:a}
-    \includegraphics[width=1.5in]{FVEMOA_DTLZ4_3}}\quad
-  \subfloat[FV-EMOA-LD]{\label{iudm3:b}
-    \includegraphics[width=1.5in]{FVEMOA_DR_DTLZ4_3}}\\
-  \subfloat[FV-EMOA-CD]{\label{iudm3:c}
-    \includegraphics[width=1.5in]{FVEMOA_DR2_DTLZ4_3}}\quad
-  \subfloat[FV-EMOA-Opt]{\label{iudm3:d}
     \includegraphics[width=1.5in]{FVEMOA_optimal_DTLZ4_5}}\\
   \caption{
     The final distribution of 4 reference point strategies on 5-dimensional DTLZ4 problems.
   }
-  \label{iudm3}
+  \label{iudm2}
 \end{figure} 
-FV-EMOA-Opt applies $r_{Initial} = 1+1/H$ mechanism at the early stage of algorithm 
+The standard deviations of FV-EMOA-Opt on the DTLZ4 problem (shown in the TABLE \ref{table_FVEMOA_tri}) are both higher
+than other three algorithms in 3- and 5-dimension($2.14e-1$  comparing with $1.21e-1, 1.31e-1, 1.76e-1$ in 3-dimension 
+and $1.01e-1$ comparing with $9.98e-2, 7.21e-2, 6.05e-2$ in 5-dimension).
+This observation also shows that the solutions distributions of some runs in FV-EMOA-Opt are poor over the total 20 runs.
+
+In FV-EMOA-Opt, the algorithm applies $r_{Initial} = 1+1/H$ mechanism at the early stage of algorithm 
 while other three algorithms apply $r_{Initial} = 2$.
 Even though the $r_{final}$ of FV-EMOA-LD, FV-EMOA-CD and FV-EMOA-Opt are all equal to $1+1/H$, 
-FV-EMOA-Opt can not estimate the pareto front well due to the pool searching behavior at the early stage.
+FV-EMOA-Opt can not jump out from the local minimum and estimate the pareto front well 
+due to the pool searching behavior at the early stage. 
 
-The above example clearly shows the importance of using dynamic mechanism, 
+The above examples clearly show the importance of using dynamic mechanism, 
 that a slightly larger $r$ than $1+1/H$ can make the algorithm with a better searching behavior in 
-convergence stage where the solutions have not reached to the pareto front. 
+convergence stage where the solutions have not reached to the pareto front 
+especially for the problems which is difficult to find the whole solutions space like the DTLZ4 problem. 
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- comparison of two dynamic mechanism ----------------------------------
@@ -747,10 +720,20 @@ convergence stage where the solutions have not reached to the pareto front.
 % rinit = 10
 %
 \subsection{Comparison of Two Dynamic Mechanisms}
-We want to further investigate the differences between two dynamic mechanisms. 
-Here is the examples of the final distribution on MaF1 problem(as shown in Fig. \ref{ctdm1}).
+We want to further investigate the differences between two dynamic mechanisms 
+(the linearly decrease mechanism and the weak convergence detection mechanism). 
+Here is the examples of the final distribution on MaF1 problem(as shown in Fig. \ref{ctdm}).
+The total evaluation number is set to $3500$ and the convergence is detected at $3400$ evaluations. 
+The solutions distribution of FV-EMOA-CD(Fig. \ref{ctdm:c}) is similar to 
+the that of FV-EMOA-Opt(Fig. \ref{ctdm:d})
+while there are still overmany solutions at the boundary of pareto front in FV-EMOA-LD(Fig. \ref{ctdm:b}). 
 
-
+The reason is quite intuitionistic.
+In the linearly decrease mechanism, the total evaluation number is so small that it is too late for the solutions 
+to distribute evenly when reaching to the final generation. 
+But in the weak convergence detection mechanism, a convergence is reported after 3400 evaluations and 
+the algorithm still has 100 evaluations to make a well solutions distribution. 
+% conclusion里写
 \begin{figure}[!t]
   \centering
   \subfloat[FV-EMOA-2]{\label{ctdm:a}
@@ -761,31 +744,17 @@ Here is the examples of the final distribution on MaF1 problem(as shown in Fig. 
     \includegraphics[width=1.5in]{FVEMOA_DR2_MaF1_M3_3500_3400convergence}}\quad
   \subfloat[FV-EMOA-Opt]{\label{ctdm:d}
     \includegraphics[width=1.5in]{FVEMOA_optimal_MaF1_M3_3500_3400convergence}}\\
-  \subfloat[FV-EMOA-2]{\label{ctdm:e}
-    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_M3_19000_18100convergence_evenly}}\quad
-  \subfloat[FV-EMOA-LD]{\label{ctdm:f}
-    \includegraphics[width=1.5in]{FVEMOA_DR_IDTLZ1_M3_19000_18100convergence_evenly}}\\
-  \subfloat[FV-EMOA-CD]{\label{ctdm:g}
-    \includegraphics[width=1.5in]{FVEMOA_DR2_IDTLZ1_M3_19000_18100convergence}}\quad
-  \subfloat[FV-EMOA-Opt]{\label{ctdm:h}
-    \includegraphics[width=1.5in]{FVEMOA_optimal_IDTLZ1_M3_19000_18100convergence_evenly}}\\
   \caption{
-    The final distribution of 4 reference point strategies on MaF1(\ref{ctdm:a}-\ref{ctdm:d})
-    and inverted-DTLZ1(\ref{ctdm:e}-\ref{ctdm:h}) problems.
+    The final distribution of 4 reference point strategies on MaF1 problem.
     The results are obtained after 3500 evaluations($t_{Convergent} = 3400$).
   }
   \label{ctdm}
 \end{figure} 
 \section{Conclusion}
-The conclusion goes here.
-
-
-% use section* for acknowledgment
-\section*{Acknowledgment}
-
-
-The authors would like to thank...\cite{IEEEhowto:kopka1}
-
+In this paper, we emphasize the importance of reference point adaptation 
+in indicator-based EMOA. 
+Without a reference point adaptation mechanism, the diversity of the final solutions will be poor
+on inverted-shape pareto front problems. 
 
 \bibliographystyle{IEEEtran} 
 \bibliography{mybibtex} 

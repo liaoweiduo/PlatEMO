@@ -95,11 +95,6 @@ J.~Bader and E.~Zitzler, ``Hype: An algorithm for fast hypervolume-based
   many-objective optimization,'' \emph{Evolutionary computation}, vol.~19,
   no.~1, pp. 45--76, 2011, [J]EC.
 
-\bibitem{C1DTLZ1}
-Q.~Zhang and H.~Li, ``Moea/d: A multiobjective evolutionary algorithm based on
-  decomposition,'' \emph{IEEE Transactions on evolutionary computation},
-  vol.~11, no.~6, pp. 712--731, 2007, [J]TEVC.
-
 \bibitem{IDTLZ1}
 N.~Beume, B.~Naujoks, and M.~Emmerich, ``Sms-emoa: Multiobjective selection
   based on dominated hypervolume,'' \emph{European Journal of Operational
@@ -109,10 +104,5 @@ N.~Beume, B.~Naujoks, and M.~Emmerich, ``Sms-emoa: Multiobjective selection
 S.~Huband, P.~Hingston, L.~Barone, and L.~While, ``A review of multiobjective
   test problems and a scalable test problem toolkit,'' \emph{IEEE Transactions
   on Evolutionary Computation}, vol.~10, no.~5, pp. 477--506, 2006, [J]TEVC.
-
-\bibitem{IEEEhowto:kopka1}
-O.~Grodzevich and O.~Romanko, ``Normalization and other topics in
-  multi-objective optimization,'' in \emph{Fields-MITACS Industrial Problems
-  Workshop}, 2006.
 
 \end{thebibliography}

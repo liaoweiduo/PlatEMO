@@ -8,53 +8,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mybibtex.bib
-Warning--I didn't find a database entry for "convergenceDetection"
-Warning--I didn't find a database entry for "WFG"
-Warning--I didn't find a database entry for "minus"
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in convergenceDetection:convergenceMetric
 
 Done.
-You've used 15 entries,
+You've used 29 entries,
             4024 wiz_defined-function locations,
-            906 strings with 10137 characters,
-and the built_in function-call counts, 13759 in all, are:
-= -- 1178
-> -- 325
-< -- 136
-+ -- 178
-- -- 52
-* -- 698
-:= -- 2068
-add.period$ -- 33
-call.type$ -- 15
-change.case$ -- 26
-chr.to.int$ -- 306
-cite$ -- 15
-duplicate$ -- 950
-empty$ -- 990
-format.name$ -- 67
-if$ -- 3159
+            998 strings with 13596 characters,
+and the built_in function-call counts, 25637 in all, are:
+= -- 2044
+> -- 638
+< -- 246
++ -- 358
+- -- 110
+* -- 1266
+:= -- 3671
+add.period$ -- 71
+call.type$ -- 29
+change.case$ -- 28
+chr.to.int$ -- 582
+cite$ -- 30
+duplicate$ -- 1776
+empty$ -- 2068
+format.name$ -- 132
+if$ -- 5978
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 163
-newline$ -- 68
-num.names$ -- 15
-pop$ -- 319
+int.to.str$ -- 29
+missing$ -- 302
+newline$ -- 114
+num.names$ -- 29
+pop$ -- 693
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1060
+skip$ -- 1961
 stack$ -- 0
-substring$ -- 749
-swap$ -- 842
-text.length$ -- 34
+substring$ -- 1400
+swap$ -- 1521
+text.length$ -- 52
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
-warning$ -- 0
-while$ -- 71
-width$ -- 17
-write$ -- 187
-(There were 3 warnings)
+type$ -- 29
+warning$ -- 1
+while$ -- 129
+width$ -- 31
+write$ -- 311
+(There was 1 warning)

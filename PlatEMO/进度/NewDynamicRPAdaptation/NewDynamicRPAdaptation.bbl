@@ -21,88 +21,174 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{ut}
-C.~Liu, Q.~Zhao, B.~Yan, S.~Elsayed, T.~Ray, and R.~Sarker, ``Adaptive
-  sorting-based evolutionary algorithm for many-objective optimization,''
-  \emph{IEEE Transactions on Evolutionary Computation}, 2018, [J]TEVC.
+\bibitem{hypervolume}
+E.~Zitzler and L.~Thiele, ``Multiobjective optimization using evolutionary
+  algorithms—a comparative case study,'' in \emph{International conference on
+  parallel problem solving from nature}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Springer, 1998, pp. 292--301.
 
-\bibitem{hisao1}
-O.~P. Jones, J.~E. Oakley, and R.~C. Purshouse, ``Component-level study of a
-  decomposition-based multi-objective optimizer on a limited evaluation
-  budget,'' in \emph{Proceedings of the Genetic and Evolutionary Computation
-  Conference}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2018, pp. 689--696,
-  [C]GECCO.
+\bibitem{R2}
+M.~P. Hansen and A.~Jaszkiewicz, \emph{Evaluating the quality of approximations
+  to the non-dominated set}.\hskip 1em plus 0.5em minus 0.4em\relax IMM,
+  Department of Mathematical Modelling, Technical Universityof Denmark, 1994.
 
-\bibitem{hisao2}
-H.~Ishibuchi, R.~Imada, Y.~Setoguchi, and Y.~Nojima, ``How to specify a
-  reference point in hypervolume calculation for fair performance comparison,''
-  \emph{Evolutionary computation}, pp. 1--29, 2018, [J]EC.
+\bibitem{e+}
+\BIBentryALTinterwordspacing
+E.~Zitzler, L.~Thiele, M.~Laumanns, C.~M. Fonseca, and V.~G. da~Fonseca,
+  ``Performance assessment of multiobjective optimizers: An analysis and
+  review,'' \emph{Trans. Evol. Comp}, vol.~7, no.~2, pp. 117--132, Apr. 2003.
+  [Online]. Available: \url{http://dx.doi.org/10.1109/TEVC.2003.810758}
+\BIBentrySTDinterwordspacing
 
-\bibitem{hisaos}
-------, ``Reference point specification in hypervolume calculation for fair
-  comparison and efficient search,'' in \emph{Proceedings of the Genetic and
-  Evolutionary Computation Conference}.\hskip 1em plus 0.5em minus 0.4em\relax
-  ACM, 2017, pp. 585--592, [C]GECCO.
+\bibitem{IGD}
+C.~A.~C. Coello and M.~R. Sierra, ``A study of the parallelization of a
+  coevolutionary multi-objective evolutionary algorithm,'' in \emph{Mexican
+  International Conference on Artificial Intelligence}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2004, pp. 688--697.
 
-\bibitem{smsemoa}
-H.~Ishibuchi, Y.~Setoguchi, H.~Masuda, and Y.~Nojima, ``Performance of
-  decomposition-based many-objective algorithms strongly depends on pareto
-  front shapes,'' \emph{IEEE Transactions on Evolutionary Computation},
-  vol.~21, no.~2, pp. 169--190, 2017, [J]TEVC.
+\bibitem{pareto_compliant}
+E.~Zitzler, D.~Brockhoff, and L.~Thiele, ``The hypervolume indicator revisited:
+  On the design of pareto-compliant indicators via weighted integration,'' in
+  \emph{International Conference on Evolutionary Multi-Criterion
+  Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2007, pp.
+  862--876.
 
-\bibitem{hisao3}
-Y.~Tian, R.~Cheng, X.~Zhang, and Y.~Jin, ``{PlatEMO}: A {MATLAB} platform for
-  evolutionary multi-objective optimization,'' \emph{IEEE Computational
-  Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
+\bibitem{hypervolume:computationLoad}
+N.~Beume, C.~M. Fonseca, M.~Lopez-Ibanez, L.~Paquete, and J.~Vahrenhold, ``On
+  the complexity of computing the hypervolume indicator,'' \emph{IEEE
+  Transactions on Evolutionary Computation}, vol.~13, no.~5, pp. 1075--1082,
+  2009.
 
-\bibitem{zhangqingfuHypE}
-H.~Ishibuchi, R.~Imada, Y.~Setoguchi, and Y.~Nojima, ``Hypervolume subset
-  selection for triangular and inverted triangular pareto fronts of
-  three-objective problems,'' in \emph{Proceedings of the 14th ACM/SIGEVO
-  Conference on Foundations of Genetic Algorithms}.\hskip 1em plus 0.5em minus
-  0.4em\relax ACM, 2017, pp. 95--110.
-
-\bibitem{hisao}
-H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
-  for multi-objective and many-objective optimization,'' \emph{Complex \&
-  Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
-
-\bibitem{hisao26}
-Y.~Yuan, H.~Xu, B.~Wang, and X.~Yao, ``A new dominance relation-based
-  evolutionary algorithm for many-objective optimization,'' \emph{IEEE
-  Transactions on Evolutionary Computation}, vol.~20, no.~1, pp. 16--37, 2016,
-  [J]TEVC.
-
-\bibitem{lscd27}
-H.~Jain and K.~Deb, ``An evolutionary many-objective optimization algorithm
-  using reference-point based nondominated sorting approach, part ii: Handling
-  constraints and extending to an adaptive approach.'' \emph{IEEE Trans.
-  Evolutionary Computation}, vol.~18, no.~4, pp. 602--622, 2014, [J]TEVC.
-
-\bibitem{lscd}
-K.~Deb and H.~Jain, ``An evolutionary many-objective optimization algorithm
-  using reference-point-based nondominated sorting approach, part i: Solving
-  problems with box constraints.'' \emph{IEEE Trans. Evolutionary Computation},
-  vol.~18, no.~4, pp. 577--601, 2014, [J]TEVC.
-
-\bibitem{FVEMOA}
-L.~While, L.~Bradstreet, and L.~Barone, ``A fast way of calculating exact
-  hypervolumes,'' \emph{IEEE Transactions on Evolutionary Computation},
-  vol.~16, no.~1, pp. 86--95, 2012, [J]TEVC.
-
-\bibitem{DTLZ1}
+\bibitem{HypE}
 J.~Bader and E.~Zitzler, ``Hype: An algorithm for fast hypervolume-based
   many-objective optimization,'' \emph{Evolutionary computation}, vol.~19,
-  no.~1, pp. 45--76, 2011, [J]EC.
+  no.~1, pp. 45--76, 2011.
 
-\bibitem{IDTLZ1}
+\bibitem{newR2}
+\BIBentryALTinterwordspacing
+K.~Shang, H.~Ishibuchi, M.-L. Zhang, and Y.~Liu, ``A new r2 indicator for
+  better hypervolume approximation,'' in \emph{Proceedings of the Genetic and
+  Evolutionary Computation Conference}, ser. GECCO '18.\hskip 1em plus 0.5em
+  minus 0.4em\relax New York, NY, USA: ACM, 2018, pp. 745--752. [Online].
+  Available: \url{http://doi.acm.org/10.1145/3205455.3205543}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ismsemoa}
+A.~Menchaca-M{\'e}ndez, E.~Montero, and S.~Zapotecas-Mart{\'\i}nez, ``An
+  improved s-metric selection evolutionary multi-objective algorithm with
+  adaptive resource allocation,'' \emph{IEEE Access}, vol.~6, pp.
+  63\,382--63\,401, 2018.
+
+\bibitem{smsemoa}
 N.~Beume, B.~Naujoks, and M.~Emmerich, ``Sms-emoa: Multiobjective selection
   based on dominated hypervolume,'' \emph{European Journal of Operational
   Research}, vol. 181, no.~3, pp. 1653--1669, 2007.
 
-\bibitem{MaF1}
+\bibitem{FVEMOA}
+S.~Jiang, J.~Zhang, Y.-S. Ong, A.~N. Zhang, and P.~S. Tan, ``A simple and fast
+  hypervolume indicator-based multiobjective evolutionary algorithm,''
+  \emph{IEEE Transactions on Cybernetics}, vol.~45, no.~10, pp. 2202--2213,
+  2014.
+
+\bibitem{hisao:RPhowtoSpecify}
+H.~Ishibuchi, R.~Imada, S.~Yu, and Y.~Nojima, ``How to specify a reference
+  point in hypervolume calculation for fair performance comparison,''
+  \emph{Evolutionary Computation}, vol.~26, no.~3, pp. 1--29, 2018.
+
+\bibitem{hisao:RPspecify}
+H.~Ishibuchi, R.~Imada, Y.~Setoguchi, and Y.~Nojima, ``Reference point
+  specification in hypervolume calculation for fair comparison and efficient
+  search,'' in \emph{Proceedings of the Genetic and Evolutionary Computation
+  Conference}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2017, pp. 585--592.
+
+\bibitem{hisao:RPexplanation}
+------, ``Hypervolume subset selection for triangular and inverted triangular
+  pareto fronts of three-objective problems,'' in \emph{Proceedings of the 14th
+  ACM/SIGEVO Conference on Foundations of Genetic Algorithms}.\hskip 1em plus
+  0.5em minus 0.4em\relax ACM, 2017, pp. 95--110.
+
+\bibitem{hisao:dynamic}
+H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
+  a reference point for hypervolume calculation in sms-emoa,'' in \emph{2018
+  IEEE Congress on Evolutionary Computation (CEC)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2018, pp. 1--8.
+
+\bibitem{hisao:twoRP}
+------, ``Use of two reference points in hypervolume-based evolutionary
+  multiobjective optimization algorithms,'' in \emph{International Conference
+  on Parallel Problem Solving from Nature}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2018, pp. 384--396.
+
+\bibitem{convergenceDetection:1}
+H.~Trautmann, U.~Ligges, J.~Mehnen, and M.~Preuss, ``A convergence criterion
+  for multiobjective evolutionary algorithms based on systematic statistical
+  testing,'' in \emph{International Conference on Parallel Problem Solving from
+  Nature}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2008, pp. 825--836.
+
+\bibitem{convergenceDetection:LSSC}
+J.~L. Guerrero, L.~Mart{\'\i}, A.~Berlanga, J.~Garc{\'\i}a, and J.~M. Molina,
+  ``Introducing a robust and efficient stopping criterion for moeas,'' in
+  \emph{IEEE Congress on Evolutionary Computation}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2010, pp. 1--8.
+
+\bibitem{convergenceDetection:OCD}
+T.~Wagner, H.~Trautmann, and B.~Naujoks, ``Ocd: Online convergence detection
+  for evolutionary multi-objective algorithms based on statistical testing,''
+  in \emph{International Conference on Evolutionary Multi-Criterion
+  Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2009, pp.
+  198--215.
+
+\bibitem{convergenceDetection:OFCDandOCD}
+H.~Trautmann, T.~Wagner, B.~Naujoks, M.~Preuss, and J.~Mehnen, ``Statistical
+  methods for convergence detection of multi-objective evolutionary
+  algorithms,'' \emph{Evolutionary computation}, vol.~17, no.~4, pp. 493--509,
+  2009.
+
+\bibitem{convergenceDetection:convergenceMetric}
+K.~Deb and S.~Jain, ``Running performance metrics for evolutionary
+  multi-objective optimization,'' 2002.
+
+\bibitem{convergenceDetection:maxCD}
+O.~Rudenko and M.~Schoenauer, ``A steady performance stopping criterion for
+  pareto-based evolutionary algorithms,'' in \emph{6th International
+  Multi-Objective Programming and Goal Programming Conference}, 2004.
+
+\bibitem{convergenceDetection:online}
+T.~Wagner, H.~Trautmann, and L.~Mart{\'\i}, ``A taxonomy of online stopping
+  criteria for multi-objective evolutionary algorithms,'' in
+  \emph{International Conference on Evolutionary Multi-Criterion
+  Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2011, pp.
+  16--30.
+
+\bibitem{SimpleLeastSquares}
+W.~Ericson, ``Introductory probability and statistical applications,''
+  \emph{Technometrics}, vol.~8, no.~4, pp. 720--722, 1970.
+
+\bibitem{DTLZ}
+K.~Deb, L.~Thiele, M.~Laumanns, and E.~Zitzler, ``Scalable multi-objective
+  optimization test problems,'' in \emph{Proceedings of the 2002 Congress on
+  Evolutionary Computation. CEC'02 (Cat. No. 02TH8600)}, vol.~1.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2002, pp. 825--830.
+
+\bibitem{WFG}
 S.~Huband, P.~Hingston, L.~Barone, and L.~While, ``A review of multiobjective
   test problems and a scalable test problem toolkit,'' \emph{IEEE Transactions
-  on Evolutionary Computation}, vol.~10, no.~5, pp. 477--506, 2006, [J]TEVC.
+  on Evolutionary Computation}, vol.~10, no.~5, pp. 477--506, 2006.
+
+\bibitem{minusTestProblem}
+H.~Ishibuchi, Y.~Setoguchi, H.~Masuda, and Y.~Nojima, ``Performance of
+  decomposition-based many-objective algorithms strongly depends on pareto
+  front shapes,'' \emph{IEEE Transactions on Evolutionary Computation},
+  vol.~21, no.~2, pp. 169--190, 2016.
+
+\bibitem{MaF}
+R.~Cheng, M.~Li, Y.~Tian, X.~Zhang, S.~Yang, Y.~Jin, and X.~Yao, ``A benchmark
+  test suite for evolutionary many-objective optimization,'' \emph{Complex \&
+  Intelligent Systems}, vol.~3, no.~1, pp. 67--81, 2017.
+
+\bibitem{PlatEMO}
+T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for
+  evolutionary multi-objective optimization [educational forum],'' \emph{IEEE
+  Computational Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
 
 \end{thebibliography}

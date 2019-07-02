@@ -14,6 +14,7 @@ function FVEMOA_optimal(Global)
 
     %% Calculation of paremeter calculating reference point position r
     H = CalH(Global.N, Global.M);
+    disp(['H is ', num2str(H)]);
     R = 1 + 1./H;
     
     %% Generate random population

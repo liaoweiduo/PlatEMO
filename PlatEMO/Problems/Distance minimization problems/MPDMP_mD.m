@@ -35,8 +35,8 @@ classdef MPDMP_mD < PROBLEM
             obj.Global.encoding = 'real';
             % Generate vertexes
             point1 = [1, zeros(1,obj.Global.D-1)];                  
-            point2 = [-1/2, sqrt(3)/2, zeros(1,obj.Global.D-2)];    
-            point3 = [-1/2,-sqrt(3)/2, zeros(1,obj.Global.D-2)];   
+            point2 = [-1/2, sqrt(3)/2, zeros(1,obj.Global.D-2)];
+            point3 = [-1/2,-sqrt(3)/2, zeros(1,obj.Global.D-2)];
             obj.Points = [point1;point2;point3];
         end
         %% Calculate objective values

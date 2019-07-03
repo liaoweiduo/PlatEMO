@@ -18,7 +18,7 @@ function FVEMOA_DR2(Global)
     [Rinit, window, threshold] = Global.ParameterSet(2, 4000, 0.00001);
     
     %% Calculation of paremeter calculating reference point position r
-    H = CalH(Global.N, Global.M);
+    H = getH(Global.M, Global.N);
     Rfinal = 1 + 1./H;
     
     %% Generate random population

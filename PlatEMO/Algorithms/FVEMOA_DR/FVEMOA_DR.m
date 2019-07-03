@@ -27,7 +27,7 @@ function FVEMOA_DR(Global)
     end
         
     %% Calculation of paremeter calculating reference point position r
-    H = CalH(Global.N, Global.M);
+    H = getH(Global.M, Global.N);
     Rfinal = 1 + 1./H;
     deltR = Rfinal - Rinit;
     n = Global.evaluation - Global.N - 1;

@@ -13,7 +13,7 @@ function FVEMOA_optimal(Global)
 %--------------------------------------------------------------------------
 
     %% Calculation of paremeter calculating reference point position r
-    H = CalH(Global.N, Global.M);
+    H = getH(Global.M, Global.N);
     disp(['H is ', num2str(H)]);
     R = 1 + 1./H;
     

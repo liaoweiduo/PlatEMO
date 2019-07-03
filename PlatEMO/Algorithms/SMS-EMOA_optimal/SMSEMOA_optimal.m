@@ -19,7 +19,8 @@ function SMSEMOA_optimal(Global)
 %--------------------------------------------------------------------------
     
     %% Calculation of paremeter calculating reference point position r
-    H = CalH(Global.N, Global.M);
+    H = getH(Global.M, Global.N);
+    disp(['H is ', num2str(H)]);
     Rfinal = 1 + 1./H;
     
     %% Generate random population

@@ -24,7 +24,7 @@ function SMSEMOA_DR2(Global)
     [Rinit, window, threshold] = Global.ParameterSet(2, 4000, 0.00001);
     
     %% Calculation of paremeter calculating reference point position r
-    H = CalH(Global.N, Global.M);
+    H = getH(Global.M, Global.N);
     Rfinal = 1 + 1./H;
     
     %% Generate random population
@@ -39,10 +39,12 @@ function SMSEMOA_DR2(Global)
     while Global.NotTermination(Population)
         
         nadir = max(Population.objs);
-            nadir_list(end + 1,:) = nadir;
-            evaluate_num(end + 1) = Global.evaluated;
+        nadir_list(end + 1,:) = nadir;
+        evaluate_num(end + 1) = Global.evaluated;
+        if ~saving
             r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);
-            r_list(end + 1) = r;
+        end
+        r_list(end + 1) = r;
             
         for i = 1 : Global.N
             drawnow();
@@ -52,7 +54,7 @@ function SMSEMOA_DR2(Global)
             
             if r == Rfinal && ~saving
                 % save nadir_list and evaluate_num and r_list
-                save(fullfile('Analysis',sprintf('%s_%s_N%d_M%d_D%d_%d_.mat',func2str(Global.algorithm),class(Global.problem),Global.N,Global.M,Global.D,Global.run)),'evaluate_num','nadir_list','r_list');
+%                 save(fullfile('Analysis',sprintf('%s_%s_N%d_M%d_D%d_%d_.mat',func2str(Global.algorithm),class(Global.problem),Global.N,Global.M,Global.D,Global.run)),'evaluate_num','nadir_list','r_list');
                 fprintf('r change to final at %d evaluation\n', Global.evaluated);
                 saving = 1;
             end

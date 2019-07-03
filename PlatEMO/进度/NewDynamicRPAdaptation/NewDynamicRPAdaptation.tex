@@ -278,6 +278,9 @@ we use hypervolume as the indicator to evaluate the performance of the solutions
 Then the reference point used to calculate the hypervolume is calculated by the formula above.
 %可以加一个介绍nadir point的图，如果8页不够的话。 !!!!!!!!
 
+The suggested value of $r$ is investigated in \cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}. 
+$r=1.1$ is not a suggested value, especially on problems with a flat(not concave or convex) pareto front.
+
 % ----------------------------------- dynamic mechanism ------------------------------------
 % 在算法运行的不同时期 early stage；final stage， 为了不同的目的，
 % （early stage是convergence， final stage是diversity） r应该设置成不同的值【我的本科毕设和hisao】
@@ -286,12 +289,10 @@ Then the reference point used to calculate the hypervolume is calculated by the 
 % unfortunately 对r的研究太少了, 因为在 benchmark问题上， 特别是正三角 r对PF上的解的影响很小
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
-\section{the Dynamic Reference Point Specification Mechanism}
-However, the suggested value of $r$ is investigated in \cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}.
-$r=1.1$ is not a suggested value, especially on problems with a flat(not concave or convex) pareto front.
+\section{The Details About the Dynamic Reference Point Specification Mechanism}
 Based on the formula (\ref{frpa1}), 
 we define the dynamic reference point specification as that,
- a adaptive value of $r$ during the process of algorithm.
+the value of $r$ is adapted during the process of the algorithm.
 
 Basically, the process of Evolutionary Multi-objective Optimization Algorithm can be separated into
 two stages:
@@ -325,7 +326,7 @@ This observation potential shows the usefulness of the dynamical reference point
 In this section, we will specify the suggested $r$ values separately
 in the early and final stages.
 
-% ------------------sub-------------- reference point specification in hypervolume-based EMOA ----------------------------------
+% ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for optimal distribution ----------------
 % 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出二维三维图for example），
 % 提一句 本文主要的研究问题就是平的PF问题
@@ -341,24 +342,24 @@ In hisao st al\cite{hisao:RPhowtoSpecify}, the suggested value of $r$ for flat(n
 \end{equation}
 as shown in Fig. \ref{dm1}. $H$ is the number of solutions intervals in 2-dimension 
 and the number of interval at each boundary of pareto front in many-dimension.
-In Fig. \ref{dm1:a}, $r=1.2(H=5)$ is the optimal setting for a $21$ individuals 
+In Fig. \ref{dm1:a}, $r=13/12(H=12)$ is the optimal setting for a $91$ individuals 
 inverted-DTLZ1 problem and a evenly distribution is observed. 
 In Fig. \ref{dm1:b} - Fig. \ref{dm1:d}, the inner solutions are decreased and move to
 the boundary of pareto front. 
 
 \begin{figure}[!t]
   \centering
-  \subfloat[$r=1.2$(optimal).]{\label{dm1:a}
-    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r1__2_N21}}\quad
+  \subfloat[$r=13/12.$(optimal).]{\label{dm1:a}
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r13_12_N91}}\quad
   \subfloat[$r=1.5.$]{\label{dm1:b}
-    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r1__5_N21}}\\
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r1__5_N91}}\\
   \subfloat[$r=2.$]{\label{dm1:c}
-    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r2_N21}}\quad
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r2_N91}}\quad
   \subfloat[$r=5.$]{\label{dm1:d}
-    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r5_N21}}\\
+    \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r5_N91}}\\
   \caption{The final distribution of solutions set in the inverted-DTLZ1 problem.
-  The algorithm is FV-EMOA with population size $=21$($H=5$) and evaluation number $=20000$.
-  $r=1.2$ is the optimal setting and we observed a evenly distribution in (\ref{dm1:a}).
+  The algorithm is FV-EMOA with population size $=91$($H=12$) and evaluation number $=20000$.
+  $r=13/12$ is the optimal setting and we observed a evenly distribution in (\ref{dm1:a}).
   As the increasing of $r$, solutions are more likely to be at the boundary
   (\ref{dm1:b}-\ref{dm1:d}). 
   }
@@ -396,14 +397,13 @@ Two examples are given in the experiment section (As shown in Fig. \ref{iudm1:d}
 
 In \cite{hisao:dynamic}, a larger value of $r$ than the $1+1/H$ is suggested in the early stage.
 
-% ------------------sub-------------- dynamic mechanism ----------------------------------
 % ------------------------- linearly decrease mechanism --------------------------
 % so r从2到1+1/H 很必要 之前介绍过 但是怎么变化 没有一个特别好的idea outperform the others
 % hisao的paper，提到一种linearly decrease 机制 就是从2到1+1/H线性下降 这是一种简单又实用的idea
 % 图在下一个section画。
 % 接下来本文介绍一种基于weak convergence detection criterion, 在一些限制条件下outperform线性机制。
 % 
-\section{Linearly Decrease Mechanism}
+\subsection{The Proposed Linearly Decrease Mechanism}
 Based on the theory above, $r$ is suggested to be specified dynamically at different stages of
 the algorithm(at early stage, a slightly larger $r$ is chosen; at final stage, $r=1+1/H$ is chosen).
 But unfortunately, there is no best mechanism on how to specify the value of $r$ dynamically
@@ -427,7 +427,7 @@ detection criterion outperforms simple linearly decrease mechanism on some const
 % 当 检测到convergence 就把r从2变成optimal 
 % （画 r 随 evaluation变化图 就是z字型那个 和线性机制一起画）
 % 
-\section{New Dynamic Mechanism}
+\section{A New Dynamic Reference Point Specification Mechanism}
 In this section,
 we will introduce a new mechanism that uses a weak convergence detection criterion to 
 decide whether to change the value of $r$ from $r_{Initial}$ to $1+1/H$. 

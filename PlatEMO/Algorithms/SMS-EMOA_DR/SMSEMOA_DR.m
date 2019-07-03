@@ -33,8 +33,8 @@ function SMSEMOA_DR(Global)
     end
     
     %% Calculation of paremeter calculating reference point position r
-    H = CalH(Global.N, Global.M);
-    Rfinal = 1 + 1./H;
+    H = getH(Global.M, Global.N);
+    Rfinal = 1 + 1./H; 
     deltR = Rfinal - Rinit;
     n = Global.evaluation - Global.N - 1;
     % evaluated starts from N+1, first N evaluated was used to initialize N generations; 

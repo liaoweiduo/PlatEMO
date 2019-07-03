@@ -48,7 +48,7 @@
 
 \begin{document}
 
-\title{A New Dynamical Reference Point Adaptation Mechanism in indicator-based EMOA
+\title{A New Dynamic Reference Point Specification Mechanism in hypervolume-based EMOA
 based on weak convergence detection}
 
 %\author{\IEEEauthorblockN{Linjun He\IEEEauthorrefmark{1},
@@ -57,18 +57,27 @@ based on weak convergence detection}
 %\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
 %Southern University of Science and Technology, Shenzhen, China\\
 %Email: helj@mail.sustech.edu.cn, hisao@sustech.edu.cn}
+%\and
 %\IEEEauthorblockA{\IEEEauthorrefmark{2}CINVESTAV, Tamaulipas, Mexico\\
 %Email: acamacho@tamps.cinvestav.mx}}
 
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
-\author{\IEEEauthorblockN{Weiduo Liao, Ke Shang and Hisao Ishibuchi} %$\textsuperscript{(\Letter)}$
+\author{\IEEEauthorblockN{Weiduo Liao, Ke Shang, Hisao Ishibuchi} %$\textsuperscript{(\Letter)}$
 \IEEEauthorblockA{Department of Computer Science and Engineering\\
 Southern University of Science and Technology, Shenzhen, China\\
-Email: 11849249@mail.sustech.edu.cn\\
-kshang@foxmail.com\\
-hisao@sustech.edu.cn}
+Email: 11849249@mail.sustech.edu.cn; kshang@foxmail.com; hisao@sustech.edu.cn}
+% \and
+% \IEEEauthorblockN{Ke Shang}
+% \IEEEauthorblockA{Department of Computer Science\\ and Engineering\\
+% Southern University of Science\\ and Technology\\ Shenzhen, China\\
+% Email: kshang@foxmail.com}
+% \and
+% \IEEEauthorblockN{Hisao Ishibuchi}
+% \IEEEauthorblockA{Department of Computer Science\\ and Engineering\\
+% Southern University of Science\\ and Technology\\ Shenzhen, China\\
+% Email: hisao@sustech.edu.cn}
 }
 
 
@@ -187,11 +196,11 @@ with several triangular and inverted-triangular problems in Section V. our exper
 3- and 5-dimension problems for clearly comparing of two dynamic mechanisms and 
 simple reference point adaptation (without dynamic mechanism). Finally, the conclusion is shown in Section VI.
 
-% -------------------------------- reference point adaptation ------------------------------
+% --------------------------- reference point specification in hypervolume-based EMOA ---------------------
 % reference point不应该只在刚开始设置而后面都不变，这样如果问题的feasible region很大的时候，初始设置的
 % reference point就会离PF很远（画图一个很大的feasible region和PF和reference point）
 % 这样的话 在某些问题（倒三角）最后分布在PF上的解 边缘上的解分布很密集【hisao paper】【倒三角图，r很大】
-% 因此 necessity of reference point adaptation during the progress of algorithm
+% 因此 necessity of a good reference point specification during the progress of algorithm
 %
 % 在很多算法中 include SMSEMOA
 % The reference point is specified by the following common-use role:
@@ -199,7 +208,7 @@ simple reference point adaptation (without dynamic mechanism). Finally, the conc
 % the estimated nadir point is the vector consists of every maximization objective values of all
 % solutions in current population.【图】
 %
-\section{Reference Point Adaptation}
+\section{Reference Point Specification in Hypervolume-based EMOA}
 When hypervolume(HV) is used in indicator-based algorithms, 
 one important thing to be considered is how to specify the reference point.
 Before calculating the HV values, a reference point needs to be chosen in advance.
@@ -232,35 +241,24 @@ that many solutions in the final solutions set will distribute at the boundary o
 Although it has no effect on the distributions of solutions set 
 in problems with triangular pareto front in 3 dimensions 
 (Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
-it is necessary using reference point adaptation during the algorithm progress.
+it is necessary using a good reference point specification method during the algorithm progress.
 And the reason is illustrated detailedly in Hisao et al\cite{hisao:RPexplanation}.
-
-In many algorithms including SMS-EMOA\cite{smsemoa}, 
-the reference point is adapted based on the following rules:
-\begin{equation}\label{frpa1}
-  RP = r * ENP, r = 1.1.
-\end{equation}
-Note that the estimated nadir point($ENP$) is the nadir point in current population.
-When the solutions in the current population are obtained, 
-we use hypervolume as the indicator to evaluate the performance of the solutions set. 
-Then the reference point used to calculate the hypervolume is calculated by the formula above.
-%可以加一个介绍nadir point的图，如果8页不够的话。
 
 \begin{figure}[!t]
   \centering
-  \subfloat[The inverted-DTLZ1 problem with a fixed reference point.]{\label{rpa2:a}
+  \subfloat[The reference point is fixed.]{\label{rpa2:a}
     \includegraphics[width=1.5in]{FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1}}\quad
-  \subfloat[The inverted-DTLZ1 problem with a adapted reference point.]{\label{rpa2:b}
+  \subfloat[The reference point is specified by the formula (\ref{frpa1}).]{\label{rpa2:b}
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation20000_r1__1}}\\
-  \subfloat[The DTLZ1 problem with a fixed reference point.]{\label{rpa2:c}
+  \subfloat[The reference point is fixed.]{\label{rpa2:c}
     \includegraphics[width=1.5in]{FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1}}\quad
-  \subfloat[The DTLZ1 problem with a adapted reference point.]{\label{rpa2:d}
+  \subfloat[The reference point is specified by the formula (\ref{frpa1}).]{\label{rpa2:d}
     \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
   \caption{The final distribution of solutions set in the inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
   and the DTLZ1 problem(\ref{rpa2:c} and \ref{rpa2:d}).
   The algorithm is FV-EMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. 
   (\ref{rpa2:a} and \ref{rpa2:c}): the reference point is calculated only once at the initial step;
-  (\ref{rpa2:b} and \ref{rpa2:d}): the reference point is adapted based on the formula (\ref{frpa1}).
+  (\ref{rpa2:b} and \ref{rpa2:d}): the reference point is specified by the formula (\ref{frpa1}).
   All the solutions in the final distribution are at the boundary of the pareto front in (\ref{rpa2:a}),
   which shows the bad effect of a faraway reference point
   on the final distribution of inverted-triangular problems.
@@ -268,6 +266,17 @@ Then the reference point used to calculate the hypervolume is calculated by the 
   }
   \label{rpa2}
 \end{figure}
+
+In many algorithms including SMS-EMOA\cite{smsemoa}, 
+the reference point is specified based on the following rules:
+\begin{equation}\label{frpa1}
+  RP = r * ENP, r = 1.1.
+\end{equation}
+Note that the estimated nadir point($ENP$) is the nadir point in current population.
+When the solutions in the current population are obtained, 
+we use hypervolume as the indicator to evaluate the performance of the solutions set. 
+Then the reference point used to calculate the hypervolume is calculated by the formula above.
+%可以加一个介绍nadir point的图，如果8页不够的话。 !!!!!!!!
 
 % ----------------------------------- dynamic mechanism ------------------------------------
 % 在算法运行的不同时期 early stage；final stage， 为了不同的目的，
@@ -277,7 +286,13 @@ Then the reference point used to calculate the hypervolume is calculated by the 
 % unfortunately 对r的研究太少了, 因为在 benchmark问题上， 特别是正三角 r对PF上的解的影响很小
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
-\section{Dynamic Mechanism}
+\section{the Dynamic Reference Point Specification Mechanism}
+However, the suggested value of $r$ is investigated in \cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}.
+$r=1.1$ is not a suggested value, especially on problems with a flat(not concave or convex) pareto front.
+Based on the formula (\ref{frpa1}), 
+we define the dynamic reference point specification as that,
+ a adaptive value of $r$ during the process of algorithm.
+
 Basically, the process of Evolutionary Multi-objective Optimization Algorithm can be separated into
 two stages:
 \subsubsection{Early Stage} In this stage, 
@@ -310,13 +325,13 @@ This observation potential shows the usefulness of the dynamical reference point
 In this section, we will specify the suggested $r$ values separately
 in the early and final stages.
 
-% ------------------sub-------------- dynamic mechanism ----------------------------------
+% ------------------sub-------------- reference point specification in hypervolume-based EMOA ----------------------------------
 % --------------- reference point specification for optimal distribution ----------------
 % 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出二维三维图for example），
 % 提一句 本文主要的研究问题就是平的PF问题
 % 即在算法的最后final stage，所有solution都在PF上，r应该设置成1+1/H。
 %
-\subsection{Reference Point Specification for Optimal Distribution}
+\subsection{Specify the Value of $r$ for Optimal Distribution}
 In the final stages, the major purpose is to augment the diversity of solutions set.
 More specifically, for inverted-triangular problems, in order to have same hypervolume contribution, 
 the interval between two boundary solutions should be the same as that between two inner solutions.
@@ -369,7 +384,7 @@ be specified as $1+1/H$, as in equation \ref{eod}.
 % HV表示最后hv差，NHV表示较快到达前沿）
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
-\subsection{Reference Point Specification for Better Searching Behavior}
+\subsection{Specifiy the Value of $r$ for Better Searching Behavior}
 However, in the early stage, solutions set is not close to the pareto front, which makes the 
 estimated ideal and nadir points far away from true ideal and nadir points, for the reason that
 they are calculated by current solutions in each generation. 
@@ -388,7 +403,7 @@ In \cite{hisao:dynamic}, a larger value of $r$ than the $1+1/H$ is suggested in 
 % 图在下一个section画。
 % 接下来本文介绍一种基于weak convergence detection criterion, 在一些限制条件下outperform线性机制。
 % 
-\subsection{Linearly Decrease Mechanism}
+\section{Linearly Decrease Mechanism}
 Based on the theory above, $r$ is suggested to be specified dynamically at different stages of
 the algorithm(at early stage, a slightly larger $r$ is chosen; at final stage, $r=1+1/H$ is chosen).
 But unfortunately, there is no best mechanism on how to specify the value of $r$ dynamically

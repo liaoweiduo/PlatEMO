@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.26)  29 JUN 2019 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.26)  3 JUL 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -445,11 +445,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 97.
+LaTeX Font Info:    Try loading font information for U+msa on input line 106.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 97.
+LaTeX Font Info:    Try loading font information for U+msb on input line 106.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -463,12 +463,12 @@ Package epstopdf Info: Source file: <fig/rpa1_1.eps>
 (epstopdf)                    date: 2019-06-27 14:39:08
 (epstopdf)                    size: 16067 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/rpa1_1-eps-converted-to.pdf fig/rpa1_1.eps>
-(epstopdf)             \includegraphics on input line 215.
+(epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
  <fig/rpa1_1-eps-converted-to.pdf, id=12, 576.1525pt x 557.08125pt>
 File: fig/rpa1_1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/rpa1_1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/rpa1_1-eps-converted-to.pdf used on input line 215.
+Package pdftex.def Info: fig/rpa1_1-eps-converted-to.pdf used on input line 224.
 (pdftex.def)             Requested size: 108.405pt x 104.8095pt.
 Package epstopdf Info: Source file: <fig/rpa1_2.eps>
 (epstopdf)                    date: 2019-06-16 10:49:07
@@ -477,12 +477,12 @@ Package epstopdf Info: Source file: <fig/rpa1_2.eps>
 (epstopdf)                    date: 2019-06-27 14:39:09
 (epstopdf)                    size: 15542 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/rpa1_2-eps-converted-to.pdf fig/rpa1_2.eps>
-(epstopdf)             \includegraphics on input line 217.
+(epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
  <fig/rpa1_2-eps-converted-to.pdf, id=13, 576.1525pt x 557.08125pt>
 File: fig/rpa1_2-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/rpa1_2-eps-converted-to.pdf>
-Package pdftex.def Info: fig/rpa1_2-eps-converted-to.pdf used on input line 217.
+Package pdftex.def Info: fig/rpa1_2-eps-converted-to.pdf used on input line 226.
 (pdftex.def)             Requested size: 108.405pt x 104.8095pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)                    date: 2019-06-27 17:58:13
@@ -491,12 +491,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1_
 (epstopdf)                    date: 2019-06-27 18:01:18
 (epstopdf)                    size: 24921 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps>
-(epstopdf)             \includegraphics on input line 252.
+(epstopdf)             \includegraphics on input line 250.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=14, 541.02126pt x 398.48875pt>
 File: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 252.
+Package pdftex.def Info: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 250.
 (pdftex.def)             Requested size: 108.405pt x 79.84227pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)                    date: 2019-06-27 18:01:07
@@ -505,12 +505,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps
 (epstopdf)                    date: 2019-06-27 18:01:20
 (epstopdf)                    size: 28020 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps>
-(epstopdf)             \includegraphics on input line 254.
+(epstopdf)             \includegraphics on input line 252.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=15, 541.02126pt x 396.48125pt>
 File: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 254.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 252.
 (pdftex.def)             Requested size: 108.405pt x 79.44003pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)                    date: 2019-06-27 17:57:52
@@ -519,12 +519,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__
 (epstopdf)                    date: 2019-06-27 18:01:20
 (epstopdf)                    size: 29698 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps>
-(epstopdf)             \includegraphics on input line 256.
+(epstopdf)             \includegraphics on input line 254.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=16, 537.00626pt x 401.5pt>
 File: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 256.
+Package pdftex.def Info: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 254.
 (pdftex.def)             Requested size: 108.405pt x 81.04599pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)                    date: 2019-06-27 17:57:22
@@ -533,12 +533,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)                    date: 2019-06-27 18:01:21
 (epstopdf)                    size: 28311 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
-(epstopdf)             \includegraphics on input line 258.
+(epstopdf)             \includegraphics on input line 256.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=17, 537.00626pt x 396.48125pt>
 File: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 258.
+Package pdftex.def Info: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 256.
 (pdftex.def)             Requested size: 108.405pt x 80.03291pt.
  [2 <./fig/rpa1_1-eps-converted-to.pdf> <./fig/rpa1_2-eps-converted-to.pdf> <./fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf> <./fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21.eps>
@@ -548,12 +548,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21
 (epstopdf)                    date: 2019-06-27 18:01:23
 (epstopdf)                    size: 17517 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21.eps>
-(epstopdf)             \includegraphics on input line 337.
+(epstopdf)             \includegraphics on input line 352.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf, id=99, 541.02126pt x 397.485pt>
 File: fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf used on input line 337.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf used on input line 352.
 (pdftex.def)             Requested size: 108.405pt x 79.64114pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21.eps>
 (epstopdf)                    date: 2019-06-27 17:58:52
@@ -562,12 +562,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21
 (epstopdf)                    date: 2019-06-27 18:01:25
 (epstopdf)                    size: 16963 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21.eps>
-(epstopdf)             \includegraphics on input line 339.
+(epstopdf)             \includegraphics on input line 354.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf, id=100, 541.02126pt x 399.4925pt>
 File: fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf used on input line 339.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf used on input line 354.
 (pdftex.def)             Requested size: 108.405pt x 80.04338pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21.eps>
 (epstopdf)                    date: 2019-06-27 17:59:13
@@ -576,12 +576,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21.ep
 (epstopdf)                    date: 2019-06-27 18:01:26
 (epstopdf)                    size: 17058 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21.eps>
-(epstopdf)             \includegraphics on input line 341.
+(epstopdf)             \includegraphics on input line 356.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf, id=101, 541.02126pt x 394.47375pt>
 File: fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf used on input line 341.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf used on input line 356.
 (pdftex.def)             Requested size: 108.405pt x 79.03781pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps>
 (epstopdf)                    date: 2019-06-27 17:59:32
@@ -590,12 +590,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.ep
 (epstopdf)                    date: 2019-06-27 18:01:28
 (epstopdf)                    size: 17207 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21.eps>
-(epstopdf)             \includegraphics on input line 343.
+(epstopdf)             \includegraphics on input line 358.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf, id=102, 541.02126pt x 394.47375pt>
 File: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf used on input line 343.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf used on input line 358.
 (pdftex.def)             Requested size: 108.405pt x 79.03781pt.
  [3 <./fig/FVEMOA_IDTLZ1_evaluation10000_r1__2_N21-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r1__5_N21-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r2_N21-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_evaluation10000_r5_N21-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
@@ -605,12 +605,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
 (epstopdf)                    date: 2019-06-27 14:39:17
 (epstopdf)                    size: 24074 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
-(epstopdf)             \includegraphics on input line 496.
+(epstopdf)             \includegraphics on input line 511.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf, id=158, 564.1075pt x 400.49625pt>
 File: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf used on input line 496.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf used on input line 511.
 (pdftex.def)             Requested size: 252.0pt x 178.91388pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
 (epstopdf)                    date: 2019-06-18 16:00:36
@@ -619,12 +619,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
 (epstopdf)                    date: 2019-06-27 14:39:18
 (epstopdf)                    size: 22263 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
-(epstopdf)             \includegraphics on input line 558.
+(epstopdf)             \includegraphics on input line 573.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf, id=159, 533.995pt x 434.62375pt>
 File: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf used on input line 558.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf used on input line 573.
 (pdftex.def)             Requested size: 252.0pt x 205.1088pt.
  [4 <./fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_3.eps>
@@ -634,12 +634,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-27 17:45:46
 (epstopdf)                    size: 27406 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DTLZ4_3.eps>
-(epstopdf)             \includegraphics on input line 734.
+(epstopdf)             \includegraphics on input line 749.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf, id=183, 537.00626pt x 405.515pt>
 File: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf used on input line 734.
+Package pdftex.def Info: fig/FVEMOA_DTLZ4_3-eps-converted-to.pdf used on input line 749.
 (pdftex.def)             Requested size: 108.405pt x 81.85645pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-27 17:41:51
@@ -648,12 +648,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-27 17:45:47
 (epstopdf)                    size: 27243 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR_DTLZ4_3.eps>
-(epstopdf)             \includegraphics on input line 736.
+(epstopdf)             \includegraphics on input line 751.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf, id=184, 537.00626pt x 403.5075pt>
 File: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf used on input line 736.
+Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_3-eps-converted-to.pdf used on input line 751.
 (pdftex.def)             Requested size: 108.405pt x 81.45122pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-27 17:41:09
@@ -662,12 +662,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-27 17:45:48
 (epstopdf)                    size: 27382 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_DR2_DTLZ4_3.eps>
-(epstopdf)             \includegraphics on input line 738.
+(epstopdf)             \includegraphics on input line 753.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf, id=185, 537.00626pt x 405.515pt>
 File: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf used on input line 738.
+Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_3-eps-converted-to.pdf used on input line 753.
 (pdftex.def)             Requested size: 108.405pt x 81.85645pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-26 10:27:02
@@ -676,12 +676,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_3.eps>
 (epstopdf)                    date: 2019-06-27 14:39:21
 (epstopdf)                    size: 21726 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf fig/FVEMOA_optimal_DTLZ4_3.eps>
-(epstopdf)             \includegraphics on input line 740.
+(epstopdf)             \includegraphics on input line 755.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf, id=186, 546.04pt x 401.5pt>
 File: fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf used on input line 740.
+Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_3-eps-converted-to.pdf used on input line 755.
 (pdftex.def)             Requested size: 108.405pt x 79.71043pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:45:27
@@ -690,12 +690,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:45:48
 (epstopdf)                    size: 33361 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ4_5-eps-converted-to.pdf fig/FVEMOA_DTLZ4_5.eps>
-(epstopdf)             \includegraphics on input line 749.
+(epstopdf)             \includegraphics on input line 764.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DTLZ4_5-eps-converted-to.pdf, id=187, 546.04pt x 455.7025pt>
 File: fig/FVEMOA_DTLZ4_5-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DTLZ4_5-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DTLZ4_5-eps-converted-to.pdf used on input line 749.
+Package pdftex.def Info: fig/FVEMOA_DTLZ4_5-eps-converted-to.pdf used on input line 764.
 (pdftex.def)             Requested size: 108.405pt x 90.47134pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:40:48
@@ -704,12 +704,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DR_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:45:49
 (epstopdf)                    size: 33115 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_DTLZ4_5-eps-converted-to.pdf fig/FVEMOA_DR_DTLZ4_5.eps>
-(epstopdf)             \includegraphics on input line 751.
+(epstopdf)             \includegraphics on input line 766.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DR_DTLZ4_5-eps-converted-to.pdf, id=188, 546.04pt x 455.7025pt>
 File: fig/FVEMOA_DR_DTLZ4_5-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DR_DTLZ4_5-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_5-eps-converted-to.pdf used on input line 751.
+Package pdftex.def Info: fig/FVEMOA_DR_DTLZ4_5-eps-converted-to.pdf used on input line 766.
 (pdftex.def)             Requested size: 108.405pt x 90.47134pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:43:58
@@ -718,12 +718,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DR2_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:45:50
 (epstopdf)                    size: 33222 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_DTLZ4_5-eps-converted-to.pdf fig/FVEMOA_DR2_DTLZ4_5.eps>
-(epstopdf)             \includegraphics on input line 753.
+(epstopdf)             \includegraphics on input line 768.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DR2_DTLZ4_5-eps-converted-to.pdf, id=189, 546.04pt x 455.7025pt>
 File: fig/FVEMOA_DR2_DTLZ4_5-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DR2_DTLZ4_5-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_5-eps-converted-to.pdf used on input line 753.
+Package pdftex.def Info: fig/FVEMOA_DR2_DTLZ4_5-eps-converted-to.pdf used on input line 768.
 (pdftex.def)             Requested size: 108.405pt x 90.47134pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:47:48
@@ -732,12 +732,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_optimal_DTLZ4_5.eps>
 (epstopdf)                    date: 2019-06-27 17:48:05
 (epstopdf)                    size: 29970 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf fig/FVEMOA_optimal_DTLZ4_5.eps>
-(epstopdf)             \includegraphics on input line 755.
+(epstopdf)             \includegraphics on input line 770.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf, id=190, 546.04pt x 455.7025pt>
 File: fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf used on input line 755.
+Package pdftex.def Info: fig/FVEMOA_optimal_DTLZ4_5-eps-converted-to.pdf used on input line 770.
 (pdftex.def)             Requested size: 108.405pt x 90.47134pt.
  [5 <./fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -750,12 +750,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_MaF1_M3_3500_3400convergence.eps
 (epstopdf)                    date: 2019-06-27 21:41:33
 (epstopdf)                    size: 26048 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_MaF1_M3_3500_3400convergence.eps>
-(epstopdf)             \includegraphics on input line 802.
+(epstopdf)             \includegraphics on input line 817.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=214, 537.00626pt x 394.47375pt>
 File: fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 802.
+Package pdftex.def Info: fig/FVEMOA_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 817.
 (pdftex.def)             Requested size: 108.405pt x 79.62769pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DR_MaF1_M3_3500_3400convergence.eps>
 (epstopdf)                    date: 2019-06-27 21:34:28
@@ -764,12 +764,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DR_MaF1_M3_3500_3400convergence.
 (epstopdf)                    date: 2019-06-27 21:41:34
 (epstopdf)                    size: 27327 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_DR_MaF1_M3_3500_3400convergence.eps>
-(epstopdf)             \includegraphics on input line 804.
+(epstopdf)             \includegraphics on input line 819.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=215, 537.00626pt x 393.47pt>
 File: fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 804.
+Package pdftex.def Info: fig/FVEMOA_DR_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 819.
 (pdftex.def)             Requested size: 108.405pt x 79.42506pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence.eps>
 (epstopdf)                    date: 2019-06-27 21:36:38
@@ -778,12 +778,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence
 (epstopdf)                    date: 2019-06-27 21:41:34
 (epstopdf)                    size: 28123 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence.eps>
-(epstopdf)             \includegraphics on input line 806.
+(epstopdf)             \includegraphics on input line 821.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=216, 537.00626pt x 392.46625pt>
 File: fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 806.
+Package pdftex.def Info: fig/FVEMOA_DR2_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 821.
 (pdftex.def)             Requested size: 108.405pt x 79.22246pt.
 Package epstopdf Info: Source file: <fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence.eps>
 (epstopdf)                    date: 2019-06-27 21:41:23
@@ -792,12 +792,12 @@ Package epstopdf Info: Source file: <fig/FVEMOA_optimal_MaF1_M3_3500_3400converg
 (epstopdf)                    date: 2019-06-27 21:41:35
 (epstopdf)                    size: 27187 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence.eps>
-(epstopdf)             \includegraphics on input line 808.
+(epstopdf)             \includegraphics on input line 823.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf, id=217, 537.00626pt x 389.455pt>
 File: fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 808.
+Package pdftex.def Info: fig/FVEMOA_optimal_MaF1_M3_3500_3400convergence-eps-converted-to.pdf used on input line 823.
 (pdftex.def)             Requested size: 108.405pt x 78.61461pt.
  (./NewDynamicRPAdaptation.bbl
 Missing character: There is no â in font ptmr7t!
@@ -823,13 +823,13 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  6442 strings out of 493014
  104966 string characters out of 6133351
- 226152 words of memory out of 5000000
+ 226157 words of memory out of 5000000
  9815 multiletter control sequences out of 15000+600000
  47912 words of font info for 110 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 44i,12n,49p,926b,4126s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,12n,49p,922b,4126s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NewDynamicRPAdaptation.pdf (8 pages, 738735 bytes).
+Output written on NewDynamicRPAdaptation.pdf (8 pages, 739168 bytes).
 PDF statistics:
  417 PDF objects out of 1000 (max. 8388607)
  272 compressed objects within 3 object streams

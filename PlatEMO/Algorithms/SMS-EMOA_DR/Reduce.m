@@ -24,7 +24,8 @@ function [Population,FrontNo] = Reduce(Population,FrontNo, r)
             deltaS(rank(i)) = (PopObj(rank(i+1),1)-PopObj(rank(i),1)).*(PopObj(rank(i-1),2)-PopObj(rank(i),2));
         end
     elseif N > 1
-        deltaS = CalHVC(PopObj,max(PopObj,[],1)*r,N);
+        ref = r*(max(PopObj,[],1)-min(PopObj,[],1))+min(PopObj,[],1);
+        deltaS = CalHVC(PopObj,ref,N);
     end
     
     %% Delete the worst solution from the last front

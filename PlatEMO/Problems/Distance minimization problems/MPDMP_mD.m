@@ -29,15 +29,16 @@ classdef MPDMP_mD < PROBLEM
             if isempty(obj.Global.D)
                 obj.Global.D = 10;
             end
-            obj.Global.M        = 3;
+            obj.Global.M        = obj.Global.D * 2;
             obj.Global.lower    = zeros(1,obj.Global.D) + lower;
             obj.Global.upper    = zeros(1,obj.Global.D) + upper;
             obj.Global.encoding = 'real';
             % Generate vertexes
-            point1 = [1, zeros(1,obj.Global.D-1)];                  
-            point2 = [-1/2, sqrt(3)/2, zeros(1,obj.Global.D-2)];
-            point3 = [-1/2,-sqrt(3)/2, zeros(1,obj.Global.D-2)];
-            obj.Points = [point1;point2;point3];
+            obj.Points = [];
+            for index = 1:obj.Global.D
+                obj.Points(2*index-1,:) = [zeros(1,index-1), 1, zeros(1,obj.Global.D-index)];
+                obj.Points(2*index  ,:) = [zeros(1,index-1),-1, zeros(1,obj.Global.D-index)];
+            end
         end
         %% Calculate objective values
         function PopObj = CalObj(obj,PopDec)
@@ -45,9 +46,8 @@ classdef MPDMP_mD < PROBLEM
         end
         %% Sample reference points on Pareto front
         function P = PF(obj,N)
-            [X,Y] = ndgrid(linspace(-1,1,ceil(sqrt(N))));
-            ND    = inpolygon(X(:),Y(:),obj.Points(:,1),obj.Points(:,2));
-            P     = pdist2([X(ND),Y(ND),zeros(sum(ND),obj.Global.D-2)],obj.Points);
+            M = obj.Global.M;
+            P = unifrnd(0,2,N,M);
         end
         %% Draw special figure
         function Draw(obj,PopDec)

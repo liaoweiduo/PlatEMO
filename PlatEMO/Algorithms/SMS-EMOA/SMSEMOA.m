@@ -2,7 +2,7 @@ function SMSEMOA(Global)
 % <algorithm> <A>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
-% r --- 2 --- r of reference point
+% r --- 10 --- r of reference point
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the
@@ -19,7 +19,7 @@ function SMSEMOA(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    r = Global.ParameterSet(2);
+    r = Global.ParameterSet(10);
     
     %% Generate random population
     Population = Global.Initialization();

@@ -119,6 +119,11 @@ H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
   on Parallel Problem Solving from Nature}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2018, pp. 384--396.
 
+\bibitem{DtA}
+Z.~Wang, Y.-S. Ong, J.~Sun, A.~Gupta, and Q.~Zhang, ``A generator for
+  multiobjective test problems with difficult-to-approximate pareto front
+  boundaries,'' \emph{IEEE Transactions on Evolutionary Computation}, 2018.
+
 \bibitem{convergenceDetection:1}
 H.~Trautmann, U.~Ligges, J.~Mehnen, and M.~Preuss, ``A convergence criterion
   for multiobjective evolutionary algorithms based on systematic statistical

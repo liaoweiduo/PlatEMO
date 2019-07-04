@@ -7,7 +7,7 @@ function SMSEMOA_DR(Global)
 % n = evaluation; a; b = deltR / n - na; c = Rinit; 
 % deltR / n2 <= a <= - deltR / n2; 
 %      tu      linear         ao;
-% Rinit --- 2 --- The initial value of r
+% Rinit --- 10 --- The initial value of r
 % level --- 0 --- level => [-1 : 1] map to a => [ao : tu]
 
 %------------------------------- Reference --------------------------------
@@ -25,7 +25,7 @@ function SMSEMOA_DR(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    [Rinit, level] = Global.ParameterSet(2, 1);
+    [Rinit, level] = Global.ParameterSet(10, 1);
     if level > 1
         level = 1;
     elseif level < -1

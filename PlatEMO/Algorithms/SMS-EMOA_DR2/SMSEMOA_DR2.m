@@ -2,7 +2,7 @@ function SMSEMOA_DR2(Global)
 % <algorithm> <A>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
-% Rinit --- 2 --- The initial value of r
+% Rinit --- 10 --- The initial value of r
 % window --- 4000 --- The window size of evaluated
 % threshold --- 0.00001 --- threshold for |b|
 
@@ -21,7 +21,7 @@ function SMSEMOA_DR2(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    [Rinit, window, threshold] = Global.ParameterSet(2, 4000, 0.00001);
+    [Rinit, window, threshold] = Global.ParameterSet(10, 4000, 0.00001);
     
     %% Calculation of paremeter calculating reference point position r
     H = getH(Global.M, Global.N);

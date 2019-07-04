@@ -1,7 +1,7 @@
 function [r] = CalR(Rinit,Rfinal,win,threshold,evaluate_num,nadir_list,n)
-    window = win / n;
+    window = floor(win / n);
     % win is base on evaluted num, window based on nadir list calculation
-    if length(nadir_list) < window
+    if size(nadir_list,1) < window
         r = Rinit;
         return
     end

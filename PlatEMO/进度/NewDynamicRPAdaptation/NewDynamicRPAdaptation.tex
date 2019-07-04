@@ -289,7 +289,6 @@ is not fatal on some benchmark problems, for example, the problems with triangul
 % 提一句 本文主要的研究问题就是平的PF问题
 % 即在算法的最后final stage，所有solution都在PF上，r应该设置成1+1/H。
 %
-\subsection{Specify the Value of $r$ for Optimal Distribution}
 In Hisao et al.\cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}, the suggested value of $r$ is investigated 
 on flat (not concave or convex) pareto front problems. 
 Specifically, on inverted-triangular problems(inverted-DTLZ1\cite{hisao:RPexplanation} etc.), 
@@ -333,7 +332,7 @@ the boundary of pareto front as the increasing of $r$.
 % unfortunately 对r的研究太少了, 因为在 benchmark问题上， 特别是正三角 r对PF上的解的影响很小
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
-\section{The Dynamic Reference Point Specification Mechanism}
+\section{Exploration on Reference Point Specification Mechanism in Detail}
 Basically, the process of Evolutionary Multi-objective Optimization Algorithm can be separated into
 two stages:
 \subsubsection{Early Stage} In this stage, 
@@ -344,18 +343,6 @@ We also call this stage the convergence stage.
 all the solutions are in or near the pareto front.
 So the main task is to make the distribution of solutions more evenly in the pareto front.
 We also call this stage the diversity stage.
-
-For different purposes in these two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
-Not only the reference point but also the value of $r$ 
-needs to be adapted in each iteration of the algorithm. 
-This is called dynamical reference point specification. 
-Based on the formula (\ref{frpa1}), 
-we define the dynamic reference point specification as:
-\begin{equation}\label{f2}
-  RP = r(t) * ENP, t=0,1,\dots,T,
-\end{equation}
-where $T$ is the total number of generations, and $r=r(t)$ is a function of the current generation $t$.
-The value of $r$ is adapted during the process of the algorithm. 
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for better searching behavior ------------
@@ -372,14 +359,14 @@ The value of $r$ is adapted during the process of the algorithm.
 % HV表示最后hv差，NHV表示较快到达前沿）
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
-\subsection{The Necessity of Using Dynamic Reference Point Specification Mechanism}
+\subsection{Specify the Value of $r$ for Better Searching Behavior}
 In the early stage, solutions set is not close to the pareto front, which makes the 
 estimated ideal and nadir points far away from true ideal and nadir points, for the reason that
 they are calculated by current solutions in each generation. 
 And considering the problems with 10 objectives, 
 if the external solutions have the same hypervolume contribution with the inner solutions,
 the exploration of solutions will be poor. 
-As a result, some dimensionalities of solutions will be missing and the diversity will be poor. 
+As a result, some dimensionalities of solutions will be missing and the breadth-diversity\cite{DtA} will be poor. 
 A example is given in Fig. \ref{nud}. 
 \begin{figure}[!t]
   \centering
@@ -390,13 +377,14 @@ A example is given in Fig. \ref{nud}.
   \caption{
     The final distribution of SMS-EMOA on 10-dimension DTLZ2 problems. 
     The population number is 30($H=1$), total evaluation number is 10000.
-    The first 4 dimensionalities are all 0 for the solutions(\ref{nud:b}). 
+    The first 6 dimensionalities are all 0 for the solutions(\ref{nud:b}). 
   }
   \label{nud}
 \end{figure} 
-The first 4 dimensionalities are all 0 for the solutions obtained by SMS-EMOA on 10-dimension DTLZ2 problems(Fig. \ref{nud:b}). 
+The first 6 dimensionalities are all 0 for the solutions obtained by SMS-EMOA on 10-dimension DTLZ2 problems(Fig. \ref{nud:b}). 
 In \cite{hisao:dynamic}, a larger value of $r$ than the $1+1/H$ is suggested in the early stage. 
 
+\subsection{Specify the Value of $r$ for Optimal Distribution}
 When algorithm reaches to the final stage, all solutions are near the pareto front, $r$ should
 be specified as $1+1/H$, as in formula \ref{eod}, 
 in order to get a optimal solutions distribution. 
@@ -409,13 +397,26 @@ for example, distance minimization problems.
 This observation potential shows the usefulness of the dynamical reference point specification
 \cite{hisao:dynamic}.
 
+\section{Existing Dynamic Reference Point Specification Mechanism}
+For different purposes in the two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
+Not only the reference point but also the value of $r$ 
+needs to be adapted in each iteration of the algorithm. 
+This is called dynamical reference point specification. 
+Based on the formula (\ref{frpa1}), 
+we define the dynamic reference point specification as:
+\begin{equation}\label{f2}
+  RP = r(t) * ENP, t=0,1,\dots,T,
+\end{equation}
+where $T$ is the total number of generations, and $r=r(t)$ is a function of the current generation $t$.
+The value of $r$ is adapted during the process of the algorithm. 
+
 % ------------------------- linearly decrease mechanism --------------------------
 % so r从2到1+1/H 很必要 之前介绍过 但是怎么变化 没有一个特别好的idea outperform the others
 % hisao的paper，提到一种linearly decrease 机制 就是从2到1+1/H线性下降 这是一种简单又实用的idea
 % 图在下一个section画。
 % 接下来本文介绍一种基于weak convergence detection criterion, 在一些限制条件下outperform线性机制。
 % 
-\subsection{The Proposed Linearly Decrease Mechanism}
+\subsection{The Proposed Linearly Decrease Mechanism} 
 Based on the theory above, $r$ is suggested to be specified dynamically at different stages of
 the algorithm(at early stage, a slightly larger $r$ is chosen; at final stage, $r=1+1/H$ is chosen).
 But unfortunately, there is no best mechanism on how to specify the value of $r$ dynamically
@@ -432,7 +433,8 @@ It is a simple and practical mechanism. In (\ref{eldm1}), the value of $r$ start
 then gradually decreases to the suggested value in a linearly decrease process. 
 
 In the next section, we will propose another good dynamic mechanism based on weak convergence 
-detection criterion outperforms simple linearly decrease mechanism on some constraint condition.
+detection criterion outperforms simple linearly decrease mechanism on some specific problems.
+% 后面要提到 outperform的地方！！！！！！
 
 % -------------------------------- new dynamic mechanism ------------------------------------
 % 本文介绍一种基于weak convergence detection criterion的 new mechanism

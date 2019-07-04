@@ -18,12 +18,12 @@ function [Population,FrontNo] = Reduce(Population,FrontNo, r)
     
     %% Calculate the contribution of hypervolume of each solution
     deltaS = inf(1,N);
-    if M == 2
-        [~,rank] = sortrows(PopObj);
-        for i = 2 : N-1
-            deltaS(rank(i)) = (PopObj(rank(i+1),1)-PopObj(rank(i),1)).*(PopObj(rank(i-1),2)-PopObj(rank(i),2));
-        end
-    elseif N > 1
+%     if M == 2
+%         [~,rank] = sortrows(PopObj);
+%         for i = 2 : N-1
+%             deltaS(rank(i)) = (PopObj(rank(i+1),1)-PopObj(rank(i),1)).*(PopObj(rank(i-1),2)-PopObj(rank(i),2));
+%         end
+    if N > 1
         ref = r*(max(PopObj,[],1)-min(PopObj,[],1))+min(PopObj,[],1);
         deltaS = CalHVC(PopObj,ref,N);
     end

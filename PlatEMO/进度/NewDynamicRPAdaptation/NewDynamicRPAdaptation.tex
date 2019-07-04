@@ -170,8 +170,8 @@ for its better performance on time-saving than SMS-EMOA\cite{FVEMOA}.
 The specification of the reference point is one of the important parts in hypervolume computation. 
 It has been reported that the position of reference point strongly influences the value of
 hypervolume contribution of the external solutions on the problems with inverted-shape pareto fronts\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
-A suitable set of reference point position for flat pareto fronts has been sufficiently investigated in Hisao st al\cite{hisao:RPspecify}.
-And a dynamic reference point adaptation has also been proposed in Hisao st al\cite{hisao:dynamic}.
+A suitable set of reference point position for flat pareto fronts has been sufficiently investigated in Hisao et al.\cite{hisao:RPspecify}.
+And a dynamic reference point adaptation has also been proposed in Hisao et al.\cite{hisao:dynamic}.
 Another strategy proposed is to use two reference points in hypervolume-based EMOA\cite{hisao:twoRP}. 
 In this paper, the dynamic mechanism is stated in two different stages of the algorithm running process. 
 At the early stage, for a better searching behavior of the algorithm, 
@@ -242,7 +242,7 @@ Although it has no effect on the distributions of solutions set
 in problems with triangular pareto front in 3 dimensions 
 (Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
 it is necessary using a good reference point specification method during the algorithm progress.
-And the reason is illustrated detailedly in Hisao et al\cite{hisao:RPexplanation}.
+And the reason is illustrated detailedly in Hisao et al.\cite{hisao:RPexplanation}.
 
 \begin{figure}[!t]
   \centering
@@ -278,78 +278,37 @@ we use hypervolume as the indicator to evaluate the performance of the solutions
 Then the reference point used to calculate the hypervolume is calculated by the formula above.
 %可以加一个介绍nadir point的图，如果8页不够的话。 !!!!!!!!
 
-The suggested value of $r$ is investigated in \cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}. 
-$r=1.1$ is not a suggested value, especially on problems with a flat(not concave or convex) pareto front.
+But actually, fixing the $r$ value to 1.1 is not suggested, especially on problems with the inverted-triangular pareto front
+\cite{hisao:RPhowtoSpecify}. 
+The research on specifying the value of $r$ is limited, for the reason that, 
+the effect of the location of the reference point on the pareto front 
+is not fatal on some benchmark problems, for example, the problems with triangular pareto front. 
 
-% ----------------------------------- dynamic mechanism ------------------------------------
-% 在算法运行的不同时期 early stage；final stage， 为了不同的目的，
-% （early stage是convergence， final stage是diversity） r应该设置成不同的值【我的本科毕设和hisao】
-% 即 r value 应该是随着算法的进行dynamically设置成不同的值。 
-%
-% unfortunately 对r的研究太少了, 因为在 benchmark问题上， 特别是正三角 r对PF上的解的影响很小
-% 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
-% 
-\section{The Details About the Dynamic Reference Point Specification Mechanism}
-Based on the formula (\ref{frpa1}), 
-we define the dynamic reference point specification as that,
-the value of $r$ is adapted during the process of the algorithm.
-
-Basically, the process of Evolutionary Multi-objective Optimization Algorithm can be separated into
-two stages:
-\subsubsection{Early Stage} In this stage, 
-all the solutions are far away from pareto front.
-The main task is to converge the solutions to pareto front.
-We also call this stage the convergence stage.
-\subsubsection{Final Stage} In this stage,
-all the solutions are in or near the pareto front.
-So the main task is to make the distribution of solutions more evenly in the pareto front.
-We also call this stage the diversity stage.
-
-For different purposes in these two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
-Not only the reference point but also the value of $r$ 
-needs to be adapted in each iteration of the algorithm. 
-This is called dynamical reference point adaptation. 
-
-Unfortunately, the research on how to specified $r$ is limited.
-Only a few papers\cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify} 
-did some research on the optimal setting of the reference point on 
-flat (not concave or convex) pareto front problems. 
-The reason is that the effect of the location of the reference point on the pareto front 
-is not fatal on some benchmark problems, especially triangular pareto front. 
-But in fact, on some specific problems, the distribution of solutions on pareto front
-strongly depends on the location of the reference point. 
-The sensitivity about the value of $r$ for solutions is also observed on some real-world problems,
-for example, distance minimization problems.
-This observation potential shows the usefulness of the dynamical reference point adaptation
-\cite{hisao:dynamic}.
-
-In this section, we will specify the suggested $r$ values separately
-in the early and final stages.
-
-% ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for optimal distribution ----------------
 % 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出二维三维图for example），
 % 提一句 本文主要的研究问题就是平的PF问题
 % 即在算法的最后final stage，所有solution都在PF上，r应该设置成1+1/H。
 %
 \subsection{Specify the Value of $r$ for Optimal Distribution}
-In the final stages, the major purpose is to augment the diversity of solutions set.
-More specifically, for inverted-triangular problems, in order to have same hypervolume contribution, 
+In Hisao et al.\cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}, the suggested value of $r$ is investigated 
+on flat (not concave or convex) pareto front problems. 
+Specifically, on inverted-triangular problems(inverted-DTLZ1\cite{hisao:RPexplanation} etc.), 
+in order to have same hypervolume contribution, 
 the interval between two boundary solutions should be the same as that between two inner solutions.
-In hisao st al\cite{hisao:RPhowtoSpecify}, the suggested value of $r$ for flat(not concave or convex) pareto front problems is:
+In hisao et al.\cite{hisao:RPhowtoSpecify}, the suggested value of $r$ is:
 \begin{equation}\label{eod}
   r=1+\frac{1}{H},
 \end{equation}
 as shown in Fig. \ref{dm1}. $H$ is the number of solutions intervals in 2-dimension 
-and the number of interval at each boundary of pareto front in many-dimension.
-In Fig. \ref{dm1:a}, $r=13/12(H=12)$ is the optimal setting for a $91$ individuals 
-inverted-DTLZ1 problem and a evenly distribution is observed. 
-In Fig. \ref{dm1:b} - Fig. \ref{dm1:d}, the inner solutions are decreased and move to
-the boundary of pareto front. 
+and the number of intervals at each boundary of pareto front in many-dimension. 
+In Fig. \ref{dm1:a}, $r=13/12(H=12)$ is the optimal setting for a 91-individual 3-dimensional 
+inverted-DTLZ1 problem and a optimal distribution is observed. 
+In Fig. \ref{dm1:b} - Fig. \ref{dm1:d}, the inner solutions are decreased and move to 
+the boundary of pareto front as the increasing of $r$. 
 
 \begin{figure}[!t]
   \centering
-  \subfloat[$r=13/12.$(optimal).]{\label{dm1:a}
+  \subfloat[$r=13/12$(optimal).]{\label{dm1:a}
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r13_12_N91}}\quad
   \subfloat[$r=1.5.$]{\label{dm1:b}
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r1__5_N91}}\\
@@ -366,9 +325,37 @@ the boundary of pareto front.
   \label{dm1}
 \end{figure}
 
-For simple illustration,
-when algorithm reaches to the final stage, all solutions are near the pareto front, $r$ should
-be specified as $1+1/H$, as in equation \ref{eod}. 
+% ----------------------------------- dynamic mechanism ------------------------------------
+% 在算法运行的不同时期 early stage；final stage， 为了不同的目的，
+% （early stage是convergence， final stage是diversity） r应该设置成不同的值【我的本科毕设和hisao】
+% 即 r value 应该是随着算法的进行dynamically设置成不同的值。 
+%
+% unfortunately 对r的研究太少了, 因为在 benchmark问题上， 特别是正三角 r对PF上的解的影响很小
+% 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
+% 
+\section{The Dynamic Reference Point Specification Mechanism}
+Basically, the process of Evolutionary Multi-objective Optimization Algorithm can be separated into
+two stages:
+\subsubsection{Early Stage} In this stage, 
+all the solutions are far away from pareto front.
+The main task is to converge the solutions to pareto front.
+We also call this stage the convergence stage.
+\subsubsection{Final Stage} In this stage,
+all the solutions are in or near the pareto front.
+So the main task is to make the distribution of solutions more evenly in the pareto front.
+We also call this stage the diversity stage.
+
+For different purposes in these two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
+Not only the reference point but also the value of $r$ 
+needs to be adapted in each iteration of the algorithm. 
+This is called dynamical reference point specification. 
+Based on the formula (\ref{frpa1}), 
+we define the dynamic reference point specification as:
+\begin{equation}\label{f2}
+  RP = r(t) * ENP, t=0,1,\dots,T,
+\end{equation}
+where $T$ is the total number of generations, and $r=r(t)$ is a function of the current generation $t$.
+The value of $r$ is adapted during the process of the algorithm. 
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
 % --------------- reference point specification for better searching behavior ------------
@@ -385,17 +372,42 @@ be specified as $1+1/H$, as in equation \ref{eod}.
 % HV表示最后hv差，NHV表示较快到达前沿）
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
-\subsection{Specifiy the Value of $r$ for Better Searching Behavior}
-However, in the early stage, solutions set is not close to the pareto front, which makes the 
+\subsection{The Necessity of Using Dynamic Reference Point Specification Mechanism}
+In the early stage, solutions set is not close to the pareto front, which makes the 
 estimated ideal and nadir points far away from true ideal and nadir points, for the reason that
 they are calculated by current solutions in each generation. 
-And considering some problems without an easy mapping from decision space to objective space,
+And considering the problems with 10 objectives, 
 if the external solutions have the same hypervolume contribution with the inner solutions,
-the exploration of pareto front will be poor. 
-As a result, the solutions can hardly jump out from the local minimums and the diversity will be poor.
-Two examples are given in the experiment section (As shown in Fig. \ref{iudm1:d} and \ref{iudm2:d}). 
+the exploration of solutions will be poor. 
+As a result, some dimensionalities of solutions will be missing and the diversity will be poor. 
+A example is given in Fig. \ref{nud}. 
+\begin{figure}[!t]
+  \centering
+  \subfloat[$r=10$.]{\label{nud:a}
+    \includegraphics[width=1.5in]{SMSEMOA_DTLZ2_e10000_r10}}\quad
+  \subfloat[$r=2$(optimal).]{\label{nud:b}
+    \includegraphics[width=1.5in]{SMSEMOA_optimal_DTLZ2_e10000}}\\
+  \caption{
+    The final distribution of SMS-EMOA on 10-dimension DTLZ2 problems. 
+    The population number is 30($H=1$), total evaluation number is 10000.
+    The first 4 dimensionalities are all 0 for the solutions(\ref{nud:b}). 
+  }
+  \label{nud}
+\end{figure} 
+The first 4 dimensionalities are all 0 for the solutions obtained by SMS-EMOA on 10-dimension DTLZ2 problems(Fig. \ref{nud:b}). 
+In \cite{hisao:dynamic}, a larger value of $r$ than the $1+1/H$ is suggested in the early stage. 
 
-In \cite{hisao:dynamic}, a larger value of $r$ than the $1+1/H$ is suggested in the early stage.
+When algorithm reaches to the final stage, all solutions are near the pareto front, $r$ should
+be specified as $1+1/H$, as in formula \ref{eod}, 
+in order to get a optimal solutions distribution. 
+That is, $r(T)=1+1/H$. 
+On inverted-triangular problems, the distribution of solutions on pareto front
+strongly depends on the value of $r$ (as shown in Fig. \ref{dm1}). 
+
+The sensitivity of the value of $r$ on the solutions distribution is also observed on some real-world problems,
+for example, distance minimization problems. 
+This observation potential shows the usefulness of the dynamical reference point specification
+\cite{hisao:dynamic}.
 
 % ------------------------- linearly decrease mechanism --------------------------
 % so r从2到1+1/H 很必要 之前介绍过 但是怎么变化 没有一个特别好的idea outperform the others
@@ -600,7 +612,7 @@ because of a weak convergence detection purpose.
 % 要验证 10^-5 是不是一个好的threshold 画出不同维度 当检测到收敛的solutions图，确认检测到不变的时候确实收敛
 %
 \section{Computational Experiments}
-To clearly represent the superiority of dynamically reference point adaptation 
+To clearly represent the superiority of dynamically reference point specification 
 and to ease the comparison process of two different dynamic mechanisms
 (linearly decrease mechanism and weak convergence detection mechanism), 
 the mechanisms are going to be tested with the algorithm FV-EMOA\cite{FVEMOA}.

@@ -27,7 +27,7 @@ classdef MPDMP_mD < PROBLEM
             % Parameter setting
             [lower,upper] = obj.Global.ParameterSet(-100,100);
             if isempty(obj.Global.D)
-                obj.Global.D = 10;
+                obj.Global.D = 5;
             end
             obj.Global.M        = obj.Global.D * 2;
             obj.Global.lower    = zeros(1,obj.Global.D) + lower;

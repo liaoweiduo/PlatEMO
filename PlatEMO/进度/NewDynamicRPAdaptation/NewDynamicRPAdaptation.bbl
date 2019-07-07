@@ -186,10 +186,10 @@ H.~Ishibuchi, Y.~Setoguchi, H.~Masuda, and Y.~Nojima, ``Performance of
   front shapes,'' \emph{IEEE Transactions on Evolutionary Computation},
   vol.~21, no.~2, pp. 169--190, 2016.
 
-\bibitem{MaF}
-R.~Cheng, M.~Li, Y.~Tian, X.~Zhang, S.~Yang, Y.~Jin, and X.~Yao, ``A benchmark
-  test suite for evolutionary many-objective optimization,'' \emph{Complex \&
-  Intelligent Systems}, vol.~3, no.~1, pp. 67--81, 2017.
+\bibitem{dmp}
+H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
+  for multi-objective and many-objective optimization,'' \emph{Complex \&
+  Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
 
 \bibitem{PlatEMO}
 T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for

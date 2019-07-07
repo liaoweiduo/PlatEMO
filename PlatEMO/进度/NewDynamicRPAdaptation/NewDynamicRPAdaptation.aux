@@ -12,7 +12,6 @@
 \citation{smsemoa}
 \citation{FVEMOA}
 \citation{FVEMOA}
-\citation{FVEMOA}
 \citation{hisao:RPhowtoSpecify,hisao:RPspecify,hisao:RPexplanation}
 \citation{hisao:RPspecify}
 \citation{hisao:dynamic}
@@ -43,7 +42,7 @@
 \newlabel{sub@rpa2:c}{{(c)}{c}}
 \newlabel{rpa2:d}{{2d}{2}}
 \newlabel{sub@rpa2:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The final distribution of solutions set in the inverted-DTLZ1(2a\hbox {} and 2b\hbox {}) and the DTLZ1 problem(2c\hbox {} and 2d\hbox {}). The algorithm is FV-EMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. (2a\hbox {} and 2c\hbox {}): the reference point is calculated only once at the initial step; (2b\hbox {} and 2d\hbox {}): the reference point is specified by the formula (1\hbox {}). All the solutions in the final distribution are at the boundary of the pareto front in (2a\hbox {}), which shows the bad effect of a faraway reference point on the final distribution of inverted-triangular problems. This bad effect can not be observed on triangular problems in (2c\hbox {}). \relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The final distribution of solutions set in the inverted-DTLZ1(2a\hbox {} and 2b\hbox {}) and the DTLZ1 problem(2c\hbox {} and 2d\hbox {}). The algorithm is SMS-EMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. (2a\hbox {} and 2c\hbox {}): the reference point is calculated only once at the initial step; (2b\hbox {} and 2d\hbox {}): the reference point is specified by the formula (1\hbox {}). All the solutions in the final distribution are at the boundary of the pareto front in (2a\hbox {}), which shows the bad effect of a faraway reference point on the final distribution of inverted-triangular problems. This bad effect can not be observed on triangular problems in (2c\hbox {}). \relax }}{2}}
 \newlabel{rpa2}{{2}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {The reference point is fixed.}}}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {The reference point is specified by the formula (1\hbox {}).}}}{2}}
@@ -62,7 +61,7 @@
 \newlabel{sub@dm1:c}{{(c)}{c}}
 \newlabel{dm1:d}{{3d}{3}}
 \newlabel{sub@dm1:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The final distribution of solutions set in the inverted-DTLZ1 problem. The algorithm is FV-EMOA with population size $=91$($H=12$) and evaluation number $=20000$. $r=13/12$ is the optimal setting and we observed a evenly distribution in (3a\hbox {}). As the increasing of $r$, solutions are more likely to be at the boundary (3b\hbox {}-3d\hbox {}). \relax }}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The final distribution of solutions set in the inverted-DTLZ1 problem. The algorithm is SMS-EMOA with population size $=91$($H=12$) and evaluation number $=20000$. $r=13/12$ is the optimal setting and we observed a evenly distribution in (3a\hbox {}). As the increasing of $r$, solutions are more likely to be at the boundary (3b\hbox {}-3d\hbox {}). \relax }}{3}}
 \newlabel{dm1}{{3}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$r=13/12$(optimal).}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$r=1.5.$}}}{3}}
@@ -92,81 +91,37 @@
 \newlabel{endm1}{{5}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Weak Convergence Detection}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-A}1}inaccuracy}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Example of nadir point and hypervolume(HV) value on inverted-DTLZ1 3-dimension problem with FV-EMOA algorithm. The yellow curve is the change of hypervolume while the black curve is the change of logarithmic nadir point. \relax }}{4}}
-\newlabel{wcd1}{{5}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-A}2}saving time}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Example of nadir point and hypervolume(HV) value on inverted-DTLZ1 3-dimension problem with SMS-EMOA algorithm. The yellow curve is the change of hypervolume while the black curve is the change of logarithmic nadir point. \relax }}{4}}
+\newlabel{wcd1}{{5}{4}}
 \newlabel{ewcd1}{{6}{4}}
 \citation{SimpleLeastSquares}
 \citation{convergenceDetection:LSSC}
-\citation{FVEMOA}
+\citation{smsemoa}
 \citation{DTLZ}
 \citation{WFG}
 \citation{minusTestProblem}
-\citation{hisao:RPexplanation}
-\citation{MaF}
+\citation{dmp}
 \citation{PlatEMO}
-\citation{FVEMOA}
+\citation{smsemoa}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example of $\delimiter 69640972 b\delimiter 86418188 $ on inverted-DTLZ1 3-dimension problem (window size = $4000$ evaluations with population size = $100$). \relax }}{5}}
 \newlabel{wcd2}{{6}{5}}
 \newlabel{elr1}{{7}{5}}
 \newlabel{elr2}{{8}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Computational Experiments}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Computational Results}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces HV mean and standard deviation over 20 independent runs for triangular pareto front problems.\relax }}{6}}
-\newlabel{table_FVEMOA_tri}{{I}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces HV mean and standard deviation over 20 independent runs for inverted-triangular pareto front problems.\relax }}{6}}
-\newlabel{table_FVEMOA_itri}{{II}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}The Importance of Using Dynamic Mechanism}{6}}
-\newlabel{iudm1:a}{{7a}{7}}
-\newlabel{sub@iudm1:a}{{(a)}{a}}
-\newlabel{iudm1:b}{{7b}{7}}
-\newlabel{sub@iudm1:b}{{(b)}{b}}
-\newlabel{iudm1:c}{{7c}{7}}
-\newlabel{sub@iudm1:c}{{(c)}{c}}
-\newlabel{iudm1:d}{{7d}{7}}
-\newlabel{sub@iudm1:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  The final distribution of 4 reference point strategies on 3-dimensional DTLZ4 problems. \relax }}{7}}
-\newlabel{iudm1}{{7}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {FV-EMOA-2}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {FV-EMOA-LD}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {FV-EMOA-CD}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {FV-EMOA-Opt}}}{7}}
-\newlabel{iudm2:a}{{8a}{7}}
-\newlabel{sub@iudm2:a}{{(a)}{a}}
-\newlabel{iudm2:b}{{8b}{7}}
-\newlabel{sub@iudm2:b}{{(b)}{b}}
-\newlabel{iudm2:c}{{8c}{7}}
-\newlabel{sub@iudm2:c}{{(c)}{c}}
-\newlabel{iudm2:d}{{8d}{7}}
-\newlabel{sub@iudm2:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  The final distribution of 4 reference point strategies on 5-dimensional DTLZ4 problems. \relax }}{7}}
-\newlabel{iudm2}{{8}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {FV-EMOA-2}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {FV-EMOA-LD}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {FV-EMOA-CD}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {FV-EMOA-Opt}}}{7}}
-\newlabel{ctdm:a}{{9a}{7}}
-\newlabel{sub@ctdm:a}{{(a)}{a}}
-\newlabel{ctdm:b}{{9b}{7}}
-\newlabel{sub@ctdm:b}{{(b)}{b}}
-\newlabel{ctdm:c}{{9c}{7}}
-\newlabel{sub@ctdm:c}{{(c)}{c}}
-\newlabel{ctdm:d}{{9d}{7}}
-\newlabel{sub@ctdm:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces  The final distribution of 4 reference point strategies on the MaF1 problem. The results are obtained after $3500$ evaluations($t_{Convergent} = 3400$). \relax }}{7}}
-\newlabel{ctdm}{{9}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {FV-EMOA-2}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {FV-EMOA-LD}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {FV-EMOA-CD}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {FV-EMOA-Opt}}}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-C}}Comparison of Two Dynamic Mechanisms}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VII-}1}Optimal Distribution}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VII-}2}Better Searching Behavior}{7}}
 \bibstyle{IEEEtran}
 \bibdata{mybibtex}
 \bibcite{hypervolume}{1}
 \bibcite{R2}{2}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces HV mean and standard deviation over 20 independent runs for DTLZ and WFG problems.\relax }}{6}}
+\newlabel{table_tri}{{I}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces HV mean and standard deviation over 20 independent runs for corresponding minus-versions and MPMP.\relax }}{6}}
+\newlabel{table_itri}{{II}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VII-}1}Optimal Distribution}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VII-}2}Better Searching Behavior}{6}}
+\@writefile{toc}{\contentsline {section}{References}{6}}
 \bibcite{e+}{3}
 \bibcite{IGD}{4}
 \bibcite{pareto_compliant}{5}
@@ -193,6 +148,5 @@
 \bibcite{DTLZ}{26}
 \bibcite{WFG}{27}
 \bibcite{minusTestProblem}{28}
-\bibcite{MaF}{29}
+\bibcite{dmp}{29}
 \bibcite{PlatEMO}{30}
-\@writefile{toc}{\contentsline {section}{References}{8}}

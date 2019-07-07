@@ -16,37 +16,37 @@ Warning--empty journal in convergenceDetection:convergenceMetric
 Done.
 You've used 30 entries,
             4024 wiz_defined-function locations,
-            1002 strings with 13787 characters,
-and the built_in function-call counts, 26130 in all, are:
-= -- 2079
-> -- 659
-< -- 246
-+ -- 368
-- -- 115
-* -- 1289
-:= -- 3752
+            1001 strings with 13753 characters,
+and the built_in function-call counts, 26082 in all, are:
+= -- 2082
+> -- 645
+< -- 248
++ -- 362
+- -- 111
+* -- 1285
+:= -- 3747
 add.period$ -- 73
 call.type$ -- 30
 change.case$ -- 29
-chr.to.int$ -- 582
+chr.to.int$ -- 588
 cite$ -- 31
-duplicate$ -- 1818
-empty$ -- 2111
-format.name$ -- 138
-if$ -- 6087
+duplicate$ -- 1814
+empty$ -- 2108
+format.name$ -- 134
+if$ -- 6077
 int.to.chr$ -- 0
 int.to.str$ -- 30
-missing$ -- 311
+missing$ -- 307
 newline$ -- 117
 num.names$ -- 30
-pop$ -- 719
+pop$ -- 707
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1997
+skip$ -- 1996
 stack$ -- 0
-substring$ -- 1401
-swap$ -- 1546
+substring$ -- 1415
+swap$ -- 1544
 text.length$ -- 52
 text.prefix$ -- 0
 top$ -- 5

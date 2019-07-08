@@ -29,7 +29,7 @@ function FVEMOA_DR2(Global)
     r_list = [];
     saving = 0;
     
-    nadir = max(Population.objs);
+    nadir = max(Population.objs);   % change to non-dominant front
     nadir_list(end + 1,:) = nadir;
     evaluate_num(end + 1) = Global.evaluated;
     r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);

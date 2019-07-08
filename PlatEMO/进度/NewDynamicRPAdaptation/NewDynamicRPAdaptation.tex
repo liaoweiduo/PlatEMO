@@ -256,9 +256,9 @@ And the reason is illustrated detailedly in Hisao et al.\cite{hisao:RPexplanatio
     \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
   \caption{The final distribution of solutions set in the inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
   and the DTLZ1 problem(\ref{rpa2:c} and \ref{rpa2:d}).
-  The algorithm is SMS-EMOA with population size $= 100$, evaluation number $= 20000$ and $r=1.1$. 
-  (\ref{rpa2:a} and \ref{rpa2:c}): the reference point is calculated only once at the initial step;
-  (\ref{rpa2:b} and \ref{rpa2:d}): the reference point is specified by the formula (\ref{frpa1}).
+  The algorithm is SMS-EMOA with population size $= 100$, evaluation number $= 20000$. 
+  \ref{rpa2:a} and \ref{rpa2:c}: the reference point is calculated only once at the initial step;
+  \ref{rpa2:b} and \ref{rpa2:d}: the reference point is specified by the formula (\ref{frpa1}) with $r=1.1$.
   All the solutions in the final distribution are at the boundary of the pareto front in (\ref{rpa2:a}),
   which shows the bad effect of a faraway reference point
   on the final distribution of inverted-triangular problems.
@@ -267,13 +267,20 @@ And the reason is illustrated detailedly in Hisao et al.\cite{hisao:RPexplanatio
   \label{rpa2}
 \end{figure}
 
-In many algorithms including SMS-EMOA\cite{smsemoa}, 
-the reference point is specified based on the following rules:
+In the original SMS-EMOA\cite{smsemoa} paper, 
+the reference point is specified as the vector of the estimated nadir point increased by $\boldsymbol{1.0}$
+(in two-dimension, a sufficiently large reference point is chosen). 
+But in current implementation, the following mechanism is always used:
 \begin{equation}\label{frpa1}
-  RP = r * ENP.
+  \boldsymbol R = r * \boldsymbol N, 
+  \boldsymbol R, \boldsymbol N \in \mathbb{R}^m.
 \end{equation}
-Note that the estimated nadir point($ENP$) is the nadir point in current population. 
-$r$ is specified as %SMSEMOA是固定正无穷， 现在用的算法在platEMO是用1.1. hypE用， FV-EMOA用，  都不同， common 1.1
+Note that $\boldsymbol R$ is the reference point in each generation, 
+and $\boldsymbol N$ is the estimated nadir point of the last front of the current population. 
+$r$ is specified as 1.1 in PlatEMO\cite{PlatEMO}, a well-known EMO framework. 
+The specification of reference point is one of the important parts in hypervolume-based algorithm.
+In the source code of PlatEMO, the value of $r$ is chosen as follow: 
+1.1(SMS-EMOA\cite{smsemoa}) and (HypE\cite{HypE}). % and 10(FV-EMOA\cite{FVEMOA}). 
 When the solutions in the current population are obtained, 
 we use hypervolume as the indicator to evaluate the performance of the solutions set. 
 Then the reference point used to calculate the hypervolume is calculated by the formula above. 
@@ -406,7 +413,8 @@ This is called dynamical reference point specification.
 Based on the formula (\ref{frpa1}), 
 we define the dynamic reference point specification as:
 \begin{equation}\label{f2}
-  RP = r(t) * ENP, t=0,1,\dots,T,
+  \boldsymbol R = r(t) * \boldsymbol N, 
+  \boldsymbol R, \boldsymbol N \in \mathbb{R}^m, t=0,1,\dots,T,
 \end{equation}
 where $T$ is the total number of generations, and $r=r(t)$ is a function of the current generation $t$.
 The value of $r$ is adapted during the process of the algorithm. 
@@ -455,12 +463,14 @@ For this purpose, we detect whether the algorithm is converged or not.
 If solutions are all close to the pareto front, 
 we change the value of $r$ to $r_{Optimal}$; otherwise, we set value of $r$ to 
 $r_{Initial}$. The mechanism is also shown below:
-\begin{equation}\begin{aligned}\label{endm1}
-  r(t)&=r_{Initial}\mathbb{I}\left[t<t_{Convergent}\right]\\
-  &+(1+1/H)\mathbb{I}\left[t \ge t_{Convergent}\right], t=0,1,\dots,T,
-\end{aligned}
+\begin{equation}\label{endm1}
+  r(t)=
+  \begin{cases}
+    r_{Initial}, t<t_{Convergent}\\
+    (1+1/H), t \ge t_{Convergent} 
+  \end{cases}
+  t=0,1,\dots,T.
 \end{equation}
-where $\mathbb{I}$ is the indicator function returning $1$ if argument is true and $0$ otherwise.
 $r(t)$ equals to $r_{Initial}$ before reaching to the convergent generation $t_{Convergent}$,
 and changes to $1+1/H$ after $t_{Convergent}$. 
 The $t_{Convergent}$ is determined by a weak convergence detection criterion. 

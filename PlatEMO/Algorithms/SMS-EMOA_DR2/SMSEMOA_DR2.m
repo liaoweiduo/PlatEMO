@@ -37,8 +37,12 @@ function SMSEMOA_DR2(Global)
     r_list = [];
     saving = 0;
     while Global.NotTermination(Population)
-        
-        nadir = max(Population.objs);
+    
+        FrontNo    = NDSort(Population.objs,inf);
+        firstFront = find(FrontNo==min(FrontNo));
+        PopObj    = Population(firstFront).objs;
+    
+        nadir = max(PopObj.objs);
         nadir_list(end + 1,:) = nadir;
         evaluate_num(end + 1) = Global.evaluated;
         if ~saving

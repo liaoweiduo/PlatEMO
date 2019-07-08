@@ -119,6 +119,11 @@ H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
   on Parallel Problem Solving from Nature}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2018, pp. 384--396.
 
+\bibitem{PlatEMO}
+T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for
+  evolutionary multi-objective optimization [educational forum],'' \emph{IEEE
+  Computational Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
+
 \bibitem{DtA}
 Z.~Wang, Y.-S. Ong, J.~Sun, A.~Gupta, and Q.~Zhang, ``A generator for
   multiobjective test problems with difficult-to-approximate pareto front
@@ -190,10 +195,5 @@ H.~Ishibuchi, Y.~Setoguchi, H.~Masuda, and Y.~Nojima, ``Performance of
 H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
   for multi-objective and many-objective optimization,'' \emph{Complex \&
   Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
-
-\bibitem{PlatEMO}
-T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for
-  evolutionary multi-objective optimization [educational forum],'' \emph{IEEE
-  Computational Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
 
 \end{thebibliography}

@@ -1,6 +1,6 @@
-Problem = 'C1_DTLZ1';
+Problem = 'IDTLZ1';
 M = '3';
-run = '5';
+run = '1';
 window = 10;
 
 for i = 1:length(Data)
@@ -15,7 +15,7 @@ for i = 1:length(Data)
         bsf = 100;
         for index = 1:len
             bsf = min(bsf, nadirSet_y(index));
-            nadirSet_y_bsf(index) = bsf;
+            nadirSet_y_bsf(index) = bsf; 
         end
         
         ab = zeros(len,2);

@@ -1,13 +1,13 @@
 %% parameter sets
 rootPath = 'Analysis/';
-Algorithms = {'FVEMOA'};
+Algorithms = {'SMSEMOA'};
 % Problems = {'DTLZ1', 'DTLZ2', 'DTLZ3', 'DTLZ4', 'DTLZ5', 'DTLZ6', 'DTLZ7', 'DTLZ8', 'DTLZ9',...
 %     'C1_DTLZ1', 'C2_DTLZ2', 'C3_DTLZ4', 'CDTLZ2', 'IDTLZ1', 'IDTLZ2', 'SDTLZ1',...
 %     'WFG1', 'WFG2', 'WFG3', 'WFG4', 'WFG5', 'WFG6', 'WFG7', 'WFG8', 'WFG9',...
 %     'MaF1', 'MaF2', 'MaF3', 'MaF4', 'MaF5', 'MaF6', 'MaF7', 'MaF8', 'MaF9', 'MaF10',...
 %     'MaF11', 'MaF12', 'MaF13', 'MaF14', 'MaF15'};
-Problems ={'DTLZ1', 'C1_DTLZ1', 'MaF1', 'IDTLZ1'};
-Ms = {'3','5'};
+Problems ={'MPDMP'};
+Ms = {'10'};
 
 %% load data
 for i = 1:size(Algorithms,2)
@@ -43,12 +43,12 @@ for indexA = 1:size(Algorithms,2)  % draw picture for specific algorithm
         for indexM = 1:size(Ms,2)
             M = Ms{indexM};
             
-            subplot(2,2,indexM);
+%             subplot(2,2,indexM);
             hold on
             for i = 1:length(metrics_1)     % origin metrics
                 if strcmp(metrics_1(i).Problem, Problem) && strcmp(metrics_1(i).M, M)
                     hvSetStrut = metrics_1(i).hvSetStrut;
-                    p0=plot(hvSetStrut.indexSet, hvSetStrut.aver);
+                    p0=plot(metrics_2(1).hvSetStrut.indexSet, hvSetStrut.aver);
                     break
                 end
             end

@@ -59,6 +59,11 @@ N.~Beume, C.~M. Fonseca, M.~Lopez-Ibanez, L.~Paquete, and J.~Vahrenhold, ``On
   Transactions on Evolutionary Computation}, vol.~13, no.~5, pp. 1075--1082,
   2009.
 
+\bibitem{smsemoa}
+N.~Beume, B.~Naujoks, and M.~Emmerich, ``Sms-emoa: Multiobjective selection
+  based on dominated hypervolume,'' \emph{European Journal of Operational
+  Research}, vol. 181, no.~3, pp. 1653--1669, 2007.
+
 \bibitem{HypE}
 J.~Bader and E.~Zitzler, ``Hype: An algorithm for fast hypervolume-based
   many-objective optimization,'' \emph{Evolutionary computation}, vol.~19,
@@ -79,16 +84,17 @@ A.~Menchaca-M{\'e}ndez, E.~Montero, and S.~Zapotecas-Mart{\'\i}nez, ``An
   adaptive resource allocation,'' \emph{IEEE Access}, vol.~6, pp.
   63\,382--63\,401, 2018.
 
-\bibitem{smsemoa}
-N.~Beume, B.~Naujoks, and M.~Emmerich, ``Sms-emoa: Multiobjective selection
-  based on dominated hypervolume,'' \emph{European Journal of Operational
-  Research}, vol. 181, no.~3, pp. 1653--1669, 2007.
-
 \bibitem{FVEMOA}
 S.~Jiang, J.~Zhang, Y.-S. Ong, A.~N. Zhang, and P.~S. Tan, ``A simple and fast
   hypervolume indicator-based multiobjective evolutionary algorithm,''
   \emph{IEEE Transactions on Cybernetics}, vol.~45, no.~10, pp. 2202--2213,
   2014.
+
+\bibitem{DTLZ}
+K.~Deb, L.~Thiele, M.~Laumanns, and E.~Zitzler, ``Scalable multi-objective
+  optimization test problems,'' in \emph{Proceedings of the 2002 Congress on
+  Evolutionary Computation. CEC'02 (Cat. No. 02TH8600)}, vol.~1.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2002, pp. 825--830.
 
 \bibitem{hisao:RPhowtoSpecify}
 H.~Ishibuchi, R.~Imada, S.~Yu, and Y.~Nojima, ``How to specify a reference
@@ -118,6 +124,11 @@ H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
   multiobjective optimization algorithms,'' in \emph{International Conference
   on Parallel Problem Solving from Nature}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2018, pp. 384--396.
+
+\bibitem{dmp}
+H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
+  for multi-objective and many-objective optimization,'' \emph{Complex \&
+  Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
 
 \bibitem{PlatEMO}
 T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for
@@ -174,12 +185,6 @@ T.~Wagner, H.~Trautmann, and L.~Mart{\'\i}, ``A taxonomy of online stopping
 W.~Ericson, ``Introductory probability and statistical applications,''
   \emph{Technometrics}, vol.~8, no.~4, pp. 720--722, 1970.
 
-\bibitem{DTLZ}
-K.~Deb, L.~Thiele, M.~Laumanns, and E.~Zitzler, ``Scalable multi-objective
-  optimization test problems,'' in \emph{Proceedings of the 2002 Congress on
-  Evolutionary Computation. CEC'02 (Cat. No. 02TH8600)}, vol.~1.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2002, pp. 825--830.
-
 \bibitem{WFG}
 S.~Huband, P.~Hingston, L.~Barone, and L.~While, ``A review of multiobjective
   test problems and a scalable test problem toolkit,'' \emph{IEEE Transactions
@@ -190,10 +195,5 @@ H.~Ishibuchi, Y.~Setoguchi, H.~Masuda, and Y.~Nojima, ``Performance of
   decomposition-based many-objective algorithms strongly depends on pareto
   front shapes,'' \emph{IEEE Transactions on Evolutionary Computation},
   vol.~21, no.~2, pp. 169--190, 2016.
-
-\bibitem{dmp}
-H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
-  for multi-objective and many-objective optimization,'' \emph{Complex \&
-  Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
 
 \end{thebibliography}

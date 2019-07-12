@@ -1,5 +1,5 @@
 clear;
-Algorithm = 'FVEMOA';
+Algorithm = 'SMSEMOA_optimal';
 PathRoot=['Data_toprocess/', Algorithm, '/'];
 list=dir(fullfile(PathRoot));
 fileNum=size(list,1)-2; 
@@ -34,6 +34,11 @@ for k=3:fileNum+2
     
     for index = 1:length(generationSet)
         populationSet = generationSet{index};
+        
+        FrontNo    = NDSort(populationSet.objs,inf);
+        firstFront = find(FrontNo==min(FrontNo));
+        PopObj    = populationSet(firstFront).objs;
+    
         objectiveSet = populationSet.objs;
         % save the nadir point of each generation
         result(index,4) = {max(objectiveSet)};

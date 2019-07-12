@@ -90,9 +90,9 @@ Email: 11849249@mail.sustech.edu.cn; kshang@foxmail.com; hisao@sustech.edu.cn}
 In the field of indicator-based evolutionary multi-objective optimization algorithms(indicator-based EMOAs), 
 hypervolume is a popular indicator, which is the only pareto-compliant indicator up to now. 
 But recently, a paper shows that the position of reference point will influence the diversity of the final solutions of
-hypervolume-based EMOAs when applying to the inverted-triangular pareto front problems,
-by influencing the hypervolume contribution of the external solutions.
-In this paper, we state this phenomenon and introduce the reference point adaptation with a dynamic mechanism in terms of necessity.
+hypervolume-based EMOAs when applying to the inverted-triangular pareto front problems, 
+by influencing the hypervolume contribution of the external solutions. 
+In this paper, we state this phenomenon and introduce the reference point specification with the dynamic mechanism in terms of necessity. 
 Then we propose a new dynamic mechanism based on weak convergence detection. 
 In our approach, the simple Least Squares and the information of nadir point are used to detect the convergence. 
 After that, we examine the difference between this new dynamic mechanism with a state-of-the-art linearly decrease mechanism. 
@@ -154,7 +154,9 @@ the hypervolume-based algorithms get poor performances
 in running time when dealing with problems which have more than three objectives, 
 which is so-called Many-Objective Optimization Problems(MaOPs). 
 
-In order to reduce the heavy computation cost of hypervolume computation, 
+SMS-EMOA\cite{smsemoa} is a basic hypervolume-based algorithm. 
+The hypervolume contribution is used to determine which solution to be discarded in the algorithm. 
+After proposing the SMS-EMOA, in order to reduce the heavy computation cost of hypervolume computation, 
 many new indicators or new methods have been proposed to estimate the hypervolume. 
 For example, HypE use a Monte Carlo simulation technology to estimate the effect of hypervolume\cite{HypE}; 
 R2 indicator bases on a standard weighted Tchebycheff function\cite{R2} and a new R2 is proposed by Shang et al\cite{newR2}.
@@ -164,37 +166,37 @@ In order to further reduce the bottleneck of high time complexity for calculatin
 the FV-EMOA considers the fact that the hypervolume contribution of a single solution 
 is only associated with partial solutions rather than the whole solution set\cite{FVEMOA}. 
 Based on this point, the FV-MOEA reduces the computational cost greatly. 
-% In this paper, the FV-MOEA is used in the experiment section, 
-% for its better performance on time-saving than SMS-EMOA\cite{FVEMOA}. 
 
-The specification of the reference point is one of the important parts in hypervolume computation. 
-It has been reported that the position of reference point strongly influences the value of
+The specification of the reference point is one of the important but easy to be ignored parts in hypervolume computation, 
+for that the effect on many problems including DTLZ series\cite{DTLZ} are not so significant. 
+But it has been reported that the position of reference point strongly influences the value of
 hypervolume contribution of the external solutions on the problems with inverted-shape pareto fronts\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
 A suitable set of reference point position for flat pareto fronts has been sufficiently investigated in Hisao et al.\cite{hisao:RPspecify}.
-And a dynamic reference point adaptation has also been proposed in Hisao et al.\cite{hisao:dynamic}.
+And a dynamic reference point specification mechanism has also been proposed in Hisao et al.\cite{hisao:dynamic}.
 Another strategy proposed is to use two reference points in hypervolume-based EMOA\cite{hisao:twoRP}. 
 In this paper, the dynamic mechanism is stated in two different stages of the algorithm running process. 
 At the early stage, for a better searching behavior of the algorithm, 
 the reference point should be set a little worse than the suggested position at the beginning.
-Then by a dynamic mechanism, the reference point is gradually decreasing to the suggested position following the iteration. 
+Then with a dynamic mechanism, the reference point is gradually decreasing to the suggested position following the iteration. 
 
-After that, we propose a new dynamic reference point adaptation with a weak convergence detection in hypervolume-based EMOA. 
+After that, we propose a new dynamic reference point specification mechanism with a weak convergence detection in hypervolume-based EMOA. 
 The simple least squares and the logarithm value of nadir point as a convergence indicator are used in this weak convergence detection. 
-For a given window $w_l$ generations, if the slope of linear regression is below one threshold, we report the convergence.
-The comparison of two dynamic mechanisms and simple reference point adaptation(without dynamic mechanism) is 
-discussed in the experiment section. On some specific conditions, for example, when the total evaluation number 
-is limited to a small addition after the reported convergence, our weak convergence detection mechanism 
-outperforms the linearly decrease mechanism. 
+Given $w_l$ generations as a window, if the slope of linear regression is below one threshold, we report the convergence.
+The comparison of two dynamic mechanisms and simple reference point specification(without dynamic mechanism) is 
+represented in the experiment section. On some specific problems, for example the multi-objective distance minimization problems\cite{dmp},
+our weak convergence detection mechanism outperforms the linearly decrease mechanism. 
 
 The remainder of this paper is organized as follows. 
-Firstly, we briefly introduce the basic idea of reference point adaptation by a simple example in Section II.
-Then, we state the reference point adaptation with the dynamic mechanism in Section III.
-The necessity of a dynamic mechanism is also illustrated in this Section. After that,
-the details of the new dynamic mechanism proposed in this paper is in Section IV. 
-And we report our computational experiments of SMS-EMOA
-with several triangular and inverted-triangular problems in Section V. our experiments are performed on
+Firstly, we briefly introduce the basic idea of reference point specification by a simple example in Section II. 
+Then, we explore the details of the reference point specification mechanism in two stages of the algorithm, 
+which elicits the necessity of using dynamic mechanism in Section III.
+After that, we state the details of the dynamic reference point specification mechanism and introduce 
+a proposed linearly decrease mechanism in Section IV. 
+Then the details of the new dynamic mechanism with a weak convergence detection proposed in this paper is in Section V. 
+And we report our computational experiments of SMS-EMOA 
+with several triangular and inverted-triangular problems in Section VI. Our experiments are performed on
 10-dimension problems for clearly comparing of two dynamic mechanisms and 
-simple reference point adaptation (without dynamic mechanism). Finally, the conclusion is shown in Section VI.
+simple reference point adaptation (without dynamic mechanism). Finally, the conclusion is shown in Section VII.
 
 % --------------------------- reference point specification in hypervolume-based EMOA ---------------------
 % reference point不应该只在刚开始设置而后面都不变，这样如果问题的feasible region很大的时候，初始设置的
@@ -242,7 +244,7 @@ Although it has no effect on the distributions of solutions set
 in problems with triangular pareto front in 3 dimensions 
 (Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
 it is necessary using a good reference point specification method during the algorithm progress.
-And the reason is illustrated detailedly in Hisao et al.\cite{hisao:RPexplanation}.
+And the reason is illustrated detailedly in Hisao et al\cite{hisao:RPexplanation}.
 
 \begin{figure}[!t]
   \centering
@@ -278,9 +280,9 @@ But in current implementation, the following mechanism is always used:
 Note that $\boldsymbol R$ is the reference point in each generation, 
 and $\boldsymbol N$ is the estimated nadir point of the last front of the current population. 
 $r$ is specified as 1.1 in PlatEMO\cite{PlatEMO}, a well-known EMO framework. 
-The specification of reference point is one of the important parts in hypervolume-based algorithm.
-In the source code of PlatEMO, the value of $r$ is chosen as follow: 
-1.1(SMS-EMOA\cite{smsemoa}) and (HypE\cite{HypE}). % and 10(FV-EMOA\cite{FVEMOA}). 
+The specification of reference point is one of the important parts in the hypervolume-based algorithm implementation.
+In the source code of PlatEMO, the values of $r$ in hypervolume-based algorithms are chosen as follow: 
+1.1(SMS-EMOA\cite{smsemoa}) and 1.2(HypE\cite{HypE}). % and 10(FV-EMOA\cite{FVEMOA}). 
 When the solutions in the current population are obtained, 
 we use hypervolume as the indicator to evaluate the performance of the solutions set. 
 Then the reference point used to calculate the hypervolume is calculated by the formula above. 
@@ -372,7 +374,7 @@ In the early stage, solutions set is not close to the pareto front, which makes 
 estimated ideal and nadir points far away from true ideal and nadir points, for the reason that
 they are calculated by current solutions in each generation. 
 And considering the problems with 10 objectives, 
-if the external solutions have the same hypervolume contribution with the inner solutions,
+if the external solutions have the same hypervolume contribution with the inner solutions, 
 the exploration of solutions will be poor. 
 As a result, some dimensionalities of solutions will be missing and the breadth-diversity\cite{DtA} will be poor. 
 A example is given in Fig. \ref{nud}. 
@@ -385,7 +387,7 @@ A example is given in Fig. \ref{nud}.
   \caption{
     The final distribution of SMS-EMOA on 10-dimension DTLZ2 problems. 
     The population number is 30($H=1$), total evaluation number is 10000.
-    The first 6 dimensionalities are all 0 for the solutions(\ref{nud:b}). 
+    The first 6 dimensionalities are all 0 in \ref{nud:b}. 
   }
   \label{nud}
 \end{figure} 
@@ -402,10 +404,9 @@ strongly depends on the value of $r$ (as shown in Fig. \ref{dm1}).
 
 The sensitivity of the value of $r$ on the solutions distribution is also observed on some real-world problems,
 for example, distance minimization problems. 
-This observation potential shows the usefulness of the dynamical reference point specification
-\cite{hisao:dynamic}.
+This observation potential shows the usefulness of the dynamical reference point specification\cite{hisao:dynamic}.
 
-\section{Existing Dynamic Reference Point Specification Mechanism}
+\section{Dynamic Reference Point Specification Mechanism}
 For different purposes in the two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
 Not only the reference point but also the value of $r$ 
 needs to be adapted in each iteration of the algorithm. 
@@ -427,9 +428,9 @@ The value of $r$ is adapted during the process of the algorithm.
 % 
 \subsection{The Proposed Linearly Decrease Mechanism} 
 Based on the theory above, $r$ is suggested to be specified dynamically at different stages of
-the algorithm(at early stage, a slightly larger $r$ is chosen; at final stage, $r=1+1/H$ is chosen).
+the algorithm(at early stage, a larger $r$ is chosen; at final stage, $r=1+1/H$ is chosen).
 But unfortunately, there is no best mechanism on how to specify the value of $r$ dynamically
-outperforms the others in all problems and all experiment settings. One mechanism may be the best
+outperforming the others in all problems and all experiment settings. One mechanism may be the best
 when working on some specific experiment conditions, but may not be good on other conditions. 
 
 In \cite{hisao:dynamic}, a linearly decrease mechanism has been proposed:
@@ -437,7 +438,7 @@ In \cite{hisao:dynamic}, a linearly decrease mechanism has been proposed:
   r(t)=r_{Initial}\frac{(T-t)}{T}+(1+1/H)\frac{t}{T}, t=0,1,\dots,T,
 \end{equation}
 where $T$ is the total number of generations, and $r_{Initial}$ is the initial value of $r$,
-which is larger than $1+1/H$.
+which is larger than $1+1/H$. 
 It is a simple and practical mechanism. In (\ref{eldm1}), the value of $r$ starts from $r_{Initial}$,
 then gradually decreases to the suggested value in a linearly decrease process. 
 
@@ -456,7 +457,7 @@ we will introduce a new mechanism that uses a weak convergence detection criteri
 decide whether to change the value of $r$ from $r_{Initial}$ to $1+1/H$. 
 
 As we have explained before, 
-a slightly larger $r$ is suggested at the initial stage of the algorithms. 
+a larger $r$ is suggested at the initial stage of the algorithms. 
 But for good diversity at the final stage,
 it is needed to set $r$ to its optimal value ($1+1/H$). 
 For this purpose, we detect whether the algorithm is converged or not.  
@@ -467,11 +468,11 @@ $r_{Initial}$. The mechanism is also shown below:
   r(t)=
   \begin{cases}
     r_{Initial}, t<t_{Convergent}\\
-    (1+1/H), t \ge t_{Convergent} 
+    1+1/H, t \ge t_{Convergent} 
   \end{cases}
   t=0,1,\dots,T.
 \end{equation}
-$r(t)$ equals to $r_{Initial}$ before reaching to the convergent generation $t_{Convergent}$,
+$r(t)$ equals to $r_{Initial}$ before reaching to the convergent generation $t_{Convergent}$, 
 and changes to $1+1/H$ after $t_{Convergent}$. 
 The $t_{Convergent}$ is determined by a weak convergence detection criterion. 
 
@@ -510,7 +511,7 @@ They focus on the accuracy of convergence, which is not the purpose in our appro
 the reason that after algorithm convergent, we still need some generations in order to
 get even distribution of solutions set. 
 We summarize our weak convergence detection criterions as follow:
-\subsubsection{inaccuracy} It is no need to have an accurate convergence detection. 
+\subsubsection{inaccuracy} It is not necessary to have an accurate convergence detection. 
 The convergence can be reported if current solutions are close to the pareto front.
 In other words, the estimated ideal and nadir points based on the current solutions
 are close to the true ideal and nadir points. 
@@ -524,12 +525,12 @@ for that, we have calculated
 hypervolume in each generation in the hypervolume-based evolutionary multi-objective optimization algorithm.
 But during the process of algorithm, the reference point is calculated by (\ref{frpa1}) 
 in each generation.
-So we can not just simply compare hypervolume calculated in algorithm among different generations. 
+As a result, we can not just simply compare hypervolume calculated in algorithm among different generations. 
 
 We are trying on some other good indicators satisfying our convergence detection criterions. 
 Fig. \ref{wcd1} shows the change of hypervolume(HV) and nadir point on the SMS-EMOA algorithm 
 with the 3-dimensional inverted-DTLZ1 problem.
-When current solutions are close to the pareto front, the estimated nadir point is close 
+When current solutions are close to the pareto front, the estimated nadir point of current solutions is close 
 to the true nadir points. 
 \begin{figure}[!t]
   \centering
@@ -537,7 +538,8 @@ to the true nadir points.
   \caption{Example of nadir point and hypervolume(HV) value on inverted-DTLZ1 3-dimension problem
   with SMS-EMOA algorithm.
   The yellow curve is the change of hypervolume 
-  while the black curve is the change of logarithmic nadir point.
+  while the black curve is the change of the logarithmic nadir point.
+  The green dotted line shows the convergence detection.
   }
   \label{wcd1}
 \end{figure}
@@ -546,16 +548,16 @@ But for some problems with the large feasible region,
 the moving distance of the estimated nadir point in the early generations is larger than that near convergence.
 So we consider the logarithm. And considering the possible bad variance of the indicator, 
 finally, we use the best logarithmic nadir point so-far as our indicator. more specifically,
-for a minimization problem, we consider the indicator as follows:
+for a minimization problem, we consider the indicator $I$ as follows:
 \begin{equation}\begin{aligned}\label{ewcd1}
-  ENP_{t} &= [f_{t1},f_{t2},\dots,f_{tm}]^\top \in \mathbb{R}^m ,\\
+  \boldsymbol{N_{t}} &= [f_{t1},f_{t2},\dots,f_{tm}]^\top \in \mathbb{R}^m ,\\
   I_{0} &= \frac{1}{m} \sum_{i=1}^{m}lnf_{0i},\\
   I_{t} &= min(I_{t-1},\frac{1}{m} \sum_{i=1}^{m}lnf_{ti}),
   t = 1,2,\dots,T,
 \end{aligned}
 \end{equation}
 where $T$ is the total number of generations, 
-$ENP_{t}$ is the estimated nadir point at the $t$th generation with $m$ objectives $f_{t1},f_{t2},\dots,f_{tm}$. 
+$\boldsymbol{N_{t}}$ is the estimated nadir point at the $t^{th}$ generation with $m$ objectives: $f_{t1},f_{t2},\dots,f_{tm}$. 
 $I_0$ is the initial indicator calculated by the initial population.
 And $I_t$ is the minimum value before the $t$th generation (including the $t$th generation). 
 
@@ -598,6 +600,7 @@ and we should not consider the first $w\_ l$ evaluations).
     \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_2}
   \caption{Example of $\lvert b\rvert$ on inverted-DTLZ1 3-dimension problem
   (window size = $4000$ evaluations with population size = $100$).
+  The green dotted line shows the threshold.
   }
   \label{wcd2}
 \end{figure}
@@ -628,7 +631,7 @@ because of a weak convergence detection purpose.
 To clearly represent the superiority of dynamically reference point specification 
 and to ease the comparison process of two different dynamic mechanisms
 (linearly decrease mechanism and weak convergence detection mechanism), 
-the mechanisms are going to be tested with the algorithm SMS-EMOA\cite{smsemoa}.
+the mechanisms are going to be tested with the state-of-the-art algorithm SMS-EMOA\cite{smsemoa}.
 The problems include: 
 DTLZ series\cite{DTLZ}, WFG series\cite{WFG}, their minus-versions\cite{minusTestProblem} 
 and a multi-objective distance minimization problem(MPDMP)\cite{dmp}.
@@ -721,34 +724,54 @@ Number of runs: 20 runs.
 Each experiment has been run for 20 times independently. 
 And the population size is $30$, $r_{Initial}=10$.
 The detailed algorithms are as following: 
-SMS-EMOA-10(the SMS-EMOA\cite{smsemoa} algorithm with the reference point adaptation with $r=10$),
-SMS-EMOA-Opt(the SMS-EMOA algorithm with the reference point adaptation with $r=1+1/H$),
+SMS-EMOA-10(the SMS-EMOA\cite{smsemoa} algorithm with $r=10$),
+SMS-EMOA-Opt(the SMS-EMOA algorithm with $r=1+1/H$),
 SMS-EMOA-LD(the SMS-EMOA algorithm with a linearly decrease mechanism),
 and SMS-EMOA-CD(the SMS-EMOA algorithm with a weak convergence detection mechanism, proposed in this paper).
-We obtain the hypervolume results after $10000$ evaluations for each algorithm. 
-The computational results of the hypervolume metric(reference point = $(1+1/H)*$PF) is shown in TABLE \ref{table_tri} and TABLE \ref{table_itri}. 
-The best result in each row is highlighted in bold, and relatively the worst result is shaded. 
+We obtain the hypervolume results after $100,000$ evaluations for each algorithm. 
+The computational results of the hypervolume metric is shown in TABLE \ref{table_tri} and TABLE \ref{table_itri}. 
+The best result in each row is highlighted in bold, and relatively, the worst result is shaded. 
 The basic Wilcoxon signed-rank sum test is used in order to show the statistical significance for the algorithm
 comparing with SMS-EMOA-CD proposed in this paper. The three symbols ``$+$'', ``$-$'', ``$\approx$'' 
 mean significantly better, significantly worse and no significant difference.
 
 In the basic test problems(DTLZ1-4, WFG1-9), 
-we can not tell the differences among the three algorithms in TABLE \ref{table_tri} except SMS-EMOA-Opt,
-for that the Wilcoxon signed-rank sum tests show that almost all the results from SMS-EMOA-10 and SMS-EMOA-LD are not significantly different from SMS-EMOA-CD
-(except 2 results from SMS-EMOA-LD are better 
-and 1 result from SMS-EMOA-10 is worse than that from SMS-EMOA-CD). 
-The results of SMS-EMOA-Opt clearly show the bad searching behavior when applying $r=1+1/H$ all the time, 
-which is discussed in Section III(9 out of 13 results in SMS-EMOA-Opt are significantly worse than SMS-EMOA-CD). 
+SMS-EMOA-Opt performs the worst (9 out of 13 significantly worse than SMS-EMOA-CD) among the algorithms in TABLE \ref{table_tri}. 
+This phenomenon clearly show the bad searching behavior when applying $r=1+1/H$ all the time, 
+which is discussed in Section III. 
+As for SMS-EMOA-10, we can not tell the differences with SMS-EMOA-CD, 
+that the Wilcoxon signed-rank sum tests show almost all the results except one are ``$\approx$''. 
+This is because that the influence of reference point on the triangular pareto front problems is small as discussed in \cite{hisao:RPexplanation}. 
+2 better results from SMS-EMOA-LD obtained indicate that SMS-EMOA-LD is slightly better than SMS-EMOA-CD on triangular pareto front problems. 
 
 In the results of inverted-triangular pareto front problems (minus-DTLZ1-4, minus-WFG1-9 and MPDMP), 
-SMS-EMOA-10 performs almost the worst in all experiments in average, 
+SMS-EMOA-10 performs the worst(12 out of 14) in all experiments in average, 
 and the Wilcoxon signed-rank sum tests show that almost all the results from SMS-EMOA-10 are significantly worse than SMS-EMOA-CD
 (11 out of 14 worse and no better results). 
-The reason is that the $r$ is $10$ all the process of SMS-EMOA-10 algorithm. 
+The reason is that the $r$ is $10$ all the process of SMS-EMOA-10 algorithm and many solutions are at the boundary of pareto front.
+Comparing with SMS-EMOA-CD, SMS-EMOA-Opt(2 better but 4 worse) and SMS-EMOA-LD(2 better but 3 worse) are slightly worse 
+on inverted-triangular pareto front problems. 
+The result of MPDMP shows that SMS-EMOA-CD is better among the four algorithms on some specific problems. 
 
-% Comparing with SMS-EMOA-CD, the final hypervolume values of SMS-EMOA-Opt and SMS-EMOA-LD are not significantly different. 
-% And it is difficult to say SMS-EMOA-CD is better than SMS-EMOA-LD or vice versa,
-% for that near one-third of results are better, one-third are worse, one-third are not significantly different. 
+\begin{figure}[!t]
+  \centering
+    \includegraphics[width=\columnwidth]{SMSEMOA_MPDMP_hv}
+  \caption{The comparison of 4 mechanisms on hypervolume graph of solutions in each evaluation. 
+  The value of each point is the average of 20 individual runs in each evaluation
+  and the problem is MPDMP as shown in TABLE \ref{table_tri}. 
+  }
+  \label{crdmp}
+\end{figure}
+So we plot the runtime hypervolume graph of 4 mechanisms (as shown in Fig. \ref{crdmp}) on the 10-dimensional MPDMP problem. 
+In Fig. \ref{crdmp}, the hypervolume of SMS-EMOA-LD (the red curve) is gradually increased 
+and finally reaches to the same level as SMS-EMOA-Opt, as the value of $r$ is gradually decrease to $1+1/H$.
+The hypervolume of SMS-EMOA-CD (the yellow curve) firstly reaches to a stable level similar to SMS-EMOA-10, 
+for that their values of $r$ are both 10 before 4,500 evaluations. 
+Then after reporting the convergence detection at about 4,500 evaluations, 
+the value of $r$ in SMS-EMOA-CD reaches to the optimal value $1+1/H$ 
+and the hypervolume increases. 
+The reason are that the boundary solutions decrease, and on the other hand, the inner solutions increase. 
+Finally, the hypervolume of SMS-EMOA-CD is better than SMS-EMOA-Opt and SMS-EMOA-LD. 
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- The Importance of Dynamic Mechanism ----------------------------------
@@ -846,37 +869,39 @@ The reason is that the $r$ is $10$ all the process of SMS-EMOA-10 algorithm.
 % \end{figure} 
 
 \section{Conclusions}
-In this paper, we emphasize the importance of reference point adaptation 
+In this paper, we emphasize the importance of reference point specification  
 in indicator-based EMOA by a simple example. 
-% Without a reference point adaptation mechanism, the diversity of the final solutions will be poor
-% on inverted-shape pareto front problems. 
-% This phenomenon will not be observed on the triangular pareto front problems. 
-Then we state the dynamic reference point adaptation mechanism with the illustration by two aspects:
-\subsubsection{Optimal Distribution} Considering the flat triangular problems, 
-the optimal setting of hypervolume reference point is $r=1+1/H$. 
+Without a good reference point specification mechanism, the diversity of the final solutions will be poor
+on inverted-shape pareto front problems. 
+This phenomenon will not be observed on the triangular pareto front problems when reference point is worse than nadir point. 
+Then we state the dynamic reference point specification mechanism with the illustration by two aspects:
 \subsubsection{Better Searching Behavior} In the early stage, 
 the solutions may not be close to the true pareto front. 
-A slightly larger value of $r$ can achieve a better searching behavior 
-especially on the problems which are difficult to find the whole objective space. 
-We give an example of the DTLZ4 problem. 
+A larger value of $r$ can achieve a better searching behavior.
+We give an example of the DTLZ2 problem. 
+\subsubsection{Optimal Distribution} Considering the flat triangular problems, 
+the optimal setting of reference point is $r=1+1/H$. 
+
+We summarize the whole process of dynamic reference point specification mechanism as that,
+the value of $r$ should be specified larger than $1+1/H$ at first and be equal to $1+1/H$ in the end,
+as in formula \ref{f2}-\ref{endm1}.
 
 After that, a new dynamic reference point adaptation mechanism is proposed in this paper.
 A weak convergence detection mechanism is used. 
 We apply our new dynamic mechanism on many test problems containing triangular, inverted-triangular pareto fronts problems.
-The results show that FV-EMOA with $r=2$ performs the worst on the problems with inverted-triangular pareto fronts. 
-FV-EMOA with weak convergence detection mechanism performs better or worse than FV-EMOA with linearly decrease mechanism
-but performs no significant difference comparing with FV-EMOA when $r=1+1/H$.
+The results show that SMS-EMOA with $r=1+1/H$ performs the worst on the problems with triangular pareto front, 
+and SMS-EMOA with $r=10$ performs the worst on the problems with inverted-triangular pareto fronts,
+which hint the superiority of dynamic mechanism. 
+SMS-EMOA with weak convergence detection mechanism performs better or worse than SMS-EMOA with linearly decrease mechanism.
 
 We compare our new mechanism with the proposed linearly decrease mechanism and find that
-on some conditions, specifically the condition that the total evaluation number 
-is limited to a small addition after the reported convergence, 
-our weak convergence detection mechanism performs better than linear decrease mechanism
-especially on the problems with the small feasible region and easy mapping from decision space to objective space. 
+on some problems, specifically the multi-objective distance minimization problems,  
+our weak convergence detection mechanism outperforms the linear decrease mechanism. 
 
 In the future, we plan to further investigate the behavior of our new mechanism. 
 A larger dimensionality of MaOPs should be considered 
 and the problems with different pareto front shapes should be tested and analyzed detailedly. 
-Our weak convergence detection mechanism can also be further improved.
+Our weak convergence detection mechanism can also be further improved. 
 
 \bibliographystyle{IEEEtran} 
 \bibliography{mybibtex} 

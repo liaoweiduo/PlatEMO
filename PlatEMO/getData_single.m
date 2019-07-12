@@ -8,18 +8,18 @@ evaluation = 40000;
 %     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
 %     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
 
-problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
-% problems = {@DTLZ1};
+% problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
+problems = {@IDTLZ1};
 
 parameters = {};
 
-M = [3,5];  
-algorithms = {{@FVEMOA,5},{@FVEMOA_DR,5,0},{@FVEMOA_DR2,5,4000,0.00001},{@FVEMOA_optimal}};
+M = [3];  
+algorithms = {{@SMSEMOA,2}};
 
 for m = M
 for algorithm = algorithms
 for problem = problems
-for run = 1:20
+for run = 1:1
     parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
 end
 end

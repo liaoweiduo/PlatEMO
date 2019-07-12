@@ -1,8 +1,9 @@
-function SMSEMOA(Global)
+function SMSEMOA_SS(Global)
 % <algorithm> <A>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
-% r --- 10 --- r of reference point
+% half evaluations using scaling method before calculating HV.
+% r --- 1.1 --- r of reference point
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the
@@ -30,7 +31,11 @@ function SMSEMOA(Global)
         for i = 1 : Global.N
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
+            if Global.evaluated <= Global.evaluation / 2
+                [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
+            else
+                [Population,FrontNo] = Reduce_scaling([Population,Offspring],FrontNo,r);
+            end
         end
     end
 end

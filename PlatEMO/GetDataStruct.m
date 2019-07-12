@@ -1,5 +1,5 @@
 clear;
-Algorithms = {'FVEMOA', 'FVEMOA_DR', 'FVEMOA_DR2', 'FVEMOA_optimal'};
+Algorithms = {'SMSEMOA_optimal'};
 for i = 1:size(Algorithms,2)
     Algorithm = Algorithms{i};
 

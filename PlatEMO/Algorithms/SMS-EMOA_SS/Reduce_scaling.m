@@ -18,8 +18,19 @@ function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
     [N,M]     = size(PopObj);
     
     %% scale the PopObj[N,M] to f1+f2+...+fM = 1 the plane need to change, by the extreme points
+    if N > M:   % more than M solutions considered
+        [~,rows] = max(PopObj,[],1);
+        extremePoints = PopObj(rows,:);     % M extreme points
+
+        syms s;
+        for row = 1:M
+            f = [PopObj(row,:)*s,1;extremePoints,ones(M,1)];
+            ans_s = solve(det(f));
+            PopObj(row,:) = PopObj(row,:).*ans_s;
+        end
+    end
     
-    PopObj = PopObj ./ sum(PopObj,2);
+%     PopObj = PopObj ./ sum(PopObj,2);
     
     %% Calculate the contribution of hypervolume of each solution
     deltaS = inf(1,N);

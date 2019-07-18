@@ -76,13 +76,12 @@ for indexA = 1:size(Algorithms,2)  % draw picture for specific algorithm
                 if strcmp(metrics_4(i).Problem, Problem) && strcmp(metrics_4(i).M, M)
                     hvSetStrut = metrics_4(i).hvSetStrut;
                     p3=plot(hvSetStrut.indexSet, hvSetStrut.aver);
-                    p7=scatter(hvSetStrut.indexSet(1:10:end), hvSetStrut.aver(1:10:end));
                     break
                 end
             end
             
             try
-                legend([p0,p1,p2,p3,p4,p5,p6,p7],'origin','DR','DR2','optimal','origin','DR','DR2','optimal');
+                legend([p0,p1,p2,p3],'origin','DR','DR2','optimal');
             catch exception
             end
             title([Algorithm,', ',Problem,', M', M]);

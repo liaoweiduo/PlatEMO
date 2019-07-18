@@ -29,11 +29,8 @@ function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
 %             PopObj(row,:) = PopObj(row,:).*ans_s;
 %         end
 %     end
-    if N > M   % more than M solutions considered
-        maxValues = max(PopObj,[],1);
-        PopObj = PopObj ./ sum(PopObj,2);
-%         PopObj = PopObj .* maxValues;
-    end
+    
+    PopObj = PopObj ./ sum(PopObj,2);
     
     %% Calculate the contribution of hypervolume of each solution
     deltaS = inf(1,N);

@@ -71,7 +71,7 @@ J.~Bader and E.~Zitzler, ``Hype: An algorithm for fast hypervolume-based
 
 \bibitem{newR2}
 \BIBentryALTinterwordspacing
-K.~Shang, H.~Ishibuchi, M.-L. Zhang, and Y.~Liu, ``A new r2 indicator for
+K.~Shang, H.~Ishibuchi, M.-L. Zhang, and Y.~Liu, ``A new {R2} indicator for
   better hypervolume approximation,'' in \emph{Proceedings of the Genetic and
   Evolutionary Computation Conference}, ser. GECCO '18.\hskip 1em plus 0.5em
   minus 0.4em\relax New York, NY, USA: ACM, 2018, pp. 745--752. [Online].
@@ -125,15 +125,30 @@ H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
   on Parallel Problem Solving from Nature}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer, 2018, pp. 384--396.
 
+\bibitem{SimpleLeastSquares}
+W.~Ericson, ``Introductory probability and statistical applications,''
+  \emph{Technometrics}, vol.~8, no.~4, pp. 720--722, 1970.
+
 \bibitem{dmp}
 H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
   for multi-objective and many-objective optimization,'' \emph{Complex \&
   Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
 
+\bibitem{invertedDTLZ1}
+H.~Jain and K.~Deb, ``An evolutionary many-objective optimization algorithm
+  using reference-point based nondominated sorting approach, part ii: handling
+  constraints and extending to an adaptive approach,'' \emph{IEEE Transactions
+  on Evolutionary Computation}, vol.~18, no.~4, pp. 602--622, 2013.
+
 \bibitem{PlatEMO}
 T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for
   evolutionary multi-objective optimization [educational forum],'' \emph{IEEE
   Computational Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
+
+\bibitem{MOEAD}
+Q.~Zhang and H.~Li, ``Moea/d: A multiobjective evolutionary algorithm based on
+  decomposition,'' \emph{IEEE Transactions on evolutionary computation},
+  vol.~11, no.~6, pp. 712--731, 2007.
 
 \bibitem{DtA}
 Z.~Wang, Y.-S. Ong, J.~Sun, A.~Gupta, and Q.~Zhang, ``A generator for
@@ -180,10 +195,6 @@ T.~Wagner, H.~Trautmann, and L.~Mart{\'\i}, ``A taxonomy of online stopping
   \emph{International Conference on Evolutionary Multi-Criterion
   Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2011, pp.
   16--30.
-
-\bibitem{SimpleLeastSquares}
-W.~Ericson, ``Introductory probability and statistical applications,''
-  \emph{Technometrics}, vol.~8, no.~4, pp. 720--722, 1970.
 
 \bibitem{WFG}
 S.~Huband, P.~Hingston, L.~Barone, and L.~While, ``A review of multiobjective

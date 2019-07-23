@@ -25,6 +25,8 @@
 \sethlcolor{hl}
 \usepackage{subfig}
 \usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}} %Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{ \textbf{Output:}} %UseOutput in the format of Algorithm
 % \usepackage{caption}
 \usepackage{afterpage}
 \usepackage{array}
@@ -208,7 +210,7 @@ a linearly decreasing mechanism in Section III.
 The details of the new dynamic mechanism with a weak convergence detection proposed in this paper is also presented in Section III. 
 We report our computational experiments of SMS-EMOA 
 with several triangular and inverted-triangular problems in Section IV. Our experiments are performed on
-10-dimension problems for clearly comparing of two dynamic mechanisms and 
+10-objecitve problems for clearly comparing of two dynamic mechanisms and 
 simple reference point specification (without dynamic mechanism). Finally, the conclusion is shown in Section V.
 
 % --------------------------- reference point specification in HV-based EMOA ---------------------
@@ -288,11 +290,10 @@ the reference point is specified as the estimated nadir point increased by $\bol
 (in two-dimension, a sufficiently large reference point is chosen). 
 But in current implementation, the following mechanism is always used:
 \begin{equation}\label{frpa1}
-  \boldsymbol R = r * \boldsymbol N, 
-  \boldsymbol R, \boldsymbol N \in \mathbb{R}^m, 
+  \boldsymbol R = r * \boldsymbol N,  
 \end{equation}
-where $\boldsymbol R$ is the reference point in each generation, 
-and $\boldsymbol N$ is the estimated nadir point of the last front of the current population. 
+where $\boldsymbol R \in \mathbb{R}^m$ is the reference point in each generation, 
+and $\boldsymbol N \in \mathbb{R}^m$ is the estimated nadir point of the last front of the current population. 
 $r$ is specified as 1.1 in PlatEMO\cite{PlatEMO}, a well-known EMO framework. 
 The specification of reference point is also one of the important parts in the HV-based algorithm implementation.
 In the source code of PlatEMO, the values of $r$ in HV-based algorithms are chosen as follow: 
@@ -300,7 +301,6 @@ In the source code of PlatEMO, the values of $r$ in HV-based algorithms are chos
 When the solutions in the current population are obtained, 
 we use HV as the indicator to evaluate the performance of the solution set. 
 Then the reference point used to calculate the HV is calculated by the formula above. 
-%可以加一个介绍nadir point的图，如果8页不够的话。 !!!!!!!!
 
 However, fixing the $r$ value to 1.1 is not recommended, especially on problems with the inverted-triangular PF
 \cite{hisao:RPhowtoSpecify}. 
@@ -435,7 +435,7 @@ Based on the Eq. (\ref{frpa1}),
 we define the dynamic reference point specification as:
 \begin{equation}\label{f2}
   \boldsymbol R = r(t) * \boldsymbol N, 
-  \boldsymbol R, \boldsymbol N \in \mathbb{R}^m, t=0,1,\dots,T,
+  t=0,1,\dots,T,
 \end{equation}
 where $T$ is the total number of generations, and $r=r(t)$ is a function of the current generation $t$.
 The value of $r$ is adapted during the process of the algorithm. 
@@ -529,11 +529,11 @@ They focus on the accuracy of convergence, which is not the purpose in our appro
 the reason that after algorithm converged, we still need some generations in order to
 get even distribution of solution set. 
 We summarize our weak convergence detection criterion as follow:
-\subsubsection{inaccuracy} It is not necessary to have an accurate convergence detection. 
+\subsubsection{Inaccuracy} It is not necessary to have an accurate convergence detection. 
 The convergence can be reported if current solutions are close to the PF.
 In other words, the estimated ideal and nadir points based on the current solutions
 are close to the true ideal and nadir points. 
-\subsubsection{saving time} We should not spend too much time in convergence detection
+\subsubsection{Saving time} We should not spend too much time in convergence detection
 for the reason that the state-of-the-art HV-based algorithms such as SMS-EMOA and HypE, 
 are time-consuming when the dimension is very high. 
 
@@ -586,38 +586,41 @@ If the absolute value of the slope of the indicator is below a threshold, the co
 Briefly speaking, for a simple linear regression $I(t)=a+bt$, 
 the intercept $a$ and slope $b$ of the $t^{th}$ generation can be calculated 
 with the following matrix-based formula:
-\begin{equation}\label{elr1}
+\begin{equation}\begin{aligned}\label{elr1}
   \left[
     \begin{matrix}
       a \\
       b
     \end{matrix}
   \right]
-  = 
+  &= 
   \left[
     \begin{matrix}
-      \sum t_i^2 & \sum t_i \\
-      \sum t_i   & w\_ l 
+      \Sigma t_i^2 & \Sigma t_i \\
+      \Sigma t_i   & w\_l 
     \end{matrix}
   \right]^{-1}
   *
   \left[
     \begin{matrix}
-      \sum t_i * I_{t_i} \\
-      \sum I_{t_i} 
+      \Sigma t_i * I_{t_i} \\
+      \Sigma I_{t_i} 
     \end{matrix}
-  \right]
+  \right], \\
+  % t_i &\in (t',t], t - t' = w_l,
+\end{aligned}
 \end{equation}
 where $w\_ l$ is the length of the chosen window
 (in the example of Fig. \ref{wcd1}, the chosen window for $t_{Converged}$ is represented with the red dotted line), 
-and $t_i$ is the evaluated number in the chosen window.
+and $t_i$ is the evaluated number in the chosen window, 
+which holds the following condition: $t_i \in (t',t], t - t' = w_l$.
 The value of slope $b$ is shown in Fig. \ref{wcd2} 
 (Note that the value in the first $w\_ l$ evaluations is 0, 
 and we should not consider the first $w\_ l$ evaluations). 
 \begin{figure}[!t]
   \centering
     \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_2}
-  \caption{Example of $\lvert b\rvert$ on inverted-DTLZ1 3-dimension problem
+  \caption{Example of $\lvert b\rvert$ on inverted-DTLZ1 3-objective problem
   (window size = $4000$ evaluations with population size = $100$).
   The green dotted line shows the threshold.
   }
@@ -629,7 +632,8 @@ formula holds:
 \begin{equation}\label{elr2}
   \lvert b \rvert < thres. 
 \end{equation}
-The value of $t_{Converged}$ equals to $t$ when convergence is detected. 
+The value of $t_{Converged}$ equals to $t$ (i.e., the current evaluation number) 
+when convergence is detected. 
 The whole process of weak convergence detection is also clearly described in Algorithm \ref{alg:wcd}. 
 If Algorithm \ref{alg:wcd} return True, we report the convergence, vice versa. 
 The choice of the $thres$ value is trivial 
@@ -646,20 +650,20 @@ because of a weak convergence detection purpose.
   \begin{algorithmic}
   \REQUIRE ~~\\
     $w\_l$, $//$ Window size.\\
-    $\boldsymbol{s_{t}}$, $//$ Solution set when evaluaiton number is $t$.\\
-    $\boldsymbol I = [I_{0},I_{1},\dots,I_{t-1}]^\top$, $//$ Store indicator values. \\
+    $\boldsymbol{S_{t}}$, $//$ Solution set when evaluaiton number is $t$.\\
+    $\boldsymbol I = \{I_{0},I_{1},\dots,I_{t-1}\}$, $//$ Stored indicator values. \\
     $thres$, $//$ The chosen threshold for slope. \\ 
-  \ENSURE ~~\\
-    Calculate nadir point $\boldsymbol{N_{t}}$ of $\boldsymbol{s_{t}}$; \\
+  \ENSURE Return True if converged, otherwise return False.~~\\
+    Calculate nadir point $\boldsymbol{N_{t}}$ of $\boldsymbol{S_{t}}$; \\
     Calculate indicator $I_{t}$; $//$ By Eq. (\ref{ewcd1}). \\
-    $\boldsymbol I \gets \boldsymbol I \cup I_{t}$; \\
+    $\boldsymbol I \gets \boldsymbol I \cup \{I_{t}\}$; \\
     \IF{$t \ge w\_l$} 
     \STATE Calculate $b$; $//$ By Eq. (\ref{elr1}).
       \IF{$\lvert b\rvert < thres$}
-      \STATE Return True;
+      \STATE Return True; $//$ Converged.
       \ENDIF
     \ENDIF
-    \STATE Return False;
+    \STATE Return False; $//$ Not converged.
   \end{algorithmic}
 \end{algorithm}
 % -------------------------------- Computational Experiments ------------------------------------
@@ -797,7 +801,7 @@ and the Wilcoxon signed-rank sum tests show that almost all the results from SMS
 The reason is that the $r$ is set to 10 for the whole process of SMS-EMOA-10 algorithm and many solutions are on the boundary of PF.
 Comparing with SMS-EMOA-CD, SMS-EMOA-Opt(2 better but 4 worse) and SMS-EMOA-LD(2 better but 3 worse) are slightly worse 
 on inverted-triangular PF problems. 
-The result of MPDMP shows that SMS-EMOA-CD is better among the four algorithms on some specific problems. 
+The result of MPDMP shows that SMS-EMOA-CD is the best among the four algorithms on some specific problems. 
 
 \begin{figure}[!t]
   \centering

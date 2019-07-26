@@ -35,6 +35,8 @@
 \usepackage{url}
 \usepackage{cite}
 
+\usepackage[keeplastbox]{flushend}
+
 \newcommand{\semitextbf}[1]{%
 	\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness
 	#1%
@@ -98,20 +100,20 @@ Email: 11849249@mail.sustech.edu.cn; kshang@foxmail.com; hisao@sustech.edu.cn}
 % In our approach, the simple Least Squares and the information of nadir point are used to detect the convergence. 
 % After that, we examine the difference between this new dynamic mechanism with a state-of-the-art linearly decrease mechanism. 
 
-In evolutonary multi-objective optimization (EMO) field, 
+In evolutionary multi-objective optimization (EMO) field, 
 the hypervolume (HV) indicator is one of the most popular performance indicators. 
-It is not only used for performance evaluation of EMO algorithms (EMOAs), 
+It is not only used for performance evaluation of EMO algorithms (EMOAs) 
 but also adopted in EMOAs for selection (e.g., SMS-EMOA). 
 However, the specification of the reference point has a large effect on the performance of SMS-EMOA. 
-Thus, the reference point speficiation should be carefully treated in SMS-EMOA. 
-In this paper, the importance of the dynamic reference point speficication in SMS-EMOA is explained first, 
+Thus, the reference point specification should be carefully treated in SMS-EMOA. 
+In this paper, the importance of the dynamic reference point specification in SMS-EMOA is explained first, 
 then a new dynamic reference point specification mechanism based on weak convergence detection is introduced for SMS-EMOA. 
 Experimental comparisons are conducted among SMS-EMOA with the proposed mechanism, 
-a linear decreasing mechanism and two static mechanisms. The results demonstrate the effectiveness of the proposed mechanism.
+a linearly decreasing mechanism and two static mechanisms. The results demonstrate the effectiveness of the proposed mechanism.
 \end{abstract}
 
 \begin{IEEEkeywords}
-reference point adaptation; indicator-based algorithm; hypervolume; evolutionary multi-objective optimization; 
+reference point; SMS-EMOA; hypervolume; evolutionary multi-objective optimization; 
 behavior; dynamic mechanism; convergence detection
 \end{IEEEkeywords}
     
@@ -157,45 +159,44 @@ behavior; dynamic mechanism; convergence detection
 \section{Introduction}
 In the field of evolutionary multi-objective optimization algorithms (EMOAs), 
 many researchers focus on various indicators including Hypervolume(HV)\cite{hypervolume}, R2\cite{R2}, $\epsilon_+$ indicator\cite{e+} and IGD\cite{IGD}.
-The indicators are designed for different purposes, and 
-have their own strong points and drawbacks. Different from IGD, 
+These indicators are designed for different purposes and 
+have their strong points and drawbacks. Different from IGD, 
 HV does not need the pre-knowledge of the shape of the Pareto front(PF) 
-and is the only pareto-compliant indicator up to now\cite{pareto_compliant}. 
+and is the only Pareto-compliant indicator up to now\cite{pareto_compliant}. 
 But due to the heavy computation load of HV computation\cite{hypervolume:computationLoad}, 
-the HV-based algorithms get poor performances in terms of running time when dealing with problems which have more than three objectives, 
-which is known as Many-Objective Optimization Problems (MaOPs). 
+the HV-based algorithms get poor performances in terms of running time when dealing with Many-Objective Optimization Problems (MaOPs) which have more than three objectives. 
 
 SMS-EMOA\cite{smsemoa} is a basic HV-based algorithm. 
 The HV contribution is used to determine which solution to be discarded in the algorithm. 
-In order to reduce the heavy computation cost of HV computation, 
+To reduce the heavy computation cost of HV computation, 
 many new indicators or new methods have been proposed to estimate the HV. 
-For example, HypE\cite{HypE} uses a Monte Carlo simulation technology to estimate the effect of HV; 
-R2\cite{R2} indicator is based on a standard weighted Tchebycheff function; 
-And a new R2\cite{newR2} is proposed by Shang et al. 
+For example, HypE uses a Monte Carlo simulation technology to estimate the effect of HV\cite{HypE}; 
+R2 indicator is based on a standard weighted Tchebycheff function\cite{R2}; 
+a new R2 is proposed by Shang et al.\cite{newR2}. 
 Recently, an improved SMS-EMOA with adaptive resource allocation has been proposed to reduce the number of HV calculations\cite{ismsemoa}.  
 In 2015, a simple and fast version of SMS-EMOA\cite{smsemoa}, so-called FV-EMOA, has been proposed\cite{FVEMOA}.
-In order to further reduce the bottleneck of high time complexity for calculating the HV contributions, 
-the FV-EMOA considers the fact that the HV contribution of a single solution 
-is only associated with partial solutions rather than the whole solution set\cite{FVEMOA}. 
-Based on this point, the FV-MOEA reduces the computational cost greatly. 
+To further reduce the bottleneck of high time complexity for calculating the HV contribution, 
+FV-EMOA considers the fact that the HV contribution of a single solution 
+is only associated with partial solutions rather than the whole solutions set\cite{FVEMOA}. 
+Based on this point, FV-MOEA reduces the computational cost greatly. 
 
 The specification of the reference point is one of the important but easy to be ignored parts in HV computation, 
 for that the effect on many problems including DTLZ\cite{DTLZ} are not so significant. 
 But it has been reported that the position of reference point strongly influences the value of
 HV contribution of the external solutions on the problems with inverted-shape PFs\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
 A suitable set of reference point position for linear PFs has been sufficiently investigated in\cite{hisao:RPspecify}.
-A dynamic reference point specification mechanism has also been proposed in\cite{hisao:dynamic}.
+A dynamic reference point specification mechanism, called linearly decreasing mechanism, has also been proposed in\cite{hisao:dynamic}.
 Another proposed strategy is to use two reference points in HV-based EMOA\cite{hisao:twoRP}. 
-In this paper, the dynamic mechanism is stated in two different stages of the algorithm running process. 
+In this paper, the dynamic mechanism is stated based on two different stages of the algorithm process. 
 At the early stage, for a better searching behavior of the algorithm, 
-the reference point should be set slightly worse than the suggested position at the beginning.
+the reference point should be set slightly worse than the suggested position.
 Then with a dynamic mechanism, the reference point is gradually decreasing to the suggested position following the iteration. 
 
-After that, we propose a new dynamic reference point specification mechanism with a weak convergence detection in HV-based EMOA. 
+After that, we propose a new dynamic reference point specification mechanism with a weak convergence detection in SMS-EMOA. 
 In this weak convergence detection mechanism, we use the logarithm nadir point as the convergence indicator
 and use the simple Least Squares\cite{SimpleLeastSquares} to detect the convergence. 
-Given $w_l$ generations as a window, if the slope of linear regression is below one threshold, we report the convergence.
-The comparison of two dynamic mechanisms and simple reference point specification(without dynamic mechanism) is 
+Given $w\_l$ generations as a window, if the slope of linear regression is below one threshold, we report the convergence.
+The comparison among two dynamic mechanisms and the simple reference point specification(without dynamic mechanism) is 
 represented in the experiment section. On some specific problems, for example the multi-objective distance minimization problems\cite{dmp},
 our weak convergence detection mechanism outperforms the linearly decreasing mechanism. 
 
@@ -204,14 +205,14 @@ Firstly in Section II, we introduce reference point specification in SMS-EMOA wi
 the original one and the one proposed in \cite{hisao:RPhowtoSpecify},
 % we briefly introduce the basic idea of reference point specification by a simple example in Section II. 
 then explore the details of the reference point specification mechanism in two stages of the algorithm, 
-which elicits the necessity of using dynamic mechanism.
+which elicits the necessity of using the dynamic mechanism.
 After that, we state the details of the dynamic reference point specification mechanism and introduce 
 a linearly decreasing mechanism in Section III. 
-The details of the new dynamic mechanism with a weak convergence detection proposed in this paper is also presented in Section III. 
+The details of the new dynamic mechanism with a weak convergence detection proposed in this paper are also presented in Section III. 
 We report our computational experiments of SMS-EMOA 
 with several triangular and inverted-triangular problems in Section IV. Our experiments are performed on
-10-objecitve problems for clearly comparing of two dynamic mechanisms and 
-simple reference point specification (without dynamic mechanism). Finally, the conclusion is shown in Section V.
+10-objective problems for clearly comparing two dynamic mechanisms and the simple reference point specification (without dynamic mechanism). 
+Finally, the conclusion is shown in Section V.
 
 % --------------------------- reference point specification in HV-based EMOA ---------------------
 % reference point不应该只在刚开始设置而后面都不变，这样如果问题的feasible region很大的时候，初始设置的
@@ -226,14 +227,13 @@ simple reference point specification (without dynamic mechanism). Finally, the c
 % solutions in current population.【图】
 %
 \section{Reference Point Specification in SMS-EMOA}
-When HV is used in SMS-EMOA algorithms, 
+When HV is used in SMS-EMOA, 
 one important thing to be considered is how to specify the reference point.
-Before calculating the HV values, a reference point needs to be specified in advance.
+Before calculating the HV value, a reference point needs to be specified in advance.
 However, it is not suggested that the reference point is set only once at the beginning. 
-This may cause a very far away reference point from solutions
+This may cause a very faraway reference point 
 for those problems with a very large feasible space (as shown in Fig. \ref{rpa1}),
-as the solution set is gradually converging to the PF
-with the process of the algorithm. 
+as the solutions set is gradually converging to the PF. 
 
 \begin{figure}[!t]
   \centering
@@ -242,20 +242,20 @@ with the process of the algorithm.
   \subfloat[The final generation.]{\label{rpa1:b}
   \includegraphics[width=1.5in]{rpa1_2}}\\
   \caption{The reference point is set with a large feasible space.
-  The PF can be far away from reference point.
+  The PF can be far away from the reference point.
   The gray region shows the feasible region and the red arc is the corresponding PF.
   The red circle $r$ is the reference point calculated by the initial solutions in (\ref{rpa1:a})
-  which is randomly generated.
-  After some generations, the current solutions reach to the five black circles in (\ref{rpa1:b}), 
+  which are randomly generated. 
+  After some generations, the current solutions reach the seven black circles in (\ref{rpa1:b}), 
   which is far away from the reference point.}
   \label{rpa1}
 \end{figure}
 
-There is a big problem when applying this strategy to some problems with special PF shape. 
+There is a big problem when applying this strategy to some problems with the special PF shape. 
 For example, the inverted-DTLZ1\cite{invertedDTLZ1} has an inverted-triangular PF, 
-so many solutions in the final solution set will distribute on the boundary of the PF
+so many solutions in the final solutions set will distribute on the boundary of the PF
 (Fig. \ref{rpa2:a})\cite{hisao:RPexplanation, hisao:RPspecify, hisao:dynamic}. 
-Although it has no effect on the distributions of solution set 
+Although it does not affect the distributions of the solutions set 
 in triangular PF problems 
 (Fig. \ref{rpa2:c} comparing with Fig. \ref{rpa2:d}), 
 it is necessary to use a good reference point specification method during the algorithm progress.
@@ -271,14 +271,14 @@ The reason is explained in detail in\cite{hisao:RPexplanation}.
     \includegraphics[width=1.5in]{FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1}}\quad
   \subfloat[The reference point is specified by Eq. (\ref{frpa1}).]{\label{rpa2:d}
     \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
-  \caption{The final distribution of solution set in the inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
-  and the DTLZ1 problem(\ref{rpa2:c} and \ref{rpa2:d}).
-  The algorithm is SMS-EMOA with population size $= 100$, evaluation number $= 20000$. 
+  \caption{The final distribution of the solutions set on inverted-DTLZ1(\ref{rpa2:a} and \ref{rpa2:b}) 
+  and DTLZ1 (\ref{rpa2:c} and \ref{rpa2:d}).
+  The algorithm is SMS-EMOA with population size $= 100$ and total evaluation number $= 20000$. 
   \ref{rpa2:a} and \ref{rpa2:c}: the reference point is calculated only once at the initial step;
   \ref{rpa2:b} and \ref{rpa2:d}: the reference point is specified by the Eq. (\ref{frpa1}) with $r=1.1$.
   All the solutions in the final distribution are on the boundary of the PF in (\ref{rpa2:a}),
   which shows the bad effect of a faraway reference point
-  on the final distribution of inverted-triangular problems.
+  on the final distribution of inverted-triangular problems. 
   This bad effect can not be observed on triangular problems in (\ref{rpa2:c}).
   }
   \label{rpa2}
@@ -288,25 +288,25 @@ The reason is explained in detail in\cite{hisao:RPexplanation}.
 In the original paper of SMS-EMOA\cite{smsemoa}, 
 the reference point is specified as the estimated nadir point increased by $\boldsymbol{1.0}$
 (in two-dimension, a sufficiently large reference point is chosen). 
-But in current implementation, the following mechanism is always used:
+But in the current implementation, the following mechanism is always used:
 \begin{equation}\label{frpa1}
   \boldsymbol R = r * \boldsymbol N,  
 \end{equation}
 where $\boldsymbol R \in \mathbb{R}^m$ is the reference point in each generation, 
 and $\boldsymbol N \in \mathbb{R}^m$ is the estimated nadir point of the last front of the current population. 
 $r$ is specified as 1.1 in PlatEMO\cite{PlatEMO}, a well-known EMO framework. 
-The specification of reference point is also one of the important parts in the HV-based algorithm implementation.
+The specification of the reference point is also one of the important parts in the HV-based algorithm implementation.
 In the source code of PlatEMO, the values of $r$ in HV-based algorithms are chosen as follow: 
 1.1(SMS-EMOA\cite{smsemoa}) and 1.2(HypE\cite{HypE}). % and 10(FV-EMOA\cite{FVEMOA}). 
-When the solutions in the current population are obtained, 
-we use HV as the indicator to evaluate the performance of the solution set. 
-Then the reference point used to calculate the HV is calculated by the formula above. 
+In the process of SMS-EMOA,  
+we use the HV contribution to evaluate each solution, when the solutions in the current population are obtained. 
+And the reference point used to calculate the HV is calculated by the formula above. 
 
 However, fixing the $r$ value to 1.1 is not recommended, especially on problems with the inverted-triangular PF
 \cite{hisao:RPhowtoSpecify}. 
 The research on specifying the value of $r$ is limited, for the reason that, 
 the effect of the location of the reference point on the PF 
-is not fatal on some benchmark problems, for example, the problems with triangular PF. 
+is not fatal on some benchmark problems (e.g., triangular PF problems). 
 
 % --------------- reference point specification for optimal distribution ----------------
 % 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出二维三维图for example），
@@ -316,8 +316,8 @@ is not fatal on some benchmark problems, for example, the problems with triangul
 \subsection{Reference Point Specification Proposed in \cite{hisao:RPhowtoSpecify}}
 In \cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}, the suggested value of $r$ is investigated 
 on linear PF problems. 
-Specifically, on inverted-triangular problems(inverted-DTLZ1\cite{hisao:RPexplanation} etc.), 
-in order to have same HV contribution, 
+Specifically, on inverted-triangular problems(e.g., inverted-DTLZ1\cite{hisao:RPexplanation}), 
+in order to have the same HV contribution, 
 the interval between two boundary solutions should be the same as that between two inner solutions.
 In \cite{hisao:RPhowtoSpecify}, the suggested value of $r$ is:
 \begin{equation}\label{eod}
@@ -325,7 +325,7 @@ In \cite{hisao:RPhowtoSpecify}, the suggested value of $r$ is:
 \end{equation}
 $H$ is the number of solutions intervals in 2-dimension 
 and the number of intervals on each boundary of PF in many-dimension. 
-The idea is inspired from MOEA/D\cite{MOEAD}, in which the $H$ is used for 
+The idea is inspired by MOEA/D\cite{MOEAD}, in which the $H$ is used for 
 generating uniformly distributed weight vectors\cite{hisao:dynamic}. 
 Given the population size $\mu$ and dimensionality $m$, the value of $H$ can be calculated by the following formula:
 \begin{equation}
@@ -346,9 +346,9 @@ the boundary of PF with the increasing of $r$.
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r2_N91}}\quad
   \subfloat[$r=5.$]{\label{dm1:d}
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r5_N91}}\\
-  \caption{The final distribution of solution set on the inverted-DTLZ1 problem.
-  The algorithm is SMS-EMOA with population size $=91$($H=12$) and evaluation number $=20000$.
-  $r=13/12$ is the optimal setting and we observed a evenly distribution in (\ref{dm1:a}).
+  \caption{The final distribution of the solutions set on inverted-DTLZ1.
+  The algorithm is SMS-EMOA with population size $=91$($H=12$) and total evaluation number $=20000$.
+  $r=13/12$ is the optimal setting and we observed a uniform distribution in (\ref{dm1:a}).
   As the increasing of $r$, solutions are more likely to be on the boundary
   (\ref{dm1:b}-\ref{dm1:d}). 
   }
@@ -391,7 +391,7 @@ We also call this stage the diversity stage.
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
 \subsection{Specify the Value of $r$ for Better Searching Behavior}
-In the early stage, solution set is not close to the PF, which makes the 
+In the early stage, the solutions set is not close to the PF, which makes the 
 estimated ideal and nadir points far away from true ideal and nadir points, for the reason that
 they are calculated by current solutions in each generation. 
 And considering the problems with 10 objectives, 
@@ -406,8 +406,8 @@ An example is given in Fig. \ref{nud}.
   \subfloat[$r=2$(optimal).]{\label{nud:b}
     \includegraphics[width=1.5in]{SMSEMOA_optimal_DTLZ2_e10000}}\\
   \caption{
-    The final distribution of SMS-EMOA on 10-objective DTLZ2 problems with different settings of $r$. 
-    The population number is 30($H=1$), total evaluation number is 10000.
+    The final distribution of SMS-EMOA on the 10-objective DTLZ2 with different settings of $r$. 
+    The population number is 30($H=1$), the total evaluation number is 10000.
   }
   \label{nud}
 \end{figure} 
@@ -415,22 +415,21 @@ The first 6 dimensionalities are all 0 for the solutions obtained by SMS-EMOA on
 In \cite{hisao:dynamic}, a larger value of $r$ than $1+1/H$ is suggested in the early stage. 
 
 \subsection{Specify the Value of $r$ for Uniform Distribution}
-When algorithm reaches the final stage, all solutions are near the PF, $r$ should
-be specified as $1+1/H$, as in Eq. (\ref{eod}), 
-in order to get an uniform solutions distribution. 
-That is, $r(T)=1+1/H$. 
+When the algorithm reaches the final stage, all solutions are near the PF. 
+To get a uniform solution distribution, $r$ should be specified as $1+1/H$, as in Eq. (\ref{eod}). 
+% That is, $r(T)=1+1/H$. 
 On inverted-triangular problems, the distribution of solutions on PF
 strongly depends on the value of $r$ (as shown in Fig. \ref{dm1}). 
 
-The sensitivity of the value of $r$ on the solutions distribution is also observed on some real-world problems,
+The sensitivity of the $r$ value on the solutions distribution is also observed in some real-world problems,
 for example, distance minimization problems. 
-This observation shows the potential use of the dynamical reference point specification\cite{hisao:dynamic}.
+This observation shows the potential use of the dynamic reference point specification\cite{hisao:dynamic}.
 
 \section{Dynamic Reference Point Specification Mechanism}
 For different purposes in the two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
 Not only the reference point but also the value of $r$ 
 needs to be adapted in each iteration of the algorithm. 
-This is called dynamical reference point specification. 
+This is called dynamic reference point specification. 
 Based on the Eq. (\ref{frpa1}), 
 we define the dynamic reference point specification as:
 \begin{equation}\label{f2}
@@ -448,7 +447,7 @@ The value of $r$ is adapted during the process of the algorithm.
 % 
 \subsection{Linearly Decreasing Mechanism Proposed in \cite{hisao:dynamic}} 
 Based on the theory above, $r$ is suggested to be specified dynamically at different stages of
-the algorithm(at early stage, a larger $r$ is chosen; at final stage, $r=1+1/H$ is chosen).
+the algorithm(at the early stage, a larger $r$ is chosen; at the final stage, $r=1+1/H$ is chosen).
 But unfortunately, there is no best mechanism on how to specify the value of $r$ dynamically
 that outperforming the others in all problems and all experiment settings. One mechanism may be the best
 when working on some specific experiment conditions, but may not be good on other conditions. 
@@ -463,8 +462,7 @@ It is a simple and practical mechanism. In (\ref{eldm1}), the value of $r$ start
 then gradually decreases to the suggested value in a linearly decreasing process. 
 
 In the next section, another dynamic mechanism based on weak convergence detection criterion is proposed. 
-We show that it outperforms simple linearly decreasing mechanism on some specific problems. 
-
+We show that it outperforms the simple linearly decreasing mechanism on some specific problems. 
 
 % -------------------------------- new dynamic mechanism ------------------------------------
 % 本文介绍一种基于weak convergence detection criterion的 new mechanism
@@ -482,7 +480,7 @@ But for good diversity at the final stage,
 it is needed to set $r$ to its optimal value ($1+1/H$). 
 For this purpose, it is necessary to detect whether the algorithm is converged. 
 If solutions are all close to the PF, 
-we change the value of $r$ to $r_{Optimal}$; otherwise, we set value of $r$ to 
+we change the value of $r$ to $r_{Optimal}$; otherwise, we set the value of $r$ to 
 $r_{Initial}$. The mechanism is shown below:
 \begin{equation}\label{endm1}
   r(t)=
@@ -521,13 +519,13 @@ $t_{Converged}$ is determined by a weak convergence detection criterion.
 % 画上图（ln np mean）的b随evaluation变化图
 % for nadir point, 经过我们的实验 10^-5是个好threshold
 %
-Various indicators including convergence detection indicators that are used to detect the stagnation 
+Various indicators including convergence detection indicators which are used to detect the stagnation 
 have been proposed in the literature\cite{convergenceDetection:1, convergenceDetection:LSSC, 
 convergenceDetection:OCD, convergenceDetection:OFCDandOCD, convergenceDetection:convergenceMetric, 
 convergenceDetection:maxCD, convergenceDetection:online}. 
 They focus on the accuracy of convergence, which is not the purpose in our approach for 
 the reason that after algorithm converged, we still need some generations in order to
-get even distribution of solution set. 
+get a uniform distribution of solutions set. 
 We summarize our weak convergence detection criterion as follow:
 \subsubsection{Inaccuracy} It is not necessary to have an accurate convergence detection. 
 The convergence can be reported if current solutions are close to the PF.
@@ -535,7 +533,7 @@ In other words, the estimated ideal and nadir points based on the current soluti
 are close to the true ideal and nadir points. 
 \subsubsection{Saving time} We should not spend too much time in convergence detection
 for the reason that the state-of-the-art HV-based algorithms such as SMS-EMOA and HypE, 
-are time-consuming when the dimension is very high. 
+are time-consuming when the dimensionality is very high. 
 
 We are discussing the effect of reference points in calculating HV. It seems to be a good
 idea to use HV as our convergence detection indicator as we have calculated 
@@ -545,27 +543,10 @@ which means that they are different among generations.
 So, we can not simply compare HV calculated in algorithm among different generations. 
 
 We are trying on some other good indicators satisfying our convergence detection criterions. 
-Fig. \ref{wcd1} shows the change of HV and nadir point on SMS-EMOA  
-with 3-objective inverted-DTLZ1 problem.
-When current solutions are close to the PF, the estimated nadir point of current solutions is close 
-to the true nadir points. 
-\begin{figure}[!t]
-  \centering
-    \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_1}
-  \caption{Example of nadir point and HV value on 3-objective inverted-DTLZ1 problem
-  with SMS-EMOA algorithm.
-  The blue curve is the change of HV 
-  while the black curve is the change of the indicator $I$: best logarithmic nadir point so-far.
-  The green dotted line shows the convergence detection 
-  and the red dotted line shows the considered window for evaluated number $t_{Converged}$. 
-  }
-  \label{wcd1}
-\end{figure}
-This implies that the estimated nadir point can be a good indicator for our purpose. 
-But for some problems with a large feasible region, 
-the moving distance of the estimated nadir point in the early generations is larger than that near convergence.
-So we consider the logarithm. And considering the possible bad variance of the indicator, 
-finally, we use the best logarithmic nadir point so-far as our indicator. More specifically,
+In the progress of the algorithm, the HV of the current solutions set increases 
+while the estimated nadir point of the current solutions set is gradually approaching the PF. 
+The estimated nadir point can be a good choice for our purpose. 
+More specifically,
 for a minimization problem, we consider the indicator $I$ as follows:
 \begin{equation}\begin{aligned}\label{ewcd1}
   \boldsymbol{N_{t}} &= [f_{t1},f_{t2},\dots,f_{tm}]^\top \in \mathbb{R}^m ,\\
@@ -578,11 +559,32 @@ where $T$ is the total number of generations,
 $\boldsymbol{N_{t}}$ is the estimated nadir point at the $t^{th}$ generation with $m$ objectives: $f_{t1},f_{t2},\dots,f_{tm}$. 
 $I_0$ is the initial indicator calculated by the initial population.
 And $I_t$ is the minimum value before the $t^{th}$ generation (including the $t^{th}$ generation). 
+Fig. \ref{wcd1} shows the change of HV and indicator $I$ on SMS-EMOA  
+with 3-objective inverted-DTLZ1.
+When current solutions are close to the PF, the estimated nadir point of current solutions is close 
+to the true nadir point. 
+\begin{figure}[!t]
+  \centering
+    \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_1}
+  \caption{Example of nadir point and HV value on the 3-objective inverted-DTLZ1
+  with SMS-EMOA.
+  The blue curve is the change of HV 
+  while the black curve is the change of the indicator $I$: best logarithmic nadir point so-far.
+  The green dotted line shows the convergence detection 
+  and the red dotted line shows the considered window for evaluated number $t_{Converged}$. 
+  }
+  \label{wcd1}
+\end{figure}
+% This implies that the estimated nadir point can be a good indicator for our purpose. 
+% But for some problems with a large feasible region, 
+% the moving distance of the estimated nadir point in the early generations is larger than that near convergence.
+% So we consider the logarithm. And considering the possible bad variance of the indicator, 
+% finally, we use the best logarithmic nadir point so-far as our indicator. 
 
 After choosing the indicator, the next step is to detect the stagnation of the indicator.
 We use a basic linear regression method called Simple Least Squares\cite{SimpleLeastSquares} with a
 simple least squares convergence detection strategy introduced in \cite{convergenceDetection:LSSC}.
-If the absolute value of the slope of the indicator is below a threshold, the convergence is reported.
+If the absolute value of the slope of the linear regression is below a threshold, the convergence is reported.
 Briefly speaking, for a simple linear regression $I(t)=a+bt$, 
 the intercept $a$ and slope $b$ of the $t^{th}$ generation can be calculated 
 with the following matrix-based formula:
@@ -620,8 +622,8 @@ and we should not consider the first $w\_ l$ evaluations).
 \begin{figure}[!t]
   \centering
     \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_2}
-  \caption{Example of $\lvert b\rvert$ on inverted-DTLZ1 3-objective problem
-  (window size = $4000$ evaluations with population size = $100$).
+  \caption{Example of $\lvert b\rvert$ on the 3-objective inverted-DTLZ1
+  (window size = $4000$ with population size = $100$).
   The green dotted line shows the threshold.
   }
   \label{wcd2}
@@ -633,11 +635,11 @@ formula holds:
   \lvert b \rvert < thres. 
 \end{equation}
 The value of $t_{Converged}$ equals to $t$ (i.e., the current evaluation number) 
-when convergence is detected. 
+when the convergence is first detected. 
 The whole process of weak convergence detection is also clearly described in Algorithm \ref{alg:wcd}. 
-If Algorithm \ref{alg:wcd} return True, we report the convergence, vice versa. 
+If Algorithm \ref{alg:wcd} returns True, we report the convergence, vice versa. 
 The choice of the $thres$ value is trivial 
-as the report ahead or delay is not fatal to the algorithm or to the final solution set.
+as the report ahead or delay is not fatal to the algorithm or the final solutions set.
 We choose $thres$ value as $10^{-5}$ after some experimental computation with 
 the window size $w\_ l = 4000$. 
 If we do not change the window size, 
@@ -650,7 +652,7 @@ because of a weak convergence detection purpose.
   \begin{algorithmic}
   \REQUIRE ~~\\
     $w\_l$, $//$ Window size.\\
-    $\boldsymbol{S_{t}}$, $//$ Solution set when evaluaiton number is $t$.\\
+    $\boldsymbol{S_{t}}$, $//$ Solutions set when evaluaiton number is $t$.\\
     $\boldsymbol I = \{I_{0},I_{1},\dots,I_{t-1}\}$, $//$ Stored indicator values. \\
     $thres$, $//$ The chosen threshold for slope. \\ 
   \ENSURE Return True if converged, otherwise return False.~~\\
@@ -678,13 +680,13 @@ because of a weak convergence detection purpose.
 %
 \section{Computational Experiments}
 \subsection{Experimental Settings}
-To clearly represent the superiority of dynamically reference point specification 
+To clearly represent the superiority of dynamic reference point specification 
 and to ease the comparison process of two different dynamic mechanisms
-(linearly decreasing mechanism and weak convergence detection mechanism), 
+(the linearly decreasing mechanism and the weak convergence detection mechanism), 
 the mechanisms are tested with the state-of-the-art algorithm SMS-EMOA\cite{smsemoa}.
 The test problems include: 
-DTLZ\cite{DTLZ}, WFG\cite{WFG}, their minus-versions\cite{minusTestProblem} 
-and a multi-objective distance minimization problem(MPDMP)\cite{dmp}.
+DTLZ\cite{DTLZ} test problems, WFG\cite{WFG} test problems, their minus-versions\cite{minusTestProblem} 
+and a Multi-Point Distance Minimization Problem(MPDMP)\cite{dmp}.
 We test all the problems with 10 objectives. 
 All the code in this section is implemented in PlatEMO framework\cite{PlatEMO} 
 with the following settings:
@@ -755,7 +757,7 @@ Number of runs: 20 runs.
     \end{tabular}
 \end{table*}
 \begin{table*}[!t]\footnotesize
-    \caption{HV mean and standard deviation over 20 independent runs for minus-DTLZ, minus-WFG and MPMP.} %加粗是好，灰色是坏
+    \caption{HV mean and standard deviation over 20 independent runs for minus-DTLZ, minus-WFG and MPDMP.} %加粗是好，灰色是坏
     \label{table_itri}
     \centering
     \begin{tabular}{ccccccc}
@@ -798,10 +800,10 @@ Number of runs: 20 runs.
 The detailed algorithms are as follows: 
 SMS-EMOA-10 (SMS-EMOA\cite{smsemoa} with $r=10$),
 SMS-EMOA-Opt (SMS-EMOA with $r=1+1/H$),
-SMS-EMOA-LD (SMS-EMOA with a linearly decreasing mechanism),
-and SMS-EMOA-CD (SMS-EMOA with a weak convergence detection mechanism, proposed in this paper).
+SMS-EMOA-LD (SMS-EMOA with the linearly decreasing mechanism),
+and SMS-EMOA-CD (SMS-EMOA with the weak convergence detection mechanism, proposed in this paper).
 We obtain the HV results after $100,000$ evaluations for each algorithm. 
-The computational results of the HV metric is shown in TABLE \ref{table_tri} and TABLE \ref{table_itri}. 
+The computational results of the HV metric are shown in TABLE \ref{table_tri} and TABLE \ref{table_itri}. 
 The best result in each row is highlighted in bold, and the worst result is shaded. 
 The basic Wilcoxon signed-rank sum test is used in order to show the statistical significance for the algorithm
 comparing with SMS-EMOA-CD proposed in this paper. The three symbols ``$+$'', ``$-$'', ``$\approx$'' 
@@ -809,15 +811,14 @@ mean significantly better, significantly worse and no significant difference.
 
 In the basic test problems(DTLZ1-4, WFG1-9), 
 SMS-EMOA-Opt performs the worst (9 out of 13 significantly worse than SMS-EMOA-CD) among the algorithms in TABLE \ref{table_tri}. 
-This phenomenon clearly show the bad searching behavior when applying $r=1+1/H$ all the time, 
-which is discussed in Section III. 
+This phenomenon clearly shows the bad searching behavior when applying $r=1+1/H$ all the time. 
 As for SMS-EMOA-10, we can not tell the differences with SMS-EMOA-CD, 
-that the Wilcoxon signed-rank sum tests show almost all the results except one are ``$\approx$''. 
+that the Wilcoxon signed-rank sum tests show almost all the results are ``$\approx$'' except one. 
 This is because of the small influence of reference point on the triangular PF problems. 
 2 better results from SMS-EMOA-LD indicate that SMS-EMOA-LD is slightly better than SMS-EMOA-CD on triangular PF problems. 
 
 In the results of inverted-triangular PF problems (minus-DTLZ1-4, minus-WFG1-9 and MPDMP), 
-SMS-EMOA-10 performs the worst(12 out of 14) in all experiments in average, 
+SMS-EMOA-10 performs the worst(12 out of 14) in all experiments on average, 
 and the Wilcoxon signed-rank sum tests show that almost all the results from SMS-EMOA-10 are significantly worse than SMS-EMOA-CD
 (11 out of 14 worse and no better results). 
 The reason is that the $r$ is set to 10 for the whole process of SMS-EMOA-10 algorithm and many solutions are on the boundary of PF.
@@ -830,7 +831,7 @@ The result of MPDMP shows that SMS-EMOA-CD is the best among the four algorithms
     \includegraphics[width=\columnwidth]{SMSEMOA_MPDMP_hv_2}
   \caption{The comparison of four mechanisms. % on HV graph of solutions in each evaluation. 
   The value of each point is the average of 20 independent runs in each evaluation
-  and the problem is MPDMP. 
+  and the problem is the 10-objective MPDMP in TABLE \ref{table_itri}. 
   }
   \label{crdmp}
 \end{figure}
@@ -838,11 +839,11 @@ We plot the HV graph of 4 mechanisms (as shown in Fig. \ref{crdmp}) on the 10-di
 In Fig. \ref{crdmp}, the HV of SMS-EMOA-LD (the red curve) is gradually increased 
 and finally reaches the same level as SMS-EMOA-Opt, as the value of $r$ is gradually decrease to $1+1/H$.
 The HV of SMS-EMOA-CD (the yellow curve) firstly reaches a stable level similar to SMS-EMOA-10, 
-for that their values of $r$ are both 10 before 4,500 evaluations. 
+for that their values of $r$ are both 10 before 4,500 evaluations. % ($t_{Converged}$)
 Then after reporting the convergence detection at about 4,500 evaluations, 
 the value of $r$ in SMS-EMOA-CD reaches the optimal value $1+1/H$ 
 and the HV increases. 
-The reason is because the boundary solutions decrease, and on the other hand, the inner solutions increase. 
+The reason is that the boundary solutions decrease, and on the other hand, the inner solutions increase. 
 Finally, the HV of SMS-EMOA-CD is better than SMS-EMOA-Opt and SMS-EMOA-LD. 
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
@@ -949,31 +950,30 @@ This phenomenon will not be observed on the triangular PF problems when the refe
 Then we state the dynamic reference point specification mechanism with the illustration by two aspects:
 \subsubsection{Better Searching Behavior} In the early stage, 
 the solutions may not be close to the true PF. 
-A larger value of $r$ can achieve a better searching behavior.
-We give an example of the DTLZ2 problem. 
+A larger value of $r$ can achieve better searching behavior.
+We give an example of DTLZ2. 
 \subsubsection{Uniform Distribution} Considering the linear triangular problems, 
-the optimal setting of reference point is $r=1+1/H$. 
+the optimal setting of the reference point is $r=1+1/H$. 
 
-We summarize the whole process of dynamic reference point specification mechanism as that,
+We summarize the whole process of dynamic reference point specification mechanism as following: 
 the value of $r$ should be specified larger than $1+1/H$ at first and be equal to $1+1/H$ in the end,
 as in Eqs. (\ref{f2})-(\ref{endm1}).
 
 After that, a new dynamic reference point adaptation mechanism is proposed in this paper.
 A weak convergence detection mechanism is used. 
 We apply our new dynamic mechanism on different test problems including the triangular and the inverted-triangular PFs problems. 
-The results show that SMS-EMOA with $r=1+1/H$ performs the worst on the problems with triangular PF, 
-and SMS-EMOA with $r=10$ performs the worst on the problems with inverted-triangular PFs,
-which hint the superiority of dynamic mechanism. 
-SMS-EMOA with weak convergence detection mechanism performs better or worse than SMS-EMOA with linearly decrease mechanism.
+The results show that SMS-EMOA with $r=1+1/H$ performs the worst on the triangular PF problems, 
+and SMS-EMOA with $r=10$ performs the worst on the inverted-triangular PF problems,
+which hint the superiority of the dynamic mechanism. 
+SMS-EMOA with the weak convergence detection mechanism performs better or worse than SMS-EMOA with the linearly decreasing mechanism.
 
-We compare our new mechanism with the proposed linearly decreasing mechanism and find that
-on some problems, specifically the multi-objective distance minimization problems,  
-our weak convergence detection mechanism outperforms the linear decreasing mechanism. 
+We compare our new mechanism with the linearly decreasing mechanism and find that
+on some problems, specifically the MPDMPs, 
+our weak convergence detection mechanism outperforms the linearly decreasing mechanism. 
 
 In the future, we plan to further investigate the behavior of our new mechanism. 
-A larger dimensionality of MaOPs should be considered 
-and the problems with different PF shapes should be tested and analyzed detailedly. 
-Our weak convergence detection mechanism can also be further improved. 
+The problems with different PF shapes should be tested and analyzed detailedly. 
+Our weak convergence detection mechanism should also be further improved. 
 
 \bibliographystyle{IEEEtran} 
 \bibliography{mybibtex} 

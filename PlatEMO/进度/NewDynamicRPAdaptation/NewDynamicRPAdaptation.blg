@@ -11,42 +11,42 @@ Database file #1: mybibtex.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty journal in convergenceDetection:convergenceMetric
+Warning--missing institution in convergenceDetection:convergenceMetric
 
 Done.
 You've used 32 entries,
             4024 wiz_defined-function locations,
-            1015 strings with 14168 characters,
-and the built_in function-call counts, 27884 in all, are:
-= -- 2244
+            1016 strings with 14200 characters,
+and the built_in function-call counts, 27932 in all, are:
+= -- 2250
 > -- 679
 < -- 270
 + -- 382
 - -- 115
-* -- 1373
-:= -- 4017
+* -- 1375
+:= -- 4025
 add.period$ -- 77
 call.type$ -- 32
 change.case$ -- 31
 chr.to.int$ -- 636
 cite$ -- 33
-duplicate$ -- 1938
-empty$ -- 2232
+duplicate$ -- 1941
+empty$ -- 2231
 format.name$ -- 140
-if$ -- 6493
+if$ -- 6501
 int.to.chr$ -- 0
 int.to.str$ -- 32
-missing$ -- 325
+missing$ -- 329
 newline$ -- 123
 num.names$ -- 32
-pop$ -- 737
+pop$ -- 742
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2140
+skip$ -- 2143
 stack$ -- 0
 substring$ -- 1529
-swap$ -- 1660
+swap$ -- 1669
 text.length$ -- 58
 text.prefix$ -- 0
 top$ -- 5
@@ -54,5 +54,5 @@ type$ -- 32
 warning$ -- 1
 while$ -- 140
 width$ -- 34
-write$ -- 341
+write$ -- 342
 (There was 1 warning)

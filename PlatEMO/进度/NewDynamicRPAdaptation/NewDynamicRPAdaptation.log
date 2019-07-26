@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.26)  24 JUL 2019 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.26)  26 JUL 2019 21:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -377,36 +377,57 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (./NewDynamicRPAdaptation.aux)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/sttools/flushend.sty
+Package: flushend 2015/04/14 v3.1 Balancing columns in twocolumn mode
+\flushend@@lastskip@a=\skip78
+\flushend@@lastskip@b=\skip79
+\flushend@@lastskip@c=\skip80
+\flushend@@penalty@a=\count133
+\flushend@@lastkern@a=\dimen171
+\var@@temp@spread=\dimen172
+\var@@temp@a=\dimen173
+\flushend@@page@rule=\dimen174
+\flushend@@varbox@a=\box41
+\flushend@@varbox@c=\box42
+\flushend@@tempbox@a=\box43
+\flushend@@tempbox@c=\box44
+\@viper=\box45
+\hold@viper=\box46
+\atColsBreak=\toks28
+\atColsEnd=\toks29
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count134
+)) (./NewDynamicRPAdaptation.aux)
 \openout1 = `NewDynamicRPAdaptation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 -- Lines per column: 56 (exact).
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count133
-\scratchdimen=\dimen171
-\scratchbox=\box41
-\nofMPsegments=\count134
-\nofMParguments=\count135
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count136
-\MPscratchDim=\dimen172
-\MPnumerator=\count137
-\makeMPintoPDFobject=\count138
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count135
+\scratchdimen=\dimen175
+\scratchbox=\box47
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen176
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO)
  (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -445,11 +466,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 118.
+LaTeX Font Info:    Try loading font information for U+msa on input line 120.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 118.
+LaTeX Font Info:    Try loading font information for U+msb on input line 120.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -465,7 +486,7 @@ Package epstopdf Info: Source file: <fig/rpa1_1.eps>
 (epstopdf)             Command: <repstopdf --outfile=fig/rpa1_1-eps-converted-to.pdf fig/rpa1_1.eps>
 (epstopdf)             \includegraphics on input line 241.
 Package epstopdf Info: Output file is already uptodate.
- <fig/rpa1_1-eps-converted-to.pdf, id=12, 576.1525pt x 557.08125pt>
+ <fig/rpa1_1-eps-converted-to.pdf, id=11, 576.1525pt x 557.08125pt>
 File: fig/rpa1_1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/rpa1_1-eps-converted-to.pdf>
 Package pdftex.def Info: fig/rpa1_1-eps-converted-to.pdf used on input line 241.
@@ -479,7 +500,7 @@ Package epstopdf Info: Source file: <fig/rpa1_2.eps>
 (epstopdf)             Command: <repstopdf --outfile=fig/rpa1_2-eps-converted-to.pdf fig/rpa1_2.eps>
 (epstopdf)             \includegraphics on input line 243.
 Package epstopdf Info: Output file is already uptodate.
- <fig/rpa1_2-eps-converted-to.pdf, id=13, 576.1525pt x 557.08125pt>
+ <fig/rpa1_2-eps-converted-to.pdf, id=12, 576.1525pt x 557.08125pt>
 File: fig/rpa1_2-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/rpa1_2-eps-converted-to.pdf>
 Package pdftex.def Info: fig/rpa1_2-eps-converted-to.pdf used on input line 243.
@@ -493,7 +514,7 @@ Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1_
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)             \includegraphics on input line 267.
 Package epstopdf Info: Output file is already uptodate.
- <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=14, 549.05125pt x 405.515pt>
+ <fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=13, 549.05125pt x 405.515pt>
 File: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
 Package pdftex.def Info: fig/FVEMOA_fixrp_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 267.
@@ -507,7 +528,7 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)             \includegraphics on input line 269.
 Package epstopdf Info: Output file is already uptodate.
- <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=15, 549.05125pt x 404.51125pt>
+ <fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=14, 549.05125pt x 404.51125pt>
 File: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
 Package pdftex.def Info: fig/FVEMOA_IDTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 269.
@@ -521,7 +542,7 @@ Package epstopdf Info: Source file: <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)             \includegraphics on input line 271.
 Package epstopdf Info: Output file is already uptodate.
- <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=16, 549.05125pt x 410.53375pt>
+ <fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=15, 549.05125pt x 410.53375pt>
 File: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
 Package pdftex.def Info: fig/FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 271.
@@ -535,7 +556,7 @@ Package epstopdf Info: Source file: <fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf fig/FVEMOA_DTLZ1_evaluation20000_r1__1.eps>
 (epstopdf)             \includegraphics on input line 273.
 Package epstopdf Info: Output file is already uptodate.
- <fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=17, 549.05125pt x 407.5225pt>
+ <fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf, id=16, 549.05125pt x 407.5225pt>
 File: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf>
 Package pdftex.def Info: fig/FVEMOA_DTLZ1_evaluation20000_r1__1-eps-converted-to.pdf used on input line 273.
@@ -636,17 +657,13 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
 (epstopdf)                    date: 2019-07-24 13:53:34
 (epstopdf)                    size: 25292 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_nadir_1.eps>
-(epstopdf)             \includegraphics on input line 554.
+(epstopdf)             \includegraphics on input line 568.
 Package epstopdf Info: Output file is already uptodate.
  <fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf, id=182, 557.08125pt x 400.49625pt>
 File: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf used on input line 554.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf used on input line 568.
 (pdftex.def)             Requested size: 252.0pt x 181.16275pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
 (epstopdf)                    date: 2019-07-24 14:28:38
 (epstopdf)                    size: 798086 bytes
@@ -654,22 +671,24 @@ Package epstopdf Info: Source file: <fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
 (epstopdf)                    date: 2019-07-24 14:28:53
 (epstopdf)                    size: 23820 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf fig/FVEMOA_IDTLZ1_M3_nadir_2.eps>
-(epstopdf)             \includegraphics on input line 622.
+(epstopdf)             \includegraphics on input line 624.
 Package epstopdf Info: Output file is already uptodate.
- <fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf, id=205, 533.995pt x 434.62375pt>
+ <fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf, id=183, 533.995pt x 434.62375pt>
 File: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf used on input line 622.
+Package pdftex.def Info: fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf used on input line 624.
 (pdftex.def)             Requested size: 252.0pt x 205.1088pt.
 
-Overfull \hbox (10.0pt too wide) detected at line 668
+Underfull \vbox (badness 1931) has occurred while \output is active []
+
+ [4]
+Overfull \hbox (10.0pt too wide) detected at line 670
 [][] 
  []
 
-[5 <./fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>]
+[5 <./fig/FVEMOA_IDTLZ1_M3_nadir_1-eps-converted-to.pdf> <./fig/FVEMOA_IDTLZ1_M3_nadir_2-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
 Package epstopdf Info: Source file: <fig/SMSEMOA_MPDMP_hv_2.eps>
 (epstopdf)                    date: 2019-07-24 14:00:46
 (epstopdf)                    size: 1267490 bytes
@@ -677,17 +696,20 @@ Package epstopdf Info: Source file: <fig/SMSEMOA_MPDMP_hv_2.eps>
 (epstopdf)                    date: 2019-07-24 14:02:14
 (epstopdf)                    size: 27174 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf fig/SMSEMOA_MPDMP_hv_2.eps>
-(epstopdf)             \includegraphics on input line 830.
+(epstopdf)             \includegraphics on input line 831.
 Package epstopdf Info: Output file is already uptodate.
- <fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf, id=234, 683.55376pt x 629.35126pt>
+ <fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf, id=230, 683.55376pt x 629.35126pt>
 File: fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf Graphic file (type pdf)
  <use fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf>
-Package pdftex.def Info: fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf used on input line 830.
+Package pdftex.def Info: fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf used on input line 831.
 (pdftex.def)             Requested size: 252.0pt x 232.01125pt.
- (./NewDynamicRPAdaptation.bbl
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ” in font ptmr7t!
+
+Underfull \vbox (badness 5802) has occurred while \output is active []
+
+ [6] (./NewDynamicRPAdaptation.bbl
+Missing character: There is no â in font cmr8!
+Missing character: There is no € in font cmr8!
+Missing character: There is no ” in font cmr8!
  [7 <./fig/SMSEMOA_MPDMP_hv_2-eps-converted-to.pdf>])
 
 ** Conference Paper **
@@ -700,21 +722,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
+- LAST -
+Extra skip:1.62001pt
+Left:354.0pt/1.73193pt
+Right:352.37999pt/1.73193pt
+Output:354.68999pt
 [8] (./NewDynamicRPAdaptation.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6399 strings out of 493014
- 102662 string characters out of 6133351
- 198929 words of memory out of 5000000
- 9788 multiletter control sequences out of 15000+600000
+ 6779 strings out of 493014
+ 107668 string characters out of 6133351
+ 216174 words of memory out of 5000000
+ 10161 multiletter control sequences out of 15000+600000
  45475 words of font info for 101 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 44i,16n,49p,905b,4381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,16n,49p,904b,4737s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NewDynamicRPAdaptation.pdf (8 pages, 553629 bytes).
+Output written on NewDynamicRPAdaptation.pdf (8 pages, 553330 bytes).
 PDF statistics:
  317 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams

@@ -23,9 +23,9 @@
 
 \bibitem{hypervolume}
 E.~Zitzler and L.~Thiele, ``Multiobjective optimization using evolutionary
-  algorithms—a comparative case study,'' in \emph{International conference on
-  parallel problem solving from nature}.\hskip 1em plus 0.5em minus 0.4em\relax
-  Springer, 1998, pp. 292--301.
+  algorithms$—-${A} comparative case study,'' in \emph{Parallel Problem
+  Solving from Nature, V}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin,
+  Germany: Springer-Verlag, 1998, pp. 292--301.
 
 \bibitem{R2}
 M.~P. Hansen and A.~Jaszkiewicz, \emph{Evaluating the quality of approximations
@@ -60,12 +60,12 @@ N.~Beume, C.~M. Fonseca, M.~Lopez-Ibanez, L.~Paquete, and J.~Vahrenhold, ``On
   2009.
 
 \bibitem{smsemoa}
-N.~Beume, B.~Naujoks, and M.~Emmerich, ``Sms-emoa: Multiobjective selection
+N.~Beume, B.~Naujoks, and M.~Emmerich, ``{SMS-EMOA}: Multiobjective selection
   based on dominated hypervolume,'' \emph{European Journal of Operational
   Research}, vol. 181, no.~3, pp. 1653--1669, 2007.
 
 \bibitem{HypE}
-J.~Bader and E.~Zitzler, ``Hype: An algorithm for fast hypervolume-based
+J.~Bader and E.~Zitzler, ``{HypE}: An algorithm for fast hypervolume-based
   many-objective optimization,'' \emph{Evolutionary computation}, vol.~19,
   no.~1, pp. 45--76, 2011.
 
@@ -115,7 +115,7 @@ H.~Ishibuchi, R.~Imada, Y.~Setoguchi, and Y.~Nojima, ``Reference point
 
 \bibitem{hisao:dynamic}
 H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
-  a reference point for hypervolume calculation in sms-emoa,'' in \emph{2018
+  a reference point for hypervolume calculation in {SMS-EMOA},'' in \emph{2018
   IEEE Congress on Evolutionary Computation (CEC)}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2018, pp. 1--8.
 
@@ -130,24 +130,25 @@ W.~Ericson, ``Introductory probability and statistical applications,''
   \emph{Technometrics}, vol.~8, no.~4, pp. 720--722, 1970.
 
 \bibitem{dmp}
-H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in moea/d
-  for multi-objective and many-objective optimization,'' \emph{Complex \&
-  Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
+H.~Ishibuchi, K.~Doi, and Y.~Nojima, ``On the effect of normalization in
+  {MOEA/D} for multi-objective and many-objective optimization,'' \emph{Complex
+  \& Intelligent Systems}, vol.~3, no.~4, pp. 279--294, 2017.
 
 \bibitem{invertedDTLZ1}
 H.~Jain and K.~Deb, ``An evolutionary many-objective optimization algorithm
-  using reference-point based nondominated sorting approach, part ii: handling
-  constraints and extending to an adaptive approach,'' \emph{IEEE Transactions
-  on Evolutionary Computation}, vol.~18, no.~4, pp. 602--622, 2013.
+  using reference-point based nondominated sorting approach, part {II}:
+  handling constraints and extending to an adaptive approach,'' \emph{IEEE
+  Transactions on Evolutionary Computation}, vol.~18, no.~4, pp. 602--622,
+  2013.
 
 \bibitem{PlatEMO}
-T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``Platemo: A matlab platform for
+T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``{PlatEMO}: A {MATLAB} platform for
   evolutionary multi-objective optimization [educational forum],'' \emph{IEEE
   Computational Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
 
 \bibitem{MOEAD}
-Q.~Zhang and H.~Li, ``Moea/d: A multiobjective evolutionary algorithm based on
-  decomposition,'' \emph{IEEE Transactions on evolutionary computation},
+Q.~Zhang and H.~Li, ``{MOEA/D}: A multiobjective evolutionary algorithm based
+  on decomposition,'' \emph{IEEE Transactions on evolutionary computation},
   vol.~11, no.~6, pp. 712--731, 2007.
 
 \bibitem{DtA}
@@ -163,12 +164,12 @@ H.~Trautmann, U.~Ligges, J.~Mehnen, and M.~Preuss, ``A convergence criterion
 
 \bibitem{convergenceDetection:LSSC}
 J.~L. Guerrero, L.~Mart{\'\i}, A.~Berlanga, J.~Garc{\'\i}a, and J.~M. Molina,
-  ``Introducing a robust and efficient stopping criterion for moeas,'' in
+  ``Introducing a robust and efficient stopping criterion for {MOEAs},'' in
   \emph{IEEE Congress on Evolutionary Computation}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2010, pp. 1--8.
 
 \bibitem{convergenceDetection:OCD}
-T.~Wagner, H.~Trautmann, and B.~Naujoks, ``Ocd: Online convergence detection
+T.~Wagner, H.~Trautmann, and B.~Naujoks, ``{OCD}: Online convergence detection
   for evolutionary multi-objective algorithms based on statistical testing,''
   in \emph{International Conference on Evolutionary Multi-Criterion
   Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2009, pp.
@@ -182,7 +183,7 @@ H.~Trautmann, T.~Wagner, B.~Naujoks, M.~Preuss, and J.~Mehnen, ``Statistical
 
 \bibitem{convergenceDetection:convergenceMetric}
 K.~Deb and S.~Jain, ``Running performance metrics for evolutionary
-  multi-objective optimization,'' 2002.
+  multi-objective optimization,'' Tech. Rep., 2002.
 
 \bibitem{convergenceDetection:maxCD}
 O.~Rudenko and M.~Schoenauer, ``A steady performance stopping criterion for

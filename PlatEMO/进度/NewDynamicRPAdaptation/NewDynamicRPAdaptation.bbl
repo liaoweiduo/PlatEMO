@@ -90,12 +90,6 @@ S.~Jiang, J.~Zhang, Y.-S. Ong, A.~N. Zhang, and P.~S. Tan, ``A simple and fast
   \emph{IEEE Transactions on Cybernetics}, vol.~45, no.~10, pp. 2202--2213,
   2014.
 
-\bibitem{DTLZ}
-K.~Deb, L.~Thiele, M.~Laumanns, and E.~Zitzler, ``Scalable multi-objective
-  optimization test problems,'' in \emph{Proceedings of the 2002 Congress on
-  Evolutionary Computation. CEC'02 (Cat. No. 02TH8600)}, vol.~1.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2002, pp. 825--830.
-
 \bibitem{hisao:RPhowtoSpecify}
 H.~Ishibuchi, R.~Imada, S.~Yu, and Y.~Nojima, ``How to specify a reference
   point in hypervolume calculation for fair performance comparison,''
@@ -196,6 +190,12 @@ T.~Wagner, H.~Trautmann, and L.~Mart{\'\i}, ``A taxonomy of online stopping
   \emph{International Conference on Evolutionary Multi-Criterion
   Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2011, pp.
   16--30.
+
+\bibitem{DTLZ}
+K.~Deb, L.~Thiele, M.~Laumanns, and E.~Zitzler, ``Scalable multi-objective
+  optimization test problems,'' in \emph{Proceedings of the 2002 Congress on
+  Evolutionary Computation. CEC'02 (Cat. No. 02TH8600)}, vol.~1.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2002, pp. 825--830.
 
 \bibitem{WFG}
 S.~Huband, P.~Hingston, L.~Barone, and L.~While, ``A review of multiobjective

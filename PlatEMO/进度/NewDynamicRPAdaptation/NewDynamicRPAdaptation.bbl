@@ -66,7 +66,7 @@ N.~Beume, B.~Naujoks, and M.~Emmerich, ``{SMS-EMOA}: Multiobjective selection
 
 \bibitem{HypE}
 J.~Bader and E.~Zitzler, ``{HypE}: An algorithm for fast hypervolume-based
-  many-objective optimization,'' \emph{Evolutionary computation}, vol.~19,
+  many-objective optimization,'' \emph{Evolutionary Computation}, vol.~19,
   no.~1, pp. 45--76, 2011.
 
 \bibitem{newR2}
@@ -172,7 +172,7 @@ T.~Wagner, H.~Trautmann, and B.~Naujoks, ``{OCD}: Online convergence detection
 \bibitem{convergenceDetection:OFCDandOCD}
 H.~Trautmann, T.~Wagner, B.~Naujoks, M.~Preuss, and J.~Mehnen, ``Statistical
   methods for convergence detection of multi-objective evolutionary
-  algorithms,'' \emph{Evolutionary computation}, vol.~17, no.~4, pp. 493--509,
+  algorithms,'' \emph{Evolutionary Computation}, vol.~17, no.~4, pp. 493--509,
   2009.
 
 \bibitem{convergenceDetection:convergenceMetric}

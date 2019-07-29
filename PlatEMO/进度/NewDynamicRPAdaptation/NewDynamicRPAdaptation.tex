@@ -183,8 +183,7 @@ many new indicators or new methods have been proposed to estimate the HV.
 For example, HypE uses a Monte Carlo simulation technology to estimate the HV\cite{HypE}; 
 R2 indicator estimates the HV by a standard weighted Tchebycheff function\cite{R2}; 
 an improved new R2 is proposed by Shang et al.\cite{newR2} to approximate the HV.  
-In 2014, a simple and fast version of SMS-EMOA, known as FV-EMOA, has been proposed\cite{FVEMOA}
-to further increase the efficiency.
+In 2014, a simple and fast version of SMS-EMOA, known as FV-EMOA\cite{FVEMOA}, has been proposed to further increase the efficiency.
 FV-EMOA considers the fact that 
 the HV contribution of a solution is only determined by partial solutions rather than the whole solution set\cite{FVEMOA}. 
 Recently, an improved SMS-EMOA with adaptive resource allocation has been proposed to reduce the number of HV calculations\cite{ismsemoa}. 
@@ -194,7 +193,7 @@ The specification of the reference point is one of the important but easy to be 
 % It is because that the effect on many test problems (e.g., DTLZ\cite{DTLZ}) are not so significant. 
 It has been reported that the position of the reference point strongly influences the hypervolume optimal distributions 
 on the inverted-triangular PFs\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
-Thus, a reference point specification method is proposed in \cite{hisao:RPspecify} for fair HV computation.
+Thus, a reference point specification method is proposed in \cite{hisao:RPhowtoSpecify} for fair HV computation.
 % A suitable set of reference point position for linear PFs has been sufficiently investigated in\cite{hisao:RPspecify}.
 A dynamic reference point specification mechanism has also been proposed in\cite{hisao:dynamic}.
 Another proposed strategy is to use two reference points in HV-based EMOA\cite{hisao:twoRP}. 
@@ -282,8 +281,8 @@ The reason is explained in detail in\cite{hisao:RPexplanation}.
     \includegraphics[width=1.5in]{FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1}}\quad
   \subfloat[The reference point $\boldsymbol R$ is specified by Eq. (\ref{frpa1}).]{\label{rpa2:d}
     \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
-  \caption{The final distribution of the solution set on inverted-DTLZ1((a) and (b)) 
-  and DTLZ1 ((c) and (d)).
+  \caption{The final distribution of the solution set on 3-objective inverted-DTLZ1((a) and (b)) 
+  and 3-objective DTLZ1 ((c) and (d)).
   The algorithm is SMS-EMOA with population size $\mu= 100$ and total evaluation number $= 20,000$. 
   (a) and (c): the reference point is calculated only once at the initial step;
   (b) and (d): the reference point is specified by Eq. (\ref{frpa1}) with $r=1.1$.
@@ -308,7 +307,7 @@ where $\boldsymbol R \in \mathbb{R}^m$ is the reference point in each generation
 and $\boldsymbol N \in \mathbb{R}^m$ is the estimated nadir point of the last front of the current population. 
 $r$ is specified as 1.1 in PlatEMO. 
 % The specification of the reference point is also one of the important parts in the HV-based algorithm implementation.
-In the source code of PlatEMO, the values of $r$ in HV-based algorithms are specified as follow: 
+In the source code of PlatEMO, the values of $r$ in HV-based algorithms are specified as follows: 
 1.1 (SMS-EMOA\cite{smsemoa}) and 1.2 (HypE\cite{HypE}). % and 10 (FV-EMOA\cite{FVEMOA}). 
 In the process of SMS-EMOA,  
 we use the HV contribution to evaluate each solution. 
@@ -357,7 +356,7 @@ the boundary of the PF with the increase of $r$.
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r2_N91}}\quad
   \subfloat[$r=5.$]{\label{dm1:d}
     \includegraphics[width=1.5in]{FVEMOA_IDTLZ1_evaluation10000_r5_N91}}\\
-  \caption{The final distribution of the solution set on inverted-DTLZ1.
+  \caption{The final distribution of the solution set on 3-objective inverted-DTLZ1.
   The algorithm is SMS-EMOA with population size $\mu=91$ ($H=12$) and total evaluation number $=20,000$.
   $r=13/12$ is the optimal setting and we observed a uniform distribution in (a).
   With the increase of $r$, more and more solutions move to the boundary of the PF
@@ -425,7 +424,7 @@ So, a larger value of $r$ than $1+1/H$ is suggested in the early stage \cite{his
     \includegraphics[width=1.5in]{SMSEMOA_optimal_DTLZ2_e10000}}\\
   \caption{
     The final solution distribution of SMS-EMOA on the 10-objective DTLZ2 with different settings of $r$. 
-    The population size $\mu = 30$ ($H=1$), the total evaluation number is 10000.
+    The population size $\mu = 30$ ($H=1$), the total evaluation number $= 10,000$.
   }
   \label{nud}
 \end{figure} 
@@ -439,8 +438,8 @@ To get a uniform solution distribution, $r$ should be specified as $1+1/H$, as i
 On inverted-triangular problems, the distribution of solutions on the PF
 strongly depends on the value of $r$ (as shown in Fig. \ref{dm1}). 
 
-The sensitivity of the $r$ value on the solutions distribution is also observed in some real-world problems,
-for example, distance minimization problems. 
+The sensitivity of the $r$ value on the solution distribution is also observed on some real-world problems,
+(e.g., Distance Minimization Problems\cite{dmp}). 
 This observation shows the potential use of the dynamic reference point specification\cite{hisao:dynamic}.
 
 \section{Dynamic Reference Point Specification Mechanism}
@@ -506,7 +505,7 @@ $r_{Initial}$. The mechanism is shown below:
   \begin{cases}
     r_{Initial}, t<t_{Converged}\\
     1+1/H, t \ge t_{Converged} 
-  \end{cases}
+  \end{cases}, 
   t=0,1,\dots,T.
 \end{equation}
 $r(t)$ equals to $r_{Initial}$ before reaching the converged generation $t_{Converged}$, 
@@ -639,8 +638,8 @@ and we should not consider the first $w\_ l$ evaluations).
   \centering
     \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_2}
   \caption{Example of $\lvert b\rvert$ on the 3-objective inverted-DTLZ1
-  (window size $w\_l = 4000$ and population size $\mu = 100$).
-  The green dotted line shows the threshold.
+  (window size $w\_l = 4,000$ and population size $\mu = 100$).
+  The green dotted line shows the threshold $10^{-5}$.
   }
   \label{wcd2}
 \end{figure}
@@ -657,7 +656,7 @@ If Algorithm \ref{alg:wcd} returns True, we report the convergence, vice versa.
 The choice of the $thres$ value is trivial 
 as the report ahead or delay is not fatal to the algorithm or the final solution set.
 We choose $thres$ value as $10^{-5}$ after some experimental computation with 
-the window size $w\_ l = 4000$. 
+the window size $w\_ l = 4,000$. 
 
 \begin{algorithm}
   \caption{Weak Convergence Detection}
@@ -693,7 +692,7 @@ the window size $w\_ l = 4000$.
 %
 \section{Computational Experiments}
 \subsection{Experimental Settings}
-In this section, the two different dynamic reference point specification mechanism 
+In this section, the two different dynamic reference point specification mechanisms 
 (i.e., the linearly decreasing mechanism and the weak convergence detection mechanism) 
 are tested with the state-of-the-art algorithm SMS-EMOA\cite{smsemoa}. 
 The DTLZ test suite\cite{DTLZ}, WFG test suite\cite{WFG}, 
@@ -735,6 +734,7 @@ Number of runs: 20 runs.
 \subsection{Computational Results}
 
 \begin{table*}[!t]\footnotesize
+  \renewcommand{\arraystretch}{1.3}
   \caption{MEAN HV AND STANDARD DEVIATION OVER 20 INDEPENDENT RUNS FOR DTLZ AND WFG TEST PROBLEMS.}
   \label{table_tri}
   \centering
@@ -743,29 +743,29 @@ Number of runs: 20 runs.
     Problem&$M$&$D$&SMS-EMOA-10&SMS-EMOA-Opt&SMS-EMOA-LD&SMS-EMOA-CD\\ 
     \midrule
     \multirow{1}{*}{DTLZ1}&10&14&6.8448e-1 (4.61e-1) $\approx$&\hl{2.0261e-1 (2.23e-1) $-$}&\semitextbf{8.8369e-1 (2.00e-1) $\approx$}&6.9062e-1 (3.95e-1)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{DTLZ2}&10&19&\semitextbf{1.0234e+3 (4.72e-1) $\approx$}&\hl{9.9315e+2 (3.94e+1) $-$}&1.0234e+3 (7.28e-1) $\approx$&1.0184e+3 (1.85e+1)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{DTLZ3}&10&19&\hl{0.0000e+0 (0.00e+0) $\approx$}&\semitextbf{1.9068e+1 (8.53e+1) $\approx$}&0.0000e+0 (0.00e+0) $\approx$&0.0000e+0 (0.00e+0)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{DTLZ4}&10&19&\semitextbf{8.0029e+2 (2.21e+2) $\approx$}&\hl{5.2691e+2 (1.79e+2) $-$}&6.6262e+2 (2.17e+2) $\approx$&7.2840e+2 (2.26e+2)\\
     \midrule
     \multirow{1}{*}{WFG1}&10&19&2.2025e+12 (2.55e+11) $\approx$&2.2597e+12 (2.64e+11) $\approx$&\hl{2.2005e+12 (1.81e+11) $\approx$}&\semitextbf{2.2601e+12 (3.42e+11)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG2}&10&19&\semitextbf{3.3604e+12 (2.92e+10) $\approx$}&3.3493e+12 (2.39e+10) $+$&3.3487e+12 (7.64e+10) $\approx$&\hl{3.3420e+12 (8.46e+10)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG3}&10&19&\hl{4.7217e-3 (1.04e-2) $-$}&\semitextbf{2.5310e-2 (3.07e-2) $\approx$}&1.7230e-2 (2.35e-2) $\approx$&2.3443e-2 (2.84e-2)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG4}&10&19&3.7667e+12 (1.77e+10) $\approx$&\hl{3.5602e+12 (9.48e+10) $-$}&3.7585e+12 (3.74e+10) $\approx$&\semitextbf{3.7737e+12 (1.63e+10)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG5}&10&19&3.6535e+12 (7.68e+9) $\approx$&\hl{3.5027e+12 (1.16e+11) $-$}&\semitextbf{3.6555e+12 (8.64e+9) $\approx$}&3.6523e+12 (1.93e+10)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG6}&10&19&3.6082e+12 (7.78e+10) $\approx$&\hl{3.5432e+12 (6.24e+10) $-$}&3.5829e+12 (5.75e+10) $\approx$&\semitextbf{3.6099e+12 (4.49e+10)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG7}&10&19&\semitextbf{3.7967e+12 (7.58e+9) $\approx$}&\hl{3.7326e+12 (5.73e+10) $-$}&3.7959e+12 (1.35e+10) $\approx$&3.7922e+12 (1.27e+10)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG8}&10&19&3.7512e+12 (1.51e+10) $\approx$&\hl{3.7087e+12 (3.64e+10) $-$}&\semitextbf{3.7613e+12 (1.13e+10) $+$}&3.7524e+12 (1.23e+10)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{WFG9}&10&19&3.5727e+12 (1.85e+11) $\approx$&\hl{3.3072e+12 (2.80e+11) $-$}&\semitextbf{3.6302e+12 (1.57e+11) $+$}&3.5146e+12 (2.31e+11)\\
     \midrule
     \multicolumn{3}{c}{$+/-/\approx$}&0/1/12&1/9/3&2/0/11&\\
@@ -773,6 +773,7 @@ Number of runs: 20 runs.
     \end{tabular}
 \end{table*}
 \begin{table*}[!t]\footnotesize
+  \renewcommand{\arraystretch}{1.3}
   \caption{MEAN HV AND STANDARD DEVIATION OVER 20 INDEPENDENT RUNS FOR MINUS-DTLZ, MINUS-WFG AND MPDMP.} %加粗是好，灰色是坏
   \label{table_itri}
   \centering
@@ -781,29 +782,29 @@ Number of runs: 20 runs.
     Problem&$M$&$D$&SMS-EMOA-10&SMS-EMOA-Opt&SMS-EMOA-LD&SMS-EMOA-CD\\ 
     \midrule
     \multirow{1}{*}{minus-DTLZ1}&10&14&4.3889e+28 (5.56e+26) $\approx$&\semitextbf{4.4237e+28 (5.99e+26) $\approx$}&4.4120e+28 (4.79e+26) $\approx$&\hl{4.3872e+28 (7.72e+26)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-DTLZ2}&10&19&\hl{1.2299e+7 (1.38e+5) $-$}&1.4737e+7 (1.55e+5) $-$&\semitextbf{1.4891e+7 (1.11e+5) $\approx$}&1.4844e+7 (1.45e+5)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-DTLZ3}&10&19&\hl{1.1227e+35 (3.16e+33) $-$}&1.3385e+35 (3.41e+33) $\approx$&\semitextbf{1.3702e+35 (3.42e+33) $\approx$}&1.3582e+35 (3.78e+33)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-DTLZ4}&10&19&\hl{1.1638e+7 (2.11e+5) $-$}&\semitextbf{1.4899e+7 (1.20e+5) $+$}&1.4895e+7 (1.27e+5) $+$&1.3585e+7 (1.57e+6)\\
     \midrule
     \multirow{1}{*}{minus-WFG1}&10&19&4.4808e+10 (5.25e+8) $\approx$&\semitextbf{4.4894e+10 (4.81e+8) $\approx$}&4.4890e+10 (4.35e+8) $\approx$&\hl{4.4705e+10 (5.60e+8)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG2}&10&19&\hl{6.6225e+10 (1.05e+8) $-$}&6.7628e+10 (7.51e+8) $\approx$&6.7870e+10 (3.31e+7) $-$&\semitextbf{6.7907e+10 (1.60e+7)}\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG3}&10&19&\hl{6.3620e+10 (5.49e+8) $\approx$}&\semitextbf{6.4321e+10 (2.29e+8) $+$}&6.3642e+10 (4.93e+8) $\approx$&6.3799e+10 (5.87e+8)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG4}&10&19&\hl{1.6478e+11 (3.22e+9) $-$}&\semitextbf{1.9896e+11 (2.20e+9) $\approx$}&1.9752e+11 (2.39e+9) $\approx$&1.9260e+11 (1.34e+10)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG5}&10&19&\hl{1.6534e+11 (2.09e+9) $-$}&1.9817e+11 (1.82e+9) $\approx$&\semitextbf{1.9897e+11 (1.93e+9) $\approx$}&1.9819e+11 (1.40e+9)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG6}&10&19&\hl{1.6532e+11 (2.11e+9) $-$}&1.9865e+11 (1.83e+9) $\approx$&\semitextbf{1.9989e+11 (2.03e+9) $\approx$}&1.9960e+11 (1.94e+9)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG7}&10&19&\hl{1.6534e+11 (2.88e+9) $-$}&1.9870e+11 (1.30e+9) $-$&\semitextbf{1.9978e+11 (2.21e+9) $\approx$}&1.9937e+11 (2.97e+9)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG8}&10&19&\hl{1.6808e+11 (1.46e+9) $-$}&1.9932e+11 (1.56e+9) $-$&\semitextbf{2.0220e+11 (1.71e+9) $+$}&2.0065e+11 (1.77e+9)\\
-    \specialrule{0em}{1pt}{1pt}
+    % \specialrule{0em}{1pt}{1pt}
     \multirow{1}{*}{minus-WFG9}&10&19&\hl{1.6415e+11 (3.16e+9) $-$}&1.9777e+11 (2.21e+9) $\approx$&1.9557e+11 (2.17e+9) $-$&\semitextbf{1.9852e+11 (1.86e+9)}\\
     \midrule
     \multirow{1}{*}{MPDMP}&10&2&\hl{1.4848e+5 (2.50e+2) $-$}&1.5051e+5 (3.10e+2) $-$&1.5017e+5 (1.98e+2) $-$&\semitextbf{1.5097e+5 (1.64e+2)}\\
@@ -813,7 +814,7 @@ Number of runs: 20 runs.
   \end{tabular}
 \end{table*}
 
-In our experiments, four versions of SMS-EMOA algorithm with different reference point specification mechanisms are considered. 
+In our experiments, four versions of SMS-EMOA with different reference point specification mechanisms are considered. 
 These algorithms are named as SMS-EMOA-10, SMS-EMOA-Opt, SMS-EMOA-LD, and SMS-EMOA-CD. 
 For SMS-EMOA-10, the value of $r$ is set to 10. 
 The value of $r$ for SMS-EMOA-Opt is set to $r=1+1/H$. 
@@ -859,7 +860,7 @@ for that their values of $r$ are both 10 before 4,500 evaluations.
 The convergence detection is reported at about 4,500 evaluations for SMS-EMOA-CD. 
 Then, the values of $r$ in SMS-EMOA-CD reaches the optimal value of $1+1/H$ and the HV increases. 
 The reason is due to the decrease of the boundary solutions, and on the other hand, the inner solutions increase. 
-Finally, the HV of SMS-EMOA-CD is better than SMS-EMOA-Opt and SMS-EMOA-LD. 
+Finally, the HV of SMS-EMOA-CD is better than SMS-EMOA-10, SMS-EMOA-Opt and SMS-EMOA-LD. 
 
 % ---------------sub-------------- Computational Experiments ------------------------------------
 % ----------------------------- The Importance of Dynamic Mechanism ----------------------------------
@@ -984,7 +985,7 @@ and SMS-EMOA with $r=10$ performs the worst on the inverted-triangular PF proble
 This gives us a hint on the necessary of the dynamic mechanism. 
 We have also compared our proposed mechanism with the linearly decreasing mechanism. 
 The results show that our new mechanism outperforms the linearly decreasing mechanism on some test problems, 
-specifically on the MPDMP problem. 
+specifically on the MPDMP. 
 
 In the future, we plan to investigate the behavior of our new mechanism and further improve it. 
 Besides that, the problems with different PF shapes will be tested and analyzed. 

@@ -13,7 +13,7 @@
 \citation{FVEMOA}
 \citation{ismsemoa}
 \citation{hisao:RPhowtoSpecify,hisao:RPspecify,hisao:RPexplanation}
-\citation{hisao:RPspecify}
+\citation{hisao:RPhowtoSpecify}
 \citation{hisao:dynamic}
 \citation{hisao:twoRP}
 \citation{SimpleLeastSquares}
@@ -52,7 +52,7 @@
 \newlabel{sub@rpa2:c}{{(c)}{c}}
 \newlabel{rpa2:d}{{2d}{2}}
 \newlabel{sub@rpa2:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The final distribution of the solution set on inverted-DTLZ1((a) and (b)) and DTLZ1 ((c) and (d)). The algorithm is SMS-EMOA with population size $\mu = 100$ and total evaluation number $= 20,000$. (a) and (c): the reference point is calculated only once at the initial step; (b) and (d): the reference point is specified by Eq. (1\hbox {}) with $r=1.1$. All the solutions in the final distribution are on the boundary of the PF in (a), which shows the bad effect of a faraway reference point on the final distribution of inverted-triangular problems. This bad effect can not be observed on triangular problems in (c). \relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The final distribution of the solution set on 3-objective inverted-DTLZ1((a) and (b)) and 3-objective DTLZ1 ((c) and (d)). The algorithm is SMS-EMOA with population size $\mu = 100$ and total evaluation number $= 20,000$. (a) and (c): the reference point is calculated only once at the initial step; (b) and (d): the reference point is specified by Eq. (1\hbox {}) with $r=1.1$. All the solutions in the final distribution are on the boundary of the PF in (a), which shows the bad effect of a faraway reference point on the final distribution of inverted-triangular problems. This bad effect can not be observed on triangular problems in (c). \relax }}{2}}
 \newlabel{rpa2}{{2}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {The reference point $\bm {R}$ is fixed.}}}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {The reference point $\bm {R}$ is specified by Eq. (1\hbox {}).}}}{2}}
@@ -63,6 +63,7 @@
 \newlabel{eod}{{2}{2}}
 \citation{DtA}
 \citation{hisao:dynamic}
+\citation{dmp}
 \citation{hisao:dynamic}
 \citation{hisao:dynamic}
 \citation{hisao:dynamic}
@@ -75,7 +76,7 @@
 \newlabel{sub@dm1:c}{{(c)}{c}}
 \newlabel{dm1:d}{{3d}{3}}
 \newlabel{sub@dm1:d}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The final distribution of the solution set on inverted-DTLZ1. The algorithm is SMS-EMOA with population size $\mu =91$ ($H=12$) and total evaluation number $=20,000$. $r=13/12$ is the optimal setting and we observed a uniform distribution in (a). With the increase of $r$, more and more solutions move to the boundary of the PF ((b)-(d)). \relax }}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The final distribution of the solution set on 3-objective inverted-DTLZ1. The algorithm is SMS-EMOA with population size $\mu =91$ ($H=12$) and total evaluation number $=20,000$. $r=13/12$ is the optimal setting and we observed a uniform distribution in (a). With the increase of $r$, more and more solutions move to the boundary of the PF ((b)-(d)). \relax }}{3}}
 \newlabel{dm1}{{3}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$r=13/12$ (optimal).}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$r=1.5.$}}}{3}}
@@ -89,7 +90,7 @@
 \newlabel{sub@nud:a}{{(a)}{a}}
 \newlabel{nud:b}{{4b}{3}}
 \newlabel{sub@nud:b}{{(b)}{b}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  The final solution distribution of SMS-EMOA on the 10-objective DTLZ2 with different settings of $r$. The population size $\mu = 30$ ($H=1$), the total evaluation number is 10000. \relax }}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  The final solution distribution of SMS-EMOA on the 10-objective DTLZ2 with different settings of $r$. The population size $\mu = 30$ ($H=1$), the total evaluation number $= 10,000$. \relax }}{3}}
 \newlabel{nud}{{4}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$r=10$.}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$r=2$ (optimal).}}}{3}}
@@ -115,7 +116,7 @@
 \citation{minusTestProblem}
 \citation{dmp}
 \citation{PlatEMO}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example of $\delimiter 69640972 b\delimiter 86418188 $ on the 3-objective inverted-DTLZ1 (window size $w\_l = 4000$ and population size $\mu = 100$). The green dotted line shows the threshold. \relax }}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example of $\delimiter 69640972 b\delimiter 86418188 $ on the 3-objective inverted-DTLZ1 (window size $w\_l = 4,000$ and population size $\mu = 100$). The green dotted line shows the threshold $10^{-5}$. \relax }}{5}}
 \newlabel{wcd2}{{6}{5}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Weak Convergence Detection\relax }}{5}}
 \newlabel{alg:wcd}{{1}{5}}
@@ -127,7 +128,6 @@
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces MEAN HV AND STANDARD DEVIATION OVER 20 INDEPENDENT RUNS FOR MINUS-DTLZ, MINUS-WFG AND MPDMP.\relax }}{6}}
 \newlabel{table_itri}{{II}{6}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-}1}Better Searching Behavior}{6}}
 \bibstyle{IEEEtran}
 \bibdata{mybibtex}
 \bibcite{hypervolume}{1}
@@ -151,12 +151,13 @@
 \bibcite{invertedDTLZ1}{19}
 \bibcite{PlatEMO}{20}
 \bibcite{MOEAD}{21}
-\bibcite{DtA}{22}
-\bibcite{convergenceDetection:1}{23}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The comparison of four mechanisms. The value of each point is the average of 20 independent runs in each evaluation and the problem is the 10-objective MPDMP in TABLE II\hbox {}. \relax }}{7}}
 \newlabel{crdmp}{{7}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-}1}Better Searching Behavior}{7}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-}2}Uniform Distribution}{7}}
 \@writefile{toc}{\contentsline {section}{References}{7}}
+\bibcite{DtA}{22}
+\bibcite{convergenceDetection:1}{23}
 \bibcite{convergenceDetection:LSSC}{24}
 \bibcite{convergenceDetection:OCD}{25}
 \bibcite{convergenceDetection:OFCDandOCD}{26}

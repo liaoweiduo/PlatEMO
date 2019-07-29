@@ -78,17 +78,17 @@ K.~Shang, H.~Ishibuchi, M.-L. Zhang, and Y.~Liu, ``A new {R2} indicator for
   Available: \url{http://doi.acm.org/10.1145/3205455.3205543}
 \BIBentrySTDinterwordspacing
 
-\bibitem{ismsemoa}
-A.~Menchaca-M{\'e}ndez, E.~Montero, and S.~Zapotecas-Mart{\'\i}nez, ``An
-  improved s-metric selection evolutionary multi-objective algorithm with
-  adaptive resource allocation,'' \emph{IEEE Access}, vol.~6, pp.
-  63\,382--63\,401, 2018.
-
 \bibitem{FVEMOA}
 S.~Jiang, J.~Zhang, Y.-S. Ong, A.~N. Zhang, and P.~S. Tan, ``A simple and fast
   hypervolume indicator-based multiobjective evolutionary algorithm,''
   \emph{IEEE Transactions on Cybernetics}, vol.~45, no.~10, pp. 2202--2213,
   2014.
+
+\bibitem{ismsemoa}
+A.~Menchaca-M{\'e}ndez, E.~Montero, and S.~Zapotecas-Mart{\'\i}nez, ``An
+  improved s-metric selection evolutionary multi-objective algorithm with
+  adaptive resource allocation,'' \emph{IEEE Access}, vol.~6, pp.
+  63\,382--63\,401, 2018.
 
 \bibitem{hisao:RPhowtoSpecify}
 H.~Ishibuchi, R.~Imada, S.~Yu, and Y.~Nojima, ``How to specify a reference

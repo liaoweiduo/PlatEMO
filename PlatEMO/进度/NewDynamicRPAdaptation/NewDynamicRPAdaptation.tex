@@ -8,7 +8,7 @@
   \kern-3\p@
   \hrule\@width.4\columnwidth
   \kern2.6\p@}
-  \makeatother
+\makeatother
   
 \usepackage{graphicx}
 \graphicspath{{fig/}}
@@ -27,7 +27,8 @@
 \usepackage{algorithmic}
 \renewcommand{\algorithmicrequire}{ \textbf{Input:}} %Use Input in the format of Algorithm
 \renewcommand{\algorithmicensure}{ \textbf{Output:}} %UseOutput in the format of Algorithm
-% \usepackage{caption}
+\usepackage{caption}
+\captionsetup{font={footnotesize}}
 \usepackage{afterpage}
 \usepackage{array}
 \usepackage{stfloats}
@@ -52,7 +53,7 @@
 
 \begin{document}
 
-\title{Weak Convergence Detection based Dynamic Reference Point Specification in SMS-EMOA}
+\title{Weak Convergence Detection-based Dynamic Reference Point Specification in SMS-EMOA}
 
 %\author{\IEEEauthorblockN{Linjun He\IEEEauthorrefmark{1},
 %Auraham Camacho\IEEEauthorrefmark{2} and
@@ -167,12 +168,12 @@ In the field of Evolutionary Multi-objective Optimization Algorithms (EMOAs),
 one of the active research areas is the development of performance indicators. 
 Over the years, various indicators have been proposed. 
 These indicators include hypervolume (HV)\cite{hypervolume}, 
-R2\cite{R2}, $\epsilon_+$ indicator\cite{e+}, IGD\cite{IGD} and etc.
+R2\cite{R2}, $\epsilon_+$ indicator\cite{e+}, IGD\cite{IGD} etc.
 They are designed for different purposes and each of them has its own advantages and disadvantages.
 Different from IGD, 
 HV does not need the pre-knowledge of the shape of the Pareto front (PF) 
 and is the only Pareto-compliant indicator up to now\cite{pareto_compliant}. 
-However due to the heavy computation load of HV computation\cite{hypervolume:computationLoad}, 
+However, due to the heavy computation load of HV computation\cite{hypervolume:computationLoad}, 
 the HV-based algorithms are inefficient when dealing with Many-Objective Optimization Problems (MaOPs) which have more than three objectives. 
 
 SMS-EMOA\cite{smsemoa} is a classical HV-based algorithm. 
@@ -181,19 +182,19 @@ To reduce the heavy computation load of HV computation,
 many new indicators or new methods have been proposed to estimate the HV. 
 For example, HypE uses a Monte Carlo simulation technology to estimate the HV\cite{HypE}; 
 R2 indicator estimates the HV by a standard weighted Tchebycheff function\cite{R2}; 
-an improved new R2 is proposed by Shang et al.\cite{newR2} to approximate the HV. 
-Recently, an improved SMS-EMOA with adaptive resource allocation has been proposed to reduce the number of HV calculations\cite{ismsemoa}.  
-In 2015, a simple and fast version of SMS-EMOA\cite{smsemoa}, so-called FV-EMOA, has been proposed\cite{FVEMOA}
+an improved new R2 is proposed by Shang et al.\cite{newR2} to approximate the HV.  
+In 2014, a simple and fast version of SMS-EMOA, known as FV-EMOA, has been proposed\cite{FVEMOA}
 to further increase the efficiency.
 FV-EMOA considers the fact that 
 the HV contribution of a solution is only determined by partial solutions rather than the whole solution set\cite{FVEMOA}. 
+Recently, an improved SMS-EMOA with adaptive resource allocation has been proposed to reduce the number of HV calculations\cite{ismsemoa}. 
 % Based on this point, FV-MOEA reduces the computational load greatly. 
 
 The specification of the reference point is one of the important but easy to be ignored issues in HV computation.  
 % It is because that the effect on many test problems (e.g., DTLZ\cite{DTLZ}) are not so significant. 
 It has been reported that the position of the reference point strongly influences the hypervolume optimal distributions 
 on the inverted-triangular PFs\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
-A reference point specification method is proposed in \cite{hisao:RPspecify} for fair HV computation.
+Thus, a reference point specification method is proposed in \cite{hisao:RPspecify} for fair HV computation.
 % A suitable set of reference point position for linear PFs has been sufficiently investigated in\cite{hisao:RPspecify}.
 A dynamic reference point specification mechanism has also been proposed in\cite{hisao:dynamic}.
 Another proposed strategy is to use two reference points in HV-based EMOA\cite{hisao:twoRP}. 
@@ -201,7 +202,7 @@ Another proposed strategy is to use two reference points in HV-based EMOA\cite{h
 In this paper, we analyzed the reference point specification during the algorithm process.
 At the early stage of the algorithm process, 
 the reference point should be set far away from the estimated nadir point to enhance the searching diversity of the algorithm. 
-In the late stage of the algorithm process, 
+In the final stage of the algorithm process, 
 the reference point should be specified properly to achieve a uniformly distributed solution set on the PF.
 
 Based on our analysis, we propose a new dynamic reference point specification mechanism based on weak convergence detection in SMS-EMOA. 
@@ -213,11 +214,10 @@ presented in the experiment section. On some specific problems (e.g., the multi-
 our weak convergence detection mechanism outperforms the linearly decreasing mechanism. 
 
 The remainder of this paper is organized as follows. 
-Firstly in Section II, we introduce reference point specification in SMS-EMOA with
-the original one and the one proposed in \cite{hisao:RPhowtoSpecify},
+Section II introduce the original reference point specification in SMS-EMOA and the one proposed in \cite{hisao:RPhowtoSpecify}. 
 % we briefly introduce the basic idea of reference point specification by a simple example in Section II. 
-then explore the details of the reference point specification mechanism in two stages of the algorithm, 
-which elicits the necessity of using the dynamic reference point specification mechanism.
+Then, we explore the details of the reference point specification mechanism in two stages of the algorithm, 
+which elicit the necessity of using the dynamic reference point specification mechanism. 
 After that, we state the details of the dynamic reference point specification mechanism and introduce 
 a linearly decreasing mechanism in Section III. 
 The details of the new dynamic mechanism with weak convergence detection proposed in this paper are also presented in Section III. 
@@ -264,7 +264,7 @@ as the solution set is gradually converging to the PF.
 
 There is an issue when applying this strategy to some problems with special PF shapes. 
 For example, the inverted-DTLZ1\cite{invertedDTLZ1} has an inverted-triangular PF, 
-so many solutions in the final solution set will distribute on the boundary of the PF
+many solutions in the final solution set will distribute on the boundary of the PF
 (as shown in Fig. \ref{rpa2:a})\cite{hisao:RPexplanation, hisao:RPspecify, hisao:dynamic}. 
 Although the position of the reference point does not affect the distributions of the solution set 
 on triangular PF 
@@ -338,7 +338,7 @@ where $H$ is a parameter used in MOEA/D\cite{MOEAD} for
 % and the number of intervals on each boundary of PF in many-dimension. 
 % The idea is inspired by MOEA/D\cite{MOEAD}, in which the $H$ is used for 
 generating uniformly distributed weight vectors\cite{hisao:dynamic}. 
-Given the population size $\mu$ and the objective number $m$, the value of $H$ can be calculated as following:
+Given the population size $\mu$ and the objective number $m$, the value of $H$ can be calculated as follows:
 \begin{equation}
   C^{H+m-1}_{m-1} \leq \mu < C^{H+m}_{m-1}.
 \end{equation}
@@ -375,7 +375,7 @@ the boundary of the PF with the increase of $r$.
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
 % \section{Exploration on Reference Point Specification Mechanism in Detail}
-Basically, the process of EMOAs can be separated into
+Basically, the process of EMOAs can be divided into
 two stages:
 \subsubsection{Early Stage} In this stage, 
 all the solutions are far away from the PF.
@@ -383,7 +383,7 @@ The main task is to converge the solutions to the PF.
 We also call this stage the convergence stage.
 \subsubsection{Final Stage} In this stage,
 all the solutions are inside or near the PF. 
-So the main task is to make the distribution of solutions more evenly on the PF.
+So the main task is to distribute the solutions more evenly on the PF.
 We also call this stage the diversity stage.
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
@@ -402,11 +402,10 @@ We also call this stage the diversity stage.
 % （图 r越大，收敛越快，从三维开始 画出hv变化斜率图）
 % 
 \subsection{Specify the Value of $r$ for Better Searching Behavior}
-We draw the final solution distribution of SMS-EMOA on the 10-objective DTLZ2 with different settings of $r$ in Fig. \ref{nud}. 
-Comparing with the solutions in Fig. \ref{nud:a}, 
-the first 6 dimensionalities of solutions in Fig. \ref{nud:b} are all 0.
+Fig. \ref{nud} shows the final solution distribution of SMS-EMOA on the 10-objective DTLZ2 with different settings of $r$. 
+It can be observed that when $r$ is set to 2, the solutions for the first six dimensions in Fig. \ref{nud:b} are all 0. 
 This phenomenon shows that the breadth-diversity\cite{DtA} in Fig. \ref{nud:b} is worse than that in Fig. \ref{nud:a},
-although $r=2$ is the suggested value of $r$ in this experimental setting. 
+although $r=2$ is the suggested optimal value for $r$ in this experimental setting. 
 
 If we set $r = 1+1/H$ at the early stage of the algorithm, the exploration of solutions will be poor. 
 So, a larger value of $r$ than $1+1/H$ is suggested in the early stage \cite{hisao:dynamic}. 
@@ -445,7 +444,7 @@ for example, distance minimization problems.
 This observation shows the potential use of the dynamic reference point specification\cite{hisao:dynamic}.
 
 \section{Dynamic Reference Point Specification Mechanism}
-For different purposes in the two stages, the $r$ should be treated differently\cite{hisao:dynamic}. 
+For different purposes in the two stages, the value of $r$ should be treated differently\cite{hisao:dynamic}. 
 Not only the reference point but also the value of $r$ 
 needs to be adapted in each iteration of the algorithm. 
 This is called dynamic reference point specification. 
@@ -551,7 +550,7 @@ We summarize our weak convergence detection criterion as follow:
 The convergence can be reported if the current solutions are close to the PF.
 In other words, the estimated ideal and nadir points based on the current solutions
 are close to the true ideal and nadir points. 
-\subsubsection{Saving time} We should not spend too much time on convergence detection. 
+\subsubsection{Time-saving} We should not spend too much time on convergence detection. 
 The state-of-the-art HV-based algorithms (e.g., SMS-EMOA and HypE) 
 are time-consuming when the dimension of the objective space is very high. 
 
@@ -561,7 +560,7 @@ The reason is that during the process of the algorithm, the reference point is c
 which means that they are different among generations. 
 So, we can not simply compare HV calculated in the algorithm among different generations. 
 
-We should consider other indicators satisfying our convergence detection criterion. 
+We should consider other indicators that satisfying our convergence detection criterion. 
 In the process of the algorithm, the HV of the current solution set increases 
 while the estimated nadir point of the current solution set is gradually approaching the PF. 
 The estimated nadir point can be a good choice for our purpose. 
@@ -632,7 +631,7 @@ with the following matrix-based formula:
 \end{equation}
 where $w\_ l$ is the length of the chosen window
 (in the example of Fig. \ref{wcd1}, the chosen window for $t_{Converged}$ is represented with the red dotted line), 
-and $t_i$ is the evaluaiton number in the chosen window, $t_i \in (t',t], t - t' = w_l$.
+and $t_i$ is the evaluation number in the chosen window, $t_i \in (t',t], t - t' = w_l$.
 The absolute value of slope $b$ is shown in Fig. \ref{wcd2} 
 (Note that in the first $w\_ l$ evaluations is 0, 
 and we should not consider the first $w\_ l$ evaluations). 
@@ -736,7 +735,7 @@ Number of runs: 20 runs.
 \subsection{Computational Results}
 
 \begin{table*}[!t]\footnotesize
-  \caption{Mean HV and standard deviation over 20 independent runs for DTLZ and WFG test problems.}
+  \caption{MEAN HV AND STANDARD DEVIATION OVER 20 INDEPENDENT RUNS FOR DTLZ AND WFG TEST PROBLEMS.}
   \label{table_tri}
   \centering
   \begin{tabular}{ccccccc}
@@ -774,7 +773,7 @@ Number of runs: 20 runs.
     \end{tabular}
 \end{table*}
 \begin{table*}[!t]\footnotesize
-  \caption{Mean HV and standard deviation over 20 independent runs for minus-DTLZ, minus-WFG and MPDMP.} %加粗是好，灰色是坏
+  \caption{MEAN HV AND STANDARD DEVIATION OVER 20 INDEPENDENT RUNS FOR MINUS-DTLZ, MINUS-WFG AND MPDMP.} %加粗是好，灰色是坏
   \label{table_itri}
   \centering
   \begin{tabular}{ccccccc}
@@ -816,18 +815,18 @@ Number of runs: 20 runs.
 
 In our experiments, four versions of SMS-EMOA algorithm with different reference point specification mechanisms are considered. 
 These algorithms are named as SMS-EMOA-10, SMS-EMOA-Opt, SMS-EMOA-LD, and SMS-EMOA-CD. 
-For SMS-EMOA-10, the value $r$ is set to 10. 
-The value $r$ for SMS-EMOA-opt is set to $r=1+1/H$. 
+For SMS-EMOA-10, the value of $r$ is set to 10. 
+The value of $r$ for SMS-EMOA-Opt is set to $r=1+1/H$. 
 SMS-EMOA with the linearly decreasing mechanism and with the weak convergence detection mechanism are referred to as SMS-EMOA-LD and SMS-EMOA-CD, respectively. 
 The HV values after 100,000 evaluations are obtained for each algorithm. 
-TABLE \ref{table_tri} and TABLE \ref{table_itri} show the computational results for HV metrics. 
+Table \ref{table_tri} and Table \ref{table_itri} show the computational results for HV metrics. 
 The best result in each row is highlighted in bold, and the worst result is shaded. 
 The Wilcoxon rank sum test is used to show the statistical significance for SMS-EMOA-10, SMS-EMOS-Opt, SMS-EMOA-LD in comparison to our proposed SMS-EMOA-CD. 
 The three symbols ``$+$'', ``$-$'', ``$\approx$'' mean significantly better, significantly worse and no significant difference. 
 
 In Table \ref{table_tri}, the results show that SMS-EMOA-Opt performs the worst (9 out of 13 significantly worse than SMS-EMOA-CD) among the algorithms. 
 This result shows that when applying $r=1+1/H$ all the time, bad searching behavior is obtained. 
-We can not tell the differences between SMS-EMOA-10 and SMS-EMOA-Opt, as the Wilcoxon rank sum tests show almost all the results are ``$\approx$''. 
+We can not tell the differences between SMS-EMOA-10 and SMS-EMOA-CD, as the Wilcoxon rank sum tests show almost all the results are ``$\approx$''. 
 This is probably because of the small influence of the reference point on the triangular PF problems. 
 As for SMS-EMOA-LD, two better results are obtained when compared to SMS-EMOA-CD. 
 This indicates that SMS-EMOA-LD is slightly better than SMS-EMOA-CD on triangular PF problems. 
@@ -838,7 +837,7 @@ The results show that SMS-EMOA-10 performs the worst (12 out of 14) on most of t
 and the Wilcoxon rank sum tests show that almost all the results from SMS-EMOA-10 are significantly worse than SMS-EMOA-CD 
 (11 out of 14 worse and no better results). 
 This result can be explained by the setting of $r$. Since the value of $r$ is set to 10 for the whole process of SMS-EMOA-10, many solutions are on the boundary of PF. 
-（我感觉这里还要多一点解释，可能一句话囊括为何solutions on the boundary of PF会导致差的表现）
+% （我感觉这里还要多一点解释，可能一句话囊括为何solutions on the boundary of PF会导致差的表现）
 As compared to SMS-EMOA-CD, the performances of SMS-EMOA-Opt (2 better but 4 worse results) and SMS-EMOA-LD (2 better but 3 worse results) are slightly worse on inverted-triangular PF problems. 
 The results of MPDMP shows that SMS-EMOA-CD is the best among the four algorithms. 
 
@@ -972,11 +971,11 @@ We give an example of DTLZ2.
 \subsubsection{Uniform Distribution} Considering the linear triangular problems, 
 the optimal setting of the reference point is $r=1+1/H$. 
 
-We summarize the basic idea of dynamic reference point specification mechanism as follows: 
+We summarize the basic idea of the dynamic reference point specification mechanism as follows: 
 the value of $r$ should be specified larger than $1+1/H$ at the initial stage 
 and equal to $1/1+H$ in the final stage, as in Eqs. (\ref{f2})-(\ref{endm1}). 
 
-In this paper, we have proposed a new dynamic reference point specification mechanism. 
+Besides that, we have proposed a new dynamic reference point specification mechanism in this paper. 
 A weak convergence detection mechanism is used in the proposed method. 
 The new dynamic reference point specification mechanism is tested on SMS-EMOA algorithm 
 and compared with other SMS-EMOAs under different settings of $r$. 

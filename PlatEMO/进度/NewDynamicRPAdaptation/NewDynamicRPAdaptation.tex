@@ -183,16 +183,16 @@ many new indicators or new methods have been proposed to estimate the HV.
 For example, HypE uses a Monte Carlo simulation technology to estimate the HV\cite{HypE}; 
 R2 indicator estimates the HV by a standard weighted Tchebycheff function\cite{R2}; 
 an improved new R2 is proposed by Shang et al.\cite{newR2} to approximate the HV.  
-In 2014, a simple and fast version of SMS-EMOA, known as FV-EMOA\cite{FVEMOA}, has been proposed to further increase the efficiency.
-FV-EMOA considers the fact that 
+In 2014, a simple and fast version of SMS-EMOA, known as FV-MOEA\cite{FVEMOA}, has been proposed to further increase the efficiency.
+FV-MOEA considers the fact that 
 the HV contribution of a solution is only determined by partial solutions rather than the whole solution set\cite{FVEMOA}. 
 Recently, an improved SMS-EMOA with adaptive resource allocation has been proposed to reduce the number of HV calculations\cite{ismsemoa}. 
 % Based on this point, FV-MOEA reduces the computational load greatly. 
 
 The specification of the reference point is one of the important but easy to be ignored issues in HV computation.  
 % It is because that the effect on many test problems (e.g., DTLZ\cite{DTLZ}) are not so significant. 
-It has been reported that the position of the reference point strongly influences the hypervolume optimal distributions 
-on the inverted-triangular PFs\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
+It has been reported that the position of the reference point strongly influences the hypervolume optimal distribution 
+on the inverted-triangular PF\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
 Thus, a reference point specification method is proposed in \cite{hisao:RPhowtoSpecify} for fair HV computation.
 % A suitable set of reference point position for linear PFs has been sufficiently investigated in\cite{hisao:RPspecify}.
 A dynamic reference point specification mechanism has also been proposed in\cite{hisao:dynamic}.
@@ -209,7 +209,7 @@ In this weak convergence detection mechanism, we use the logarithm nadir point a
 and use the Simple Least Squares\cite{SimpleLeastSquares} to detect the convergence. 
 % Given $w\_l$ generations as a window, if the slope of linear regression is below one threshold, we report the convergence.
 The comparison among two dynamic mechanisms and the simple reference point specification (without dynamic mechanism) is 
-presented in the experiment section. On some specific problems (e.g., the multi-objective distance minimization problems\cite{dmp}), 
+presented in the experiment section. On some specific problems (e.g., Distance Minimization Problems\cite{dmp}), 
 our weak convergence detection mechanism outperforms the linearly decreasing mechanism. 
 
 The remainder of this paper is organized as follows. 
@@ -257,13 +257,13 @@ as the solution set is gradually converging to the PF.
   The red circle $\boldsymbol R$ is the reference point calculated by the initial solutions in (a)
   which are randomly generated. 
   After some generations, the current solutions reach the seven black circles in (b), 
-  which is far away from the reference point.}
+  which are far away from the reference point.}
   \label{rpa1}
 \end{figure}
 
 There is an issue when applying this strategy to some problems with special PF shapes. 
 For example, the inverted-DTLZ1\cite{invertedDTLZ1} has an inverted-triangular PF, 
-many solutions in the final solution set will distribute on the boundary of the PF
+and many solutions in the final solution set will distribute on the boundary of the PF
 (as shown in Fig. \ref{rpa2:a})\cite{hisao:RPexplanation, hisao:RPspecify, hisao:dynamic}. 
 Although the position of the reference point does not affect the distributions of the solution set 
 on triangular PF 
@@ -432,7 +432,7 @@ So, a larger value of $r$ than $1+1/H$ is suggested in the early stage \cite{his
 % In \cite{hisao:dynamic}, a larger value of $r$ than $1+1/H$ is suggested in the early stage. 
 
 \subsection{Specify the Value of $r$ for Uniform Distribution}
-When the algorithm reaches the final stage, all solutions are near the PF. 
+When the algorithm reaches the final stage of the algorithm, all solutions are near the PF. 
 To get a uniform solution distribution, $r$ should be specified as $1+1/H$, as in Eq. (\ref{eod}). 
 % That is, $r(T)=1+1/H$. 
 On inverted-triangular problems, the distribution of solutions on the PF
@@ -489,11 +489,11 @@ We show that it outperforms the simple linearly decreasing mechanism on some spe
 % 
 \subsection{A New Dynamic Reference Point Specification Mechanism}
 In this section,
-we will introduce a new mechanism that uses weak convergence detection criterion to 
+we will introduce a new mechanism that uses the weak convergence detection criterion to 
 decide when to change the value of $r$ from $r_{Initial}$ to $1+1/H$. 
 
 As we have explained before, 
-a larger $r$ is suggested at the early stage of the algorithms. 
+a larger $r$ is suggested at the early stage of the algorithm. 
 But for good diversity at the final stage,
 it is needed to set $r$ to its suggested value $1+1/H$. 
 For this purpose, it is necessary to detect whether the algorithm is converged. 
@@ -510,7 +510,7 @@ $r_{Initial}$. The mechanism is shown below:
 \end{equation}
 $r(t)$ equals to $r_{Initial}$ before reaching the converged generation $t_{Converged}$, 
 and changes to $1+1/H$ after $t_{Converged}$. 
-$t_{Converged}$ is determined by weak convergence detection criterion. 
+$t_{Converged}$ is determined by a weak convergence detection criterion. 
 
 % ---------------sub-------------- new dynamic mechanism ------------------------------------
 % ----------------------------- weak convergence detection ----------------------------------
@@ -651,7 +651,7 @@ condition holds:
 \end{equation}
 The value of $t_{Converged}$ equals to $t$ (i.e., the current evaluation number) 
 when the convergence is detected. 
-The whole process of weak convergence detection is also described in Algorithm \ref{alg:wcd}. 
+The whole process of the weak convergence detection is also described in Algorithm \ref{alg:wcd}. 
 If Algorithm \ref{alg:wcd} returns True, we report the convergence, vice versa. 
 The choice of the $thres$ value is trivial 
 as the report ahead or delay is not fatal to the algorithm or the final solution set.

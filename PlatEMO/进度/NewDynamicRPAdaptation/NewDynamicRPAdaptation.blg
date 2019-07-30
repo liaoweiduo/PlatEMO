@@ -16,43 +16,43 @@ Warning--missing institution in convergenceDetection:convergenceMetric
 Done.
 You've used 32 entries,
             4024 wiz_defined-function locations,
-            1015 strings with 14176 characters,
-and the built_in function-call counts, 27932 in all, are:
-= -- 2250
-> -- 679
-< -- 270
-+ -- 382
+            1014 strings with 14184 characters,
+and the built_in function-call counts, 27443 in all, are:
+= -- 2198
+> -- 672
+< -- 260
++ -- 376
 - -- 115
-* -- 1375
-:= -- 4025
+* -- 1346
+:= -- 3955
 add.period$ -- 77
 call.type$ -- 32
-change.case$ -- 31
-chr.to.int$ -- 636
+change.case$ -- 30
+chr.to.int$ -- 615
 cite$ -- 33
-duplicate$ -- 1941
-empty$ -- 2231
+duplicate$ -- 1910
+empty$ -- 2218
 format.name$ -- 140
-if$ -- 6501
+if$ -- 6387
 int.to.chr$ -- 0
 int.to.str$ -- 32
-missing$ -- 329
+missing$ -- 326
 newline$ -- 123
 num.names$ -- 32
-pop$ -- 742
+pop$ -- 747
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2143
+skip$ -- 2106
 stack$ -- 0
-substring$ -- 1529
-swap$ -- 1669
-text.length$ -- 58
+substring$ -- 1479
+swap$ -- 1629
+text.length$ -- 55
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 32
 warning$ -- 1
-while$ -- 140
+while$ -- 137
 width$ -- 34
-write$ -- 342
+write$ -- 338
 (There was 1 warning)

@@ -16,7 +16,7 @@ Warning--missing institution in convergenceDetection:convergenceMetric
 Done.
 You've used 32 entries,
             4024 wiz_defined-function locations,
-            1014 strings with 14184 characters,
+            1012 strings with 14122 characters,
 and the built_in function-call counts, 27443 in all, are:
 = -- 2198
 > -- 672

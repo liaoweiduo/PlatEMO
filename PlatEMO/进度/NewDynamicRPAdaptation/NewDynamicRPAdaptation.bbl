@@ -28,8 +28,8 @@ E.~Zitzler and L.~Thiele, ``Multiobjective optimization using evolutionary
   Germany: Springer-Verlag, 1998, pp. 292--301.
 
 \bibitem{R2}
-M.~P. Hansen and A.~Jaszkiewicz, \emph{Evaluating the quality of approximations
-  to the non-dominated set}.\hskip 1em plus 0.5em minus 0.4em\relax IMM,
+M.~P. Hansen and A.~Jaszkiewicz, \emph{Evaluating the Quality of Approximations
+  to the Non-dominated Set}.\hskip 1em plus 0.5em minus 0.4em\relax IMM,
   Department of Mathematical Modelling, Technical Universityof Denmark, 1994.
 
 \bibitem{e+}
@@ -121,8 +121,8 @@ H.~Ishibuchi, R.~Imada, N.~Masuyama, and Y.~Nojima, ``Dynamic specification of
   0.4em\relax Springer, 2018, pp. 384--396.
 
 \bibitem{SimpleLeastSquares}
-P.~L. Meyer, \emph{Introductory probability and statistical
-  applications}.\hskip 1em plus 0.5em minus 0.4em\relax Addison-Wesley
+P.~L. Meyer, \emph{Introductory Probability and Statistical
+  Applications}.\hskip 1em plus 0.5em minus 0.4em\relax Addison-Wesley
   Publishing Company, 1970.
 
 \bibitem{dmp}
@@ -138,7 +138,7 @@ H.~Jain and K.~Deb, ``An evolutionary many-objective optimization algorithm
   2013.
 
 \bibitem{PlatEMO}
-T.~Ye, C.~Ran, X.~Zhang, and Y.~Jin, ``{PlatEMO}: A {MATLAB} platform for
+Y.~Tian, R.~Cheng, X.~Zhang, and Y.~Jin, ``{PlatEMO}: A {MATLAB} platform for
   evolutionary multi-objective optimization [educational forum],'' \emph{IEEE
   Computational Intelligence Magazine}, vol.~12, no.~4, pp. 73--87, 2017.
 

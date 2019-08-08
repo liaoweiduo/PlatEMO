@@ -54,12 +54,6 @@ E.~Zitzler, D.~Brockhoff, and L.~Thiele, ``The hypervolume indicator revisited:
   Optimization}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2007, pp.
   862--876.
 
-\bibitem{hypervolume:computationLoad}
-N.~Beume, C.~M. Fonseca, M.~Lopez-Ibanez, L.~Paquete, and J.~Vahrenhold, ``On
-  the complexity of computing the hypervolume indicator,'' \emph{IEEE
-  Transactions on Evolutionary Computation}, vol.~13, no.~5, pp. 1075--1082,
-  2009.
-
 \bibitem{smsemoa}
 N.~Beume, B.~Naujoks, and M.~Emmerich, ``{SMS-EMOA}: Multiobjective selection
   based on dominated hypervolume,'' \emph{European Journal of Operational

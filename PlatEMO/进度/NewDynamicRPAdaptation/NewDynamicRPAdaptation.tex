@@ -165,21 +165,26 @@ dynamic mechanism; convergence detection
 % 4种problems要一句话介绍
 % 
 \section{Introduction}
-In the field of Evolutionary Multi-objective Optimization (EMO) Algorithms, 
+In the field of Evolutionary Multi-objective Optimization (EMO), 
 one active research issue is the development of performance indicators. 
 Over the years, various indicators have been proposed. 
-These indicators include hypervolume (HV)\cite{hypervolume}, 
+These indicators include hypervolume(HV)\cite{hypervolume}, 
 R2\cite{R2}, $\epsilon_+$ indicator\cite{e+}, IGD\cite{IGD}, etc.
 They are designed for different purposes. 
 Each of them has its own advantages and disadvantages.
-Different from IGD, 
-HV does not need the pre-knowledge of the shape of the Pareto front (PF). 
+Among them, one of the most popular performance indicators is the HV indicator. 
+HV is not only used for measuring the performance of EMO algorithms (EMOAs), 
+but also adopted in some EMOAs for selection. 
 HV is also the only Pareto-compliant indicator up to now\cite{pareto_compliant}. 
-However, due to the heavy computation load of HV computation\cite{hypervolume:computationLoad}, 
-the HV-based algorithms are inefficient when dealing with Many-Objective Optimization Problems (MaOPs) which have more than three objectives. 
+% Different from IGD, 
+% HV does not need the pre-knowledge of the shape of the Pareto front (PF). 
+% However, due to the heavy computation load of HV computation\cite{hypervolume:computationLoad}, 
+% the HV-based algorithms are inefficient when dealing with Many-Objective Optimization Problems (MaOPs) which have more than three objectives. 
 
 SMS-EMOA\cite{smsemoa} is a classical HV-based algorithm. 
 The HV contribution is used to determine which solution to be discarded in the population. 
+However, due to the heavy computation load of HV calculation, 
+the HV-based algorithms are inefficient when dealing with many-objective optimization problems (i.e., more than three objectives). 
 To reduce the heavy computation load of HV computation, 
 many new methods have been proposed to estimate HV. 
 For example, HypE uses a Monte Carlo simulation technique to estimate HV\cite{HypE}; 
@@ -195,7 +200,7 @@ The specification of a reference point is an important issue in HV computation.
 However, its importance has not been discussed in many studies. 
 % It is because that the effect on many test problems (e.g., DTLZ\cite{DTLZ}) are not so significant. 
 Recently, it has been reported that the position of the reference point strongly influences the optimal distribution of solutions 
-for HV maximization in the case of on inverted-triangular Pareto fronts\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
+for HV maximization in the case of inverted-triangular Pareto fronts\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
 A reference point specification method has been proposed in \cite{hisao:RPhowtoSpecify} for fair HV computation.
 % A suitable set of reference point position for linear PFs has been sufficiently investigated in\cite{hisao:RPspecify}.
 A dynamic reference point specification mechanism has been proposed in\cite{hisao:dynamic}.
@@ -571,8 +576,11 @@ $I_t$ is the minimum value of $I$ before the $t^{th}$ generation (including the 
 Fig. \ref{wcd1} shows the HV values and the indicator $I$ values over the execution of SMS-EMOA 
 on the three-objective inverted-DTLZ1 problem. 
 The fixed nadir point based on the true nadir point is used for HV calculation in this figure for illustration purposes: $\boldsymbol R = (0.55, 0.55, 0.55)$.
-When the current solutions are close to the Pareto front, the estimated nadir point of the
-current solutions is close to the true nadir point. 
+When the current solutions are close to the Pareto front 
+(i.e., the HV value reaches the stagnation), the convergence should be reported. 
+Meanwhile, the estimated nadir point of the current solutions is close to the true nadir point 
+(i.e., the indicator $I$ value also reaches the stagnation). 
+ 
 \begin{figure}[!t]
   \centering
     \includegraphics[width=\columnwidth]{FVEMOA_IDTLZ1_M3_nadir_1}
@@ -641,10 +649,10 @@ condition holds:
 \begin{equation}\label{elr2}
   \lvert b \rvert < thres. 
 \end{equation}
-The choice of the threshold value $thres$ does not have a strong effect on the performance 
-of the proposed HV-based algorithm since the accuracy of the convergence detection is not very important.
 We choose $thres$ value as $10^{-5}$ after some computational experiments with 
 the window size $w\_ l$ of 4,000. 
+The choice of the threshold value $thres$ does not have a strong effect on the performance 
+of the proposed HV-based algorithm since the accuracy of the convergence detection is not very important.
 The whole process of the weak convergence detection is described in Algorithm \ref{alg:wcd}. 
 If Algorithm \ref{alg:wcd} returns True, we report the convergence. 
 The value of the converged generation $t_{Converged}$ equals to $t$ (i.e., the current evaluation number) 
@@ -656,7 +664,7 @@ when the convergence is detected.
   \begin{algorithmic}
   \REQUIRE ~~\\
     $w\_l$, $//$ Window size.\\
-    $\boldsymbol{S_{t}}$, $//$ Solution set when evaluaiton number is $t$.\\
+    $\boldsymbol{S_{t}}$, $//$ Solution set when evaluation number is $t$.\\
     $\boldsymbol I = \{I_{0},I_{1},\dots,I_{t-1}\}$, $//$ Stored indicator values. \\
     $thres$, $//$ The chosen threshold for slope. \\ 
   \ENSURE Return True if converged, otherwise return False.~~\\

@@ -2,7 +2,7 @@ function SMSEMOA(Global)
 % <algorithm> <A>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
-% r --- 10 --- r of reference point
+% r --- 1.1 --- r of reference point
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the

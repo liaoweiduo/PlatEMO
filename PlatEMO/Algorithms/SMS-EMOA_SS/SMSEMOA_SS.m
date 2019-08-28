@@ -31,7 +31,7 @@ function SMSEMOA_SS(Global)
         for i = 1 : Global.N
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            if Global.evaluated <= Global.evaluation / 2
+            if Global.evaluated <= Global.evaluation / 5 * 4
                 [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
             else
                 [Population,FrontNo] = Reduce_scaling([Population,Offspring],FrontNo,r);

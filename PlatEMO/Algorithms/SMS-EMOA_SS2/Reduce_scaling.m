@@ -17,12 +17,14 @@ function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
     PopObj    = Population(LastFront).objs; 
     [N,M]     = size(PopObj);
     
-    %% first normalize, then scale the PopObj[N,M] to f1+f2+...+fM = 1 
+    %% first normalize, then translate the PopObj[N,M] along 45 degree to f1+f2+...+fM = 1 
     if N > M   % more than M solutions considered
         maxValues = max(PopObj,[],1); 
         minValues = min(PopObj,[],1); 
         PopObj = (PopObj - minValues) ./ (maxValues - minValues); 
-        PopObj = PopObj ./ sum(PopObj,2); 
+        a = (1 - sum(PopObj,2)) ./ M;
+        PopObj = PopObj + a; 
+%         print(max(sum(PopObj,2)));
     end
     
     %% Calculate the contribution of hypervolume of each solution

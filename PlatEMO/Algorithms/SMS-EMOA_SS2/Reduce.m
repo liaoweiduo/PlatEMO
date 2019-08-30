@@ -1,6 +1,5 @@
-function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
+function [Population,FrontNo] = Reduce(Population,FrontNo,r)
 % Delete one solution from the population
-% first scale the population to f1+f2+...+fm = 1.
 
 %------------------------------- Copyright --------------------------------
 % Copyright (c) 2018-2019 BIMK Group. You are free to use the PlatEMO for
@@ -16,14 +15,6 @@ function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
     LastFront = find(FrontNo==max(FrontNo));
     PopObj    = Population(LastFront).objs; 
     [N,M]     = size(PopObj);
-    
-    %% first normalize, then scale the PopObj[N,M] to f1+f2+...+fM = 1 
-    if N > M   % more than M solutions considered
-        maxValues = max(PopObj,[],1); 
-        minValues = min(PopObj,[],1); 
-        PopObj = (PopObj - minValues) ./ (maxValues - minValues); 
-        PopObj = PopObj ./ sum(PopObj,2); 
-    end
     
     %% Calculate the contribution of hypervolume of each solution
     deltaS = inf(1,N);

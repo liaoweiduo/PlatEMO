@@ -1,4 +1,4 @@
-function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
+function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r,c)
 % Delete one solution from the population
 % first scale the population to f1+f2+...+fm = 1.
 
@@ -23,7 +23,7 @@ function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r)
         minValues = min(PopObj,[],1); 
         PopObj = (PopObj - minValues) ./ (maxValues - minValues); 
         a = (1 - sum(PopObj,2)) ./ M;
-        PopObj = PopObj + a; 
+        PopObj = PopObj + c * a; 
 %         print(max(sum(PopObj,2)));
     end
     

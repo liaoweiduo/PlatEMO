@@ -4,7 +4,6 @@ function SMSEMOA_SS2(Global)
 % algorithm
 % half evaluations using scaling method before calculating HV.
 % r --- 1.1 --- r of reference point
-% c --- 0.9 --- coefficient of scaling
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the
@@ -21,7 +20,7 @@ function SMSEMOA_SS2(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    [r,c] = Global.ParameterSet(1.1,0.9);
+    r = Global.ParameterSet(1.1);
     
     %% Generate random population
     Population = Global.Initialization();
@@ -32,11 +31,13 @@ function SMSEMOA_SS2(Global)
         for i = 1 : Global.N
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            if Global.evaluated <= Global.evaluation / 3 * 2
-                [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
-            else
-                [Population,FrontNo] = Reduce_scaling([Population,Offspring],FrontNo,r,c);
-            end
+            
+            % calculate c
+            t = Global.evaluated;
+            T = Global.evaluation;
+            c = t/T;
+            
+            [Population,FrontNo] = Reduce_scaling([Population,Offspring],FrontNo,r,c);
         end
     end
 end

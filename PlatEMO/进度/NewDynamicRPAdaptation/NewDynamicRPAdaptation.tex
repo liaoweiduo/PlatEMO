@@ -216,7 +216,7 @@ Based on our analysis, we propose a new dynamic reference point specification me
 In our weak convergence detection mechanism, we use the logarithm nadir point as a convergence indicator
 and use the Simple Least Squares\cite{SimpleLeastSquares} to detect the convergence. 
 % Given $w\_l$ generations as a window, if the slope of linear regression is below one threshold, we report the convergence.
-We report comparison results of the proposed approach with the existing linearly decreasing method and 
+We report comparison results of the proposed approach with the existing linearly decreasing method\cite{hisao:dynamic} and 
 the simple reference point specification method in the experiment section. 
 On some test problems (e.g., Distance Minimization Problems\cite{dmp}), 
 our weak convergence detection mechanism outperforms the linearly decreasing mechanism. 
@@ -287,7 +287,7 @@ on the distribution of solutions for HV maximization, see \cite{hisao:RPexplanat
     \includegraphics[width=1.5in]{FVEMOA_fixrp_DTLZ1_evaluation20000_r1__1}}\quad
   \subfloat[Reference point by Eq. (\ref{frpa1}).]{\label{rpa2:d}
     \includegraphics[width=1.5in]{FVEMOA_DTLZ1_evaluation20000_r1__1}}\\
-  \caption{Obtained solution sets by SMS-EMOA with the population size 100 after 20,000 solution evaluations.
+  \caption{Obtained solution sets by SMS-EMOA with the population size 100 after 20,000 solution evaluations. 
   % (a) and (c): the reference point is calculated only once at the initial step;
   % (b) and (d): the reference point is specified by Eq. (\ref{frpa1}) with $r=1.1$.
   }
@@ -296,7 +296,8 @@ on the distribution of solutions for HV maximization, see \cite{hisao:RPexplanat
 
 \subsection{Original Reference Point Specification}
 In the original paper of SMS-EMOA\cite{smsemoa}, 
-the reference point is specified as the estimated nadir point increased by 1.0
+the reference point is specified as the estimated nadir point (i.e., the currently worst objective values) 
+increased by 1.0
 (in the two-objective case, a sufficiently large reference point is chosen). 
 % And in \cite{hisao:dynamic}, the reference point is set as $(r, r, \dots, r)$ in the normalized objective space. 
 However in the current implementation of SMS-EMOA in PlatEMO\cite{PlatEMO}, the reference point is specified as:
@@ -304,7 +305,9 @@ However in the current implementation of SMS-EMOA in PlatEMO\cite{PlatEMO}, the 
   \boldsymbol R = r \cdot \boldsymbol N,  
 \end{equation}
 where $\boldsymbol R \in \mathbb{R}^m$ is the reference point in each generation, 
-and $\boldsymbol N \in \mathbb{R}^m$ is the estimated nadir point of the last front from the current population. 
+and $\boldsymbol N \in \mathbb{R}^m$ is the estimated nadir point of the last front from the current population, 
+according to the non-dominated sorting. 
+$m$ is the number of objectives. 
 $r$ is specified as 1.1 in PlatEMO. 
 % The specification of the reference point is also one of the important parts in the HV-based algorithm implementation.
 In the source code of PlatEMO, the values of $r$ in HV-based algorithms are specified as follows: 
@@ -314,8 +317,8 @@ the HV contribution is used to evaluate each solution.
 We specify the reference point for HV calculation by  Eq. (\ref{frpa1}) in this paper.
 
 However, fixing the $r$ value to 1.1 is not recommended, especially for problems with inverted-triangular Pareto fronts
-\cite{hisao:RPhowtoSpecify}. 
-The research on specifying the value of $r$ is limited.
+\cite{hisao:RPhowtoSpecify}. The suggested value of $r$ is discussed in next section. 
+The research on specifying the value of $r$ is limited. 
 This is because the location of the reference point does not have a large effect on the calculation of HV contribution 
 when HV-based algorithms are applied to test problems with triangular Pareto fronts. 
 
@@ -338,7 +341,7 @@ where $H$ is a parameter used in MOEA/D\cite{MOEAD} for
 generating uniformly distributed weight vectors\cite{hisao:dynamic}. 
 Given the population size $\mu$ and the number of objectives $m$, the value of $H$ can be calculated as follows:
 \begin{equation}
-  C^{H+m-1}_{m-1} \leq \mu < C^{H+m}_{m-1}.
+  C_{m-1}^{H+m-1} \leq \mu < C_{m-1}^{H+m}.
 \end{equation}
 In Fig. \ref{dm1} (a), $r=13/12 (H=12)$ is the suggested setting in \cite{hisao:RPhowtoSpecify} for inverted-DTLZ1 with $\mu = 91$ and $m = 3$.
 Well-distributed solutions are obtained in Fig. \ref{dm1} (a). 
@@ -534,7 +537,7 @@ $t_{Converged}$ is determined by a weak convergence detection criterion.
 % 画上图（ln np mean）的b随evaluation变化图
 % for nadir point, 经过我们的实验 10^-5是个好threshold
 %
-Various indicators including convergence detection indicators which are used to detect the stagnation of the algorithm 
+Various indicators including convergence detection indicators, which are used to detect the stagnation of the algorithm, 
 have been proposed in the literature\cite{convergenceDetection:1, convergenceDetection:LSSC, 
 convergenceDetection:OCD, convergenceDetection:OFCDandOCD, convergenceDetection:convergenceMetric, 
 convergenceDetection:maxCD, convergenceDetection:online}. 
@@ -564,15 +567,16 @@ More specifically,
 for a minimization problem, we consider the following indicator $I$:
 \begin{equation}\begin{aligned}\label{ewcd1}
   \boldsymbol{N_{t}} &= [f_{t1},f_{t2},\dots,f_{tm}]^\top \in \mathbb{R}^m ,\\
-  I_{0} &= \frac{1}{m} \sum_{i=1}^{m}lnf_{0i},\\
-  I_{t} &= min(I_{t-1},\frac{1}{m} \sum_{i=1}^{m}lnf_{ti}), \quad
+  I_{0} &= \frac{1}{m} \sum_{i=1}^{m} \ln f_{0i},\\
+  I_{t} &= \min(I_{t-1},\frac{1}{m} \sum_{i=1}^{m} \ln f_{ti}), \quad
   t = 1,2,\dots,T,
 \end{aligned}
 \end{equation}
 where $T$ is the total number of generations, 
 $\boldsymbol{N_{t}}$ is the estimated nadir point at the $t^{th}$ generation with $m$ elements: $f_{t1},f_{t2},\dots,f_{tm}$. 
-$I_0$ is the average logarithmic element value of the nadir point calculated from the initial population.
-$I_t$ is the minimum value of $I$ before the $t^{th}$ generation (including the $t^{th}$ generation). 
+In order to take all $m$ elements into consideration, we use the average value. 
+The initial indicator value $I_0$ is the average natural logarithmic element value of the nadir point calculated from the initial population.
+And the indicator value at $t^{th}$ generation $I_t$ is the minimum value of $I$ before the $t^{th}$ generation (including the $t^{th}$ generation). 
 Fig. \ref{wcd1} shows the HV values and the indicator $I$ values over the execution of SMS-EMOA 
 on the three-objective inverted-DTLZ1 problem. 
 The fixed nadir point based on the true nadir point is used for HV calculation in this figure for illustration purposes: $\boldsymbol R = (0.55, 0.55, 0.55)$.
@@ -617,7 +621,7 @@ with the following matrix-based formula:
       \Sigma t_i   & w\_l 
     \end{matrix}
   \right]^{-1}
-  *
+  \times
   \left[
     \begin{matrix}
       \Sigma t_i I_{t_i} \\

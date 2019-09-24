@@ -5,7 +5,7 @@ function drawCuboid(poi, ref)
         ref(1) poi(2) ref(3);
         ref(1) ref(2) poi(3);
         poi(1) ref(2) poi(3);
-        poi(1) poi(2) poi(3);
+        poi(1);
         ref(1) poi(2) poi(3)];
 
     b= [1 2 6 5;
@@ -19,6 +19,4 @@ function drawCuboid(poi, ref)
     'facecolor',[.5 .5 .5],...
     'edgecolor',[1,1,1],...
     'facealpha',1);
-    view(3)
-    axis square
 end

@@ -3,7 +3,7 @@ problem = @DTLZ7;
 N = 100;
 varargin = {'-algorithm', algorithm, '-problem', problem, '-N', N, '-run', 1};
 Global = GLOBAL(varargin{:});
-PF = Global.problem.PF(100);
+PF = Global.problem.PF(10);
 ref = (max(PF)-min(PF)) * 1.1 + min(PF);
 
 

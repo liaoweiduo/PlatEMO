@@ -3,7 +3,14 @@ problem = @DTLZ7;
 N = 100;
 varargin = {'-algorithm', algorithm, '-problem', problem, '-N', N, '-run', 1};
 Global = GLOBAL(varargin{:});
-PF = Global.problem.PF(10);
+PF = Global.problem.PF(49);
+
+maxValues = max(PopObj,[],1); 
+        minValues = min(PopObj,[],1); 
+        PopObj = (PopObj - minValues) ./ (maxValues - minValues); 
+        a = (1 - sum(PopObj,2)) ./ M;
+        PopObj = PopObj + c * a; 
+
 ref = (max(PF)-min(PF)) * 1.1 + min(PF);
 
 
@@ -17,6 +24,8 @@ end
 
 scatter3(PF(:,1),PF(:,2),PF(:,3),'ro')
 
+view(3)
+axis square
 set(gca,'xdir','reverse');
 set(gca,'ydir','reverse');
 set(gca,'zdir','reverse');

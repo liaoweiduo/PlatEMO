@@ -5,7 +5,7 @@ function drawCuboid(poi, ref)
         ref(1) poi(2) ref(3);
         ref(1) ref(2) poi(3);
         poi(1) ref(2) poi(3);
-        poi(1);
+        poi;
         ref(1) poi(2) poi(3)];
 
     b= [1 2 6 5;

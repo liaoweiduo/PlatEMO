@@ -1,9 +1,21 @@
 algorithm = @SMSEMOA;
-problem = @DTLZ7;
+problem = @MinusDTLZ2;
 N = 100;
 varargin = {'-algorithm', algorithm, '-problem', problem, '-N', N, '-run', 1};
 Global = GLOBAL(varargin{:});
-PF = Global.problem.PF(100);
+PF = Global.problem.PF(49);
+
+maxValues = max(PF,[],1); 
+minValues = min(PF,[],1); 
+PF = (PF - minValues) ./ (maxValues - minValues); 
+
+% a = (1 - sum(PF,2)) ./ 3;
+% PF = PF + 1 * a; 
+
+maxValues = max(PF,[],1); 
+minValues = min(PF,[],1); 
+PF = (PF - minValues) ./ (maxValues - minValues); 
+
 ref = (max(PF)-min(PF)) * 1.1 + min(PF);
 
 

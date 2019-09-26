@@ -19,6 +19,7 @@ function [Population,FrontNo] = Reduce_scaling(Population,FrontNo,r,c)
     
     %% first normalize, then translate the PopObj[N,M] along 45 degree to f1+f2+...+fM = 1 
     if N > M   % more than M solutions considered
+        
         maxValues = max(PopObj,[],1); 
         minValues = min(PopObj,[],1); 
         PopObj = (PopObj - minValues) ./ (maxValues - minValues); 

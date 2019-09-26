@@ -1,15 +1,20 @@
 algorithm = @SMSEMOA;
-problem = @DTLZ7;
+problem = @DTLZ2;
 N = 100;
 varargin = {'-algorithm', algorithm, '-problem', problem, '-N', N, '-run', 1};
 Global = GLOBAL(varargin{:});
 PF = Global.problem.PF(49);
 
-maxValues = max(PopObj,[],1); 
-        minValues = min(PopObj,[],1); 
-        PopObj = (PopObj - minValues) ./ (maxValues - minValues); 
-        a = (1 - sum(PopObj,2)) ./ M;
-        PopObj = PopObj + c * a; 
+maxValues = max(PF,[],1); 
+minValues = min(PF,[],1); 
+PF = (PF - minValues) ./ (maxValues - minValues); 
+
+% a = (1 - sum(PF,2)) ./ 3;
+% PF = PF + 1 * a; 
+
+maxValues = max(PF,[],1); 
+minValues = min(PF,[],1); 
+PF = (PF - minValues) ./ (maxValues - minValues); 
 
 ref = (max(PF)-min(PF)) * 1.1 + min(PF);
 
@@ -22,10 +27,11 @@ for index = 1:length(PF)
     drawCuboid(point,ref);
 end
 
-scatter3(PF(:,1),PF(:,2),PF(:,3),'ro')
+scatter3(PF(:,1),PF(:,2),PF(:,3),500,'r.')
 
 view(3)
 axis square
+set(g)
 set(gca,'xdir','reverse');
 set(gca,'ydir','reverse');
 set(gca,'zdir','reverse');

@@ -37,6 +37,9 @@ function SMSEMOA_SS2(Global)
             T = Global.evaluation;
             c = t/T;
             
+            % no c strategy
+%             c = 1;
+            
             [Population,FrontNo] = Reduce_scaling([Population,Offspring],FrontNo,r,c);
         end
     end

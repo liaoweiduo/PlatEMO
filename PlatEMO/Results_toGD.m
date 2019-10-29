@@ -1,6 +1,6 @@
-Algorithm = 'SMSEMOA';
+Algorithm = 'SMSEMOA_SS2';
 PathRoot=['Data/', Algorithm, '/'];
-filename = 'SMSEMOA_DTLZ2_N100_M3_D12_1.mat';
+filename = 'SMSEMOA_SS2_DTLZ3_N100_M3_D12_6.mat';
 
 filename_temp = filename(length(Algorithm)+2:length(filename));
 Problem = filename_temp(1:strfind(filename_temp,'_N')-1);
@@ -22,9 +22,9 @@ clc;disp(['IGD calculation: ', filename]);
 load(strcat(PathRoot, filename));
 indexSet = cell2mat(result(:,1));
 generationSet = result(:,2);
-parfor index = 1:length(generationSet)
+for index = 1:length(generationSet)
     populationSet = generationSet{index};
     objectiveSet = populationSet.objs;
-    result(index,3) = {HV(objectiveSet, PF)};
+    result(index,4) = {IGD(objectiveSet, PF)};
 end
 save([PathRoot,filename],'result','metric');

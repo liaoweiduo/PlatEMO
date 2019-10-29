@@ -1,0 +1,14 @@
+%% draw pic of data  need data
+
+evaluation_index = 10;
+
+objSet1 = result1{evaluation_index, 2}.objs;
+
+objSet2 = result2{evaluation_index, 2}.objs;
+
+figure()
+hold on 
+scatter3(objSet1(:,1),objSet1(:,2),objSet1(:,3), 'r');
+scatter3(objSet2(:,1),objSet2(:,2),objSet2(:,3), 'b');
+
+title(['evaluation:')

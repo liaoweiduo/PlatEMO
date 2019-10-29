@@ -1,5 +1,5 @@
 algorithm = @SMSEMOA;
-problem = @MinusDTLZ2;
+problem = @DTLZ2;
 N = 100;
 varargin = {'-algorithm', algorithm, '-problem', problem, '-N', N, '-run', 1};
 Global = GLOBAL(varargin{:});
@@ -16,7 +16,7 @@ maxValues = max(PF,[],1);
 minValues = min(PF,[],1); 
 PF = (PF - minValues) ./ (maxValues - minValues); 
 
-ref = (max(PF)-min(PF)) * 1.1 + min(PF);
+ref = (max(PF)-min(PF)) * 2 + min(PF);
 
 
 % draw pic

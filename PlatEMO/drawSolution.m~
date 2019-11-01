@@ -1,14 +1,20 @@
 %% draw pic of data  need data
 
-evaluation_index = 10;
-
-objSet1 = result1{evaluation_index, 2}.objs;
-
-objSet2 = result2{evaluation_index, 2}.objs;
+N = 100; M = 3; D = 12;
+algorithm = 'SMSEMOA_SS2';
+problem = 'DTLZ3';
+evaluation_index = 100;
 
 figure()
 hold on 
-scatter3(objSet1(:,1),objSet1(:,2),objSet1(:,3), 'r');
-scatter3(objSet2(:,1),objSet2(:,2),objSet2(:,3), 'b');
+view(3)
+title([algorithm,' ',problem,...
+    ' N',int2str(N),' M',int2str(M),' D',int2str(D)]);
+for run = 1:10
+    readPath = fullfile('Data',algorithm,[algorithm,'_',problem,...
+        '_N',int2str(N),'_M',int2str(M),'_D',int2str(D),'_',int2str(run),'.mat']);
+    load(readPath);
+    objSet = result{evaluation_index, 2}.objs;
+    Draw(objSet);
+end
 
-title(['evaluation:')

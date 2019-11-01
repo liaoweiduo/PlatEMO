@@ -1,8 +1,8 @@
 clear
-Algorithm = 'SMSEMOA_SS2';
-PathRoot=['Data/', Algorithm,'_c1', '/'];
-for run = 1:20
-    filename = ['SMSEMOA_SS2_DTLZ3_N100_M3_D12_',num2str(run),'.mat'];
+Algorithm = 'SMSEMOA_SS2_c1';
+PathRoot=['Data/', Algorithm, '/'];
+for run = 1:10
+    filename = [Algorithm,'_DTLZ3_N100_M3_D12_',num2str(run),'.mat'];
 
     filename_temp = filename(length(Algorithm)+2:length(filename));
     Problem = filename_temp(1:strfind(filename_temp,'_N')-1);
@@ -19,7 +19,7 @@ for run = 1:20
     Global = GLOBAL(varargin{:});
     PF = Global.problem.PF(10000);
 
-    clc;disp(['GD calculation: ', filename]);
+    clc;disp(['IGD calculation: ', filename]);
 
     load(strcat(PathRoot, filename));
     indexSet = cell2mat(result(:,1));
@@ -27,7 +27,7 @@ for run = 1:20
     for index = 1:length(generationSet)
         populationSet = generationSet{index};
         objectiveSet = populationSet.objs;
-        result(index,3) = {GD(objectiveSet, PF)};
+        result(index,4) = {IGD(objectiveSet, PF)};
     end
     save([PathRoot,filename],'result','metric');
 end

@@ -1,6 +1,6 @@
 clear;
 N = 100;
-evaluation = 40000;
+evaluation = 50000;
 
 % problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
 %     @C1_DTLZ1, @C2_DTLZ2, @C3_DTLZ4, @CDTLZ2, @IDTLZ1, @IDTLZ2, @SDTLZ1,...
@@ -14,12 +14,12 @@ problems = {@DTLZ3};
 parameters = {};
 
 M = [3];  
-algorithms = {{@SMSEMOA_SS2,1.1}};
+algorithms = {{@SMSEMOA,1.1}, {@SMSEMOA_SS2,1.1}};
 
 for m = M
 for algorithm = algorithms
 for problem = problems
-for run = 1:10
+for run = 11:20
     parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
 end
 end

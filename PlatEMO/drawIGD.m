@@ -1,7 +1,7 @@
 %% draw pic of data  need data
 clear
 N = 100; M = 3; D = 12;
-problem = 'DTLZ2';
+problem = 'DTLZ3';
 totalrun = 10;
 
 figure()

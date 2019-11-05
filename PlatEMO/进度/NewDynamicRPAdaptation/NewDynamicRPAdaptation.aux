@@ -18,8 +18,8 @@
 \citation{SimpleLeastSquares}
 \citation{hisao:dynamic}
 \citation{dmp}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
 \citation{hisao:RPhowtoSpecify}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
 \citation{invertedDTLZ1}
 \citation{hisao:RPexplanation,hisao:RPspecify,hisao:dynamic}
 \citation{smsemoa}
@@ -31,6 +31,7 @@
 \citation{hisao:RPexplanation,hisao:RPhowtoSpecify,hisao:RPspecify}
 \citation{MOEAD}
 \citation{hisao:dynamic}
+\citation{hisao:RPhowtoSpecify}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{rpa1:a}{{1a}{2}}
 \newlabel{sub@rpa1:a}{{(a)}{a}}
@@ -41,6 +42,7 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {An initial generation.}}}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {A final generation.}}}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Reference Point Specification in SMS-EMOA}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Original Reference Point Specification}{2}}
 \newlabel{rpa2:a}{{2a}{2}}
 \newlabel{sub@rpa2:a}{{(a)}{a}}
 \newlabel{rpa2:b}{{2b}{2}}
@@ -55,11 +57,9 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Reference point by Eq. (1\hbox {}).}}}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Fixed far reference point.}}}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Reference point by Eq. (1\hbox {}).}}}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Original Reference Point Specification}{2}}
 \newlabel{frpa1}{{1}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Reference Point Specification Proposed in \cite  {hisao:RPhowtoSpecify}}{2}}
 \newlabel{eod}{{2}{2}}
-\citation{hisao:RPhowtoSpecify}
 \citation{hisao:RPhowtoSpecify}
 \citation{hisao:RPhowtoSpecify}
 \citation{DtA}
@@ -88,6 +88,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-B}1}Early Stage}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-B}2}Final Stage}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Specify the Value of $r$ for Better Searching Behavior}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Specify the Value of $r$ for Uniform Distribution}{3}}
 \newlabel{nud:a}{{4a}{3}}
 \newlabel{sub@nud:a}{{(a)}{a}}
 \newlabel{nud:b}{{4b}{3}}
@@ -96,21 +97,21 @@
 \newlabel{nud}{{4}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$r=10$.}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$r=2$ (Suggested \cite {hisao:RPhowtoSpecify}).}}}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Specify the Value of $r$ for Uniform Distribution}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Dynamic Reference Point Specification Mechanism}{3}}
 \newlabel{f2}{{4}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Linearly Decreasing Mechanism Proposed in \cite  {hisao:dynamic}}{3}}
 \newlabel{eldm1}{{5}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}A New Dynamic Reference Point Specification Mechanism}{3}}
 \citation{convergenceDetection:1,convergenceDetection:LSSC,convergenceDetection:OCD,convergenceDetection:OFCDandOCD,convergenceDetection:convergenceMetric,convergenceDetection:maxCD,convergenceDetection:online}
 \citation{SimpleLeastSquares}
 \citation{convergenceDetection:LSSC}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}A New Dynamic Reference Point Specification Mechanism}{4}}
 \newlabel{endm1}{{6}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-B}1}Moderately accurate}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-B}2}Computationally efficient}{4}}
+\newlabel{ewcd1}{{7}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  Illustration of the convergence detection for a run of SMS-EMOA on the three-objective inverted-DTLZ1 problem. The fixed reference point $\bm  {R} = (0.55, 0.55, 0.55)$ is used for HV calculation in this figure. \relax }}{4}}
 \newlabel{wcd1}{{5}{4}}
-\newlabel{ewcd1}{{7}{4}}
+\newlabel{elr1}{{8}{4}}
 \citation{smsemoa}
 \citation{DTLZ}
 \citation{WFG}
@@ -119,12 +120,11 @@
 \citation{PlatEMO}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Values of $\delimiter 69640972 b\delimiter 86418188 $ for the three-objective inverted-DTLZ1 (the window size $w\_l$ is 4,000 and the population size $\mu $ is 100). The green dotted line shows the threshold $10^{-5}$. \relax }}{5}}
 \newlabel{wcd2}{{6}{5}}
-\newlabel{elr1}{{8}{5}}
 \newlabel{elr2}{{9}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Computational Experiments}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Experimental Settings}{5}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Weak Convergence Detection\relax }}{5}}
 \newlabel{alg:wcd}{{1}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Computational Experiments}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Experimental Settings}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Computational Results}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Mean HV and standard deviation over 20 independent runs for DTLZ and WFG test problems.\relax }}{6}}
 \newlabel{table_tri}{{I}{6}}
@@ -143,14 +143,14 @@
 \bibcite{FVEMOA}{9}
 \bibcite{ismsemoa}{10}
 \bibcite{hisao:RPhowtoSpecify}{11}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Average HV values by the four algorithms on the ten-objective Multi-Point Distance Minimization Problem (MPDMP). \relax }}{7}}
-\newlabel{crdmp}{{7}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{7}}
-\@writefile{toc}{\contentsline {section}{References}{7}}
 \bibcite{hisao:RPspecify}{12}
 \bibcite{hisao:RPexplanation}{13}
 \bibcite{hisao:dynamic}{14}
 \bibcite{hisao:twoRP}{15}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Average HV values by the four algorithms on the ten-objective Multi-Point Distance Minimization Problem (MPDMP). \relax }}{7}}
+\newlabel{crdmp}{{7}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{7}}
+\@writefile{toc}{\contentsline {section}{References}{7}}
 \bibcite{SimpleLeastSquares}{16}
 \bibcite{dmp}{17}
 \bibcite{invertedDTLZ1}{18}

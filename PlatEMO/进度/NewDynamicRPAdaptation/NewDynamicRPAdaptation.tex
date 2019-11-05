@@ -105,13 +105,13 @@
 % In our approach, the simple Least Squares and the information of nadir point are used to detect the convergence. 
 % After that, we examine the difference between this new dynamic mechanism with a state-of-the-art linearly decrease mechanism. 
 
-In the evolutionary multi-objective optimization (EMO) field, 
-the hypervolume (HV) indicator is one of the most popular performance indicators. 
-It is not only used for performance evaluation of EMO algorithms (EMOAs) 
+In Evolutionary Multi-objective Optimization (EMO) field, 
+the hypervolume (HV) indicator is one very popular performance indicators. 
+It is not only used for evaluating the performance of EMO algorithms (EMOAs) 
 but also adopted in EMOAs for selection (e.g., SMS-EMOA). 
-The specification of a reference point for HV calculation has a large effect on the performance of SMS-EMOA. 
+The reference point specification for HV calculation strongly affect the performance of SMS-EMOA. 
 Thus, the reference point specification should be carefully treated in SMS-EMOA. 
-In this paper, the importance of the dynamic reference point specification in SMS-EMOA is explained first. 
+In this paper, the importance of the dynamic specification of the reference point in SMS-EMOA is explained first. 
 Then a new dynamic reference point specification mechanism, which is based on weak convergence detection is introduced for SMS-EMOA. 
 Experimental comparisons are conducted for different specification methods in SMS-EMOA:  
 a linearly decreasing mechanism and two static mechanisms. 
@@ -120,7 +120,7 @@ Our results demonstrate the effectiveness of the proposed dynamic reference poin
 
 \begin{IEEEkeywords}
 Reference point specification; SMS-EMOA; hypervolume; evolutionary multi-objective optimization; 
-dynamic mechanism; convergence detection
+convergence detection; dynamic mechanism 
 \end{IEEEkeywords}
     
 \let\thefootnote\relax\footnotetext{
@@ -165,15 +165,15 @@ dynamic mechanism; convergence detection
 % 4种problems要一句话介绍
 % 
 \section{Introduction}
-In the field of Evolutionary Multi-objective Optimization (EMO), 
-one active research issue is the development of performance indicators. 
+In Evolutionary Multi-objective Optimization (EMO) field, 
+a popular research issue is the development of performance indicators. 
 Over the years, various indicators have been proposed. 
 These indicators include hypervolume(HV)\cite{hypervolume}, 
 R2\cite{R2}, $\epsilon_+$ indicator\cite{e+}, IGD\cite{IGD}, etc.
 They are designed for different purposes. 
 Each of them has its own advantages and disadvantages.
-Among them, one of the most popular performance indicators is the HV indicator. 
-HV is not only used for measuring the performance of EMO algorithms (EMOAs), 
+Among them, the HV indicator is treated as one very important performance indicator,
+for that it is not only used for measuring the performance of EMO algorithms (EMOAs), 
 but also adopted in some EMOAs for selection. 
 HV is also the only Pareto-compliant indicator up to now\cite{pareto_compliant}. 
 % Different from IGD, 
@@ -187,30 +187,30 @@ However, due to the heavy computation load of HV calculation,
 the HV-based algorithms are inefficient when dealing with many-objective optimization problems (i.e., more than three objectives). 
 To reduce the heavy computation load of HV computation, 
 many new methods have been proposed to estimate HV. 
-For example, HypE uses a Monte Carlo simulation technique to estimate HV\cite{HypE}; 
+For example, HypE estimates HV by using Monte Carlo simulation technique\cite{HypE}; 
 the R2 indicator estimates HV using a standard weighted Tchebycheff function\cite{R2}; 
 an improved new R2 indicator is proposed by Shang et al.\cite{newR2} to approximate HV.  
 A simple and fast version of SMS-EMOA, called FV-MOEA\cite{FVEMOA}, has been proposed to further increase the efficiency.
-FV-MOEA utilizes the fact that 
-the HV contribution of a solution is only determined by partial solutions rather than the whole solution set\cite{FVEMOA}. 
-Recently, an improved SMS-EMOA with adaptive resource allocation has been proposed to reduce the number of HV calculations\cite{ismsemoa}. 
+FV-MOEA utilizes the fact that rather than determined by the whole solution set, 
+the HV contribution of a solution is only determined by partial solutions\cite{FVEMOA}. 
+Recently, an improved SMS-EMOA has been proposed and it reduces the number of HV calculations by the adaptive resource allocation \cite{ismsemoa}. 
 % Based on this point, FV-MOEA reduces the computational load greatly. 
 
 The specification of a reference point is an important issue in HV computation. 
 However, its importance has not been discussed in many studies. 
 % It is because that the effect on many test problems (e.g., DTLZ\cite{DTLZ}) are not so significant. 
-Recently, it has been reported that the position of the reference point strongly influences the optimal distribution of solutions 
-for HV maximization in the case of inverted-triangular Pareto fronts\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
+Recently, it has been reported that the optimal distribution for HV maximization of a solution set 
+is influenced by the reference point position in inverted-triangular Pareto fronts\cite{hisao:RPhowtoSpecify, hisao:RPspecify, hisao:RPexplanation}. 
 A reference point specification method has been proposed in \cite{hisao:RPhowtoSpecify} for fair HV computation.
 % A suitable set of reference point position for linear PFs has been sufficiently investigated in\cite{hisao:RPspecify}.
 A dynamic reference point specification mechanism has been proposed in\cite{hisao:dynamic}.
 Another proposed strategy is to use two reference points in HV-based EMOAs\cite{hisao:twoRP}. 
 
 In this paper, we analyze the reference point specification during the execution of HV-based EMOAs.
-At the early stage of multi-objective evolution, 
-the reference point should be set far away from the estimated nadir point to enhance the diversity of solutions. 
-In the final stage of multi-objective evolution, 
-the reference point should be specified properly to obtain uniformly distributed solutions over the entire Pareto front.
+In the early stage of the multi-objective evolution, 
+we suggest to set the reference point far from the estimated nadir point to enhance the solution diversity. 
+In the final stage of the multi-objective evolution, 
+the reference point should be specified properly to obtain a uniformly distributed solution set over the entire Pareto front.
 
 Based on our analysis, we propose a new dynamic reference point specification mechanism based on weak convergence detection in SMS-EMOA. 
 In our weak convergence detection mechanism, we use the logarithm nadir point as a convergence indicator
@@ -218,13 +218,13 @@ and use the Simple Least Squares\cite{SimpleLeastSquares} to detect the converge
 % Given $w\_l$ generations as a window, if the slope of linear regression is below one threshold, we report the convergence.
 We report comparison results of the proposed approach with the existing linearly decreasing method\cite{hisao:dynamic} and 
 the simple reference point specification method in the experiment section. 
-On some test problems (e.g., Distance Minimization Problems\cite{dmp}), 
+On some specific problems (e.g., Distance Minimization Problems\cite{dmp}), 
 our weak convergence detection mechanism outperforms the linearly decreasing mechanism. 
 
 The remainder of this paper is organized as follows. 
-Section II explains the original reference point specification in SMS-EMOA and the one proposed in \cite{hisao:RPhowtoSpecify}. 
+The explanations of the original reference point specification in SMS-EMOA and the one proposed in \cite{hisao:RPhowtoSpecify} are in Section II. 
 % we briefly introduce the basic idea of reference point specification by a simple example in Section II. 
-Then, we examine the reference point specification in two stages of multi-objective evolution by SMS-EMOA, 
+Then, we examine the specification of the reference point in two stages of multi-objective evolution by SMS-EMOA, 
 which clearly demonstrates the necessity of using the dynamic reference point specification mechanism. 
 In Section III, after explaining the existing linearly decreasing method of the reference point, we propose a dynamic reference point
 specification method. 
@@ -264,18 +264,16 @@ for the final population as explained in Fig. \ref{rpa1}.
   \label{rpa1}
 \end{figure}
 
-In Fig. \ref{rpa2}, we show some examples of obtained solution sets by SMS-EMOA. 
-When a fixed reference point is far away from the Pareto front, 
-all solutions are on the sides of the Pareto front when SMS-EMOA is 
-applied to the three-objective inverted DTLZ1 problem \cite{invertedDTLZ1} in Fig. \ref{rpa2} (a). 
-By appropriately specifying the reference point at each generation 
+Some examples of obtained solution sets by SMS-EMOA are shown in Fig. \ref{rpa2}. 
+Using a faraway fixed reference point, 
+nearly all solutions of the three-objective inverted DTLZ1 problem \cite{invertedDTLZ1} are on the boundaries of the Pareto front in Fig. \ref{rpa2} (a). 
+In Fig. \ref{rpa2} (b), by appropriately specifying the reference point at each generation 
 (e.g., by Eq. (\ref{frpa1}) shown later in this section), 
-we can obtain a well-distributed solution set as in Fig. \ref{rpa2} (b). 
-When the Pareto front is triangular, 
-the specification of the reference point does not have a large effect 
-on the finally obtained solution set as shown in Fig. \ref{rpa2} (c) and (d) for the three-objective DTLZ1 problem. 
-For further discussions on the effect of the reference point specification 
-on the distribution of solutions for HV maximization, see \cite{hisao:RPexplanation, hisao:RPspecify, hisao:dynamic}.
+we obtain a solution set which is well-distributed. 
+However, the specification of the reference point does not strongly affect 
+the finally obtained solution set on triangular Pareto fornt problems as in Fig. \ref{rpa2} (c) and (d) for the three-objective DTLZ1 problem. 
+The effect of specifying the location of the reference point on the distribution of solutions for HV maximization 
+is further discussed in \cite{hisao:RPexplanation, hisao:RPspecify, hisao:dynamic}.
 
 \begin{figure}[!t]
   \centering
@@ -304,10 +302,9 @@ However in the current implementation of SMS-EMOA in PlatEMO\cite{PlatEMO}, the 
 \begin{equation}\label{frpa1}
   \boldsymbol R = r \cdot \boldsymbol N,  
 \end{equation}
-where $\boldsymbol R \in \mathbb{R}^m$ is the reference point in each generation, 
+where $\boldsymbol R \in \mathbb{R}^m$ is the reference point in each generation ($m$ is the number of objectives), 
 and $\boldsymbol N \in \mathbb{R}^m$ is the estimated nadir point of the last front from the current population, 
-according to the non-dominated sorting. 
-$m$ is the number of objectives. 
+after the non-dominated sorting. 
 $r$ is specified as 1.1 in PlatEMO. 
 % The specification of the reference point is also one of the important parts in the HV-based algorithm implementation.
 In the source code of PlatEMO, the values of $r$ in HV-based algorithms are specified as follows: 
@@ -316,11 +313,11 @@ In SMS-EMOA,
 the HV contribution is used to evaluate each solution. 
 We specify the reference point for HV calculation by  Eq. (\ref{frpa1}) in this paper.
 
-However, fixing the $r$ value to 1.1 is not recommended, especially for problems with inverted-triangular Pareto fronts
+However, fixing the $r$ value to 1.1 is not recommended, especially for problems which have inverted-triangular Pareto fronts
 \cite{hisao:RPhowtoSpecify}. The suggested value of $r$ is discussed in next section. 
 The research on specifying the value of $r$ is limited. 
-This is because the location of the reference point does not have a large effect on the calculation of HV contribution 
-when HV-based algorithms are applied to test problems with triangular Pareto fronts. 
+This is due to the reference point location does not strongly influence the calculation of HV contribution 
+when HV-based algorithms are applied to triangular Pareto fronts test problems. 
 
 % --------------- reference point specification for optimal distribution ----------------
 % 在hisao的paper中指出r = 1+1/H 在一些问题中（平的PF问题）是最优的设置（画出二维三维图for example），
@@ -329,17 +326,16 @@ when HV-based algorithms are applied to test problems with triangular Pareto fro
 %
 \subsection{Reference Point Specification Proposed in \cite{hisao:RPhowtoSpecify}}
 In \cite{hisao:RPexplanation, hisao:RPhowtoSpecify, hisao:RPspecify}, 
-an appropriate value of $r$ was suggested from a viewpoint of fair HV-based performance comparison of EMO algorithms. 
+an appropriate value of $r$ was suggested from a point of view of fair HV-based performance comparison of EMO algorithms. 
 The suggested $r$ is: 
 \begin{equation}\label{eod}
   r=1+\frac{1}{H},
 \end{equation}
-where $H$ is a parameter used in MOEA/D\cite{MOEAD} for 
+where $H$ is used to generate uniformly distributed weight vectors in the same way as in MOEA/D\cite{MOEAD}\cite{hisao:dynamic}. 
 % $H$ is the number of solutions intervals in 2-dimension 
 % and the number of intervals on each boundary of PF in many-dimension. 
 % The idea is inspired by MOEA/D\cite{MOEAD}, in which the $H$ is used for 
-generating uniformly distributed weight vectors\cite{hisao:dynamic}. 
-Given the population size $\mu$ and the number of objectives $m$, the value of $H$ can be calculated as follows:
+Given the number of objectives $m$ and the population size $\mu$, $H$ can be calculated as follows:
 \begin{equation}
   C_{m-1}^{H+m-1} \leq \mu < C_{m-1}^{H+m}.
 \end{equation}
@@ -375,7 +371,7 @@ increases the number of solutions on the sides of the inverted triangular Pareto
 % 但是实际上 在一些问题上 最后PF上解的分布情况是对r很敏感的【hisao paper里的倒三角和最近点问题】
 % 
 % \section{Exploration on Reference Point Specification Mechanism in Detail}
-Very roughly speaking, multi-objective evolution by EMOAs can be divided into the following
+Very roughly speaking, multi-objective evolution by EMOAs can be separated into
 two stages:
 \subsubsection{Early Stage} In this stage, 
 all solutions are far away from the Pareto front.
@@ -383,7 +379,7 @@ The main task is to converge the solutions to the Pareto front.
 We also call this stage the convergence stage.
 \subsubsection{Final Stage} In this stage,
 all solutions are on or near the Pareto front. 
-So the main task is to distribute the solutions more evenly on the Pareto front.
+So the primary task is to distribute the solutions more evenly on the Pareto front.
 We also call this stage the diversification stage.
 
 % ------------------sub-------------- dynamic mechanism ----------------------------------
@@ -446,7 +442,7 @@ This observation suggests the potential usefulness of the dynamic reference poin
 Since a different stage of multi-objective evolution has a different purpose, the value of $r$ should be treated differently in each stage\cite{hisao:dynamic}. 
 Not only the estimated nadir point but also the value of $r$ 
 needs to be adapted in each iteration of the algorithm. 
-This is called dynamic reference point specification. 
+Thus, this process is called dynamic reference point specification. 
 Based on Eq. (\ref{frpa1}), 
 we define the dynamic reference point specification as:
 \begin{equation}\label{f2}
@@ -489,8 +485,8 @@ We show that it outperforms the simple linearly decreasing mechanism on some tes
 % 
 \subsection{A New Dynamic Reference Point Specification Mechanism}
 In this section,
-we introduce a new mechanism that uses a weak convergence detection criterion to 
-decide the timing of changing the value of $r$ from $r_{Initial}$ to $1+1/H$. 
+a new mechanism that uses a weak convergence detection criterion to 
+decide the timing of changing the value of $r$ from $r_{Initial}$ to $1+1/H$ is introduced. 
 
 As we have explained before, 
 a larger $r$ is suggested at the early stage of the algorithm. 
@@ -607,7 +603,7 @@ simple least squares convergence detection strategy introduced in \cite{converge
 If the absolute value of the slope of the linear regression is below a threshold, the convergence is reported.
 Briefly speaking, considering a simple linear regression model $I(t)=a+bt$, 
 the intercept $a$ and slope $b$ of the $t^{th}$ generation can be calculated 
-with the following matrix-based formula:
+by the following formula:
 \begin{equation}\begin{aligned}\label{elr1}
   \left[
     \begin{matrix}
@@ -703,8 +699,8 @@ are tested by combining each of them into SMS-EMOA\cite{smsemoa}.
 The DTLZ test suite\cite{DTLZ}, WFG test suite\cite{WFG}, 
 their minus-versions\cite{minusTestProblem}, 
 and Multi-Point Distance Minimization Problems (MPDMP)\cite{dmp} are used in our computational experiments. 
-The number of objectives ($m$) is specified as 10 in all test problems. 
-The number of decision variables ($D$) is specified for each test problem as follows: 
+The number of objectives ($m$) is set as 10 in all test problems, 
+and the number of decision variables ($D$) is specified for each test problem as follows: 
 
 14 (DTLZ1 and minus-DTLZ1),
 
@@ -717,7 +713,7 @@ with the following settings:
 
 Population size: 30 ($H=1$), 
 
-Stopping condition: 100,000 solution evaluations, 
+Stopping condition: 100,000 function evaluations, 
 
 % Initial value of $r$ $(r_{Initial})$: 10, 
 
@@ -829,24 +825,23 @@ In both of the two specification methods, the initial value of $r$ $(r_{Initial}
 The average HV value is calculated over 20 runs of each algorithm on each test problem under the stopping condition of 100,000 solution evaluations. 
 The reference point is specified as 2 times the true nadir point for HV performance comparison.
 Table \ref{table_tri} and Table \ref{table_itri} show HV-based comparison results. 
-The best result in each row is highlighted in bold, and the worst result is shaded. 
-The Wilcoxon rank sum test is used to show the statistical significance for SMS-EMOA-10, SMS-EMOS-Opt, SMS-EMOA-LD in comparison with the proposed SMS-EMOA-CD. 
+The results highlighted in bold in each row is the best result, and the worst result is shaded. 
+The one-tailed Wilcoxon rank sum test is used to show the statistical significance for SMS-EMOA-10, SMS-EMOS-Opt, SMS-EMOA-LD in comparison with the proposed SMS-EMOA-CD. 
 The three symbols ``$+$'', ``$-$'', ``$\approx$'' mean significantly better, significantly worse and no significant difference. 
 
 Table \ref{table_tri} shows that SMS-EMOA-Opt performs the worst (significantly worse than SMS-EMOA-CD for 9 out of the 13 test problems) among the compared algorithms. 
 This observation suggests that the use of $r = 1 + 1/H$ throughout the execution of SMS-EMOA is not a good idea. 
 We cannot tell the differences between SMS-EMOA-10 and SMS-EMOA-CD.
-The Wilcoxon rank sum tests show that almost all the results are ``$\approx$''. 
-This is because that the location of the reference point has no influence on the optimal distribution of solutions for HV maximization when Pareto fronts are triangular 
-and the reference point is not too close to the Pareto front. 
-For two test problems (WFG8 and WFG9), better results are obtained from SMS-EMOA-LD than SMS-EMOA-CD. 
+The one-tailed Wilcoxon rank sum tests show that almost all the results are ``$\approx$''. 
+This is because for the triangular Pareto front, the location of the reference point (except the same as nadir point) has no influence on the optimal distribution of solutions. 
+For WFG8 and WFG9, better results are obtained from SMS-EMOA-LD than SMS-EMOA-CD. 
 For all the other test problems, these two algorithms have no statistically significant differences.
-These observations suggest that SMS-EMOA-LD is slightly better than SMS-EMOA-CD on test problems with triangular Pareto fronts. 
+These observations suggest that SMS-EMOA-LD is slightly better than SMS-EMOA-CD on triangular Pareto front test problems. 
 
 Table \ref{table_itri} shows HV-based performance comparison results on test problems with inverted-triangular Pareto front
 (i.e., minus-DTLZ1-4, minus-WFG1-9, and MPDMP). 
 In Table \ref{table_itri}, SMS-EMOA-10 performs the worst on most test problems (12 out of the 14 test problems).
-The Wilcoxon rank sum tests show that SMS-EMOA-10 is significantly outperformed by SMS-EMOA-CD on 11 out of the 14 test problems.
+The one-tailed Wilcoxon rank sum tests show that SMS-EMOA-10 is significantly outperformed by SMS-EMOA-CD on 11 out of the 14 test problems.
 This result can be explained by the setting of $r$. Since the value of $r$ is set to 10 in SMS-EMOA-10, many solutions are on the boundary of the triangular Pareto fronts. 
 In Table \ref{table_itri}, it seems that the other three algorithms (SMS-EMOA-Opt, SMS-EMOA-LD and SMS-EMOA-CD) have almost the same performance on the test problems with inverted-triangular
 Pareto front. The results of MPDMP shows that
@@ -971,8 +966,8 @@ In this paper, first we explain the importance of an appropriate reference point
 in SMS-EMOA using a simple example. 
 We demonstrate that, without a good reference point specification mechanism, 
 well-distributed solutions are not obtained on inverted triangular Pareto fronts. 
-This is not observed for triangular Pareto fronts. 
-That is, well-distributed solutions are obtained when the reference point is not too close to the triangular Pareto fronts. 
+This phenomenon is not observed for triangular Pareto fronts. 
+That is, well-distributed solutions are obtained when the reference point is not just the nadir point of the triangular Pareto fronts. 
 
 % Next we introduce the dynamic reference point specification mechanism with the illustration by two aspects: 
 % \subsubsection{Better Searching Behavior} In the early stage, 
@@ -997,7 +992,7 @@ We have also compared our proposed mechanism with the linearly decreasing mechan
 The results show that our new mechanism outperforms the linearly decreasing mechanism on some test problems, 
 specifically on the MPDMP. 
 
-In the future, we plan to investigate the behavior of our new mechanism and further improve it. 
+In the future, we will investigate the behavior of our new mechanism and further improve it. 
 The problems with different PF shapes will be tested and analyzed. 
 
 \bibliographystyle{IEEEtran} 

@@ -2,12 +2,12 @@ clear;
 N = 200;
 evaluation = 50000;
 
-problems = {@OMZM};
+problems = {{@OMZM,10,1}};
 
 parameters = {};
 
 M = [2];  
-algorithms = {{@MOEAD,1},{@MOEADPWV}};
+algorithms = {{@MOEADPWV,2,0,1,5}};
 
 for m = M
 for algorithm = algorithms
@@ -28,16 +28,12 @@ parfor i = 1:total
     
     fprintf('start %d of %d...\n', i, total);
     
-    if strcmp(func2str(problem), 'MaF1')
-        d = m + 9;
-    else
-        d = m + 4;
-    end
+    d = 500;
     if exist(['Data/',func2str(algorithm{1}),'/',func2str(algorithm{1}),...
-            '_',func2str(problem),'_N',int2str(N),'_M',int2str(m),'_D',...
+            '_',func2str(problem{1}),'_N',int2str(N),'_M',int2str(m),'_D',...
             int2str(d),'_',int2str(run),'.mat'],'file') == 2
         fprintf('file: %s exist, continue\n', [func2str(algorithm{1}),'_',...
-            func2str(problem),'_N',int2str(N),'_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
+            func2str(problem{1}),'_N',int2str(N),'_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
         continue
     end
     

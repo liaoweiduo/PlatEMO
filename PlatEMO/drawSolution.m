@@ -1,8 +1,8 @@
 %% draw pic of data  need data
 clear
-N = 100; M = 3; D = 12;
-algorithm = 'SMSEMOA_SS2';
-problem = 'DTLZ3';
+N = 200; M = 2; D = 500;
+algorithm = 'MOEADPWV';
+problem = 'OMZM';
 evaluation_index = 100;
 
 figure()

@@ -2,7 +2,7 @@ clear;
 N = 200;
 evaluation = 50000;
 
-problems = {{@OMZM,1,10}};
+problems = {{@ZDT1}};
 
 parameters = {};
 

@@ -2,7 +2,7 @@ clear
 Algorithm = 'MOEADPWV';
 PathRoot=['Data/', Algorithm, '/'];
 for run = 1:20
-    filename = [Algorithm,'_OMZM_N200_M2_D500_',num2str(run),'.mat'];
+    filename = [Algorithm,'_ZDT1_N200_M2_D30_',num2str(run),'.mat'];
 
     filename_temp = filename(length(Algorithm)+2:length(filename));
     Problem = filename_temp(1:strfind(filename_temp,'_N')-1);

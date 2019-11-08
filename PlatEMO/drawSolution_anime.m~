@@ -1,0 +1,14 @@
+figure
+
+for i = 1:100
+    objSet = result{i,2}.objs;
+    Draw(objSet);
+    xrag = xlim;
+    yrag = ylim;
+    if yrag(2) < 1
+        ylim(0,1];
+    end
+    if xrag(2) <1
+        xlim = [0,1];
+    end
+end

@@ -46,5 +46,5 @@ plot(indexSet, mean(IGDSets(:,totalrun+1:2*totalrun),2),'b');
 plot(indexSet, mean(IGDSets(:,2*totalrun+1:3*totalrun),2),'k');
 set(gca,'yscale','log')
 grid on
-legend('MOEAD','MOEADPWV_f1','MOEADPWV_f2')
+legend('MOEAD','MOEADPWV f1','MOEADPWV f2')
 

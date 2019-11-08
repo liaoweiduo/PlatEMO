@@ -1,20 +1,13 @@
 clear;
-N = 100;
-evaluation = 40000;
+N = 200;
+evaluation = 50000;
 
-% problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
-%     @C1_DTLZ1, @C2_DTLZ2, @C3_DTLZ4, @CDTLZ2, @IDTLZ1, @IDTLZ2, @SDTLZ1,...
-%     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
-%     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
-%     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
-
-% problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
-problems = {@DTLZ2};
+problems = {@OMZM};
 
 parameters = {};
 
-M = [3];  
-algorithms = {{@SMSEMOA,1.1},{@SMSEMOA_SS2_c1,1.1},{@SMSEMOA_SS2,1.1}};
+M = [2];  
+algorithms = {{@MOEAD,1},{@MOEADPWV}};
 
 for m = M
 for algorithm = algorithms

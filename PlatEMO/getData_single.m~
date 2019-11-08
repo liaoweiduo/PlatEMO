@@ -1,20 +1,13 @@
 clear;
 N = 200;
-evaluation = 200000;
+evaluation = 20000;
 
-% problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4, @DTLZ5, @DTLZ6, @DTLZ7, @DTLZ8, @DTLZ9,...
-%     @C1_DTLZ1, @C2_DTLZ2, @C3_DTLZ4, @CDTLZ2, @IDTLZ1, @IDTLZ2, @SDTLZ1,...
-%     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
-%     @MaF1, @MaF2, @MaF3, @MaF4, @MaF5, @MaF6, @MaF7, @MaF8, @MaF9, @MaF10,...
-%     @MaF11, @MaF12, @MaF13, @MaF14, @MaF15};
-
-% problems = {@DTLZ1, @C1_DTLZ1, @MaF1, @IDTLZ1};
-problems = {@DTLZ2};
+problems = {{@ZDT2}};
 
 parameters = {};
 
-M = [3];  
-algorithms = {{@SMSEMOA,1.1},{@SMSEMOA_SS2_c1,1.1},{@SMSEMOA_SS2,1.1}};
+M = [2];  
+algorithms = {{},{@MOEADPWV,2,0,1,5}};
 
 for m = M
 for algorithm = algorithms
@@ -35,16 +28,12 @@ parfor i = 1:total
     
     fprintf('start %d of %d...\n', i, total);
     
-    if strcmp(func2str(problem), 'MaF1')
-        d = m + 9;
-    else
-        d = m + 4;
-    end
+    d = 500;
     if exist(['Data/',func2str(algorithm{1}),'/',func2str(algorithm{1}),...
-            '_',func2str(problem),'_N',int2str(N),'_M',int2str(m),'_D',...
+            '_',func2str(problem{1}),'_N',int2str(N),'_M',int2str(m),'_D',...
             int2str(d),'_',int2str(run),'.mat'],'file') == 2
         fprintf('file: %s exist, continue\n', [func2str(algorithm{1}),'_',...
-            func2str(problem),'_N',int2str(N),'_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
+            func2str(problem{1}),'_N',int2str(N),'_M',int2str(m),'_D',int2str(d),'_',int2str(run),'.mat']);
         continue
     end
     

@@ -2,7 +2,7 @@
 clear
 N = 200; M = 2; D = 30;
 algorithm = 'MOEADPWV';
-problem = 'ZDT1';
+problem = 'ZDT2';
 evaluation_index = 100;
 
 figure()

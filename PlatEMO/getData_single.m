@@ -1,8 +1,8 @@
 clear;
 N = 200;
-evaluation = 50000;
+evaluation = 20000;
 
-problems = {{@ZDT1}};
+problems = {{@ZDT2}};
 
 parameters = {};
 

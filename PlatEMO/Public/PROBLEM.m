@@ -52,6 +52,7 @@ classdef PROBLEM < handle
         end
         %% Draw special figure
         function Draw(obj,PopDec)
+            Draw(PopDec);
         end
     end
 end

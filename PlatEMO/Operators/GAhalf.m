@@ -43,7 +43,7 @@ function Offspring = GAhalf(Parent,Parameter)
             Offspring(k) = Parent2(k);
             % Bitwise mutation
             Site = rand(N,D) < proM/D;
-            Offspring(Site) = ~Offspring(Site);
+            Offspring(Site) = ~Offspring(Site);      
         case 'permutation'
             %% Genetic operators for permutation based encoding
             % Order crossover
@@ -86,6 +86,7 @@ function Offspring = GAhalf(Parent,Parameter)
             Offspring(temp) = Offspring(temp)+(Upper(temp)-Lower(temp)).*(1-(2.*(1-mu(temp))+2.*(mu(temp)-0.5).*...
                               (1-(Upper(temp)-Offspring(temp))./(Upper(temp)-Lower(temp))).^(disM+1)).^(1/(disM+1)));
     end
+    
     if calObj
         Offspring = INDIVIDUAL(Offspring);
     end

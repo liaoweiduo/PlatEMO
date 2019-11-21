@@ -2,17 +2,17 @@ clear;
 N = 200;
 evaluation = 20000;
 
-problems = {{@ZDT2}};
+problems = {{@vehicle}};
 
 parameters = {};
 
 M = [2];  
-algorithms = {{@MOEADPWV,2,0,1,5}};
+algorithms = {{@MOEADSTAT}};
 
 for m = M
 for algorithm = algorithms
 for problem = problems
-for run = 1:20
+for run = 1:1
     parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
 end
 end

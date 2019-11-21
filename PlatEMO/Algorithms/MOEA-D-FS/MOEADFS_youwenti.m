@@ -1,4 +1,4 @@
-function MOEADSTAT(Global)
+function MOEADFS(Global)
 % <algorithm> <M>
 % Multiobjective evolutionary algorithm based on decomposition for feature
 % selection 
@@ -18,7 +18,10 @@ function MOEADSTAT(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    N = min(Global.D,200);
+    fn = Global.D - 1;
+    Nf = min(fn, 100);
+    Nk = 20;
+    N = Nf * Nk;
     Global.N = N;
     T = ceil(N/10);  % neighborhood size
     if T < 4
@@ -26,9 +29,10 @@ function MOEADSTAT(Global)
     end
     
     %% generate reference point
-    ref = 0+1/N:1/N:1; ref = ref';
-    ref(:,1) = ref;
-    ref(:,2) = zeros(N,1);
+    reff = 1/Nf:1/Nf:1;
+    refk = 1/Nk:1/Nk:1;
+    [reff,refk] = meshgrid(reff,refk);
+    ref = [reshape(reff,N,1),reshape(refk,N,1),zeros(N,1)];
 
     %% Detect the neighbours of each solution
     B = pdist2(ref,ref);
@@ -55,16 +59,20 @@ function MOEADSTAT(Global)
             % 1) Generate an offspring through DE corssover and polynomial mutation; 
             [Offspring, calObj] = DE_FS(Parents(1),Parents(2),Parents(3),{0.6,0.7,1,20});  
             
-            % 2) Repair offspring if it selects more than nref features. 
-            % The feature is chosen if the entry’s value is greater than a threshold theta = 0.6
-            nref = ceil(ref(i,1) * Global.D); 
-            [nsf, ~] = Global.problem.getSelectedFeatures(Offspring);
-            if nsf > nref
+            % 2) Repair offspring if it selects more than nreff features 
+            % and more than nrefk k value. 
+            nreff = ceil(ref(i,1) * fn); 
+            nrefk = ceil(ref(i,2) * Nk);
+            [nsf, selectedFeatures, nk] = Global.problem.getSelectedFeatures(Offspring);
+            if nsf > nreff
                 Offspring = Global.problem.reduceFeature(Offspring, nsf-nref);
             elseif nsf == 0
                 Offspring = Global.problem.addFeature(Offspring, unidrnd(13));
             end
-            [nsf, ~] = Global.problem.getSelectedFeatures(Offspring);
+            if nk > nrefk || nk == 0
+                Offspring = Global.problem.changeK(Offspring, nrefk);
+            end
+            
             % 3) Generate Offspring indicidual, calculating fitness function
             if calObj
                 Offspring = INDIVIDUAL(Offspring); 
@@ -75,10 +83,9 @@ function MOEADSTAT(Global)
             bias = [0.01,1];
             pobjs = Population(P).objs; pdecs = Population(P).decs;
             [nsfs, selectedFeaturess] = Global.problem.getSelectedFeatures(pdecs);
-            nrefs = ceil(ref(P,1) * Global.D);
-            g_old = sum(pobjs .* bias, 2)+100*max(nsfs-nrefs,0);
+            g_old = sum(pobjs .* bias, 2)+100*max(nsfs-nref,0);
             p = repmat(Offspring.obj,T,1); 
-            g_new = sum(p .* bias, 2)+100*max(nsf-nrefs,0);
+            g_new = sum(p .* bias, 2)+100*max(nsf-nref,0);
             
             for ii = 1:T
             % paper里用的是随机，只更新找到的第一个，后面用neighbor自己的
@@ -87,7 +94,7 @@ function MOEADSTAT(Global)
                     break
                 end
             end
-%            Population(P(g_old>=g_new)) = Offspring;                    
+%             Population(P(g_old>=g_new)) = Offspring;                    
             
         end
         % Repair duplicated feature subsets

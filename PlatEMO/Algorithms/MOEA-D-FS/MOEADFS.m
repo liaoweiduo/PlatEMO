@@ -20,7 +20,7 @@ function MOEADFS(Global)
     %% Parameter setting
     fn = Global.D - 1;
     Nf = min(fn, 100);
-    Nk = 20;
+    Nk = 10;
     N = Nf * Nk;
     Global.N = N;
     T = ceil(N/10);  % neighborhood size
@@ -63,15 +63,18 @@ function MOEADFS(Global)
             % and more than nrefk k value. 
             nreff = ceil(ref(i,1) * fn); 
             nrefk = ceil(ref(i,2) * Nk);
-            [nsf, selectedFeatures, nk] = Global.problem.getSelectedFeatures(Offspring);
+            [nsf, ~] = Global.problem.getSelectedFeatures(Offspring);
+            nk = Global.problem.getK(Offspring, Nk);
             if nsf > nreff
-                Offspring = Global.problem.reduceFeature(Offspring, nsf-nref);
+                Offspring = Global.problem.reduceFeature(Offspring, nsf-nreff);
             elseif nsf == 0
-                Offspring = Global.problem.addFeature(Offspring, unidrnd(13));
+                Offspring = Global.problem.addFeature(Offspring, unidrnd(nreff));
             end
             if nk > nrefk || nk == 0
-                Offspring = Global.problem.changeK(Offspring, nrefk);
+                Offspring = Global.problem.changeK(Offspring, nrefk, Nk);
             end
+            [nsf, ~] = Global.problem.getSelectedFeatures(Offspring);
+            nk = Global.problem.getK(Offspring, Nk);
             
             % 3) Generate Offspring indicidual, calculating fitness function
             if calObj
@@ -79,13 +82,17 @@ function MOEADFS(Global)
             end
             
             % Update the neighbours
-            % fitness function: f2 + 100*max(nsf-nref,0) + 0.01*f1
-            bias = [0.01,1];
+            % fitness function: 
+            % 0.01*fratio + erate + 100*max(nsf-nreff,0) + 100*max(nk-nrefk,0)
+            bias = [0.01,0,1];
             pobjs = Population(P).objs; pdecs = Population(P).decs;
-            [nsfs, selectedFeaturess] = Global.problem.getSelectedFeatures(pdecs);
-            g_old = sum(pobjs .* bias, 2)+100*max(nsfs-nref,0);
+            [nsfs, ~] = Global.problem.getSelectedFeatures(pdecs);
+            nks = Global.problem.getK(pdecs, Nk);
+            nreffs = ceil(ref(P,1) * fn);
+            nrefks = ceil(ref(P,2) * Nk);
+            g_old = sum(pobjs .* bias, 2)+100*max(nsfs-nreffs,0)+100*max(nks-nrefks);
             p = repmat(Offspring.obj,T,1); 
-            g_new = sum(p .* bias, 2)+100*max(nsf-nref,0);
+            g_new = sum(p .* bias, 2)+100*max(nsf-nreffs,0)+100*max(nk-nrefks);
             
             for ii = 1:T
             % paper里用的是随机，只更新找到的第一个，后面用neighbor自己的
@@ -97,11 +104,12 @@ function MOEADFS(Global)
 %             Population(P(g_old>=g_new)) = Offspring;                    
             
         end
-        % Repair duplicated feature subsets
+        % Repair duplicated feature subsets with k
         [nsfs, selectedFeaturess] = Global.problem.getSelectedFeatures(Population.decs);
+        nks = Global.problem.getK(Population.decs, Nk);
         for i = 1:N
-            if ismember(selectedFeaturess(i,:), selectedFeaturess(1:i-1,:), 'rows')
-                nref = ceil(ref(i,1) * Global.D); 
+            if ismember([selectedFeaturess(i,:),nks(i)], [selectedFeaturess(1:i-1,:),nks(1:i-1)], 'rows')
+                nref = ceil(ref(i,1) * fn); 
                 if nref > nsfs(i)
                     Population(i) = INDIVIDUAL(Global.problem.addFeature(Population(i).dec, nref-nsfs(i)));
                 end

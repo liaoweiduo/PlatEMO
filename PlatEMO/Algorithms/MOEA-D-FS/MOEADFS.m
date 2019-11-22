@@ -19,7 +19,7 @@ function MOEADFS(Global)
 
     %% Parameter setting
     fn = Global.D - 1;
-    Nf = min(fn, 100);
+    Nf = min(fn, 50);
     Nk = 10;
     N = Nf * Nk;
     Global.N = N;

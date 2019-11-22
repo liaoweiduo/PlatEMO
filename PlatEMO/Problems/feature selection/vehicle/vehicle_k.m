@@ -120,7 +120,7 @@ classdef vehicle_k < PROBLEM
             nks = obj.getK(PopDec,obj.NK);
             erates = zeros(1,N)';
             for DecIndex = 1:N
-                if nsfs(DecIndex) ~= 0
+                if nsfs(DecIndex) ~= 0 && nks(DecIndex) ~= 0
                     selectedFeatureList = 1:D;
                     selectedFeatureList = selectedFeatureList(selectedFeaturess(DecIndex,:)); 
                     Mdl = fitcknn(obj.train(:,selectedFeatureList+1),obj.train(:,1),'NumNeighbors',nks(DecIndex),'Standardize',1);

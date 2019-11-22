@@ -13,5 +13,7 @@ for i = 1:100
     if xrag(1) <1
         xlim([0,xrag(2)]);
     end
+    xlim([0,1]);
+    ylim([0,1]);
     pause(0.05)
 end

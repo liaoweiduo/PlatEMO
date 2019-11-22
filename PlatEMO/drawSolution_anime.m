@@ -3,7 +3,7 @@ figure
 for i = 1:100
     objSet = result{i,2}.objs;
     clf
-    title(['evaluation:',num2str(i*500)])
+    title(['evaluation:',num2str(i*1000)])
     Draw(objSet);
     xrag = xlim;
     yrag = ylim;

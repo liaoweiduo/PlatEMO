@@ -5,7 +5,7 @@ problem = 'vehicle_k';
 evaluation_index = 100;
 runs = 2;
 
-figure()
+figure() 
 hold on 
 view(3)
 title([problem,...
@@ -26,7 +26,7 @@ objChoose = unique(objChoose, 'rows');
 if objChoose(1,1) == 0
     objChoose = objChoose(2:end,:);
 end
-scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),'g^');
+scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),100,'g^');
 
 
 algorithm = 'MOEADFS';
@@ -38,13 +38,20 @@ for run = 1:2
     load(readPath);
     objSet((run-1)*N+1:run*N,:) = result{evaluation_index, 2}.objs;
 end
-FrontNo    = NDSort(objSet,inf);
-objChoose = objSet(FrontNo==1,:);
-objChoose = unique(objChoose, 'rows');
+objSet = unique(objSet, 'rows');
+objSet_2 = unique(objSet(:,2));
+objChoose = [];
+for i = 1:size(objSet_2,1)
+    xValue = objSet_2(i);
+    objSet2 = objSet(objSet(:,2) == xValue,:);
+    FrontNo    = NDSort(objSet2,inf);
+    choose = objSet2(FrontNo==1,:);
+    objChoose(end+1:end+size(choose,1),:) = choose;
+end
 if objChoose(1,1) == 0
     objChoose = objChoose(2:end,:);
 end
-scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),'c*');
+scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),100,'c*');
 
 
 algorithm = 'NSGAII';
@@ -61,7 +68,7 @@ objChoose = unique(objChoose, 'rows');
 if objChoose(1,1) == 0
     objChoose = objChoose(2:end,:);
 end
-scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),'mx');
+scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),100,'mx');
 
 
 algorithm = 'SPEA2';
@@ -78,7 +85,7 @@ objChoose = unique(objChoose, 'rows');
 if objChoose(1,1) == 0
     objChoose = objChoose(2:end,:);
 end
-scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),'b+');
+scatter3(objChoose(:,1),objChoose(:,2),objChoose(:,3),100,'b+');
 
 legend('MOEA/D','MOEA/D-FS','NSGAII','SPEA2')
 xlabel('fRatio');

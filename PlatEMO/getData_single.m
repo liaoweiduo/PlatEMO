@@ -1,13 +1,13 @@
 clear;
-N = 180;
+N = 166;
 evaluation = 100000;
 
-problems = {{@vehicle_k}};
+problems = {{@musk1}};
 
 parameters = {};
 
-M = [3];  
-algorithms = {{@MOEAD,2},{@NSGAII},{@SPEA2}}; %
+M = [2];  
+algorithms = {{@MOEAD,2}}; %
 
 for m = M
 for algorithm = algorithms

@@ -1,8 +1,8 @@
 
 clear
-N = 166; M = 2; D = 166;
-problem = 'musk1';
-evaluation_index = 100;
+N = 200; M = 2; D = 500;
+problem = 'madelon';
+evaluation_index = 20;
 runs = 2;
 objSet = zeros(N*runs,M);
 

@@ -40,12 +40,14 @@ function MOEAD(Global)
             P = B(i,randperm(size(B,2)));
 
             % Generate an offspring
-            Offspring = GAhalf(Population(P(1:2)));
+            Offspring = GAhalf(Population(P(1:2))); 
 
             % Update the ideal point
             Z = min(Z,Offspring.obj);
 
             % Update the neighbours
+            
+            
             switch type
                 case 1
                     % PBI approach
@@ -58,8 +60,8 @@ function MOEAD(Global)
                     g_new   = normO.*CosineO + 5*normO.*sqrt(1-CosineO.^2);
                 case 2
                     % Tchebycheff approach
-                    g_old = max(abs(Population(P).objs-repmat(Z,T,1)).*W(P,:),[],2);
-                    g_new = max(repmat(abs(Offspring.obj-Z),T,1).*W(P,:),[],2);
+                    g_old = max(abs(Population(P).objs-repmat(Z,T,1)).*W(P,:),[],2);    % 最大的：所有P与ideal point的距离 * 他们的weight vectors
+                    g_new = max(repmat(abs(Offspring.obj-Z),T,1).*W(P,:),[],2);         % 
                 case 3
                     % Tchebycheff approach with normalization
                     Zmax  = max(Population.objs,[],1);
@@ -69,8 +71,12 @@ function MOEAD(Global)
                     % Modified Tchebycheff approach
                     g_old = max(abs(Population(P).objs-repmat(Z,T,1))./W(P,:),[],2);
                     g_new = max(repmat(abs(Offspring.obj-Z),T,1)./W(P,:),[],2);
+                case 5
+                    % weighted sum
+                    g_old = sum(abs(Population(P).objs-repmat(Z,T,1)).*W(P,:),2);
+                    g_new = sum(repmat(abs(Offspring.obj-Z),T,1).*W(P,:),2);
             end
-            Population(P(g_old>=g_new)) = Offspring;
+            Population(P(g_old>=g_new)) = Offspring;  %offspring只更新neighborhood，更适合就代替
         end
     end
 end

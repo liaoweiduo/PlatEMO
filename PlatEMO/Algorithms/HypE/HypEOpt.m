@@ -1,8 +1,8 @@
-function HypE(Global)
+function HypEOpt(Global)
 % <algorithm> <HypE>
 % Hypervolume estimation algorithm
+% Rfinal = Rinit = 1 + 1 / H 
 % nSample --- 10000 --- Number of sampled points for HV estimation
-% r --- 2 --- r of reference point
 
 %------------------------------- Reference --------------------------------
 % J. Bader and E. Zitzler, HypE: An algorithm for fast hypervolume-based
@@ -18,7 +18,11 @@ function HypE(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    [nSample,r] = Global.ParameterSet(10000,1.1);
+    nSample = Global.ParameterSet(10000);
+    
+    %% Calculation of paremeter calculating reference point position r
+    H = getH(Global.M, Global.N);
+    R = 1 + 1./H;
     
     %% Generate random population
     Population = Global.Initialization();
@@ -27,7 +31,7 @@ function HypE(Global)
     while Global.NotTermination(Population)
         % Reference point for hypervolume calculation
         PopObj = Population.objs;
-        RefPoint = r*(max(PopObj,[],1)-min(PopObj,[],1))+min(PopObj,[],1);
+        RefPoint = R*(max(PopObj,[],1)-min(PopObj,[],1))+min(PopObj,[],1);
         MatingPool = TournamentSelection(2,Global.N,-CalHV(Population.objs,RefPoint,Global.N,nSample));
         Offspring  = GA(Population(MatingPool));    
         Population = EnvironmentalSelection([Population,Offspring],Global.N,RefPoint,nSample);

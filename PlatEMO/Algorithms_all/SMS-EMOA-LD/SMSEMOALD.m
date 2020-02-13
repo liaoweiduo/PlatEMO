@@ -1,8 +1,9 @@
-function SMSEMOA(Global)
-% <algorithm> <SMSEMOA>
+function SMSEMOALD(Global)
+% <algorithm> <A>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
-% r --- 1.1 --- r of reference point
+% linearly decrease
+% Rinit --- 10 --- The initial value of r
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the
@@ -19,7 +20,11 @@ function SMSEMOA(Global)
 %--------------------------------------------------------------------------
 
     %% Parameter setting
-    r = Global.ParameterSet(1.1);
+    Rinit = Global.ParameterSet(10);
+    
+    %% Calculation of paremeter calculating reference point position r
+    H = getH(Global.M, Global.N);
+    Rfinal = 1 + 1./H;
     
     %% Generate random population
     Population = Global.Initialization();
@@ -27,10 +32,23 @@ function SMSEMOA(Global)
 
     %% Optimization
     while Global.NotTermination(Population)
+        
+        if Global.evaluated <= Global.evaluation / 3
+            R = Rinit;
+        elseif Global.evaluated > Global.evaluation * 2 / 3
+            R = Rfinal;
+        else
+            T = Global.evaluation / 3;
+            t = Global.evaluated - Global.evaluation / 3 ;
+            R = Rinit * (T - t) / T + Rfinal * t / T;
+        end
+            
         for i = 1 : Global.N
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
+    % evaluated starts from N+1, first N evaluated was used to initialize N generations; 
+            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,R);
+            
         end
     end
 end

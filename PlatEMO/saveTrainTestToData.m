@@ -2,7 +2,7 @@ data = [test;train];
 filename='data.dat';
 fid = fopen(filename, 'w');
 dataFormat = '%d';
-for i = 1:617
+for i = 1:649
     dataFormat = [dataFormat,',%d'];
 end
 for row = 1:size(data,1)

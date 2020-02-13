@@ -1,7 +1,7 @@
 classdef MultipleFeatures < PROBLEM
 % <problem> <feature selection>
 % The bi-objective feature selection problem
-% 2000 instances;2 classes;649 attributes
+% 2000 instances;10 classes;649 attributes
 
 
 %------------------------------- Reference --------------------------------

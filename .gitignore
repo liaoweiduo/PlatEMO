@@ -8,3 +8,6 @@ Data/*
 PlatEMO/Analysis_1/*
 PlatEMO/Analysis/*
 PlatEMO/Metrics/wfg/*
+*.dat
+*.mat
+*.icloud

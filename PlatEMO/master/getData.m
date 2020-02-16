@@ -8,8 +8,8 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
 %     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
-M = [10];  
-algorithms = {@SMSEMOA1,@SMSEMOA2,@SMSEMOA5,@SMSEMOA10};
+M = [8];  
+algorithms = {@SMSEMOA3_2,@SMSEMOA10};
 
 parameters = {};
 for m = M

@@ -7,8 +7,10 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
 %     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
-M = [5];  
-algorithms = {@SMSEMOA1,@SMSEMOA5_4,@SMSEMOA2,@SMSEMOA5};
+% problems = {@WFG3};
+
+M = [3];  
+algorithms = {@SMSEMOA1,@SMSEMOA13_12,@SMSEMOA2,@SMSEMOA5}; 
 
 parameters = {};
 for m = M
@@ -44,8 +46,8 @@ for i = 1:total
     figure();
     Draw(PopObjs);
     if m == 3
-        minValues = min(PF);
-        maxValues = max(PF);
+        minValues = min([PF;PopObjs]);
+        maxValues = max([PF;PopObjs]);
         xlim([minValues(1),maxValues(1)])
         ylim([minValues(2),maxValues(2)])
         zlim([minValues(3),maxValues(3)])

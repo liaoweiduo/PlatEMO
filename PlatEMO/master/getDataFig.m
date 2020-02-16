@@ -10,8 +10,8 @@ problems = {
 
 % problems = {@WFG3};
 
-M = [3];  
-algorithms = {@SMSEMOA1,@SMSEMOA13_12,@SMSEMOA2,@SMSEMOA5}; 
+M = [5];  
+algorithms = {@SMSEMOA1,@SMSEMOA5_4,@SMSEMOA2,@SMSEMOA5}; 
 
 parameters = {};
 for m = M

@@ -5,9 +5,8 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
     };
 
-M = [5];  
-N = 70;
-algorithms = {@SMSEMOA1,@SMSEMOA5_4,@SMSEMOA2,@SMSEMOA5};
+M = [3,8];  
+algorithms = {@SMSEMOA1,@SMSEMOA13_12,@SMSEMOA2,@SMSEMOA5};
 
 parameters = {};
 for m = M
@@ -27,6 +26,15 @@ parfor i = 1:total
     algorithm = parameters{i}{3}{1};
     run = parameters{i}{4};
     
+    if m == 3
+        N = 91;
+    elseif m == 5
+        N = 70;
+    elseif m == 8
+        N = 36;
+    elseif m == 10
+        N = 30;
+    end
     
     fprintf('start %d of %d...\n', i, total);
     main('-algorithm', {algorithm},'-problem', {problem},... 

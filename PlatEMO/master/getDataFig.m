@@ -2,6 +2,9 @@ clear;
 
 problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
+%     @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
+%     @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
+%     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
 M = [5];  
@@ -51,7 +54,9 @@ for i = 1:total
         maxValue = max(max(PF));
         ylim([minValue,maxValue])
     end
-    
+    if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
+        mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
+    end
     saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
         [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
     close(figure(gcf))

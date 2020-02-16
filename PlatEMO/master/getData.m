@@ -9,7 +9,7 @@ problems = {@DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
     };
 
 M = [10];  
-algorithms = {@SMSEMOA1,@SMSEMOA13_12,@SMSEMOA2,@SMSEMOA5};
+algorithms = {@SMSEMOA1,@SMSEMOA2,@SMSEMOA5,@SMSEMOA10};
 
 parameters = {};
 for m = M

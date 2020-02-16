@@ -3,7 +3,7 @@ function SMSEMOALD(Global)
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
 % linearly decrease
-% Rinit --- 10 --- The initial value of r
+% Rinit --- 2 --- The initial value of r
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the

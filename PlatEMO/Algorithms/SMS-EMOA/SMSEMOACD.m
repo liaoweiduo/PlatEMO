@@ -2,7 +2,7 @@ function SMSEMOACD(Global)
 % <algorithm> <SMSEMOA>
 % S metric selection based evolutionary multiobjective optimization
 % algorithm
-% Rinit --- 10 --- The initial value of r
+% Rinit --- 2 --- The initial value of r
 % window --- 4000 --- The window size of evaluated
 % threshold --- 0.00001 --- threshold for |b|
 

@@ -310,12 +310,12 @@ classdef GLOBAL < handle
                            func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run,obj.evaluated/obj.evaluation*100,obj.runtime);
             end
             if obj.evaluated >= obj.evaluation
+                % Identify the feasible and non-dominated solutions in the
+                % final population
+                Feasible     = find(all(obj.result{end}.cons<=0,2));
+                NonDominated = NDSort(obj.result{end}(Feasible).objs,1) == 1;
+                Population   = obj.result{end}(Feasible(NonDominated));
                 if obj.save == 0
-                    % Identify the feasible and non-dominated solutions in the
-                    % final population
-                    Feasible     = find(all(obj.result{end}.cons<=0,2));
-                    NonDominated = NDSort(obj.result{end}(Feasible).objs,1) == 1;
-                    Population   = obj.result{end}(Feasible(NonDominated));
                     % Calculate the metric values
                     if length(Population) > size(obj.PF,1)
                         Metrics = {@HV};
@@ -340,11 +340,16 @@ classdef GLOBAL < handle
                     uimenu(top,'Label','GD',              'CallBack',{@GLOBAL.cb_metric,obj,@GD});
                     uimenu(top,'Label','Spacing',         'CallBack',{@GLOBAL.cb_metric,obj,@Spacing});
                 else
+                    % Calculate the metric values 
+                    Metrics = {@NHV};
+                    Score     = cellfun(@(S)GLOBAL.Metric(S,Population,obj.PF),Metrics,'UniformOutput',false);
+                    
                     folder = fullfile('Data',func2str(obj.algorithm));
                     [~,~]  = mkdir(folder);
                     result         = obj.result;
                     metric.runtime = obj.runtime; 
-                    save(fullfile(folder,sprintf('%s_%s_N%d_M%d_D%d_%d.mat',func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run)),'result','metric');
+                    metric.NHV = Score{:};
+                    save(fullfile(folder,sprintf('%s_%s_M%d_D%d_%d.mat',func2str(obj.algorithm),class(obj.problem),obj.M,obj.D,obj.run)),'result','metric');
                 end
             end
         end

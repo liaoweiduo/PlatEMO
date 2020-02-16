@@ -40,7 +40,9 @@ function HypECD(Global)
         nadir = max(PopObj);
         nadir_list(end + 1,:) = nadir;
         evaluate_num(end + 1) = Global.evaluated;
-        r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);
+        if ~saving
+            r = CalR(Rinit,Rfinal,window,threshold,evaluate_num,nadir_list,Global.N);
+        end
         r_list(end + 1) = r;
         PopObj = Population.objs;
         RefPoint = r*(max(PopObj,[],1)-min(PopObj,[],1))+min(PopObj,[],1);

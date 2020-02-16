@@ -9,8 +9,8 @@ problems = {
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
-M = [3];  
-algorithms = {@SMSEMOA1,@SMSEMOA13_12,@SMSEMOA2,@SMSEMOA5};
+M = [5];  
+algorithms = {@SMSEMOA1,@SMSEMOA5_4,@SMSEMOA2,@SMSEMOA5};
 
 parameters = {};
 for m = M

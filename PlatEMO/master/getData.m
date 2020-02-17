@@ -9,8 +9,8 @@ problems = {
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
-M = [10];  
-algorithms = {@HypE1,@HypE2,@HypE5,@HypE10};
+M = [8];  
+algorithms = {@HypE1,@HypE3_2,@HypE5,@HypE10};
 
 parameters = {};
 for m = M

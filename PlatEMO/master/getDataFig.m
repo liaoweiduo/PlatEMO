@@ -1,8 +1,8 @@
 clear;
 
 problems = {
-%     @DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
-%     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
+    @DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
+    @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
     @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
     @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
@@ -10,18 +10,18 @@ problems = {
 
 % problems = {@WFG3};
 
-M = [3,5,8];  
+M = [8];  
 
 parameters = {};
 for m = M
     if m == 3
-        algorithms = {@HypE1,@HypE13_12,@HypE2,@HypE5};
+        algorithms = {@SMSEMOA1,@SMSEMOA13_12,@SMSEMOA2,@SMSEMOA5};
     elseif m == 5
-        algorithms = {@HypE1,@HypE5_4,@HypE2,@HypE5};
+        algorithms = {@SMSEMOA1,@SMSEMOA5_4,@SMSEMOA2,@SMSEMOA5};
     elseif m == 8
-        algorithms = {@HypE1,@HypE3_2,@HypE5,@HypE10};
+        algorithms = {@SMSEMOA1,@SMSEMOA3_2,@SMSEMOA5,@SMSEMOA10};
     else 
-        algorithms = {@HypE1,@HypE2,@HypE5,@HypE10};
+        algorithms = {@SMSEMOA1,@SMSEMOA2,@SMSEMOA5,@SMSEMOA10};
     end
     for algorithm = algorithms
         for problem = problems

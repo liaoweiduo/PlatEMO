@@ -10,18 +10,26 @@ problems = {
 
 % problems = {@WFG3};
 
-M = [10];  
-algorithms = {@SMSEMOA1,@SMSEMOA2,@SMSEMOA5,@SMSEMOA10}; 
+M = [3,5,8];  
 
 parameters = {};
 for m = M
-for algorithm = algorithms
-for problem = problems
-for run = 1:1
-    parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
-end
-end
-end
+    if m == 3
+        algorithms = {@HypE1,@HypE13_12,@HypE2,@HypE5};
+    elseif m == 5
+        algorithms = {@HypE1,@HypE5_4,@HypE2,@HypE5};
+    elseif m == 8
+        algorithms = {@HypE1,@HypE3_2,@HypE5,@HypE10};
+    else 
+        algorithms = {@HypE1,@HypE2,@HypE5,@HypE10};
+    end
+    for algorithm = algorithms
+        for problem = problems
+            for run = 1:1
+                parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
+            end
+        end
+    end
 end
 
 total = size(parameters,2);

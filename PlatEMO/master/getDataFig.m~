@@ -40,7 +40,7 @@ for i = 1:total
     run = parameters{i}{4};
     
    
-    fprintf('start %d of %d...\n', i, total);
+    fprintf('start %d of %d... func2str(algorithm),'_',func2str(problem),'_M',num2str(m)\n', i, total);
     
     file = dir(fullfile('Data',func2str(algorithm),...
         [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'*']));

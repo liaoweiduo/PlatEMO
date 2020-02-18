@@ -1,6 +1,6 @@
-function Score = IGD(PopObj,PF)
+function Score = IGDPlus(PopObj,PF)
 % <metric> <min>
-% Inverted generational distance
+% Inverted generational distance plus
 
 %------------------------------- Reference --------------------------------
 % C. A. Coello Coello and N. C. Cortes, Solving multiobjective optimization
@@ -14,7 +14,23 @@ function Score = IGD(PopObj,PF)
 % for evolutionary multi-objective optimization [educational forum], IEEE
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
-
-    Distance = min(pdist2(PF,PopObj),[],2);
-    Score    = mean(Distance); 
+    
+    Score = 0;
+    [row,~] = size(PF);
+    for i=1:row
+       ref = PF(i,:);
+       matrix = max(PopObj - ref,0);
+       distance = sqrt(sum(matrix.^2,2));
+       Score = Score + min(distance);
+    end
+    Score = Score/row;
+    
+%         Distance = pdist2(PopObj, PF, @ModifiedDistance);
+%         D = min(Distance, [], 1);
+%         Score = mean(D);
+%         
+%         function d = ModifiedDistance(z, a)
+%             [M,~] = size(a);
+%             d = sqrt(sum(max(a - repmat(z,M,1), 0).^2,2));
+%         end
 end

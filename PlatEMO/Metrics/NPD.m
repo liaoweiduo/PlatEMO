@@ -1,6 +1,6 @@
 function Score = NPD(PopObj,PF)
 % <metric> <max>
-% Pure diversity
+% Normalized pure diversity
 
 %------------------------------- Reference --------------------------------
 % H. Wang, Y. Jin, and X. Yao, Diversity assessment in many-objective
@@ -14,7 +14,12 @@ function Score = NPD(PopObj,PF)
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
-    N = size(PopObj,1);
+    [N,M]  = size(PopObj);
+    fmin   = min(PF,[],1);
+    fmax   = max(PF,[],1);
+    PopObj = (PopObj-repmat(fmin,N,1))./repmat(fmax-fmin,N,1);
+    PF     = (PF    -repmat(fmin,size(PF,1),1))./repmat(fmax-fmin,size(PF,1),1);
+
     C = false(N);
     C(logical(eye(size(C)))) = true;
     D = pdist2(PopObj,PopObj,'minkowski',0.1);

@@ -341,14 +341,14 @@ classdef GLOBAL < handle
                     uimenu(top,'Label','Spacing',         'CallBack',{@GLOBAL.cb_metric,obj,@Spacing});
                 else
                     % Calculate the metric values 
-                    Metrics = {@NHV};
-                    Score     = cellfun(@(S)GLOBAL.Metric(S,Population,obj.PF),Metrics,'UniformOutput',false);
+                    Metrics = {@HV,@NHV,@IGDPlus,@NIGDPlus,@PD,@NPD,@DM};
+                    Score   = cellfun(@(S)GLOBAL.Metric(S,Population,obj.PF),Metrics,'UniformOutput',false);
                     
                     folder = fullfile('Data',func2str(obj.algorithm));
                     [~,~]  = mkdir(folder);
                     result         = obj.result;
                     metric.runtime = obj.runtime; 
-                    metric.NHV = Score{:};
+                    [metric.HV,metric.NHV,metric.IGDPlus,metric.NIGDPlus,metric.PD,metric.NPD,metric.DM] = Score{:};
                     save(fullfile(folder,sprintf('%s_%s_M%d_D%d_%d.mat',func2str(obj.algorithm),class(obj.problem),obj.M,obj.D,obj.run)),'result','metric');
                 end
             end

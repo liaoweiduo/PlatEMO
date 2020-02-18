@@ -15,13 +15,13 @@ M = [3,5,8,10];
 parameters = {};
 for m = M
     if m == 3
-        algorithms = {@HypE1,@HypE13_12,@HypE2,@HypE5};
+        algorithms = {@FVMOEA1,@FVMOEA13_12,@FVMOEA2,@FVMOEA5};
     elseif m == 5
-        algorithms = {@HypE1,@HypE5_4,@HypE2,@HypE5};
+        algorithms = {@FVMOEA1,@FVMOEA5_4,@FVMOEA2,@FVMOEA5};
     elseif m == 8
-        algorithms = {@HypE1,@HypE3_2,@HypE5,@HypE10};
+        algorithms = {@FVMOEA1,@FVMOEA3_2,@FVMOEA5,@FVMOEA10};
     else 
-        algorithms = {@HypE1,@HypE2,@HypE5,@HypE10};
+        algorithms = {@FVMOEA1,@FVMOEA2,@FVMOEA5,@FVMOEA10};
     end
     for algorithm = algorithms
         for problem = problems

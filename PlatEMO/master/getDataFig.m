@@ -15,13 +15,13 @@ M = [3,5,8,10];
 parameters = {};
 for m = M
     if m == 3
-        algorithms = {@FVMOEA1,@FVMOEA13_12,@FVMOEA2,@FVMOEA5};
+        algorithms = {@R2HCAEMOA1,@R2HCAEMOA13_12,@R2HCAEMOA2,@R2HCAEMOA5};
     elseif m == 5
-        algorithms = {@FVMOEA1,@FVMOEA5_4,@FVMOEA2,@FVMOEA5};
+        algorithms = {@R2HCAEMOA1,@R2HCAEMOA5_4,@R2HCAEMOA2,@R2HCAEMOA5};
     elseif m == 8
-        algorithms = {@FVMOEA1,@FVMOEA3_2,@FVMOEA5,@FVMOEA10};
+        algorithms = {@R2HCAEMOA1,@R2HCAEMOA3_2,@R2HCAEMOA5,@R2HCAEMOA10};
     else 
-        algorithms = {@FVMOEA1,@FVMOEA2,@FVMOEA5,@FVMOEA10};
+        algorithms = {@R2HCAEMOA1,@R2HCAEMOA2,@R2HCAEMOA5,@R2HCAEMOA10};
     end
     for algorithm = algorithms
         for problem = problems
@@ -40,10 +40,21 @@ for i = 1:total
     run = parameters{i}{4};
     
    
-    fprintf('start %d of %d...\n', i, total);
+    fprintf('start %d of %d... %s\n', i, total, [func2str(algorithm),'_',func2str(problem),'_M',num2str(m)]);
     
-    file = dir(fullfile('Data',func2str(algorithm),...
+    files = dir(fullfile('Data',func2str(algorithm),...
         [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'*']));
+    
+    Metrics = [];
+    for fileIndex = 1:size(files,1)
+        file = files(fileIndex);
+        filename = fullfile(file.folder, file.name);
+        load(filename);
+        Metrics(fileIndex) = metric.NHV;
+    end
+    [~,index] = max(Metrics);
+    
+    file = files(index);
     filename = fullfile(file.folder, file.name);
     load(filename);
     PopObjs = result{end,end}.objs;

@@ -1,8 +1,8 @@
-function HypEr7_6s3(Global)
+function HypEr13_12s3(Global)
 % <algorithm> <HypE>
 % Hypervolume estimation algorithm
 % nSample = 30000  Number of sampled points for HV estimation
-% r = 7/6  r of reference point
+% r = 13/12  r of reference point
 
 %------------------------------- Reference --------------------------------
 % J. Bader and E. Zitzler, HypE: An algorithm for fast hypervolume-based
@@ -19,7 +19,7 @@ function HypEr7_6s3(Global)
 
     %% Parameter setting
     nSample = 30000;
-    r = 7/6;
+    r = 13/12;
     
     %% Generate random population
     Population = Global.Initialization();

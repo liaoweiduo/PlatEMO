@@ -1,28 +1,14 @@
 clear;
 
-problems = {
-    @DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
-    @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
-    @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
-    @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
-    @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
-    };
-
-% problems = {@WFG3};
-
-M = [3,5,8,10];  
+problems = {@DTLZ1};
+algorithms = {@HypEr7_6s1,@HypEr7_6s3,@HypEr7_6s5,...
+                  @HypEr2s1,@HypEr2s3,@HypEr2s5,...
+                  @HypEr5s1,@HypEr5s3,@HypEr5s5,...
+                  @HypEr10s1,@HypEr10s3,@HypEr10s5};
+M = [3];  
 
 parameters = {};
 for m = M
-    if m == 3
-        algorithms = {@R2HCAEMOA1,@R2HCAEMOA13_12,@R2HCAEMOA2,@R2HCAEMOA5};
-    elseif m == 5
-        algorithms = {@R2HCAEMOA1,@R2HCAEMOA5_4,@R2HCAEMOA2,@R2HCAEMOA5};
-    elseif m == 8
-        algorithms = {@R2HCAEMOA1,@R2HCAEMOA3_2,@R2HCAEMOA5,@R2HCAEMOA10};
-    else 
-        algorithms = {@R2HCAEMOA1,@R2HCAEMOA2,@R2HCAEMOA5,@R2HCAEMOA10};
-    end
     for algorithm = algorithms
         for problem = problems
             for run = 1:1
@@ -50,9 +36,11 @@ for i = 1:total
         file = files(fileIndex);
         filename = fullfile(file.folder, file.name);
         load(filename);
-        Metrics(fileIndex) = metric.NHV;
+        Metrics(fileIndex) = metric.NPD;
     end
-    [~,index] = max(Metrics);
+    [~,indexs] = sort(Metrics);
+    index = indexs(ceil((size(files,1)+1)/2));
+%     [~,index] = max(Metrics);
     
     file = files(index);
     filename = fullfile(file.folder, file.name);

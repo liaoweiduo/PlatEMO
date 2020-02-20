@@ -1,22 +1,22 @@
 clear;
-evaluation = 20000;
+evaluation = 40000;
 
 problems = {@DTLZ1};
 
 M = [3];  
-N = 28;
+N = 91;
 
 parameters = {};
 for m = M
 
-    algorithms = {@HypEr7_6s1,@HypEr7_6s3,@HypEr7_6s5,...
+    algorithms = {@HypEr13_12s1,@HypEr13_12s3,@HypEr13_12s5,...
                   @HypEr2s1,@HypEr2s3,@HypEr2s5,...
                   @HypEr5s1,@HypEr5s3,@HypEr5s5,...
                   @HypEr10s1,@HypEr10s3,@HypEr10s5};
 
     for algorithm = algorithms
         for problem = problems
-            for run = 1:5
+            for run = 1:11
                 parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
             end
         end

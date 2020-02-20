@@ -1,7 +1,7 @@
 clear;
 evaluation = 20000;
 
-problem = {@DTLZ1};
+problems = {@DTLZ1};
 
 M = [3];  
 N = 28;

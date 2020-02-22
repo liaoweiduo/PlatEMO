@@ -1,7 +1,7 @@
 clear;
 
 problems = {@DTLZ1};
-algorithms = {@HypEr7_6s1,@HypEr7_6s3,@HypEr7_6s5,...
+algorithms = {@HypEr13_12s1,@HypEr13_12s3,@HypEr13_12s5,...
                   @HypEr2s1,@HypEr2s3,@HypEr2s5,...
                   @HypEr5s1,@HypEr5s3,@HypEr5s5,...
                   @HypEr10s1,@HypEr10s3,@HypEr10s5};
@@ -35,7 +35,7 @@ for i = 1:total
     for fileIndex = 1:size(files,1)
         file = files(fileIndex);
         filename = fullfile(file.folder, file.name);
-        load(filename);
+        load(filename,"metric");
         Metrics(fileIndex) = metric.NPD;
     end
     [~,indexs] = sort(Metrics);
@@ -61,7 +61,7 @@ for i = 1:total
         zlim([minValues(3),maxValues(3)])
     else
         minValue = min(min(PF));
-        maxValue = max(max(PF));
+        maxValue = max(max(PF)); 
         ylim([minValue,maxValue])
     end
     if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0

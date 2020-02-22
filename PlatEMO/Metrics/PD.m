@@ -1,4 +1,4 @@
-function Score = NPD(PopObj,PF)
+function Score = PD(PopObj,PF)
 % <metric> <max>
 % Pure diversity
 

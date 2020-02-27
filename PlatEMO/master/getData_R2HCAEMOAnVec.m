@@ -3,7 +3,7 @@ evaluation = 40000;
 
 problems = {@DTLZ2, @DTLZ3, @DTLZ4};
 
-algorithms = {@R2HCAEMOA13_12_nVec3_mixed,@R2HCAEMOA13_12_nVec5_mixed,@R2HCAEMOA13_12_nVec10_mixed};
+algorithms = {@R2HCAEMOA13_12_nVec1_mixed};
 
 M = [3]; 
 

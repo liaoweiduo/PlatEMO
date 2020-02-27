@@ -1,15 +1,10 @@
 clear;
 
-problems = {
-    @DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
-    @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
-    @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
-    @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
-    @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
-    };
+problems = {@DTLZ2, @DTLZ3, @DTLZ4};
 
-algorithms = {@R2HCAEMOA2_uniform};
-M = [3,5,8,10];  
+algorithms = {@R2HCAEMOA13_12_nVec3_mixed,@R2HCAEMOA13_12_nVec5_mixed,@R2HCAEMOA13_12_nVec10_mixed};
+
+M = [3];  
 
 total = size(problems,2)*size(M,2);
 for i = 1:size(problems,2)

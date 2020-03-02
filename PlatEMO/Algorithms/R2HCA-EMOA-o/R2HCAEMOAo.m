@@ -1,8 +1,9 @@
-function SMSEMOA(Global)
-% <algorithm> <SMSEMOA>
-% S metric selection based evolutionary multiobjective optimization
-% algorithm
+function R2HCAEMOAo(Global)
+% <algorithm> <R2HCAEMOA>
+% R2HCA-EMOA the origin version
+% numVec --- 100 --- Direction vector number
 % r --- 1.1 --- r of reference point
+% mode --- 1 --- 1 random; 2 uniform; 3 mixed
 
 %------------------------------- Reference --------------------------------
 % M. Emmerich, N. Beume, and B. Naujoks, An EMO algorithm using the
@@ -17,9 +18,19 @@ function SMSEMOA(Global)
 % for evolutionary multi-objective optimization [educational forum], IEEE
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
+%% Paremeter settings
+    [num_vec, r, mode] = Global.ParameterSet(100, 1.1, 1);
 
-    %% Parameter setting
-    r = Global.ParameterSet(1.1);
+    %% Generate direction vectors
+    if mode == 1
+        [W,num_vec] = UniformVector(num_vec, Global.M);
+    elseif mode == 2
+        [W,num_vec] = UniformPoint(num_vec, Global.M);
+        W = W./repmat(sqrt(sum(W.^2,2)),1,Global.M);
+    else
+        [W,~] = UniformVector(num_vec-Global.M, Global.M);
+        W = [W;eye(Global.M)];
+    end
     
     %% Generate random population
     Population = Global.Initialization();
@@ -28,9 +39,20 @@ function SMSEMOA(Global)
     %% Optimization
     while Global.NotTermination(Population)
         for i = 1 : Global.N
+            %% Re generate direction vectors
+%             if mode == 1
+%                 [W,num_vec] = UniformVector(num_vec, Global.M);
+%             elseif mode == 2
+%                 [W,num_vec] = UniformPoint(num_vec, Global.M);
+%                 W = W./repmat(sqrt(sum(W.^2,2)),1,Global.M);
+%             else
+%                 [W,~] = UniformVector(num_vec-Global.M, Global.M);
+%                 W = [W;eye(Global.M)];
+%             end
+    
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r,);
+            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r,W,num_vec);
         end
     end
 end

@@ -2,7 +2,8 @@ clear;
 
 problems = {@DTLZ2, @DTLZ3, @DTLZ4};
 
-algorithms = {@R2HCAEMOA13_12_nVec3_mixed,@R2HCAEMOA13_12_nVec5_mixed,@R2HCAEMOA13_12_nVec10_mixed};
+algorithms = {@R2HCAEMOA13_12_nVec1_mixed,@R2HCAEMOA13_12_nVec3_mixed,...
+    @R2HCAEMOA13_12_nVec5_mixed,@R2HCAEMOA13_12_nVec10_mixed};
 
 M = [3];  
 
@@ -25,9 +26,9 @@ for i = 1:size(problems,2)
                 load(filename,'metric');
                 Metrics(fileIndex) = metric.NIGDPlus;
             end
-            [~,indexs] = sort(Metrics);
-            index = indexs(ceil((size(files,1)+1)/2));
-        %     [~,index] = max(Metrics);
+%             [~,indexs] = sort(Metrics);
+%             index = indexs(ceil((size(files,1)+1)/2));    %median front
+            [~,index] = min(Metrics);   %best front
 
             file = files(index);
             filename = fullfile(file.folder, file.name);

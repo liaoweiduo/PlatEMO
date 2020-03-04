@@ -1,4 +1,4 @@
-function R2HCAEMOAa0r2(Global)
+function R2HCAEMOAa10r2(Global)
 % <algorithm> <R2HCAEMOA>
 % A New Hypervolume-based Evolutionary Algorithm for Many-objective Optimization
 % numVec --- 100 --- Direction vector number

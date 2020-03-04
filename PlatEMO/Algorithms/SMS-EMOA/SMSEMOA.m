@@ -30,7 +30,7 @@ function SMSEMOA(Global)
         for i = 1 : Global.N
             drawnow();
             Offspring = GAhalf(Population(randperm(end,2)));
-            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r,);
+            [Population,FrontNo] = Reduce([Population,Offspring],FrontNo,r);
         end
     end
 end

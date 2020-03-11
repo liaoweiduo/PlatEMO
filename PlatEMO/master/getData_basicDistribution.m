@@ -8,6 +8,10 @@ problems = {
     @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
+problems = {@MinusDTLZ3, @MinusDTLZ4,...
+    @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
+    @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
+    };
 
 M = [8];  
 
@@ -18,7 +22,7 @@ for m = M
     elseif m == 5
         algorithms = {@FVMOEA1,@FVMOEA5_4,  @FVMOEA2,@FVMOEA5,@HypE1,@HypE5_4,  @HypE2,@HypE5,@SMSEMOA1,@SMSEMOA5_4,  @SMSEMOA2,@SMSEMOA5};
     elseif m == 8
-        algorithms = {@HypE5};
+        algorithms = {@HypE3_2};
     else 
         algorithms = {@FVMOEA1,@FVMOEA2,    @FVMOEA5,@FVMOEA10,@HypE1,@HypE2,   @HypE5,@HypE10,@SMSEMOA1,@SMSEMOA2,   @SMSEMOA5,@SMSEMOA10};
     end

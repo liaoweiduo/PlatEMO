@@ -305,7 +305,8 @@ classdef GLOBAL < handle
         %% Display or save the result after the algorithm is terminated
         function Output(obj)
             unit = floor(floor(obj.evaluation / obj.N) / 100); 
-            if mod(floor(obj.evaluated / obj.N), unit) == 0
+            if (mod(floor(obj.evaluated / obj.N), unit) == 0 && obj.runtime > 300)||...
+                    (mod(floor(obj.evaluated / obj.N), 10* unit) == 0)
                 clc; fprintf('%s on %s,%d populations %d objectives %d variables, run %d (%6.2f%%), %.2fs passed...\n',...
                            func2str(obj.algorithm),class(obj.problem),obj.N,obj.M,obj.D,obj.run,obj.evaluated/obj.evaluation*100,obj.runtime);
             end

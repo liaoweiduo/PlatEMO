@@ -68,7 +68,7 @@ for m = M
     end
     for algorithm = algorithms
         for problem = problems
-            for run = 1:1
+            for run = 1:5
                 parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
             end
         end

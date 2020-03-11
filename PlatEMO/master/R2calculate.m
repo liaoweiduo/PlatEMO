@@ -9,7 +9,7 @@ W = [];
 HVCval = [];
 R2HCAval = [];
 
-varargin = {'-algorithm', @SMSEMOA, '-problem', @MinusDTLZ2, '-M', M};
+varargin = {'-algorithm', @SMSEMOA, '-problem', @DTLZ2, '-M', M};
 Global = GLOBAL(varargin{:});
 
 % points = Global.Initialization().objs;  % random
@@ -48,6 +48,8 @@ addpath('/Users/liaoweiduo/Documents/MATLAB/PlatEMO/PlatEMO/Algorithms/FVMOEA');
 for i = 1:size(A,2)
     R2HCAval(i,:) = CalR22(points,W(:,:,i),rR2);
 end
+[Wr,num_vec] = UniformVector(num_vec, M);
+R2HCAvalr = CalR22(points,Wr,rR2);
 
 % HVCval = sort(HVCval,2);
 % R2HCAval = sort(R2HCAval,2);
@@ -55,8 +57,10 @@ end
 figure()
 hold on
 plot(1:N,R2HCAval(1:2,:),'LineWidth',3);
+plot(1:N,R2HCAvalr,'LineWidth',3);
 plot(1:N,HVCval(1,:),'LineWidth',3);
-legend('R2HCA, uniform','R2HCA, a = 0.2', 'HV contribution')
+
+legend('R2HCA, uniform','R2HCA, a = 0.2','R2HCA, random', 'HV contribution')
 title(['r = ',num2str(rR2)])
 xlabel('Point index');
 ylabel('Value');

@@ -10,7 +10,7 @@ problems = {
 
 % problems = {@WFG3};
 
-M = [10];  
+M = [3,5,8,10];  
 
 parameters = {};
 for m = M
@@ -70,23 +70,17 @@ for i = 1:total
     figure();
     Draw(PopObjs);
     if m == 3
-        if strcmp(problem,'WFG3')
-            xlim([0,3])
-            ylim([0,2])
-            zlim([0,6])
-        else
-            minValues = min([PF;PopObjs]);
-            maxValues = max([PF;PopObjs]);
-            xlim([minValues(1),maxValues(1)])
-            ylim([minValues(2),maxValues(2)])
-            zlim([minValues(3),maxValues(3)])
-        end
+        minValues = min([PF;PopObjs]);
+        maxValues = max([PF;PopObjs]);
+        xlim([minValues(1),maxValues(1)])
+        ylim([minValues(2),maxValues(2)])
+        zlim([minValues(3),maxValues(3)])
     else
         minValue = min(min(PF));
         maxValue = max(max(PF));
         ylim([minValue,maxValue])
     end
-    xlabel('') 
+    xlabel('')
     ylabel('')
     zlabel('')
     set(gca,'FontSize',40);

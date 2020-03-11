@@ -1,12 +1,13 @@
 r = 5;
-% As = [0:0.02:0.2,0.3:0.1:1];
-As = 0:0.005:1;
+As = [0:0.02:0.2,0.3:0.1:1];
+% As = 0:0.1:1;
 % As = 0:0.001:0.01;
-M = 10;
-N = 30;             % will change for uniform
+M = 8;
+N = 36;             % will change for uniform
 num_vec = 100;      % will change for uniform
 num_front = 100;
-PFproblem = {@DTLZ7,@DTLZ1,@DTLZ2,@MinusDTLZ1,@MinusDTLZ2};
+PFproblem = {};
+% PFproblem = {@DTLZ7,@DTLZ1,@DTLZ2,@MinusDTLZ1,@MinusDTLZ2};
 
 %% generate data set
 pointsSet = {};

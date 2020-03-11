@@ -8,11 +8,8 @@ problems = {
     @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
-problems = {@DTLZ4,...
-    @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
-    @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
-    @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
-    @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
+problems = {
+    @MinusWFG6, @MinusWFG7, @MinusWFG8,...
     };
 
 M = [10];  
@@ -26,11 +23,11 @@ for m = M
     elseif m == 8
         algorithms = {@HypE3_2};
     else 
-        algorithms = {@FVMOEA2};
+        algorithms = {@HypE10};
     end
     for algorithm = algorithms
         for problem = problems
-            for run = 2:3
+            for run = 2:5
                 parameters{size(parameters,2)+1} = {m,problem,algorithm,run};
             end
         end

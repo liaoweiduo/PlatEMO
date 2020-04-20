@@ -6,7 +6,7 @@ algorithms = {@SMSEMOAn1,@SMSEMOAn3,@SMSEMOAn5,...
               @FVMOEAn1,@FVMOEAn3,@FVMOEAn5,...
               @HypEn1,@HypEn3,@HypEn5,...
               @R2HCAEMOAn1,@R2HCAEMOAn3,@R2HCAEMOAn5};
-algorithms = {@HypEn1,@HypEn3,@HypEn5};
+% algorithms = {@R2HCAEMOAn1,@R2HCAEMOAn3,@R2HCAEMOAn5};
 M = [3];  
 
 Means = [];
@@ -51,45 +51,49 @@ for i = 1:size(algorithms,2)
     Means(i,:) = mean(Metrics);
     Stds(i,:) = std(Metrics); 
     
-    %% NPD part
-    plot(resultIndex,Means(i,:),'LineWidth',3);
+%     %% NPD part
+%     plot(resultIndex,Means(i,:),'LineWidth',3);
 
     %% median front part
-%     [~,indexs] = sort(Metrics(:,end));
-%     index = indexs(ceil((size(files,1)+1)/2));
-%     
-%     file = files(index);
-%     filename = fullfile(file.folder, file.name);
-%     load(filename);
-%     PopObjs = result{end,2}.objs;
-%     
-%     figure();
-%     Draw(PopObjs);
-%     if m == 3
-%         minValues = min([PF;PopObjs]);
-%         maxValues = max([PF;PopObjs]);
-%         xlim([minValues(1),maxValues(1)])
-%         ylim([minValues(2),maxValues(2)])
-%         zlim([minValues(3),maxValues(3)])
-%     else
-%         minValue = min(min(PF));
-%         maxValue = max(max(PF));
-%         ylim([minValue,maxValue])
-%     end
-%     if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
-%         mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
-%     end
-%     saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
-%         [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
-%     close(figure(gcf))
+    [~,indexs] = sort(Metrics(:,end));
+    index = indexs(ceil((size(files,1)+1)/2));
+    
+    file = files(index);
+    filename = fullfile(file.folder, file.name);
+    load(filename);
+    PopObjs = result{end,2}.objs;
+    
+    figure();
+    Draw(PopObjs);
+    if m == 3
+        minValues = min([PF;PopObjs]);
+        maxValues = max([PF;PopObjs]);
+        xlim([minValues(1),maxValues(1)])
+        ylim([minValues(2),maxValues(2)])
+        zlim([minValues(3),maxValues(3)])
+    else
+        minValue = min(min(PF));
+        maxValue = max(max(PF));
+        ylim([minValue,maxValue])
+    end
+    xlabel('') 
+    ylabel('')
+    zlabel('')
+    set(gca,'FontSize',40);
+    if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
+        mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
+    end
+    saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
+        [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
+    close(figure(gcf))
     
     %% finish
     fprintf('finish %d of %d...\n', i, size(algorithms,2));
 end
-algorithmStr = cellfun(@func2str, algorithms,'UniformOutput',false);
-legend(algorithmStr);
-xlabel('FEs');
-ylabel('Normalized IGDPlus');
-set(gca,'FontSize',20);
-% set(gca, 'YScale', 'log');
-grid on
+% algorithmStr = cellfun(@func2str, algorithms,'UniformOutput',false);
+% legend('N=10,000','N=30,000','N=50,000');
+% xlabel('FEs');
+% ylabel('NIGD^+');
+% set(gca,'FontSize',30);
+% % set(gca, 'YScale', 'log');
+% grid on

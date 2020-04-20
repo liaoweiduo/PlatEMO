@@ -1,9 +1,10 @@
 clear;
 
-problem = @DTLZ3;
-
-algorithm = @R2HCAEMOA5_mixed;
-m = 3;  
+problem = @MinusDTLZ1;
+algorithm = @R2HCAEMOAa2r5;
+% algorithm = @R2HCAEMOA5;
+% algorithm = @SMSEMOA5;
+m = 10;  
 
 files = dir(fullfile('Data',func2str(algorithm),...
     [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'*']));
@@ -13,7 +14,7 @@ for fileIndex = 1:size(files,1)
     file = files(fileIndex);
     filename = fullfile(file.folder, file.name);
     load(filename,'metric');
-    Metrics(fileIndex) = metric.NIGDPlus;
+    Metrics(fileIndex) = metric.NIGDPlus(end);
 end
 [~,indexs] = sort(Metrics);
 index = indexs(ceil((size(files,1)+1)/2));
@@ -47,9 +48,13 @@ else
     maxValue = max(max(PF));
     ylim([minValue,maxValue])
 end
-if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
-    mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
-end
-saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
-    [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
-close(figure(gcf))
+xlabel('') 
+ylabel('')
+zlabel('')
+set(gca,'FontSize',40);
+% if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
+%     mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
+% end
+% saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
+%     [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
+% close(figure(gcf))

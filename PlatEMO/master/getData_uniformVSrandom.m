@@ -9,7 +9,7 @@ problems = {
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
-algorithms = {@R2HCAEMOA2_mixed,@R2HCAEMOA2_uniform};
+algorithms = {@R2HCAEMOA2_uniform,@R2HCAEMOA5_uniform};
 
 M = [3,5,8,10]; 
 

@@ -3,9 +3,9 @@ clear
 problems = {
     @DTLZ1, @DTLZ2, @DTLZ3, @DTLZ4,...
     @WFG1, @WFG2, @WFG3, @WFG4, @WFG5, @WFG6, @WFG7, @WFG8, @WFG9,...
-    @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
-    @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
-    @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
+%     @MinusDTLZ1, @MinusDTLZ2, @MinusDTLZ3, @MinusDTLZ4,...
+%     @MinusWFG1, @MinusWFG2, @MinusWFG3, @MinusWFG4, @MinusWFG5,...
+%     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
 M = [3,5,8,10]; 
@@ -47,7 +47,7 @@ for pi = 1:size(problems,2)
                 file = files(fileIndex);
                 filename = fullfile(file.folder, file.name);
                 load(filename,'metric');
-                Metrics(fileIndex) = metric.NHV;
+                Metrics(fileIndex) = metric.NIGDPlus(end);
             end
             MetricsData(1,ai) = mean(Metrics);
         end
@@ -62,7 +62,7 @@ for pi = 1:size(problems,2)
             file = files(fileIndex);
             filename = fullfile(file.folder, file.name);
             load(filename,'metric');
-            Metrics(fileIndex) = metric.NHV;
+            Metrics(fileIndex) = metric.NIGDPlus(end);
         end
         MetricsData(2,:) = repmat(mean(Metrics),1,size(algorithms,2));
         
@@ -76,7 +76,7 @@ for pi = 1:size(problems,2)
             file = files(fileIndex);
             filename = fullfile(file.folder, file.name);
             load(filename,'metric');
-            Metrics(fileIndex) = metric.NHV;
+            Metrics(fileIndex) = metric.NIGDPlus(end);
         end
         MetricsData(3,:) = repmat(mean(Metrics),1,size(algorithms,2));
             
@@ -86,12 +86,14 @@ for pi = 1:size(problems,2)
         plot(xindex,MetricsData(1,:),'-v','LineWidth',3,'MarkerSize',20)
         plot(xindex,MetricsData(2,:),'-x','LineWidth',3,'MarkerSize',20)
         plot(xindex,MetricsData(3,:),'-.','LineWidth',3,'MarkerSize',20)
-        legend('Uniform','Random','SMSEMOA');
+        legend('Uniform','Random','SMS-EMOA');
 %         title(['R2HCA, r = ', num2str(r), ', m = ', num2str(m)]);
         xlabel('a');
-        ylabel('NHV');
-        set(gca,'FontSize',20);
-%         set(gca, 'YScale', 'log');
+        ylabel('NIGD^+');
+        xlabel('');
+        ylabel('');
+        set(gca,'FontSize',30);
+        set(gca, 'YScale', 'log');
         grid on
         
         %% save fig

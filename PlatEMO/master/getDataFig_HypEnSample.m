@@ -64,6 +64,10 @@ for i = 1:total
         maxValue = max(max(PF)); 
         ylim([minValue,maxValue])
     end
+    xlabel('') 
+    ylabel('')
+    zlabel('')
+    set(gca,'FontSize',40);
     if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
         mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
     end

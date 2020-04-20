@@ -8,7 +8,7 @@ problems = {
     @MinusWFG6, @MinusWFG7, @MinusWFG8, @MinusWFG9,...
     };
 
-algorithms = {@R2HCAEMOA2_uniform};
+algorithms = {@R2HCAEMOA2_uniform,@R2HCAEMOA5_uniform};
 M = [3,5,8,10];  
 
 total = size(problems,2)*size(M,2);
@@ -62,6 +62,10 @@ for i = 1:size(problems,2)
                 maxValue = max(max(PF));
                 ylim([minValue,maxValue])
             end
+            xlabel('') 
+            ylabel('')
+            zlabel('')
+            set(gca,'FontSize',40);
             if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
                 mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
             end

@@ -1,4 +1,4 @@
-function [Population,FrontNo] = Reduce(Population,FrontNo,r)
+function [Population,FrontNo] = Reduce4st(Population,FrontNo,r)
 % Delete one solution from the population
 
 %------------------------------- Copyright --------------------------------
@@ -11,7 +11,6 @@ function [Population,FrontNo] = Reduce(Population,FrontNo,r)
 %--------------------------------------------------------------------------
 
     %% Identify the solutions in the last front
-    FrontNo   = UpdateFront(Population.objs,FrontNo);
     LastFront = find(FrontNo==max(FrontNo));
     PopObj    = Population(LastFront).objs;
     [N,M]     = size(PopObj);

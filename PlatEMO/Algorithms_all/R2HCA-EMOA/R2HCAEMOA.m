@@ -1,7 +1,10 @@
 function R2HCAEMOA(Global)
-% <algorithm> <R>
+% <algorithm> <R2HCAEMOA>
 % A New Hypervolume-based Evolutionary Algorithm for Many-objective Optimization
 % numVec --- 100 --- Direction vector number
+% r --- 1.1 --- r of reference point
+% mode --- 1 --- 1 random; 2 uniform with shift; 3 mixed 
+% a --- 0 --- used in mode 2 only
 
 %--------------------------------------------------------------------------
 % Author: Ke Shang
@@ -14,15 +17,24 @@ function R2HCAEMOA(Global)
 %-------------------------------------------------------------------------- 
 
     %% Paremeter settings
-    num_vec = Global.ParameterSet(100);  
-    r = 1+1/getH(Global.M,Global.N);
+    [num_vec, r, mode, a] = Global.ParameterSet(100, 2, 1, 0);
 
     %% Generate initial population
     Population = Global.Initialization();
     
     %% Generate direction vectors
-    [W,num_vec] = UniformVector(num_vec, Global.M);
-    
+    if mode == 1
+        [W,num_vec] = UniformVector(num_vec, Global.M);
+    elseif mode == 2
+        [W,num_vec] = UniformPoint(num_vec, Global.M);
+        W = W./repmat(sqrt(sum(W.^2, 2)),1,Global.M);
+        W = (1 - a) .* W + a .* (1/sqrt(Global.M)) .* ones(1,Global.M);
+        W = W./ sqrt(sum(W.^2,2));
+    elseif mode == 3
+        [W,~] = UniformVector(num_vec-Global.M, Global.M); 
+        W = [W;eye(Global.M)];
+    end
+     
     %% Initialize tensor
     PopObj = Population.objs;
     fmax   = max(PopObj,[],1);

@@ -1,0 +1,26 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{multirow,booktabs,color,soul,threeparttable}
+\definecolor{hl}{rgb}{0.75,0.75,0.75}
+\sethlcolor{hl}
+\newcommand{\semitextbf}[1]{%
+\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness
+#1%
+\pdfliteral direct {0 Tr 0 w}%
+}
+\begin{document}
+\begin{table*}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\centering
+\caption{No Title}
+\begin{tabular}{ccccccc}
+\toprule
+Problem&$M$&$D$&SMSEMOA&SMSEMOA\_optimal&SMSEMOA\_DR&SMSEMOA\_DR2\\
+\midrule
+\multirow{1}{*}{MPDMP}&10&2&\hl{1.4848e+5 (2.50e+2) $-$}&1.5051e+5 (3.10e+2) $-$&1.5017e+5 (1.98e+2) $-$&\semitextbf{1.5097e+5 (1.64e+2)}\\
+\hline
+\multicolumn{3}{c}{$+/-/\approx$}&0/1/0&0/1/0&0/1/0&\\
+\bottomrule
+\end{tabular}
+\label{No Label}
+\end{table*}
+\end{document}

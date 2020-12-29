@@ -1,10 +1,10 @@
 clear;
 
 problem = @MinusDTLZ1;
-algorithm = @R2HCAEMOAa2r5;
+algorithm = @R2HCAEMOAa4r5;
 % algorithm = @R2HCAEMOA5;
 % algorithm = @SMSEMOA5;
-m = 10;  
+m = 3;  
 
 files = dir(fullfile('Data',func2str(algorithm),...
     [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'*']));
@@ -52,9 +52,10 @@ xlabel('')
 ylabel('')
 zlabel('')
 set(gca,'FontSize',40);
-% if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
-%     mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
-% end
-% saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
-%     [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
-% close(figure(gcf))
+% title([func2str(algorithm),' ',func2str(problem)])
+if exist(fullfile('Analysis','master','distribution',func2str(algorithm)),'dir') == 0
+    mkdir (fullfile('Analysis','master','distribution',func2str(algorithm)));
+end
+saveas(gca,fullfile('Analysis','master','distribution',func2str(algorithm),...
+    [func2str(algorithm),'_',func2str(problem),'_M',num2str(m),'.eps']),'eps');
+close(figure(gcf))

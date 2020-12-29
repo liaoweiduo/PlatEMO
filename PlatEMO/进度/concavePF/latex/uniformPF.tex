@@ -1,0 +1,184 @@
+\documentclass[conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+
+\makeatletter
+\renewcommand\footnoterule{%
+  \kern-3\p@
+  \hrule\@width.4\columnwidth
+  \kern2.6\p@}
+\makeatother
+  
+\usepackage{graphicx}
+\graphicspath{{fig/}}
+\DeclareGraphicsExtensions{.eps,.pdf,.jpeg,.png}
+
+\usepackage[misc]{ifsym}
+\usepackage{multirow,booktabs,color,soul,threeparttable}
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{amsmath,bm,setspace}
+\interdisplaylinepenalty=2500
+\usepackage{amsfonts}
+\definecolor{hl}{rgb}{0.75,0.75,0.75}
+\sethlcolor{hl}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}} %Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{ \textbf{Output:}} %UseOutput in the format of Algorithm
+\usepackage{caption}
+\captionsetup{font={footnotesize}}
+\usepackage{subfig}
+\usepackage{afterpage}
+\usepackage{array}
+\usepackage{stfloats}
+\fnbelowfloat
+\usepackage{url}
+\usepackage{cite}
+\def\tablename{Table}
+
+\usepackage[keeplastbox]{flushend}
+
+\newcommand{\semitextbf}[1]{%
+	\pdfliteral direct {2 Tr 0.3 w} %the second factor is the boldness
+	#1%
+	\pdfliteral direct {0 Tr 0 w}%
+}
+
+%\def\Plus{\texttt{+}}
+\newcommand{\Plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\renewcommand\IEEEkeywordsname{Keywords}
+
+\begin{document}
+
+\title{Uniform Solution Set}
+
+%\author{\IEEEauthorblockN{Linjun He\IEEEauthorrefmark{1},
+%Auraham Camacho\IEEEauthorrefmark{2} and
+%Hisao Ishibuchi\IEEEauthorrefmark{1}$\textsuperscript{(\Letter)}$}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Southern University of Science and Technology, Shenzhen, China\\
+%Email: helj@mail.sustech.edu.cn, hisao@sustech.edu.cn}
+%\and
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}CINVESTAV, Tamaulipas, Mexico\\
+%Email: acamacho@tamps.cinvestav.mx}}
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+\author{\IEEEauthorblockN{Weiduo Liao, Hisao Ishibuchi} %$\textsuperscript{(\Letter)}$
+\IEEEauthorblockA{
+  Shenzhen Key Laboratory of Computational Intelligence, \\
+  University Key Laboratory of Evolving Intelligent Systems of Guangdong Province, \\
+  Department of Computer Science and Engineering, \\
+  Southern University of Science and Technology (SUSTech), Shenzhen, China \\
+  Email: 11849249@mail.sustech.edu.cn; hisao@sustech.edu.cn}
+% \and
+% \IEEEauthorblockN{Ke Shang}
+% \IEEEauthorblockA{Department of Computer Science\\ and Engineering\\
+% Southern University of Science\\ and Technology\\ Shenzhen, China\\
+% Email: kshang@foxmail.com}
+% \and
+% \IEEEauthorblockN{Hisao Ishibuchi}
+% \IEEEauthorblockA{Department of Computer Science\\ and Engineering\\
+% Southern University of Science\\ and Technology\\ Shenzhen, China\\
+% Email: hisao@sustech.edu.cn}
+}
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+% -------------------------------------------------------------------------------------
+% 
+% -------------------------------------------------------------------------------------
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+Reference point specification; SMS-EMOA; hypervolume; evolutionary multi-objective optimization; 
+convergence detection; dynamic mechanism 
+\end{IEEEkeywords}
+    
+\let\thefootnote\relax\footnotetext{
+  This work was supported by National Natural Science Foundation of China (Grant No. 61876075), 
+  the Program for Guangdong Introducing Innovative and Enterpreneurial Teams (Grant No. 2017ZT07X386), 
+  Shenzhen Peacock Plan (Grant No. KQTD2016112514355531), 
+  the Science and Technology Innovation Committee Foundation of Shenzhen (Grant No. ZDSYS201703031748284), 
+  and the Program for University Key Laboratory of Guangdong Province (Grant No. 2017KSYS008).
+  Corresponding Author: Hisao Ishibuchi (hisao@sustech.edu.cn)
+}
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For perreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+% -------------------------------------------------------------------------------------
+% outline:
+% linear; concave; convex shape PF, each solution HV contribution different
+% 
+% 定理 (indicator based algorithm)： 
+%   最优分布solution set的每一个解的HV contribution需要一样（连续的PF）
+%      这样这个solution set才能稳定，不然理论上indicator based algorithm会继续删除最小找大的
+%     证明：例子是有一个solution set一个solution小，一个solution大，必然可以有一个解替换小的，移动
+%          一下（前提 PF连续）
+%   拓展：disjoint PF 的每个连续的sub PF中也hold上述
+%   
+% after mapping (normalize -> scale -> normalize) in 2D; in 3D 
+% the difference decreases (after mathematical calculation)
+% So if we treat these solutions using HV contribution after mapping,
+%
+% propose mapped HV contribution:  I(s,S) =  HVc(s',S'), S->S', s->s' 
+% 
+% 2个缺点 
+% do not contain dominate information 
+% a far away non-dominated solution intend to stay because 较小的mapped HV contribution difference 
+% 
+% introduce a coefficient c
+% 贴图 c为0，c从0到1，c为1 3种情况的结果图， c为0和以前一样，c为1会有很远的解
+% （c从0到1和c为1的结果可能相差不大！！！）
+% 
+% DTLZ7的结果显示对于不连续问题 此方法可以减少subPF的边缘影响（边缘密集）
+% 
+% -------------------------------------------------------------------------------------
+\section{Introduction}
+% -------------------------------------------------------------------------------------
+% 
+% -------------------------------------------------------------------------------------
+
+\section{Computational Experiments}
+% -------------------------------------------------------------------------------------
+% 
+% -------------------------------------------------------------------------------------
+\subsection{Experimental Settings}
+% -------------------------------------------------------------------------------------
+% 
+% -------------------------------------------------------------------------------------
+
+\subsection{Computational Results}
+% -------------------------------------------------------------------------------------
+% 
+% -------------------------------------------------------------------------------------
+
+\section{Conclusions}
+% -------------------------------------------------------------------------------------
+% 
+% -------------------------------------------------------------------------------------
+
+\bibliographystyle{IEEEtran} 
+\bibliography{mybibtex} 
+
+\end{document}
+
+

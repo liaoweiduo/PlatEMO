@@ -283,6 +283,7 @@ xlabel('Number of processor');
 ylabel('Speed up');
 legend('rMSM','gMSM','sMSM','sOIM','aOIM');  %,'ideal' 
 set(gca,'FontSize',20);
+set(gca, 'YScale', 'log');
 
 % figure()
 % hold on
